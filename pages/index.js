@@ -65,7 +65,7 @@ export default function Home() {
             iconRight={icons.arrowRight.src}
             titleRight={"Xem tất cả"}
             maxItemSlide={4}
-            linkTo={"/devices"}
+            linkTo={"/products"}
             htmlDescription={items.slice(0, 5).map((image) => (
               <ImgMediaCard
                 image={image}
