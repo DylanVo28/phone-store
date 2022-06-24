@@ -7,10 +7,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
-const ItemCheckBox=()=>{
+
+const ItemCheckBox=(props)=>{
+    const [isChecked,setIsChecked]=React.useState(false)
     return (
         <ListItem
-        key={value}
         secondaryAction={
           <IconButton edge="end" aria-label="comments">
             <CommentIcon />
@@ -18,17 +19,18 @@ const ItemCheckBox=()=>{
         }
         disablePadding
       >
-        <ListItemButton role={undefined} onClick={1} dense>
+        <ListItemButton role={undefined} onClick={()=>setIsChecked(!isChecked)} dense >
           <ListItemIcon>
             <Checkbox
               edge="start"
-              checked={true}
+              checked={isChecked}
               tabIndex={-1}
               disableRipple
+             
               inputProps={{ 'aria-labelledby':'checkbox-list-label-1'}}
             />
           </ListItemIcon>
-          <ListItemText  primary={`Line item `} />
+          <ListItemText  primary={props.title} />
         </ListItemButton>
       </ListItem>
     )

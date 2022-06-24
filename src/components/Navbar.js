@@ -17,12 +17,15 @@ import Link from 'next/link';
 import { Container } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['Gói cước', 'Chọn số', 'Thiết bị di động','Giải pháp doanh nghiệp','Đăng ký MNP','Khuyến mãi', 'Điểm giao dịch','Tin tức'];
+
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const itemsNavbar={
+    logo:"https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg",
+    navItems:['Gói cước', 'Chọn số', 'Thiết bị di động','Giải pháp doanh nghiệp','Đăng ký MNP','Khuyến mãi', 'Điểm giao dịch','Tin tức']
+  }
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -34,7 +37,7 @@ function Navbar(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {itemsNavbar.navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary={item} />
@@ -49,14 +52,25 @@ function Navbar(props) {
 
   return (
     <Box sx={{ display: 'flex' }} id='navbar'>
-       <style jsx global>{`
+      <style jsx global>{`
         #navbar .MuiPaper-root{
           position: unset!important
         }
+        #navbar .logo.width-15{
+          width: 15%
+        }
+        #navbar .width-100{
+          width: 100%
+        }
+        #navbar .bg-white{
+          background: white;
+          box-shadow: none;
+        }
       `}</style>
+      <AppBar component="nav" className="bg-white">
       <Container maxWidth="lg">
-      <AppBar component="nav">
-        <Toolbar>
+      
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -70,20 +84,22 @@ function Navbar(props) {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            className="logo width-15"
           >
-             <img src="https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg"/>
+             <img className='width-100' src={itemsNavbar.logo}/>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+            {itemsNavbar.navItems.map((item) => (
+              <Button key={item} sx={{ color: 'black' }}>
                 {item}
               </Button>
             ))}
           </Box>
         </Toolbar>
-      </AppBar>
       </Container>
+      </AppBar>
+
       <Box component="nav">
         <Drawer
           container={container}

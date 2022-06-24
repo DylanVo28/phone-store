@@ -80,12 +80,6 @@ const index = () => {
             </div>
             </Grid>
           <Grid container spacing={2} >
-          <Grid item xs={12} >
-          <div>
-              Ưu tiên xem {<ItemButton/>}
-            </div>
-         </Grid>
-           
           {images.slice(0, 5).map((image) => (
                 <Grid item xs={12} sm={4}><ImgMediaCard
                 image={image}
@@ -100,7 +94,9 @@ const index = () => {
 
 
           </Grid>
+          <Grid item xs={12} >
          
+          </Grid>
         </Grid>
       
        

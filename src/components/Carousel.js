@@ -2,34 +2,32 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
 
-const Item=(props)=>
-{
-    return (
-        <Paper>
-           <img src="https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg"/>
-            
-        </Paper>
-    )
-}
 
-const Slide=()=>{
-    var items = [
-        {
-            name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!"
-        }
-    ]
 
+const Slide=(props)=>{
+   
     return <>
-     <Carousel 
+    <style jsx global>{`
+        .carousel-banner .css-1ps6pg7-MuiPaper-root .banner{
+            height: 500px;
+           
+            background-repeat: no-repeat!important;
+            background-size: cover!important;
+            background-position: center!important;
+            
+        }
+    `}
+       
+    </style>
+     <Carousel id="carousel" className="carousel-banner"
     animation="slide" activeIndicatorIconButtonProps={{className: "activeIndicator"}}
      >
             {
-                items.map( (item, i) => <Item key={i} item={item} /> )
+                props.items.map( (item, i) => <>
+                 <Paper>
+            <div className="banner" style={{background: `url(${item.image})`}}></div>
+            </Paper>
+                </>  )
             }
         </Carousel>
     </>

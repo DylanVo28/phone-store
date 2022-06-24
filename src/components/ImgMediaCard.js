@@ -8,35 +8,44 @@ import Typography from "@mui/material/Typography";
 import icons from "../images/icons";
 import { Link } from 'next/link';
 const ImgMediaCard = (props) => {
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
-        height="140"
-        image={props.image}
-      />
-      {props.isCart && <img src={icons.cart.src} />}
-      {props.isdiscount && <div> Giảm : {props.discountValue}</div>}
+         height="200"
+        image={props.item.image}
+        className="card-image"
+      >
+
+      </CardMedia>
+      {props.isCart && <img src={icons.cart.src} className="cart-icon"/>}
+
+      <div style={{position: 'relative'}}>
+      <div className="product__price-discount">Giảm : {props.item.discountValue}</div>
+
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h5" component="div" className="card__title">
+          {props.item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles<span>tada</span>
+        <Typography variant="body2" color="text.secondary" className="card__description">
+          {props.item.description}
         </Typography>
       </CardContent>
-      <CardActions>
+      
+      <CardActions className="product__price">
+       
         <span>
-          {props.itemValue&&<div>900,000đ</div>}
-        {props.detail && <a href="/tada">tada</a>}
-          {props.discountValue && (
-            <div>{props.itemValue - props.discountValue}</div>
-          )}
+        
+
+            <div className="product__price__discount">{props.item.price - props.item.discountValue}</div>
+            <div className="product__price__price">{props.item.price}</div>
         </span>
 
-        <Button size="small">Đăng ký</Button>
+        <Button variant="outlined" size="small">Đăng ký</Button>
       </CardActions>
+      </div>
     </Card>
   );
 };
