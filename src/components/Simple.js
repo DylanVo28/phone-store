@@ -27,9 +27,7 @@ const images = [
   "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
 ];
 const MultiItemCarousel = (props) => {
-  useEffect(() => {
-    console.log(props);
-  }, []);
+  
   return (
     <>
       {props.style}
@@ -130,6 +128,10 @@ const MultiItemCarousel = (props) => {
         >
           {props.htmlDescription}
         </Carousel>
+        <div style={{textAlign: 'center'}}>
+        <Button variant="outlined" style={{    color: 'white',borderColor: 'white'}}>Xem thêm</Button>
+
+        </div>
       </div>
     </>
   );

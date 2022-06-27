@@ -5,9 +5,22 @@ import Grid from "@mui/material/Grid"
 import  Typography  from '@mui/material/Typography';
 import AllOutIcon from '@mui/icons-material/AllOut';
 import IconTitle from "./IconTitle";
+import background from '../images/background-reverse.png'
 const Footer=()=>{
     return (<footer>
-        <Box>
+        <style jsx global>
+            {`
+                #footer{
+                    background: url('${background.src}');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    padding: 100px 0;
+                }
+            `}
+
+        </style>
+        <Box id="footer">
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={4}>

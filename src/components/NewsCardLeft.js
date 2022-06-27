@@ -10,7 +10,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import AllOutIcon  from '@mui/icons-material/AllOut';
 import IconTitle from './IconTitle';
- const PackageCardM8=(props)=>{
+import LinkM8 from './LinkM8';
+ const NewsCardLeft=(props)=>{
     return <>
     <style jsx global>{`
     .package-card{
@@ -90,10 +91,10 @@ import IconTitle from './IconTitle';
     `}
 
     </style>
-    <Card sx={{ maxWidth: 345 }} className="package-card">
+    <Card  className="package-card">
       <CardMedia
         component="img"
-        height="250"
+        height="400"
         image={props.item.image}
         alt="green iguana"
         className="package-card_image"
@@ -103,31 +104,17 @@ import IconTitle from './IconTitle';
           {props.item.title}
         </Typography>
         <Typography gutterBottom variant="p" component="div" className="package-card__description">
-          <span>Đối tượng: </span>{props.item.des}
+          {props.item.des}
         </Typography>
-        <Typography gutterBottom variant="p" component="div" className="package-card__title-list">
-                Ưu đãi
-            </Typography>
-        <List >
-            
-                {props.item.incentives && props.item.incentives.map(item=><ListItem>
-                    <IconTitle variant="p" component="h6"
-                                icon={<div style={{width:5+"px",height: 5+"px",background: 'orange', borderRadius: 50+"%", display: 'inline-block'}}/>}
-                                title={item}
-                                className="package-card__list-item"
-                            />
-                      
-                </ListItem>)}
-            </List>
+      
             <CardActions style={{justifyContent: 'space-between'}}>
-      <Typography gutterBottom variant="p" component="div" className="package-card__price">
-         100.000đ/ 1 month
-        </Typography>
-        <Button variant="contained">Đăng ký</Button>
+      
+            <LinkM8 href="/tada" title="Xem chi tiết"></LinkM8>
+
       </CardActions>
       </CardContent>
      
     </Card>
     </>
 }
-export default PackageCardM8
+export default NewsCardLeft

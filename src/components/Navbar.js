@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
 import { Container } from '@mui/material';
+import DropdownItemM8 from './DropdownItemM8';
 
 const drawerWidth = 240;
 
@@ -24,7 +25,7 @@ function Navbar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const itemsNavbar={
     logo:"https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg",
-    navItems:['Gói cước', 'Chọn số', 'Thiết bị di động','Giải pháp doanh nghiệp','Đăng ký MNP','Khuyến mãi', 'Điểm giao dịch','Tin tức']
+    navItems:['Gói cước', 'Chọn số', 'Thiết bị di động','Giải pháp doanh nghiệp','Đăng ký MNP']
   }
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -66,6 +67,9 @@ function Navbar(props) {
           background: white;
           box-shadow: none;
         }
+        .navbar__box{
+          display:flex
+        }
       `}</style>
       <AppBar component="nav" className="bg-white">
       <Container maxWidth="lg">
@@ -80,20 +84,13 @@ function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            className="logo width-15"
-          >
-             <img className='width-100' src={itemsNavbar.logo}/>
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }} className="navbar__box">
             
             {itemsNavbar.navItems.map((item) => (
-              <Button key={item} sx={{ color: 'black' }}>
+              <DropdownItemM8 key={item} sx={{ color: 'black' }}>
                 {item}
-              </Button>
+              </DropdownItemM8>
             ))}
           </Box>
         </Toolbar>
