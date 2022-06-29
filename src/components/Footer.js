@@ -5,17 +5,14 @@ import Grid from "@mui/material/Grid"
 import  Typography  from '@mui/material/Typography';
 import AllOutIcon from '@mui/icons-material/AllOut';
 import IconTitle from "./IconTitle";
-import background from '../images/background-reverse.png'
+import background from '../images/background-1.svg'
 const Footer=()=>{
     return (<footer>
         <style jsx global>
             {`
                 #footer{
                     background: url('${background.src}');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    padding: 100px 0;
+                  
                 }
             `}
 

@@ -8,8 +8,8 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import ButtonM8 from "./Button";
-import TypograPhyM8 from "./TypographyM8";
+import ButtonM8 from "./ButtonM8/Button";
+import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ArrowForwardM8 } from "./Icons";
 const images = [
@@ -113,7 +113,7 @@ const MultiItemCarousel = (props) => {
                 max: 1024,
                 min: 464,
               },
-              items: 2,
+              items: 1,
               partialVisibilityGutter: 30,
             },
           }}

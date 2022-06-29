@@ -12,84 +12,7 @@ import AllOutIcon  from '@mui/icons-material/AllOut';
 import IconTitle from './IconTitle';
  const PackageCardM8=(props)=>{
     return <>
-    <style jsx global>{`
-    .package-card{
-      border: none;
-    box-shadow: none;
-    }
-    .package-card .package-card__list{
-      padding: 15px 0;
-    }
-    .package-card-content{
-        transform: translateY(-35px);
-        left: calc(50% - 385px/2 - 0.5px);
-        top: calc(50% - 366px/2 + 111px);
-        background: #FFFFFF;
-        border: 1px solid #4BA6DD;
-        border-radius: 42px 42px 12px 12px;
-    }
-    .package-card__title{
-        font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    color: #0061AF;
-    }
-    .package-card__description{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        letter-spacing: 0.005em;
-        color: #44494D;
-    }
-    .package-card__description span{
-        color: #0061AF;
-    }
-    .package-card__title-list{
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
-        /* identical to box height */
-        
-        letter-spacing: 0.0015em;
-        
-        /* Blue main */
-        
-        color: #0061AF;
-    }
-    .package-card__list-item{
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      /* identical to box height */
-
-      letter-spacing: 0.0025em;
-
-      /* gray sub text */
-
-      color: #44494D;
-      display: flex;
-    }
-    .package-card__list-item span{
-      padding-right: 5px;
-      display: flex;
-      align-items: center;
-    }
-    .package-card__price{
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 28px;
-      color: #EE1C24;
-    }
-    .package-card_image{
-      border-top-right-radius: 15px;
-      border-top-left-radius: 15px;
-    }
-    `}
-
-    </style>
+ 
     <Card sx={{ maxWidth: 345 }} className="package-card">
       <CardMedia
         component="img"
@@ -105,9 +28,10 @@ import IconTitle from './IconTitle';
         <Typography gutterBottom variant="p" component="div" className="package-card__description">
           <span>Đối tượng: </span>{props.item.des}
         </Typography>
-        <Typography gutterBottom variant="p" component="div" className="package-card__title-list">
+        {props.item.incentives &&<Typography gutterBottom variant="p" component="div" className="package-card__title-list">
                 Ưu đãi
             </Typography>
+        }
         <List >
             
                 {props.item.incentives && props.item.incentives.map(item=><ListItem>

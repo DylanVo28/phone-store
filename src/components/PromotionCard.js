@@ -10,40 +10,9 @@ import background from '../images/background-card.svg'
 export default function PromotionCard(props) {
   return (<>
     <style jsx global>{`
-    .promotion-card__title{
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
-        letter-spacing: 0.0015em;
-        color: #333333;
-        padding-top: 30px;
-    }
     
-    .promotion-card__btn{
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
-        text-align: right;
-        letter-spacing: 0.0015em;
-        text-decoration-line: underline;
-        
-        /* Blue main */
-        
-        color: #0061AF;
-    }
     .promotion-card__content{
       background: url('${background.src}');
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: top;
-      transform: translateY(-60px);
-      padding-bottom: 0;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-    }
-    .promotion-card__image{
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
     }
     `}
         
@@ -54,7 +23,7 @@ export default function PromotionCard(props) {
         className="promotion-card__image"
         component="img"
         height="300"
-        image={"https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg"}
+        image={"https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"}
         alt="green iguana"
       />
       <CardContent className='promotion-card__content'>

@@ -1,0 +1,507 @@
+#packages .react-multi-carousel-track {
+  padding: 15px 0;
+}
+#packages .title{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #0061AF;
+}
+#packages .text-mobi-8{
+  color: #5180C0;
+}
+#packages .arrow-forward-m8{
+  color: white;
+  background: #0061af;
+}
+.package-card{
+  border: none;
+  box-shadow: none;
+}
+.package-card .package-card__list{
+  padding: 15px 0;
+}
+.package-card .package-card-content{
+  transform: translateY(-35px);
+  left: calc(50% - 385px/2 - 0.5px);
+  top: calc(50% - 366px/2 + 111px);
+  background: #FFFFFF;
+  border: 1px solid #4BA6DD;
+  border-radius: 42px 42px 12px 12px;
+}
+.package-card__title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #0061AF;
+}
+.package-card{
+  border: none;
+  box-shadow: none;
+}
+.package-card .package-card__list{
+  padding: 15px 0;
+}
+.package-card-content{
+  transform: translateY(-35px);
+  left: calc(50% - 385px/2 - 0.5px);
+  top: calc(50% - 366px/2 + 111px);
+  background: #FFFFFF;
+  border: 1px solid #4BA6DD;
+  border-radius: 42px 42px 12px 12px;
+}
+.package-card__description{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: #44494D;
+}
+.package-card__description span{
+  color: #0061AF;
+}
+.package-card__title-list{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+ /* identical to box height */
+  letter-spacing: 0.0015em;
+ /* Blue main */
+  color: #0061AF;
+}
+.package-card__list-item{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+ /* identical to box height */
+  letter-spacing: 0.0025em;
+ /* gray sub text */
+  color: #44494D;
+  display: flex;
+}
+.package-card__list-item span{
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+}
+.package-card__price{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #EE1C24;
+}
+.package-card_image{
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.package-card .package-card__title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #0061AF;
+}
+.package-card .package-card__description{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: #44494D;
+}
+.package-card .package-card__description span{
+  color: #0061AF;
+}
+.package-card .package-card__title-list{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+ /* identical to box height */
+  letter-spacing: 0.0015em;
+ /* Blue main */
+  color: #0061AF;
+}
+.package-card .package-card__list-item{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+ /* identical to box height */
+  letter-spacing: 0.0025em;
+ /* gray sub text */
+  color: #44494D;
+  display: flex;
+}
+.package-card .package-card__list-item span{
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+}
+.package-card .package-card__price{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #EE1C24;
+}
+.package-card .package-card_image{
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+/*product section*/
+#products .react-multi-carousel-item{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#products .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+  position: relative;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 15;
+  border: none;
+}
+#products .css-1ri6ub7-MuiPaper-root-MuiCard-root .cart-icon{
+  position: absolute;
+  background: #0090ff;
+  padding: 4px;
+  border-radius: 50%;
+  width: 30px;
+  right: 15px;
+  top: 15px;
+  box-shadow: 0px 0px 8px 0px #0090ff80;
+  background: #0061AF;
+  box-shadow: 0px 0px 8px 2px #67b9f4;
+  border-radius: 100px;
+}
+#products .card-image{
+  border-bottom: 1px solid #00000021;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+#products .product__price-discount{
+  position: absolute;
+  top: -13px;
+  background: #ff0000;
+  padding: 3px 15px;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 13px;
+}
+#products .react-multi-carousel-track{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#products .card__description{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0.0025em;
+  color: #44494D;
+}
+#products {
+  background-size: 100%!important;
+  background-repeat: no-repeat!important;
+}
+#products .product__price{
+  justify-content: space-between;
+  padding: 16px 
+}
+#products .product__price__price{
+  text-decoration-line: line-through;
+  color: #0061AF;
+  letter-spacing: 0.004em;
+  font-weight: 300;
+  font-size: 14px;
+}
+#products .product__price__discount{
+  color: #EE1C24;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+#products .card__title{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  color: #44494D;
+}
+#products .title{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: white;
+}
+#packages .react-multi-carousel-track {
+  padding: 15px 0;
+}
+#packages .title{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #0061AF;
+}
+#packages .text-mobi-8{
+  color: #5180C0;
+}
+#packages .arrow-forward-m8{
+  color: white;
+  background: #0061af;
+}
+#promotion{
+  background-size: 100%!important;
+  background-repeat: no-repeat!important;
+}
+#promotion .react-multi-carousel-item{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#promotion .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+  position: relative;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 15;
+  border: none;
+  display: contents;
+}
+#promotion .css-1ri6ub7-MuiPaper-root-MuiCard-root .cart-icon{
+  position: absolute;
+  background: #0090ff;
+  padding: 4px;
+  border-radius: 50%;
+  width: 30px;
+  right: 15px;
+  top: 15px;
+  box-shadow: 0px 0px 8px 0px #0090ff80;
+  background: #0061AF;
+  box-shadow: 0px 0px 8px 2px #67b9f4;
+  border-radius: 100px;
+}
+#promotion .card-image{
+  border-bottom: 1px solid #00000021;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+#promotion .product__price-discount{
+  position: absolute;
+  top: -13px;
+  background: #ff0000;
+  padding: 3px 15px;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 13px;
+}
+#promotion .react-multi-carousel-track{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#promotion .card__description{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0.0025em;
+  color: #44494D;
+}
+#promotion .product__price{
+  justify-content: space-between;
+  padding: 16px 
+}
+#promotion .product__price__price{
+  text-decoration-line: line-through;
+  color: #0061AF;
+  letter-spacing: 0.004em;
+  font-weight: 300;
+  font-size: 14px;
+}
+#promotion .product__price__discount{
+  color: #EE1C24;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+#promotion .card__title{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  color: #44494D;
+}
+#promotion .title{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: white;
+}
+.promotion-card__title{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.0015em;
+  color: #333333;
+  padding-top: 30px;
+}
+.promotion-card__btn{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 0.0015em;
+  text-decoration-line: underline;
+ /* Blue main */
+  color: #0061AF;
+}
+.promotion-card__content{
+  background-size: 100%!important;
+  background-repeat: no-repeat!important;
+  background-position: top!important;
+  transform: translateY(-60px)!important;
+  padding-bottom: 0!important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.promotion-card__image{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.news__list-item{
+  padding: 0;
+  padding-bottom:15px;
+}
+#footer{
+  background-size: 100%!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+  padding: 150px 0;
+  color: white;
+}
+.rtf--mb{
+  background: linear-gradient(180deg, #006ABC 0%, #0278D4 22.92%, #118BEC 37.5%, #118DF0 53.65%, #147ED6 73.44%, #165992 90.62%);
+}
+.fab-mobi-8__icon{
+  width: 30px;
+}
+.item-checkbox .css-518kzi-MuiListItemSecondaryAction-root{
+  display: none;
+}
+.btn-mobi-8{
+  padding: 8px 24px;
+  gap: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 20px;
+  color: #0061AF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+  margin-right: 15px 
+}
+.btn-mobi-8-outline{
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  padding: 8px 24px;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+  color: white;
+  background: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  box-shadow: none;
+  margin-right: 15px 
+}
+.btn-package-active{
+  background: #5180C0;
+  color: white;
+  box-shadow: none;
+}
+.btn-package-outline{
+  color: #5180C0;
+  border-color: #5180C0;
+}
+.item-button{
+  border: 1px solid #D9D9D9;
+  border-radius: 100px;
+  align-items: flex-start;
+  padding: 8px 12px 8px 14px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+  color: #44494D;
+}
+.package__list-option .css-zkqepn-MuiButtonBase-root-MuiCheckbox-root{
+  color: #0061AF;
+}
+.tabs-m8 .css-heg063-MuiTabs-flexContainer{
+  justify-content: space-around!important;
+}
+.tabs-m8 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  width: 100%!important;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+  color: #0061AF;
+}
+.title{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #0061AF;
+}
+
+.carousel-banner .css-1ps6pg7-MuiPaper-root .banner{
+  height: 500px;
+  background-repeat: no-repeat!important;
+  background-size: cover!important;
+  background-position: center!important;
+}
+.parallax-carousel-m8 .makeStyles-arrowLeft-6{
+  left: 0!important;
+}
+.parallax-carousel-m8 .makeStyles-arrowRight-7{
+  right: 0!important;
+}
+#navbar .MuiPaper-root{
+  position: unset!important 
+}
+#navbar .logo.width-15{
+  width: 15% 
+}
+#navbar .width-100{
+  width: 100% 
+}
+#navbar .bg-white{
+  background: white;
+  box-shadow: none;
+}
+.navbar__box{
+  display:flex 
+}
+.navbar-header{
+  background: #0061AF;
+  height: 58px;
+}
+.navbar-header .css-1oqqzyl-MuiContainer-root, .navbar-header .css-mhc70k-MuiGrid-root, .navbar-header .css-1equabv-MuiGrid-root{
+  height:100%!important;
+}
+.navbar-header__sign-in{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+

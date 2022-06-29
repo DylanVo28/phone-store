@@ -62,7 +62,7 @@ export default function NewsCard() {
      <CardMedia
        component="img"
        sx={{ height: 187, width: 200 }}
-       image="https://th.bing.com/th/id/R.a8fbbfa66ce63680ab673396ac354214?rik=%2bBodyjDVc04TSQ&pid=ImgRaw&r=0"
+       image="https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
        alt="Live from space album cover"
      />
       <Box sx={{ display: 'flex', flexDirection: 'column' }} className="news-card__box">

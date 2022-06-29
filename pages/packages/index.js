@@ -7,6 +7,11 @@ import ImgMediaCard from './../../src/components/ImgMediaCard';
 import ItemButton from "../../src/components/ItemButton";
 import Footer from './../../src/components/Footer';
 import SpeedDialTooltipOpen from './../../src/components/SpeedDialTooltipOpen';
+import { useEffect, useState } from "react";
+import PackageCardM8 from "../../src/components/PackageCardM8";
+import CloseIcon from '@mui/icons-material/Close';
+import ButtonM8 from "../../src/components/Button";
+import TabsM8 from "../../src/components/TabsM8";
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
     "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -22,8 +27,62 @@ const images = [
     "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   ];
-  
+  const itemsPackage = [
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+     
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+     
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+     
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+     
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+      
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+      
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
+      title: "dijango",
+      des: "Thuê bao mới hòa mạng",
+     
+    },
+  ];
 const index = () => {
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
   return (
     <>
       <Navbar />
@@ -38,7 +97,7 @@ const index = () => {
       </div>
       <Container maxWidth="lg">
         <Grid container spacing={2} >
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={2} className="package__list-option">
           <Grid item xs={12}  >
             <h4>Loại gói cước</h4>
             <List
@@ -49,44 +108,25 @@ const index = () => {
               ))}
             </List>
             </Grid>
-            <Grid item xs={12}>
-            <h4>Loại gói cước</h4>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {items.map((item) => (
-                <ItemCheckBox title={item} />
-              ))}
-            </List>
+         
+         
           </Grid>
-          <Grid item xs={12}>
-            <h4>Loại gói cước</h4>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {items.map((item) => (
-                <ItemCheckBox title={item} />
-              ))}
-            </List>
-          </Grid>
-          </Grid>
-          <Grid item xs={12} sm={9}>
+          <Grid item xs={12} sm={10}>
           <Grid item xs={12}>
                 <div>
-            <h1>Thiết bị di động</h1>
+                <h1 className="title">Gói cước</h1>
             <p>Trang chủ: <span>Danh sách thiết bị</span></p>
             <span>Lọc theo: </span>
-            <ItemButton/>
+            <ItemButton icon={<CloseIcon/>} title={"tất cả"}/>
+            <p>Ưu tiên xem</p>
+            <ButtonM8 title="Trả trước" className="btn-mobi-8 btn-package-active"></ButtonM8>
+            <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
             </div>
             </Grid>
           <Grid container spacing={2} >
-          {images.slice(0, 5).map((image) => (
-                <Grid item xs={12} sm={4}><ImgMediaCard
-                image={image}
-                isCart={true}
-                isdiscount={true}
-                discountValue={3000000}
-              /></Grid>
+            <TabsM8/>
+          {itemsPackage.slice(0, 5).map((item) => (
+                <Grid item xs={12} sm={4}> <PackageCardM8 item={item} detail={true} /></Grid>
               
             ))}
           </Grid>
@@ -101,7 +141,8 @@ const index = () => {
       
        
       </Container>
-      <SpeedDialTooltipOpen/>
+     
+      {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>
     </>
   );

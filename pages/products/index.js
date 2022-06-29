@@ -7,6 +7,7 @@ import ImgMediaCard from './../../src/components/ImgMediaCard';
 import ItemButton from "../../src/components/ItemButton";
 import Footer from './../../src/components/Footer';
 import SpeedDialTooltipOpen from './../../src/components/SpeedDialTooltipOpen';
+import ButtonM8 from "../../src/components/Button";
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
     "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -77,6 +78,10 @@ const index = () => {
             <p>Trang chủ: <span>Danh sách thiết bị</span></p>
             <span>Lọc theo: </span>
             <ItemButton/>
+            <p>Ưu tiên xem</p>
+            <ButtonM8 title="Trả trước" className="btn-mobi-8 btn-package-active"></ButtonM8>
+            <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
+
             </div>
             </Grid>
           <Grid container spacing={2} >
