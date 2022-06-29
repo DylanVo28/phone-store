@@ -14,7 +14,7 @@ const ImgMediaCard = (props) => {
       <CardMedia
         component="img"
         alt="green iguana"
-         height="200"
+         height={props.heightCard}
         image={props.item.image}
         className="card-image"
       >
@@ -43,10 +43,24 @@ const ImgMediaCard = (props) => {
             <div className="product__price__price">{props.item.price}</div>
         </span>
 
-        <Button variant="outlined" size="small">Đăng ký</Button>
+        <Button variant="outlined" size="small">{props.textBtn}</Button>
       </CardActions>
       </div>
     </Card>
   );
 };
+ImgMediaCard.defaultProps={
+  item: {
+    id: 1,
+    image:
+      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      " which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. ",
+    price: 300000000,
+  },
+  textBtn: "Đăng ký",
+  heightCard: 200
+}
 export default ImgMediaCard;

@@ -1,14 +1,13 @@
 import { Button, CardMedia, Grid, List } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
-import Navbar from "../src/components/Navbar";
-import MultiItemCarousel from "../src/components/Simple";
-import styles from "../styles/Home.module.css";
-import Slide from "./../src/components/Carousel";
-import icons from "../src/images/icons";
-import ImgMediaCard from "../src/components/ImgMediaCard";
+import Navbar from "../../src/components/Navbar";
+import MultiItemCarousel from "../../src/components/Simple";
+import icons from "../../src/images/icons";
+
+import ImgMediaCard from "../../src/components/ImgMediaCard";
 import { Container, Input, InputAdornment } from "@mui/material";
-import Item from "../src/components/Item";
+import Item from "../../src/components/Item";
 import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import { ImageIcon } from "@mui/icons-material/Image";
@@ -19,19 +18,20 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Link from "next/link";
-import Footer from "./../src/components/Footer";
-import SpeedDialTooltipOpen from "./../src/components/SpeedDialTooltipOpen";
+import Footer from "../../src/components/Footer";
+import SpeedDialTooltipOpen from "../../src/components/SpeedDialTooltipOpen";
 import { useEffect, useState } from "react";
-import PackageCardM8 from "../src/components/PackageCardM8";
-import background from "../src/images/background.svg";
-import backgroundPromotion from "../src/images/background-promotion.svg";
-import SolutionCard from "../src/components/SolutionCard";
-import PromotionCard from "./../src/components/PromotionCard";
-import NewsCard from "../src/components/NewsCard";
-import NewsCardLeft from "../src/components/NewsCardLeft";
+import PackageCardM8 from "../../src/components/PackageCardM8";
+import background from "../../src/images/background.svg";
+import backgroundPromotion from "../../src/images/background-promotion.svg";
+import SolutionCard from "../../src/components/SolutionCard";
+import PromotionCard from "../../src/components/PromotionCard";
+import NewsCard from "../../src/components/NewsCard";
+import NewsCardLeft from "../../src/components/NewsCardLeft";
 import Card from "@mui/material/Card";
-import ActionAreaCardM8 from "../src/components/ActionAreaCardM8/ActionAreaCardM8";
-import ParallaxCarouselM8 from "../src/components/ParallaxCarouselM8";
+import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCardM8";
+import ParallaxCarouselM8 from "../../src/components/ParallaxCarouselM8";
+import CardTextM8 from "../../src/components/CardTextM8";
 const backgroundImage =
   "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
 const items = [
@@ -213,7 +213,7 @@ const itemsPackage = [
     ],
   },
 ];
-export default function Home() {
+export default function PackageDetail() {
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -233,183 +233,36 @@ export default function Home() {
     <>
       <Navbar />
       {/* <Slide items={itemsBanner} /> */}
-      <ParallaxCarouselM8/>
+      <ParallaxCarouselM8 />
       {/*package section*/}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} id="packages">
-          <Grid item xs={12}>
-            <MultiItemCarousel
-              iconLeft={icons.solution.src}
-              titleLeft={"Gói cước"}
-              iconRight={icons.arrowRight.src}
-              titleRight={"Xem tất cả"}
-              maxItemSlide={3}
-              linkTo={"/packages"}
-              component="package"
-              htmlDescription={itemsPackage.map((item) => (
-                <PackageCardM8 item={item} detail={true} />
-              ))}
-            />
+      <Container maxWidth="lg" >
+        <Grid container spacing={2} >
+          <Grid item md={10}>
+          <Grid container spacing={2} >
+          <Grid item md={5}>
+          <Card sx={{ maxWidth: 100 + "%" }}>
+              <CardMedia
+                component="img"
+                alt="green iguana"
+                height="200"
+                image={
+                  "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
+                }
+                className="card-image"
+              />
+            </Card>
           </Grid>
-        </Grid>
-      </Container>
-      {/*product section*/}
-      <Grid item xs={12} spacing={2} id="products">
-        <Container
-          maxWidth="lg"
-          style={{ paddingTop: 30 + "px", paddingBottom: 150 + "px" }}
-        >
-          <MultiItemCarousel
-            iconLeft={icons.device.src}
-            titleLeft={"Thiết bị di động"}
-            iconRight={icons.arrowRight.src}
-            titleRight={"Xem tất cả"}
-            maxItemSlide={4}
-            linkTo={"/products"}
-            component="product"
-            isColorWhiteTextRight={true}
-            style={
-              <style jsx>{`
-              #products {
-              background: url('${background.src}');
-              }
-             
-              
-            `}</style>
-            }
-            htmlDescription={items.map((item) => (
-              <ImgMediaCard item={item} isCart={true} isdiscount={true} />
-            ))}
-          />
-        </Container>
-      </Grid>
+            <Grid item md={7} className="display--flex justify-content--between">
 
-      {/*solution section*/}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} id="packages">
-          <Grid item xs={12}>
-            <MultiItemCarousel
-              iconLeft={icons.solution.src}
-              titleLeft={"Giải pháp doanh nghiệp"}
-              iconRight={icons.arrowRight.src}
-              titleRight={"Xem tất cả"}
-              maxItemSlide={3}
-              linkTo={"/packages"}
-              component="package"
-              htmlDescription={itemsPackage.map((item) => (
-                <SolutionCard item={item} detail={true} />
-              ))}
-            />
+                <CardTextM8/>
+                <CardTextM8/>
+            </Grid>
+
           </Grid>
-        </Grid>
-      </Container>
-
-      {/*banner section*/}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} style={{ padding: 15 + "px  " + 0 }}>
-          <Grid item xs={12}>
-            <div
-              style={{
-                background:
-                  "url('https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg')",
-                height: 300 + "px",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                borderRadius: 15 + "px",
-              }}
-            ></div>
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* promotion section*/}
-      <Grid item xs={12} spacing={2} id="promotion">
-        <Container
-          maxWidth="lg"
-          style={{ paddingTop: 30 + "px", paddingBottom: 150 + "px" }}
-        >
-          <MultiItemCarousel
-            iconLeft={icons.device.src}
-            titleLeft={"Thiết bị di động"}
-            iconRight={icons.arrowRight.src}
-            titleRight={"Xem tất cả"}
-            maxItemSlide={3}
-            linkTo={"/promotions"}
-            component="promotion"
-            isColorWhiteTextRight={true}
-            style={
-              <style jsx>{`
-                
             
-               #promotion {
-              background: url('${backgroundPromotion.src}');
-               }
-              
-            `}</style>
-            }
-            htmlDescription={items.map((item) => (
-              <PromotionCard item={item} isCart={true} isdiscount={true} />
-            ))}
-          />
-        </Container>
-      </Grid>
-
-      {/*news section */}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} id="news">
-          <Grid item xs={12}>
-            <div style={{ width: "100%" }}>
-              <Box
-                sx={{
-                  display: "grid",
-                  gridAutoColumns: "1fr",
-                  gap: 1,
-                }}
-                className="news__box"
-              >
-                <Item sx={{ gridRow: "1", gridColumn: "span 2" }}>
-                  {
-                    <NewsCardLeft
-                      item={{
-                        image:
-                          "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-                        title: "Tada",
-                        des: "Sau thành công lớn tại giải chạy online Head to 2021 được tổ chức vào cuối năm 2020 với gần 3000 VĐV tham dự trên khắp cả nước. Từ ngày 01/12/2021, MobiFone tiếp tục tổ chức giải chạy online Head to 2022. Giải được tổ chức nhằm đem lại sân chơi gắn kết cộng đồng với mong muốn...",
-                      }}
-                    />
-                  }
-                </Item>
-
-                {/* The second non-visible column has width of 1/4 */}
-                <Item
-                  sx={{ gridRow: "1", gridColumn: "span 2" }}
-                  className="news__col-right"
-                >
-                  <List
-                    sx={{
-                      width: "100%",
-                      maxWidth: 360,
-                      bgcolor: "background.paper",
-                    }}
-                    className="news__list"
-                  >
-                    <ListItem className="news__list-item">
-                      <NewsCard />
-                    </ListItem>
-                    <ListItem className="news__list-item">
-                      <NewsCard />
-                    </ListItem>
-                    <ListItem className="news__list-item">
-                      <NewsCard />
-                    </ListItem>
-                  </List>
-                </Item>
-              </Box>
-            </div>
           </Grid>
+          <Grid item md={2}></Grid>
         </Grid>
-        <Button variant="contained">Đăng ký</Button>
       </Container>
 
       {/*banner section */}
@@ -428,32 +281,31 @@ export default function Home() {
               />
             </Card>
           </Grid>
-         
         </Grid>
       </Container>
 
       {/*support section*/}
       <Container maxWidth="lg">
-      <div>
-        <span>
-          <h1 className="title">Hỗ trợ khách hàng</h1>
-        </span>
-      </div>
+        <div>
+          <span>
+            <h1 className="title">Hỗ trợ khách hàng</h1>
+          </span>
+        </div>
         <Grid container spacing={2} id="supports">
           <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            </Grid>
-            </Container>
+            <ActionAreaCardM8 />
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 />
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 />
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 />
+          </Grid>
+        </Grid>
+      </Container>
       {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>
     </>

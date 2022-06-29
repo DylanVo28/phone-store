@@ -5,7 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-export default function TabsM8() {
+export default function TabsM8(props) {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -17,15 +17,31 @@ export default function TabsM8() {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Item One" value="1" />
-            <Tab label="Item Two" value="2" />
-            <Tab label="Item Three" value="3" />
+            {props.items.map(item=>  <Tab label={item.label} value={item.value} />)}
+          
+            
           </TabList>
         </Box>
-        <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
+        {props.items.map(item=> <TabPanel value={item.value}>{item.label}</TabPanel>)}
+      
       </TabContext>
     </Box>
   );
+}
+
+TabsM8.defaultProps={
+  items:[
+    {
+      label:"Item One",
+      value: 1
+    },
+    {
+      label:"Item Two",
+      value: 2
+    }, {
+      label:"Item Three",
+      value: 3
+    },
+  ]
+
 }

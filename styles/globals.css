@@ -373,6 +373,9 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+.news__list{
+  max-width: none;
+}
 .news__list-item{
   padding: 0;
   padding-bottom:15px;
@@ -505,3 +508,143 @@
   align-items: center;
 }
 
+.dropdown--item .dropdown--item__button{
+  background: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+  color: #333333;
+}
+.dropdown--item .css-37jdci-MuiTypography-root{
+  font-size: 16px
+}
+.dropdown--item .dropdown--item__icon-btn{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  background-size: 100%;
+}
+.dropdown--item__menu .css-6hp17o-MuiList-root-MuiMenu-list{
+  background: #0061AF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0015em;
+  color: #FFFFFF;
+}
+.dropdown--item__menu .css-edx3xz-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper::before{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -20px;
+  left: 0px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #0061AF;
+}
+.dropdown--item__menu .css-edx3xz-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+  overflow: unset;
+}
+
+.input-m8 .input-m8__outlined-input{
+  flex-direction: row-reverse;
+}
+.input-m8 .input-m8__label{
+  padding-left: 33px;
+}
+.input-m8 .Mui-focused{
+  padding-left: 0px;
+}
+.link-mb-8{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.0015em;
+  text-decoration-line: underline;
+  color: #0061AF;
+  float: right;
+}
+.news-card{
+  width: 100%;
+}
+.news-card .css-1mcnwpj-MuiList-root{
+  max-width: none;
+}
+.news-card .css-1p823my-MuiListItem-root{
+  display: block
+}
+.news-card .css-ag7rrr-MuiTypography-root{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  letter-spacing: 0.0015em;
+
+  /* Blue main */
+
+  color: #0061AF;
+}
+.news-card .css-ecpxie-MuiTypography-root{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  /* or 171% */
+
+
+  /* gray sub text */
+
+  color: #44494D;
+}
+.news-card .news-card__content{
+  width: 100%;
+}
+.news-card .news-card__box{
+  display: block;
+  width: 80%;
+}
+.text-decoration--none{
+  text-decoration: none;
+}
+
+.card-text-8 .card-text-8__content{
+  padding: 0;
+  height: 100%;
+}
+
+.card-text-8 .card-text-8__title{
+  background: #0061AF;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  height: 20%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.card-text-8 .card-text-8__description{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.0015em;
+  color: #44494D;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.display--flex{
+  display: flex
+}
+.justify-content--between{
+  justify-content: space-between;
+}

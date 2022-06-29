@@ -20,6 +20,8 @@ import InputM8 from "./InputM8";
 import LogoMobi from "../images/logo-mobi.png";
 import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import IconUser from "../images/icon-user.svg";
+import SearchIcon  from '@mui/icons-material/Search';
+import Visibility  from '@mui/icons-material/Visibility';
 const drawerWidth = 240;
 
 function Navbar(props) {
@@ -28,11 +30,90 @@ function Navbar(props) {
   const itemsNavbar = {
     logo: "https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg",
     navItems: [
-      "Gói cước",
-      "Chọn số",
-      "Thiết bị di động",
-      "Giải pháp doanh nghiệp",
-      "Đăng ký MNP",
+      {
+        title: "Sản phẩm",
+        items:[
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          }
+        ]
+      },
+      {
+        title: "Sản phẩm",
+        items:[
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          }
+        ]
+      },
+      {
+        title: "Sản phẩm",
+        items:[
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          }
+        ]
+      },
+      {
+        title: "Sản phẩm",
+        items:[
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          },
+          {
+            title:"Gói cước",
+            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+          }
+        ]
+      }
     ],
   };
   const handleDrawerToggle = () => {
@@ -46,10 +127,10 @@ function Navbar(props) {
       </Typography>
       <Divider />
       <List>
-        {itemsNavbar.navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {itemsNavbar.navItems.map((item,index) => (
+          <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -80,7 +161,7 @@ function Navbar(props) {
             <Grid item xs={9}>
               <Link href={"/signin"}>
                 <a className="navbar-header__sign-in">
-                  <TypograPhyM8 title={"Đăng nhập"}></TypograPhyM8>
+                  <TypograPhyM8 title={"Đăng nhập"} isWhiteColor={true}></TypograPhyM8>
                   <span>
                     <img src={IconUser.src} />
                   </span>
@@ -108,13 +189,20 @@ function Navbar(props) {
                 md={{ display: { md: "none", lg: "block" } }}
                 className="navbar__box"
               >
-                {itemsNavbar.navItems.map((item) => (
-                  <DropdownItemM8 key={item} sx={{ color: "black" }}>
+                 {itemsNavbar.navItems.map((item,index) => (
+                  <DropdownItemM8 key={index} sx={{ color: "black" }} title={item.title} items={item.items}>
                     {item}
                   </DropdownItemM8>
-                ))}
+                ))} 
               </Box>
-              <InputM8 placeholder="Tìm kiếm" />
+              <InputM8 placeHolder="Tìm kiếm" 
+              icon={<SearchIcon
+                aria-label="toggle password visibility"
+                edge="end"
+              >
+                {  <Visibility />}
+              </SearchIcon>}
+              />
             </Toolbar>
           </Container>
         </AppBar>

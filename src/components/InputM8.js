@@ -15,29 +15,14 @@ import SearchIcon from '@mui/icons-material/Search';
 const InputM8=(props)=>{
     
     return  <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" className='input-m8'>
-        <style jsx global>{`
-            .input-m8__outlined-input{
-                flex-direction: row-reverse;
-            }
-            .input-m8__label{
-                padding-left: 33px;
-            }
-            .Mui-focused{
-                padding-left: 0px;
-            }
-        `}</style>
-    <InputLabel htmlFor="outlined-adornment-password" className='input-m8__label'>Password</InputLabel>
+      
+    <InputLabel htmlFor="outlined-adornment-password" className='input-m8__label'>{props.placeHolder}</InputLabel>
     <OutlinedInput
       id="outlined-adornment-password"
       type={'text'}
       endAdornment={
         <InputAdornment position="end">
-          <SearchIcon
-            aria-label="toggle password visibility"
-            edge="end"
-          >
-            {  <Visibility />}
-          </SearchIcon>
+          {props.icon}
         </InputAdornment>
       }
       label="Password"
@@ -45,5 +30,9 @@ const InputM8=(props)=>{
     />
   </FormControl>
 }
+FormControl.defaultProps={
+  placeHolder:"tada",
+ label:"tada"
 
+}
 export default InputM8

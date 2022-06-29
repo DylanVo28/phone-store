@@ -21,7 +21,7 @@ import LinkM8 from './LinkM8';
     <Card  className="package-card">
       <CardMedia
         component="img"
-        height="400"
+        height={props.heightCard}
         image={props.item.image}
         alt="green iguana"
         className="package-card_image"
@@ -36,12 +36,17 @@ import LinkM8 from './LinkM8';
       
             <CardActions style={{justifyContent: 'space-between'}}>
       
-            <LinkM8 href="/tada" title="Xem chi tiết"></LinkM8>
+            <LinkM8 href={props.href} title={props.hrefTitle}></LinkM8>
 
       </CardActions>
       </CardContent>
      
     </Card>
     </>
+}
+NewsCardLeft.defaultProps={
+  href: "/tada",
+  hrefTitle:"Xem chi tiết",
+  heightCard:400
 }
 export default NewsCardLeft
