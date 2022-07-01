@@ -106,7 +106,7 @@ arrItem.map((item,index)=><ListItem  key={index}  className="dropdown--item__lis
             icon={
               <div
                 className="dropdown--item__icon-btn"
-                style={{ background: `url('${props.icon}')` }}
+                // style={{ background: `url('${props.icon}')` }}
               />
             }
             title={props.title}

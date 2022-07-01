@@ -8,7 +8,7 @@ import IconTitle from "./IconTitle";
 import background from '../images/background-1.svg'
 const Footer=()=>{
     return (<footer>
-        <style jsx global>
+        {/* <style jsx global>
             {`
                 #footer{
                     background: url('${background.src}');
@@ -16,7 +16,7 @@ const Footer=()=>{
                 }
             `}
 
-        </style>
+        </style> */}
         <Box id="footer">
             <Container maxWidth="lg">
                 <Grid container spacing={5}>

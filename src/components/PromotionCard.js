@@ -9,14 +9,14 @@ import Typography from '@mui/material/Typography';
 import background from '../images/background-card.svg'
 export default function PromotionCard(props) {
   return (<>
-    <style jsx global>{`
+    {/* <style jsx global>{`
     
     .promotion-card__content{
       background: url('${background.src}');
     }
     `}
         
-    </style>
+    </style> */}
 
     <Card sx={{ maxWidth: 345 }} className="promotion-card">
       <CardMedia
