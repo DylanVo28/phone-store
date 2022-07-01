@@ -34,7 +34,7 @@ import IconTitle from './IconTitle';
         }
         <List >
             
-                {props.item.incentives && props.item.incentives.map(item=><ListItem>
+                {props.item.incentives && props.item.incentives.map((item,index)=><ListItem key={index}>
                     <IconTitle variant="p" component="h6"
                                 icon={<div style={{width:5+"px",height: 5+"px",background: 'orange', borderRadius: 50+"%", display: 'inline-block'}}/>}
                                 title={item}
