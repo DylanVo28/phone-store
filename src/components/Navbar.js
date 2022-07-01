@@ -174,7 +174,7 @@ function Navbar(props) {
       <Box sx={{ display: "flex" }} id="navbar">
         <AppBar component="nav" className="bg-white">
           <Container maxWidth="lg">
-            <Toolbar>
+            <Toolbar className="navbar__toolbar">
               <IconButton
                 color="inherit"
                 aria-label="open drawer"

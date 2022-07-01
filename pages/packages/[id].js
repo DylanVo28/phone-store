@@ -253,15 +253,26 @@ export default function PackageDetail() {
             </Card>
           </Grid>
             <Grid item md={7} className="display--flex justify-content--between">
+            <Grid container spacing={2} >
+          <Grid item md={6}>
+          <CardTextM8/>
 
-                <CardTextM8/>
-                <CardTextM8/>
+              </Grid>
+          <Grid item md={6}>
+          <CardTextM8/>
+          <Button variant="contained" className="float--right">Đăng ký</Button>
+
+              </Grid>
+              </Grid>
+              
+
             </Grid>
-
+              
           </Grid>
             
           </Grid>
-          <Grid item md={2}></Grid>
+          <Grid item md={2}>
+          </Grid>
         </Grid>
       </Container>
 

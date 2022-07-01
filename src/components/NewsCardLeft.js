@@ -13,11 +13,7 @@ import IconTitle from './IconTitle';
 import LinkM8 from './LinkM8';
  const NewsCardLeft=(props)=>{
     return <>
-    <style jsx global>{`
-    
-    `}
-
-    </style>
+   
     <Card  className="package-card">
       <CardMedia
         component="img"

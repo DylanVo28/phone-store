@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../src/components/Navbar";
 import MultiItemCarousel from "../src/components/Simple";
 import styles from "../styles/Home.module.css";
-import Slide from "./../src/components/Carousel";
+import CarouselM8 from "./../src/components/Carousel";
 import icons from "../src/images/icons";
 import ImgMediaCard from "../src/components/ImgMediaCard";
 import { Container, Input, InputAdornment } from "@mui/material";
@@ -232,8 +232,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* <Slide items={itemsBanner} /> */}
-      <ParallaxCarouselM8/>
+      <CarouselM8 items={itemsBanner}/>
       {/*package section*/}
       <Container maxWidth="lg">
         <Grid container spacing={2} id="packages">
@@ -246,8 +245,8 @@ export default function Home() {
               maxItemSlide={3}
               linkTo={"/packages"}
               component="package"
-              htmlDescription={itemsPackage.map((item) => (
-                <PackageCardM8 item={item} detail={true} />
+              htmlDescription={itemsPackage.map((item,index) => (
+                <PackageCardM8 item={item} detail={true} key={index} />
               ))}
             />
           </Grid>
@@ -277,8 +276,8 @@ export default function Home() {
               
             `}</style>
             }
-            htmlDescription={items.map((item) => (
-              <ImgMediaCard item={item} isCart={true} isdiscount={true} />
+            htmlDescription={items.map((item,index) => (
+              <ImgMediaCard item={item} isCart={true} isdiscount={true} key={index}/>
             ))}
           />
         </Container>
@@ -296,8 +295,8 @@ export default function Home() {
               maxItemSlide={3}
               linkTo={"/packages"}
               component="package"
-              htmlDescription={itemsPackage.map((item) => (
-                <SolutionCard item={item} detail={true} />
+              htmlDescription={itemsPackage.map((item,index) => (
+                <SolutionCard item={item} detail={true} key={index}/>
               ))}
             />
           </Grid>
@@ -349,15 +348,15 @@ export default function Home() {
             `}</style>
             }
             htmlDescription={items.map((item) => (
-              <PromotionCard item={item} isCart={true} isdiscount={true} />
+              <PromotionCard item={item} isCart={true} isdiscount={true} key={index}/>
             ))}
           />
         </Container>
       </Grid>
 
       {/*news section */}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} id="news">
+      <Container maxWidth="lg"  id="news">
+        <Grid container spacing={2}>
           <Grid item xs={12}>
             <div style={{ width: "100%" }}>
               <Box
@@ -413,7 +412,7 @@ export default function Home() {
       </Container>
 
       {/*banner section */}
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" id="banner">
         <Grid container spacing={2} id="banners">
           <Grid item xs={12}>
             <Card sx={{ maxWidth: 100 + "%" }}>

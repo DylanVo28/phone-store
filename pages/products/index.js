@@ -45,8 +45,8 @@ const index = () => {
             <List
               sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
             >
-              {items.map((item) => (
-                <ItemCheckBox title={item} />
+              {items.map((item,index) => (
+                <ItemCheckBox title={item} key={index} />
               ))}
             </List>
             </Grid>
@@ -55,8 +55,8 @@ const index = () => {
             <List
               sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
             >
-              {items.map((item) => (
-                <ItemCheckBox title={item} />
+              {items.map((item,index) => (
+                <ItemCheckBox title={item} key={index}/>
               ))}
             </List>
           </Grid>
@@ -65,8 +65,8 @@ const index = () => {
             <List
               sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
             >
-              {items.map((item) => (
-                <ItemCheckBox title={item} />
+              {items.map((item,index) => (
+                <ItemCheckBox title={item}  key={index}/>
               ))}
             </List>
           </Grid>
@@ -91,8 +91,8 @@ const index = () => {
             </div>
          </Grid>
            
-          {images.slice(0, 5).map((image) => (
-                <Grid item xs={12} sm={4}><ImgMediaCard
+          {images.slice(0, 5).map((image,index) => (
+                <Grid item xs={12} sm={4} key={index}><ImgMediaCard
                 image={image}
                 isCart={true}
                 isdiscount={true}

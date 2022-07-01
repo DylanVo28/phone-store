@@ -112,6 +112,7 @@
   line-height: 19px;
   letter-spacing: 0.005em;
   color: #44494D;
+  text-align: left;
 }
 .package-card .package-card__description span{
   color: #0061AF;
@@ -380,12 +381,12 @@
   padding: 0;
   padding-bottom:15px;
 }
-#footer{
-  background-size: 100%!important;
+#footer{    
+  background-size: cover!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
-  padding: 150px 0;
   color: white;
+  padding: 150px 0;
 }
 .rtf--mb{
   background: linear-gradient(180deg, #006ABC 0%, #0278D4 22.92%, #118BEC 37.5%, #118DF0 53.65%, #147ED6 73.44%, #165992 90.62%);
@@ -466,7 +467,15 @@
   line-height: 28px;
   color: #0061AF;
 }
-
+.align-item--center{
+  align-items: center;
+} 
+.carousel-banner .css-1g04gm2-MuiButtonBase-root-MuiIconButton-root{
+  background: none;
+}
+.carousel-banner .css-1abc02a:hover button,.carousel-banner .css-hn784z:hover button{
+  background-color: transparent!important;
+}
 .carousel-banner .css-1ps6pg7-MuiPaper-root .banner{
   height: 500px;
   background-repeat: no-repeat!important;
@@ -478,6 +487,9 @@
 }
 .parallax-carousel-m8 .makeStyles-arrowRight-7{
   right: 0!important;
+}
+#navbar .navbar__toolbar{
+  justify-content: space-between;
 }
 #navbar .MuiPaper-root{
   position: unset!important 
@@ -507,7 +519,20 @@
   flex-direction: row-reverse;
   align-items: center;
 }
+.dropdown--item__list-parent{
+  display: flex;
+  margin-top: 20px;
+}
+.dropdown--item__list-child{
+  display: block;
+}
+.dropdown--item__demo{
+  background-color: #0061AF;
+}
 
+.dropdown--item__list,.dropdown--item__listitem{
+  padding: 0;
+}
 .dropdown--item .dropdown--item__button{
   background: none;
   font-weight: 500;
@@ -548,7 +573,9 @@
 .dropdown--item__menu .css-edx3xz-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
   overflow: unset;
 }
-
+.input-m8 .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+  font-size: 14px;
+}
 .input-m8 .input-m8__outlined-input{
   flex-direction: row-reverse;
 }
@@ -647,4 +674,14 @@
 }
 .justify-content--between{
   justify-content: space-between;
+}
+.float--right{
+  float: right;
+}
+
+#news{
+  text-align: center;
+}
+#banner{
+  padding: 30px 0;
 }

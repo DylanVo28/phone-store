@@ -17,12 +17,12 @@ export default function TabsM8(props) {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
-            {props.items.map(item=>  <Tab label={item.label} value={item.value} />)}
+            {props.items.map((item,index)=>  <Tab label={item.label} value={item.value} key={index}/>)}
           
             
           </TabList>
         </Box>
-        {props.items.map(item=> <TabPanel value={item.value}>{item.label}</TabPanel>)}
+        {props.items.map((item,index)=> <TabPanel value={item.value} key={index}>{item.label}</TabPanel>)}
       
       </TabContext>
     </Box>

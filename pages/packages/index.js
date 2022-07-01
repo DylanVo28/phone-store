@@ -74,7 +74,7 @@ const itemsPackage = [
     des: "Thuê bao mới hòa mạng",
   },
 ];
-const index = () => {
+const Index = () => {
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -106,8 +106,8 @@ const index = () => {
                   bgcolor: "background.paper",
                 }}
               >
-                {items.map((item) => (
-                  <ItemCheckBox title={item} />
+                {items.map((item,index) => (
+                  <ItemCheckBox title={item} key={index} />
                 ))}
               </List>
             </Grid>
@@ -131,8 +131,8 @@ const index = () => {
             </Grid>
             <Grid container spacing={2}>
               <TabsM8 />
-              {itemsPackage.slice(0, 5).map((item) => (
-                <Grid item xs={12} sm={4}>
+              {itemsPackage.slice(0, 5).map((item, index) => (
+                <Grid item xs={12} sm={4} key={index}>
                   {" "}
                   <PackageCardM8 item={item} detail={true} />
                 </Grid>
@@ -190,4 +190,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

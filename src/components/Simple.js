@@ -64,9 +64,9 @@ const MultiItemCarousel = (props) => {
           </Grid>
           <Grid item xs={3} style={{ textAlign: "right" }}>
             <Link href={props.linkTo} >
-              <a className="text-decoration--none">
+              <a className="text-decoration--none display--flex align-item--center float--right">
                 <TypograPhyM8 title={"Xem tất cả"} isWhiteColor={props.isColorWhiteTextRight}></TypograPhyM8>
-                <span>{<ArrowForwardM8 />}</span>
+                {<ArrowForwardM8 />}
               </a>
             </Link>
           </Grid>
