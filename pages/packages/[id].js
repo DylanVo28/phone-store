@@ -214,10 +214,10 @@ const itemsPackage = [
   },
 ];
 export default function PackageDetail() {
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  // const [width, setWidth] = useState(0);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // }, []);
   var itemsBanner = [
     {
       image:
@@ -317,7 +317,7 @@ export default function PackageDetail() {
           </Grid>
         </Grid>
       </Container>
-      {width && <SpeedDialTooltipOpen />}
+      {/* {width && <SpeedDialTooltipOpen />} */}
       <Footer></Footer>
     </>
   );

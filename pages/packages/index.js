@@ -75,10 +75,10 @@ const itemsPackage = [
   },
 ];
 const Index = () => {
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  // const [width, setWidth] = useState(0);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // }, []);
 
   return (
     <>
@@ -184,7 +184,7 @@ const Index = () => {
             </Grid>
             </Container>
 
-      {width && <SpeedDialTooltipOpen />}
+      {/* {width && <SpeedDialTooltipOpen />} */}
       <Footer></Footer>
     </>
   );
