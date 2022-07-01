@@ -110,7 +110,7 @@ const index = () => {
       
        
       </Container>
-      <SpeedDialTooltipOpen/>
+      {/* <SpeedDialTooltipOpen/> */}
       <Footer></Footer>
     </>
   );
