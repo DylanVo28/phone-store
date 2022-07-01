@@ -1,6 +1,5 @@
 
 const ProductDetail =()=>{
-    const router= useRouter()
     
     return (<div>hello</div>)
 }
