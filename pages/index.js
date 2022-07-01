@@ -267,15 +267,7 @@ export default function Home() {
             linkTo={"/products"}
             component="product"
             isColorWhiteTextRight={true}
-            // style={
-            //   <style jsx>{`
-            //   #products {
-            //   background: url('${background.src}');
-            //   }
-             
-              
-            // `}</style>
-            // }
+          
             htmlDescription={items.map((item,index) => (
               <ImgMediaCard item={item} isCart={true} isdiscount={true} key={index}/>
             ))}
@@ -337,16 +329,7 @@ export default function Home() {
             linkTo={"/promotions"}
             component="promotion"
             isColorWhiteTextRight={true}
-            // style={
-            //   <style jsx>{`
-                
-            
-            //    #promotion {
-            //   background: url('${backgroundPromotion.src}');
-            //    }
-              
-            // `}</style>
-            // }
+           
             htmlDescription={items.map((item,index) => (
               <PromotionCard item={item} isCart={true} isdiscount={true} key={index}/>
             ))}

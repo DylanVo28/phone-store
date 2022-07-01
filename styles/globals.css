@@ -152,6 +152,9 @@
   border-top-left-radius: 15px;
 }
 /*product section*/
+#products{
+  background: url('../src/images/background.svg');
+}
 #products .react-multi-carousel-item{
   padding-right: 10px;
   padding-left: 10px;
@@ -204,8 +207,9 @@
   color: #44494D;
 }
 #products {
-  background-size: 100%!important;
-  background-repeat: no-repeat!important;
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat!important;
 }
 #products .product__price{
   justify-content: space-between;
@@ -256,7 +260,9 @@
   background: #0061af;
 }
 #promotion{
-  background-size: 100%!important;
+  background: url("../src/images/background-promotion.svg");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat!important;
 }
 #promotion .react-multi-carousel-item{
@@ -362,6 +368,7 @@
   color: #0061AF;
 }
 .promotion-card__content{
+  background: url("../src/images/background-card.svg");
   background-size: 100%!important;
   background-repeat: no-repeat!important;
   background-position: top!important;
@@ -381,7 +388,8 @@
   padding: 0;
   padding-bottom:15px;
 }
-#footer{    
+#footer{   
+  background: url("../src/images/background-1.svg"); 
   background-size: cover!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
