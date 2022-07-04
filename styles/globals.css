@@ -481,7 +481,7 @@
 .align-item--center{
   align-items: center;
 } 
-.carousel-banner .css-1g04gm2-MuiButtonBase-root-MuiIconButton-root{
+.carousel-banner .MuiIconButton-root{
   background: none;
 }
 .carousel-banner .css-1abc02a:hover button,.carousel-banner .css-hn784z:hover button{
