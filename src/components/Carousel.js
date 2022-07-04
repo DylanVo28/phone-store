@@ -19,7 +19,7 @@ const CarouselM8=(props)=>{
      >
             {
                 props.items.map( (item, i) => <>
-                 <Paper>
+                 <Paper className='carousel-banner__paper'>
             <div className="banner" style={{background: `url(${item.image})`}}></div>
             </Paper>
                 </>  )

@@ -269,7 +269,7 @@
   padding-right: 10px;
   padding-left: 10px;
 }
-#promotion .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+#promotion .promotion-card{
   position: relative;
   border-radius: 15px;
   box-sizing: border-box;
@@ -278,7 +278,7 @@
   border: none;
   display: contents;
 }
-#promotion .css-1ri6ub7-MuiPaper-root-MuiCard-root .cart-icon{
+#promotion .promotion-card .cart-icon{
   position: absolute;
   background: #0090ff;
   padding: 4px;
@@ -487,7 +487,7 @@
 .carousel-banner .css-1abc02a:hover button,.carousel-banner .css-hn784z:hover button{
   background-color: transparent!important;
 }
-.carousel-banner .css-1ps6pg7-MuiPaper-root .banner{
+.carousel-banner  .banner{
   height: 500px;
   background-repeat: no-repeat!important;
   background-size: cover!important;
