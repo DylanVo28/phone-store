@@ -28,7 +28,7 @@ const Footer=()=>{
                         <Box>
                             <h5>Giới thiệu</h5>
                             <IconTitle variant="p" component="h6"
-                                icon={<div style={{width:5+"px",height: 5+"px",background: 'orange', borderRadius: 50+"%"}}/>}
+                                icon={<div style={{width:5+"px",height: 5+"px",background: 'orange', borderRadius: 50+"%",    display: "inline-block"}}/>}
                                 title="Công ty Dịch vụ mobifone khu vực 8"
                             />
                       
@@ -72,7 +72,7 @@ const Footer=()=>{
                             width: '30px',
                             height:'30px',
                             overflow: 'hidden'
-                            }}><img src="https://th.bing.com/th/id/R.26d9974a1feec9905a4e0d5e5ddf8db6?rik=ycoXFwG5Udz08A&pid=ImgRaw&r=0"/></Box>
+                            }}><img src="https://th.bing.com/th/id/R.26d9974a1feec9905a4e0d5e5ddf8db6?rik=ycoXFwG5Udz08A&pid=ImgRaw&r=0" style={{width: 100+"%"}}/></Box>
                         </Box>
                             </Grid>
                             </Grid>

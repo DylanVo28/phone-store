@@ -15,6 +15,7 @@ import TabsM8 from "../../src/components/TabsM8";
 import  Card  from '@mui/material/Card';
 import  CardMedia  from '@mui/material/CardMedia';
 import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCardM8";
+import CarouselM8 from "../../src/components/Carousel";
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -74,26 +75,27 @@ const itemsPackage = [
     des: "Thuê bao mới hòa mạng",
   },
 ];
+var itemsBanner = [
+  {
+    image:
+      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+  },
+  {
+    image:
+      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+  },
+];
 const Index = () => {
-  // const [width, setWidth] = useState(0);
-  // useEffect(() => {
-  //   setWidth(window.innerWidth);
-  // }, []);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <>
       <Navbar />
-      <div
-        style={{
-          background:
-            "url('https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')",
-          width: 100 + "%",
-          height: 25 + "vw",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
+      <CarouselM8 items={itemsBanner}/>
+
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={2} className="package__list-option">
@@ -184,7 +186,7 @@ const Index = () => {
             </Grid>
             </Container>
 
-      {/* {width && <SpeedDialTooltipOpen />} */}
+      {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>
     </>
   );

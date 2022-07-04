@@ -457,6 +457,9 @@
 .package__list-option .css-zkqepn-MuiButtonBase-root-MuiCheckbox-root{
   color: #0061AF;
 }
+.tabs-m8{
+  padding-top: 20px;
+}
 .tabs-m8 .css-heg063-MuiTabs-flexContainer{
   justify-content: space-around!important;
 }

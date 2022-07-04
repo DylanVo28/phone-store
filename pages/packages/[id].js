@@ -32,6 +32,8 @@ import Card from "@mui/material/Card";
 import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCardM8";
 import ParallaxCarouselM8 from "../../src/components/ParallaxCarouselM8";
 import CardTextM8 from "../../src/components/CardTextM8";
+import CarouselM8 from "../../src/components/Carousel";
+
 const backgroundImage =
   "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
 const items = [
@@ -213,6 +215,7 @@ const itemsPackage = [
     ],
   },
 ];
+
 export default function PackageDetail() {
   // const [width, setWidth] = useState(0);
   // useEffect(() => {
@@ -232,8 +235,10 @@ export default function PackageDetail() {
   return (
     <>
       <Navbar />
+      <CarouselM8 items={itemsBanner}/>
+
+     
       {/* <Slide items={itemsBanner} /> */}
-      <ParallaxCarouselM8 />
       {/*package section*/}
       <Container maxWidth="lg" >
         <Grid container spacing={2} >
