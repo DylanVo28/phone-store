@@ -16,6 +16,7 @@ import  Card  from '@mui/material/Card';
 import  CardMedia  from '@mui/material/CardMedia';
 import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCardM8";
 import CarouselM8 from "../../src/components/Carousel";
+import iconNotFound from'../../src/images/404.svg'
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -33,42 +34,49 @@ const images = [
 ];
 const itemsPackage = [
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
+    id:1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
@@ -139,6 +147,9 @@ const Index = () => {
                   <PackageCardM8 item={item} detail={true} />
                 </Grid>
               ))}
+              {
+                  <img className="not-found" src={iconNotFound.src}/>
+              }
             </Grid>
           </Grid>
           <Grid item xs={12}></Grid>

@@ -11,3 +11,6 @@ const ItemButton=(props)=>{
     )
 }
 export default ItemButton
+ItemButton.defaultProps={
+    title:"tada x"
+}

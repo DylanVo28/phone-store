@@ -1,9 +1,9 @@
 import IconTitle from "./IconTitle"
-import { List } from '@mui/material/List';
-import { ListItem } from '@mui/material/ListItem';
+import  List  from '@mui/material/List';
+import ListItem  from '@mui/material/ListItem';
 import { ArrowForwardM8 } from "./Icons";
 
-const ListItemTextM8 =()=>{
+const ListItemTextM8 =(props)=>{
     return (
        <>
       
@@ -14,12 +14,13 @@ const ListItemTextM8 =()=>{
                 props.iconTitle
             }
             title={props.title}
+            className="list-item-text-m8"
           />
          <List >
             
-            {props.item.incentives && props.item.incentives.map((item,index)=><ListItem key={index}>
+            {props.items && props.items.map((item,index)=><ListItem key={index}>
                 <IconTitle variant="p" component="h6"
-                            icon={<div style={{width:5+"px",height: 5+"px",background: 'orange', borderRadius: 50+"%", display: 'inline-block'}}/>}
+                            icon={props.iconItem}
                             title={item}
                             className="package-card__list-item"
                         />
@@ -30,8 +31,3 @@ const ListItemTextM8 =()=>{
     )
 }
 export default ListItemTextM8
-ListItemTextM8.defaultProps={
-    iconTitle: ArrowForwardM8,
-    title: "Enter title",
-    
-}

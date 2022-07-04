@@ -159,7 +159,7 @@
   padding-right: 10px;
   padding-left: 10px;
 }
-#products .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+.img-media-card .css-1ri6ub7-MuiPaper-root-MuiCard-root{
   position: relative;
   border-radius: 15px;
   box-sizing: border-box;
@@ -167,7 +167,7 @@
   border-radius: 15;
   border: none;
 }
-#products .css-1ri6ub7-MuiPaper-root-MuiCard-root .cart-icon{
+.img-media-card .cart-icon{
   position: absolute;
   background: #0090ff;
   padding: 4px;
@@ -180,12 +180,12 @@
   box-shadow: 0px 0px 8px 2px #67b9f4;
   border-radius: 100px;
 }
-#products .card-image{
+.img-media-card .card-image{
   border-bottom: 1px solid #00000021;
   padding-bottom: 15px;
   padding-top: 15px;
 }
-#products .product__price-discount{
+.img-media-card .product__price-discount{
   position: absolute;
   top: -13px;
   background: #ff0000;
@@ -195,11 +195,11 @@
   border-bottom-right-radius: 15px;
   font-size: 13px;
 }
-#products .react-multi-carousel-track{
+.img-media-card .react-multi-carousel-track{
   padding-top: 15px;
   padding-bottom: 15px;
 }
-#products .card__description{
+.img-media-card .card__description{
   font-weight: 400;
   font-size: 14px;
   line-height: 125%;
@@ -211,31 +211,34 @@
     background-position: center;
     background-repeat: no-repeat!important;
 }
-#products .product__price{
+.img-media-card .product__price{
   justify-content: space-between;
   padding: 16px 
 }
-#products .product__price__price{
+.img-media-card .product__price__price{
   text-decoration-line: line-through;
   color: #0061AF;
   letter-spacing: 0.004em;
   font-weight: 300;
   font-size: 14px;
 }
-#products .product__price__discount{
+.img-media-card .product__price__discount{
   color: #EE1C24;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.0015em;
 }
-#products .card__title{
+.img-media-card .card__title{
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
   text-align: center;
   letter-spacing: 0.0015em;
   color: #44494D;
+}
+#products .react-multi-carousel-track {
+  padding: 20px 0;
 }
 #products .title{
   font-weight: 600;
@@ -562,7 +565,7 @@
   display: inline-block;
   background-size: 100%;
 }
-.dropdown--item__menu .css-6hp17o-MuiList-root-MuiMenu-list{
+.dropdown--item__menu .MuiMenu-list{
   background: #0061AF;
   font-weight: 400;
   font-size: 14px;
@@ -570,7 +573,7 @@
   letter-spacing: 0.0015em;
   color: #FFFFFF;
 }
-.dropdown--item__menu .css-edx3xz-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper::before{
+.dropdown--item__menu .MuiMenu-list::before{
   content: '';
   position: absolute;
   width: 20px;
@@ -695,4 +698,58 @@
 }
 #banner{
   padding: 30px 0;
+}
+.list-item-text-m8 {
+  font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.0015em;
+color: #0061AF;
+}
+.list-item-text-m8 .list-item-text-m8__contact{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: #44494D;
+}
+
+.not-found{
+  margin: auto;
+}
+.package-detail .package-card {
+  max-width: 278px;
+}
+.package-detail .package-card .package-card-content{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.package-detail .package-card .package-card__card-actions{
+  padding: 0;
+}
+
+.footer-pvs{
+  background: #044C89;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+}
+
+.text-align--center{
+  text-align: center;
+}
+
+.sweet-loading{
+  width: 100vw;
+    height: 100vw;
+    background: #ffffff;
+    position: fixed;
+    display: flex;
+    z-index:9999
+}
+.sweet-loading .sweet-loading__bounce{
+  top: 45vh;
 }

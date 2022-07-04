@@ -7,13 +7,37 @@ import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/themes/lightTheme';
 import '../styles/globals.css';
 const clientSideEmotionCache = createEmotionCache();
+import { Router } from 'next/dist/client/router'
+import 'nprogress/nprogress.css'
+import NProgress from 'nprogress'
+import LoadingM8 from '../src/components/LoadingM8';
+import { useState } from 'react';
+
+
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+  const [loading,setLoading]=useState(false)
+  const sleep = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+  Router.events.on('routeChangeStart', () => {
+    // NProgress.start()
+    setLoading(true)
+  })
+  Router.events.on('routeChangeComplete',async () => {
+   
+    await sleep(1000)
+    setLoading(false)
+  })
+  Router.events.on('routeChangeError', () => {
+    // NProgress.done()
+    setLoading(false)
+  })
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
+        {loading && <LoadingM8 loading={loading}/>}
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>

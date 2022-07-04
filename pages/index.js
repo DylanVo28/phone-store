@@ -1,9 +1,8 @@
 import { Button, CardMedia, Grid, List } from "@mui/material";
-import Head from "next/head";
-import Image from "next/image";
+
 import Navbar from "../src/components/Navbar";
 import MultiItemCarousel from "../src/components/Simple";
-import styles from "../styles/Home.module.css";
+
 import CarouselM8 from "./../src/components/Carousel";
 import icons from "../src/images/icons";
 import ImgMediaCard from "../src/components/ImgMediaCard";
@@ -11,27 +10,17 @@ import { Container, Input, InputAdornment } from "@mui/material";
 import Item from "../src/components/Item";
 import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
-import { ImageIcon } from "@mui/icons-material/Image";
-import ListItemText from "@mui/material/ListItemText";
-import { WorkIcon } from "@mui/icons-material/Work";
-import { BeachAccessIcon } from "@mui/icons-material/BeachAccess";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Link from "next/link";
 import Footer from "./../src/components/Footer";
 import SpeedDialTooltipOpen from "./../src/components/SpeedDialTooltipOpen";
 import { useEffect, useState } from "react";
 import PackageCardM8 from "../src/components/PackageCardM8";
-import background from "../src/images/background.svg";
-import backgroundPromotion from "../src/images/background-promotion.svg";
 import SolutionCard from "../src/components/SolutionCard";
 import PromotionCard from "./../src/components/PromotionCard";
 import NewsCard from "../src/components/NewsCard";
 import NewsCardLeft from "../src/components/NewsCardLeft";
 import Card from "@mui/material/Card";
 import ActionAreaCardM8 from "../src/components/ActionAreaCardM8/ActionAreaCardM8";
-import ParallaxCarouselM8 from "../src/components/ParallaxCarouselM8";
+import { Private } from "../auth/auth";
 const backgroundImage =
   "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
 const items = [
@@ -129,6 +118,7 @@ const items = [
 
 const itemsPackage = [
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -141,6 +131,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -153,6 +144,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -165,6 +157,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -177,6 +170,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -189,6 +183,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -201,6 +196,7 @@ const itemsPackage = [
     ],
   },
   {
+    id:1,
     image:
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     title: "dijango",
@@ -231,6 +227,7 @@ export default function Home() {
 
   return (
     <>
+      {/* <Private> */}
       <Navbar />
       <CarouselM8 items={itemsBanner}/>
       {/*package section*/}
@@ -438,6 +435,8 @@ export default function Home() {
             </Container>
         {width&&<SpeedDialTooltipOpen />}
       <Footer></Footer>
+      {/* </Private> */}
+     
     </>
   );
 }

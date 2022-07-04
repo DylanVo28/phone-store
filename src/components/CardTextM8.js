@@ -16,7 +16,6 @@ const bull = (
 );
 
 export default function CardTextM8(props) {
-  console.log(props)
   return (
     <Card sx={{ width: props.widthCard,height: props.heightCard }} className="card-text-8">
       <CardContent className="card-text-8__content">

@@ -17,11 +17,11 @@ import Link from "next/link";
 import { Container, Grid } from "@mui/material";
 import DropdownItemM8 from "./DropdownItemM8";
 import InputM8 from "./InputM8";
-import LogoMobi from "../images/logo-mobi.png";
+import LogoMobi from "../images/logo-mobi.svg";
 import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import IconUser from "../images/icon-user.svg";
-import SearchIcon  from '@mui/icons-material/Search';
-import Visibility  from '@mui/icons-material/Visibility';
+import SearchIcon from "@mui/icons-material/Search";
+import Visibility from "@mui/icons-material/Visibility";
 const drawerWidth = 240;
 
 function Navbar(props) {
@@ -32,88 +32,88 @@ function Navbar(props) {
     navItems: [
       {
         title: "Sản phẩm",
-        items:[
+        items: [
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
-          }
-        ]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+        ],
       },
       {
         title: "Sản phẩm",
-        items:[
+        items: [
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
-          }
-        ]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+        ],
       },
       {
         title: "Sản phẩm",
-        items:[
+        items: [
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
-          }
-        ]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+        ],
       },
       {
         title: "Sản phẩm",
-        items:[
+        items: [
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
           },
           {
-            title:"Gói cước",
-            items: ["trả trước","trả sau","giải trí","cho doanh nghiệp"]
-          }
-        ]
-      }
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+        ],
+      },
     ],
   };
   const handleDrawerToggle = () => {
@@ -127,7 +127,7 @@ function Navbar(props) {
       </Typography>
       <Divider />
       <List>
-        {itemsNavbar.navItems.map((item,index) => (
+        {itemsNavbar.navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item.title} />
@@ -147,21 +147,28 @@ function Navbar(props) {
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={3}>
-              <Box
-                component="img"
-                sx={{
-                  height: 100 + "%",
-                  maxHeight: { xs: 233, md: 167 },
-                  maxWidth: { xs: 350, md: 250 },
-                }}
-                alt="The house from the offer."
-                src={LogoMobi.src}
-              />
+              <Link href="/" passHref>
+                <a>
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 100 + "%",
+                      maxHeight: { xs: 233, md: 167 },
+                      maxWidth: { xs: 150, md: 150 },
+                    }}
+                    alt="The house from the offer."
+                    src={LogoMobi.src}
+                  />
+                </a>
+              </Link>
             </Grid>
             <Grid item xs={9}>
               <Link href={"/signin"}>
                 <a className="navbar-header__sign-in">
-                  <TypograPhyM8 title={"Đăng nhập"} isWhiteColor={true}></TypograPhyM8>
+                  <TypograPhyM8
+                    title={"Đăng nhập"}
+                    isWhiteColor={true}
+                  ></TypograPhyM8>
                   <span>
                     <img src={IconUser.src} />
                   </span>
@@ -189,19 +196,27 @@ function Navbar(props) {
                 md={{ display: { md: "none", lg: "block" } }}
                 className="navbar__box"
               >
-                 {itemsNavbar.navItems.map((item,index) => (
-                  <DropdownItemM8 key={index} sx={{ color: "black" }} title={item.title} items={item.items}>
+                {itemsNavbar.navItems.map((item, index) => (
+                  <DropdownItemM8
+                    key={index}
+                    sx={{ color: "black" }}
+                    title={item.title}
+                    items={item.items}
+                  >
                     {item}
                   </DropdownItemM8>
-                ))} 
+                ))}
               </Box>
-              <InputM8 placeHolder="Tìm kiếm" 
-              icon={<SearchIcon
-                aria-label="toggle password visibility"
-                edge="end"
-              >
-                {  <Visibility />}
-              </SearchIcon>}
+              <InputM8
+                placeHolder="Tìm kiếm"
+                icon={
+                  <SearchIcon
+                    aria-label="toggle password visibility"
+                    edge="end"
+                  >
+                    {<Visibility />}
+                  </SearchIcon>
+                }
               />
             </Toolbar>
           </Container>

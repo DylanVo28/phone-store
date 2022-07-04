@@ -80,8 +80,13 @@ const Footer=()=>{
                     </Grid>
                 </Grid>
             </Container>
+           
         </Box>
-
+        <Grid container spacing={5} className="footer-pvs">
+                <Grid xs={12} >
+                © Copyright 2022. Design by PVS.com
+                </Grid>
+            </Grid>
     </footer>)
 }
 export default Footer

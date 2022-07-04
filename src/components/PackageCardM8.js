@@ -10,10 +10,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import AllOutIcon  from '@mui/icons-material/AllOut';
 import IconTitle from './IconTitle';
+import Link  from 'next/link';
  const PackageCardM8=(props)=>{
     return <>
- 
-    <Card sx={{ maxWidth: 345 }} className="package-card">
+  <Link href={{
+            pathname: '/packages/[id]',
+            query: { id: props.item.id },
+          }}>
+            <a className='text-decoration--none'>
+            <Card sx={{ maxWidth: 345 }} className="package-card">
       <CardMedia
         component="img"
         height="250"
@@ -43,7 +48,7 @@ import IconTitle from './IconTitle';
                       
                 </ListItem>)}
             </List>
-            <CardActions style={{justifyContent: 'space-between'}}>
+            <CardActions className="package-card__card-actions" style={{justifyContent: 'space-between'}}>
       <Typography gutterBottom variant="p" component="div" className="package-card__price">
          100.000đ/ 1 month
         </Typography>
@@ -52,6 +57,10 @@ import IconTitle from './IconTitle';
       </CardContent>
      
     </Card>
+            </a>
+  
+  </Link>
+    
     </>
 }
 export default PackageCardM8
