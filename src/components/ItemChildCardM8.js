@@ -1,0 +1,35 @@
+
+import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+
+export default function ItemChildCardM8() {
+  const theme = useTheme();
+
+  return (
+    <Card sx={{ display: 'flex' , flexDirection: 'row-reverse'}} className="item-child-card">
+      <Box >
+          <Typography component="h5" variant="h5" className="item-child-card__title">
+            Live From Space
+          </Typography>
+          <Typography component="h5" variant="h5" className="item-child-card__price">
+            29.990.000
+          </Typography>
+      </Box>
+      <CardMedia
+        component="img"
+        style={{maxWidth: 60+"px"}}
+        image="https://cdn.tgdd.vn/Products/Images/42/274360/samsung-galaxy-a13-xanh-thumb-1-600x600.jpg"
+        alt="Live from space album cover"
+      />
+    </Card>
+  );
+}
