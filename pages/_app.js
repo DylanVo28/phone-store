@@ -12,22 +12,30 @@ import 'nprogress/nprogress.css'
 import NProgress from 'nprogress'
 import LoadingM8 from '../src/components/LoadingM8';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const [loading,setLoading]=useState(false)
+  useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
   const sleep = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );
+
   Router.events.on('routeChangeStart', () => {
     // NProgress.start()
     setLoading(true)
   })
   Router.events.on('routeChangeComplete',async () => {
    
-    await sleep(1000)
     setLoading(false)
   })
   Router.events.on('routeChangeError', () => {

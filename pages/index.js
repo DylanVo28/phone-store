@@ -229,6 +229,7 @@ export default function Home() {
     <>
       {/* <Private> */}
       <Navbar />
+      
       <CarouselM8 items={itemsBanner}/>
       {/*package section*/}
       <Container maxWidth="lg">
@@ -440,3 +441,6 @@ export default function Home() {
     </>
   );
 }
+// Home.getInitialProps=()=>{
+//   //where call api to render data for page
+// }
