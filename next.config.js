@@ -15,7 +15,9 @@ const nextConfig = {
     API_PRODUCTION: "https://mobi8.pvssolution.com/api",
     PRODUCTION:false,
     DOMAIN_DEVELOPMENT: 'http://localhost:3000',
-    DOMAIN_PRODUCTION: "https://mobi8.pvssolution.com"
+    DOMAIN_PRODUCTION: "https://mobi8.pvssolution.com",
+    FB_APP_ID: "749452959524618"
+
   },
   
 }

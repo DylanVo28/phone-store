@@ -7,12 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import AllOutIcon  from '@mui/icons-material/AllOut';
+
 import IconTitle from './IconTitle';
 import Link  from 'next/link';
+import PackageCardM8Style from '../styles/PackageCardM8Style';
  const PackageCardM8=(props)=>{
     return <>
+    <PackageCardM8Style/>
   <Link href={{
             pathname: '/packages/[id]',
             query: { id: props.item.id },

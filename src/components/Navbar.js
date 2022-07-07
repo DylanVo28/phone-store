@@ -22,6 +22,14 @@ import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import IconUser from "../images/icon-user.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import Visibility from "@mui/icons-material/Visibility";
+import NavbarStyle from "../styles/NavbarStyle";
+import IconTitle from "./IconTitle";
+import Image from "next/image";
+import cart from '../images/cart.svg'
+import idCart from '../images/id-cart.svg'
+import discount from '../images/discount-menu.svg'
+import newspaper from '../images/newspaper.svg'
+import sp from '../images/sp.svg'
 const drawerWidth = 240;
 
 function Navbar(props) {
@@ -32,6 +40,30 @@ function Navbar(props) {
     navItems: [
       {
         title: "Sản phẩm",
+        icon: idCart.src,
+        items: [
+          {
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+          {
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          },
+          {
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+
+          },
+          {
+            title: "Gói cước",
+            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
+          }
+        ],
+      },
+      {
+        title: "Chuyển mạng giữ số",
+        icon: idCart.src,
         items: [
           {
             title: "Gói cước",
@@ -52,7 +84,8 @@ function Navbar(props) {
         ],
       },
       {
-        title: "Sản phẩm",
+        title: "Khuyến mãi",
+        icon: discount.src,
         items: [
           {
             title: "Gói cước",
@@ -73,28 +106,8 @@ function Navbar(props) {
         ],
       },
       {
-        title: "Sản phẩm",
-        items: [
-          {
-            title: "Gói cước",
-            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
-          },
-          {
-            title: "Gói cước",
-            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
-          },
-          {
-            title: "Gói cước",
-            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
-          },
-          {
-            title: "Gói cước",
-            items: ["trả trước", "trả sau", "giải trí", "cho doanh nghiệp"],
-          },
-        ],
-      },
-      {
-        title: "Sản phẩm",
+        title: "Hỗ trợ khách hàng",
+        icon: newspaper.src,
         items: [
           {
             title: "Gói cước",
@@ -144,6 +157,7 @@ function Navbar(props) {
   return (
     <>
       <Grid item xs={12} spacing={2} className="navbar-header">
+        <NavbarStyle/>
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={3}>
@@ -162,18 +176,50 @@ function Navbar(props) {
                 </a>
               </Link>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={7} className="navbar-header__between">
               <Link href={"/signin"}>
-                <a className="navbar-header__sign-in">
+                <a className="navbar-header__sign-in text-decoration--none">
+                <span className="icon-title__icon">
+                    <img src={IconUser.src} />
+                  </span>
                   <TypograPhyM8
                     title={"Đăng nhập"}
                     isWhiteColor={true}
                   ></TypograPhyM8>
-                  <span>
-                    <img src={IconUser.src} />
-                  </span>
+                
                 </a>
+               
               </Link>
+              /
+              <Link href={"/logout"}>
+
+              <a className="navbar-header__register text-decoration--none">
+                  <TypograPhyM8
+                    title={"Đăng ký"}
+                    isWhiteColor={true}
+                  ></TypograPhyM8>
+                 
+                </a>
+                </Link>
+            </Grid>
+            <Grid item xs={2} className="navbar-header__right">
+            <IconTitle
+                  variant="p"
+                  component="h5"
+                  className="navbar-header__icon-title"
+                  icon={<Image src={cart.src} width={30} height={30} className="navbar-header__cart"/>}
+                  title={"Giỏ hàng"}
+                />
+              <Link href={"/logout"}>
+
+              <a className="navbar-header__vn-en text-decoration--none">
+                  <TypograPhyM8
+                    title={"VN/EN"}
+                    isWhiteColor={true}
+                  ></TypograPhyM8>
+                
+                </a>
+                </Link>
             </Grid>
           </Grid>
         </Container>
@@ -202,6 +248,7 @@ function Navbar(props) {
                     sx={{ color: "black" }}
                     title={item.title}
                     items={item.items}
+                    icon={item.icon}
                   >
                     {item}
                   </DropdownItemM8>

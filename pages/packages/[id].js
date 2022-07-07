@@ -11,6 +11,7 @@ import iconDiscount from '../../src/images/Discount.svg'
 import MultiItemCarousel from "../../src/components/Simple";
 import icons from "../../src/images/icons";
 import PackageCardM8 from "../../src/components/PackageCardM8";
+import BreadCrumbsM8 from './../../src/components/BreadCrumbsM8';
 
 const backgroundImage =
   "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
@@ -183,12 +184,47 @@ export default function PackageDetail() {
 
   return (
     <>
+    <style jsx global>
+      {
+        `
+        .package-title{
+          padding: 0;
+          border-radius: 15px;
+          border-radius: 12px;
+          border: 1px solid #00000033;
+          padding: 15px 0;
+          margin-top: 15px;
+        }
+        .package-title .title{
+          margin: 0;
+        }
+        .package-detail{
+          padding: 20px 0;
+        }
+        .package-detail__promotion{
+          border: 1px solid #D9D9D9;
+          border-radius: 5px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin-top: 15px;
+        }
+        
+        `
+      }
+
+    </style>
       <Navbar />
       <CarouselM8 items={itemsBanner} />
-
-      {/* <Slide items={itemsBanner} /> */}
-      {/*package section*/}
       <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid item md={12} className={"package-title"}>
+            <h1 className="title">Gói cước</h1>
+            <BreadCrumbsM8/>
+          </Grid>
+        </Grid>
+      </Container>
+      {/*package section*/}
+      <Container maxWidth="lg" className="package-detail">
         <Grid container spacing={2}>
           <Grid item md={10}>
             <Grid container spacing={2}>
@@ -197,7 +233,7 @@ export default function PackageDetail() {
                   <CardMedia
                     component="img"
                     alt="green iguana"
-                    height="200"
+                    height="250"
                     image={
                       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
                     }
@@ -215,7 +251,8 @@ export default function PackageDetail() {
                     <CardTextM8 />
                   </Grid>
                   <Grid item md={6}>
-                    <CardTextM8 />
+                    <CardTextM8 description={<span className="package-detail__description" style={{color:'red',fontSize: 24 +"px",fontWeight: 600}}>44.000đ</span>}/>
+                    <br/>
                     <Button variant="contained" className="float--right">
                       Đăng ký
                     </Button>
@@ -223,7 +260,8 @@ export default function PackageDetail() {
                   
                 </Grid>
               </Grid>
-              <Grid item md={12}>
+              
+              <Grid item md={12} className={"package-detail__promotion"}>
                     <ListItemTextM8 iconTitle={<img src={iconDiscount.src} className="list-item-text-m8__icon"/>}
                       title={"Ưu đãi"}
                       iconItem={<span>-</span>}
@@ -247,7 +285,7 @@ export default function PackageDetail() {
 
       {/*package section */}
       <Container maxWidth="lg">
-        <Grid container spacing={2} id="packages" className="package-detail">
+        <Grid container spacing={2} id="packages" className="packages">
           <Grid item xs={12}>
             <MultiItemCarousel
               iconLeft={icons.solution.src}

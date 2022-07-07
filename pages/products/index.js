@@ -13,6 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import iconNotFound from'../../src/images/404.svg'
 import TabsM8 from "../../src/components/TabsM8";
 import { useEffect, useState } from "react";
+import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
 
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
@@ -45,60 +46,109 @@ const Index = () => {
     setWidth(window.innerWidth);
   }, []);
   return (
-    <>
+    <><style jsx global>
+    {
+      `
+        .package__list-option{
+          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
+          border-radius: 12px;
+        }
+        .package__list-option .MuiList-root{
+          background: none;
+        }
+        .package-list__title{
+          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
+          border-radius: 12px;
+          padding: 10px 20px;
+        }
+        .package-list__title .title{
+          margin: 0;
+        }
+        .package-list__item{
+          margin-left: 15px;
+          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
+          border-radius: 12px;
+          margin-top: 30px;
+        }
+        .item-checkbox .MuiListItemButton-root{
+          padding-left: 0px;
+        }
+        .package__list-option 
+      `
+    }
+  </style>
       <Navbar />
       <CarouselM8 items={itemsBanner}/>
       <Container maxWidth="lg">
         <Grid container spacing={2} >
-          <Grid item xs={12} sm={3}>
-          <Grid item xs={12}  >
-            <h4>Loại gói cước</h4>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {items.map((item,index) => (
-                <ItemCheckBox title={item} key={index} />
-              ))}
-            </List>
+        <Grid item xs={12} sm={2} className="package__list-option">
+            <Grid item xs={12}>
+              <h4 style={{margin: 0}}>Loại gói cước</h4>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                {items.map((item,index) => (
+                  <ItemCheckBox title={item} key={index} />
+                ))}
+              </List>
             </Grid>
             <Grid item xs={12}>
-            <h4>Loại gói cước</h4>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {items.map((item,index) => (
-                <ItemCheckBox title={item} key={index}/>
-              ))}
-            </List>
-          </Grid>
-          <Grid item xs={12}>
-            <h4>Loại gói cước</h4>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {items.map((item,index) => (
-                <ItemCheckBox title={item}  key={index}/>
-              ))}
-            </List>
-          </Grid>
+              <h4 style={{margin: 0}}>Loại gói cước</h4>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                {items.map((item,index) => (
+                  <ItemCheckBox title={item} key={index} />
+                ))}
+              </List>
+            </Grid>
+            <Grid item xs={12}>
+              <h4 style={{margin: 0}}>Loại gói cước</h4>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                {items.map((item,index) => (
+                  <ItemCheckBox title={item} key={index} />
+                ))}
+              </List>
+            </Grid>
           </Grid>
           <Grid item xs={12} sm={9}>
-          <Grid item xs={12}>
+          <Grid item xs={12}  className="package-list__title">
                 <div>
-            <h1>Thiết bị di động</h1>
-            <p>Trang chủ: <span>Danh sách thiết bị</span></p>
-            <span>Lọc theo: </span>
-            <ItemButton icon={<CloseIcon />} title={"tất cả"} />
+                <h1 className="title">Gói cước</h1>
+                <BreadCrumbsM8/>
+                <span>Lọc theo: </span>
+                <ItemButton icon={<CloseIcon />} title={<span>Tất cả</span>} />
                 
-            <p>Ưu tiên xem</p>
-            <ButtonM8 title="Trả trước" className="btn-mobi-8 btn-package-active"></ButtonM8>
-            <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
 
             </div>
             </Grid>
+            
           <Grid container spacing={2} >
-         
+          <Grid item xs={12} className="package-list__item">
+          <div>
+                  <p>Ưu tiên xem</p>
+                <ButtonM8
+                  title="Trả trước"
+                  className="btn-mobi-8 btn-package-active"
+                ></ButtonM8>
+                <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
+                  </div>
           <TabsM8 />
+          <Grid container spacing={2}>
            
           {images.slice(0, 5).map((image,index) => (
                 <Grid item xs={12} sm={4} key={index}><ImgMediaCard
@@ -109,6 +159,9 @@ const Index = () => {
               /></Grid>
               
             ))}
+            </Grid>
+          </Grid>
+         
           </Grid>
            
             {

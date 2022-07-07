@@ -21,7 +21,7 @@ const ItemCheckBox=(props)=>{
         disablePadding
       >
         <ListItemButton role={undefined} onClick={()=>setIsChecked(!isChecked)} dense >
-          <ListItemIcon>
+          <ListItemIcon className='checkbox'>
             <Checkbox
               edge="start"
               checked={isChecked}

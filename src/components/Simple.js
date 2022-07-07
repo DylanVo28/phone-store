@@ -12,6 +12,9 @@ import ButtonM8 from "./ButtonM8/Button";
 import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ArrowForwardM8 } from "./Icons";
+import IconPrev from '../images/icon-prev.svg'
+import IconNext from '../images/icon-next.svg'
+import MultiItemCarouselStyle from "../styles/MultiItemCarouselStyle";
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -26,11 +29,44 @@ const images = [
   "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
 ];
+
+
 const MultiItemCarousel = (props) => {
-  
+  function CustomRightArrow({ onClick }) {
+    return (
+      <button
+        aria-label="Go to next slide"
+        className="react-multiple-carousel__arrow react-multiple-carousel__arrow--right"
+      />
+    );
+  }
+
+  const ButtonGroup = ({ next, previous, ...rest }) => {
+    const {
+      carouselState: { currentSlide, totalItems, slidesToShow }
+  } = rest;
+    return (
+      <div className="carousel-button-group">
+        <button aria-label="Go to previous slide"
+                        className={currentSlide === 0 ? "disable" : "react-multiple-carousel__arrow react-multiple-carousel__arrow--left react-multiple-carousel__arrow-left"}
+                        onClick={() => previous()}>
+        <img src={IconPrev.src} />
+
+                        </button>
+       <button
+        onClick={() => next()}
+        aria-label="Go to next slide"
+        className="react-multiple-carousel__arrow react-multiple-carousel__arrow--right react-multiple-carousel__arrow-right"
+      >
+        <img src={IconNext.src} />
+      </button>
+      </div>
+    );
+  };
   return (
     <>
       {props.style}
+      <MultiItemCarouselStyle/>
       <div>
         <span>
           <h1 className="title">{props.titleLeft}</h1>
@@ -62,18 +98,20 @@ const MultiItemCarousel = (props) => {
               </>
             )}
           </Grid>
-          <Grid item xs={3} style={{ textAlign: "right" }}>
+          {props.titleRight && <Grid item xs={3} style={{ textAlign: "right" }}>
             <Link href={props.linkTo} >
               <a className="text-decoration--none display--flex align-item--center float--right">
-                <TypograPhyM8 title={"Xem tất cả"} isWhiteColor={props.isColorWhiteTextRight}></TypograPhyM8>
+                <TypograPhyM8 title={props.titleRight} isWhiteColor={props.isColorWhiteTextRight}></TypograPhyM8>
                 {<ArrowForwardM8 />}
               </a>
             </Link>
-          </Grid>
+          </Grid>}
         </Grid>
       </Container>
-      <div id={props.id}>
+      <div id={props.id} style={{position: 'relative'}} className="multi-item-carousel-m8">
         <Carousel
+        renderButtonGroupOutside={true}
+         customButtonGroup={<ButtonGroup />}
           additionalTransfrom={0}
           arrows
           autoPlaySpeed={3000}
@@ -89,7 +127,6 @@ const MultiItemCarousel = (props) => {
           minimumTouchDrag={80}
           pauseOnHover
           renderArrowsWhenDisabled={false}
-          renderButtonGroupOutside={false}
           renderDotsOutside={false}
           responsive={{
             desktop: {
@@ -129,7 +166,7 @@ const MultiItemCarousel = (props) => {
           {props.htmlDescription}
         </Carousel>
         <div style={{textAlign: 'center'}}>
-        <Button variant="outlined" style={{    color: 'white',borderColor: 'white'}}>Xem thêm</Button>
+        <Button variant="outlined" style={props.btnWhite && {color: 'white',borderColor: 'white'}}>Xem thêm</Button>
 
         </div>
       </div>

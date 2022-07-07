@@ -10,12 +10,20 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
+import ItemChildCardM8Style from '../styles/ItemChildCardM8Style';
 
 export default function ItemChildCardM8() {
   const theme = useTheme();
 
   return (
-    <Card sx={{ display: 'flex' , flexDirection: 'row-reverse'}} className="item-child-card">
+    <Card sx={{ display: 'flex', flexDirection: 'flex-end'}} className={'item-child-card'}>
+      <ItemChildCardM8Style/>
+      <CardMedia
+        component="img"
+        style={{width: 60+"px"}}
+        image="https://cdn.tgdd.vn/Products/Images/42/274360/samsung-galaxy-a13-xanh-thumb-1-600x600.jpg"
+        alt="Live from space album cover"
+      />
       <Box >
           <Typography component="h5" variant="h5" className="item-child-card__title">
             Live From Space
@@ -24,12 +32,6 @@ export default function ItemChildCardM8() {
             29.990.000
           </Typography>
       </Box>
-      <CardMedia
-        component="img"
-        style={{maxWidth: 60+"px"}}
-        image="https://cdn.tgdd.vn/Products/Images/42/274360/samsung-galaxy-a13-xanh-thumb-1-600x600.jpg"
-        alt="Live from space album cover"
-      />
     </Card>
   );
 }
