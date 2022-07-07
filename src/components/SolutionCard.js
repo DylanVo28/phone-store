@@ -11,6 +11,10 @@ export default function SolutionCard(props) {
   return (<>
   <style jsx global>
     {`
+        .solution-card{
+          box-shadow:none;
+          border: 
+        }
         .solution-card__title{
             font-weight: 600;
             font-size: 24px;
@@ -42,15 +46,25 @@ export default function SolutionCard(props) {
             text-decoration-line: underline;
             color: #0061AF;
         }
+        .solution-card{
+          box-shadow: 0px 0px 2px 2px rgba(131, 131, 131, 0.15);
+          cursor: pointer;
+        }
+        .solution-card:hover{
+          box-shadow: 0px 0px 2px 2px rgb(0 158 254 / 15%);
+          transition: 0.3s;
+        }
     `}
   </style>
     <Card sx={{ maxWidth: 345 }} className="solution-card">
+      <Card>
       <CardMedia
         component="img"
         height="300"
         image={props.item.image}
         alt="green iguana"
       />
+      </Card>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" className='solution-card__title' >
           Lizard

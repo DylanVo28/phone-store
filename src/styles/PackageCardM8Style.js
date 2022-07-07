@@ -16,7 +16,7 @@ const PackageCardM8Style=()=>{
                 left: calc(50% - 385px/2 - 0.5px);
                 top: calc(50% - 366px/2 + 111px);
                 background: #FFFFFF;
-                border: 1px solid #4BA6DD;
+                border: 1px solid #D9D9D9;
                 border-radius: 42px 42px 12px 12px;
               }
               .package-card__title{
@@ -141,6 +141,18 @@ const PackageCardM8Style=()=>{
                 border-top-right-radius: 15px;
                 border-top-left-radius: 15px;
               }
+              
+              .package-card:hover .package-card_image,.img-media-card:hover .card-image,
+              .solution-card:hover .MuiCardMedia-img{
+                transform: scale(1.2);
+                transition: 0.3s;
+              }
+              .package-card:hover .package-card-content {
+                border: 1px solid #0061AF;
+                transition: 0.3s;
+
+              }
+              
             `
         }
     </style>

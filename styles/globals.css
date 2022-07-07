@@ -45,7 +45,6 @@
   border-radius: 100px;
 }
 .img-media-card .card-image{
-  border-bottom: 1px solid #00000021;
   padding-bottom: 15px;
   padding-top: 15px;
 }
@@ -141,7 +140,6 @@
   border-radius: 15px;
   box-sizing: border-box;
   background: #FFFFFF;
-  border-radius: 15;
   border: none;
   display: contents;
 }
