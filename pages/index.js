@@ -25,6 +25,8 @@ import { APP_NAME, DOMAIN,FB_APP_ID } from "../config";
 import Router, { useRouter } from 'next/router';
 import IconPrev from '../src/images/icon-prev.svg'
 import IconNext from '../src/images/icon-next.svg'
+const isSSR = () => typeof window === undefined; 
+import NoSSR from 'react-no-ssr';
 const items = [
   {
     id: 1,
@@ -251,6 +253,7 @@ export default function Home() {
   return (
     <React.Fragment>
       {head()}
+      <NoSSR>
 {/* <Private> */}
 <Navbar />
 
@@ -462,6 +465,7 @@ export default function Home() {
   {width&&<SpeedDialTooltipOpen />}
 <Footer></Footer>
 {/* </Private> */}
+</NoSSR>
     </React.Fragment>
       
      
