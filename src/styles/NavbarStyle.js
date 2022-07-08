@@ -3,9 +3,17 @@ export default function NavbarStyle(){
         {`
             .navbar-header{
                 background: #0061AF;
-                height: 70px;
+                height: 55px;
+                position: fixed;
+                top: 0;
+                z-index: 9999;
+                width: 100vw;
               }
-              .navbar-header .css-1oqqzyl-MuiContainer-root, .navbar-header .css-mhc70k-MuiGrid-root, .navbar-header .css-1equabv-MuiGrid-root{
+              .navbar-header .MuiContainer-root{
+                display: flex;
+                align-items: center;
+              }
+              .navbar-header .MuiContainer-root, .navbar-header .MuiGrid-root, .navbar-header .navbar-header__left{
                 height:100%!important;
               }
               .navbar-header .navbar-header__between{
@@ -66,6 +74,12 @@ export default function NavbarStyle(){
               .navbar-header .navbar-header__sign-in{
                 display: flex;
                 align-items: center;
+              }
+              #navbar{
+                position: fixed;
+                top: 55px;
+                z-index: 99;
+                width: 100vw;
               }
               #navbar .navbar__toolbar{
                 justify-content: space-between;

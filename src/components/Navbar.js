@@ -160,7 +160,7 @@ function Navbar(props) {
         <NavbarStyle/>
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            <Grid item xs={3}>
+            <Grid item xs={3} className="navbar-header__left">
               <Link href="/" passHref>
                 <a>
                   <Box

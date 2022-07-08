@@ -440,7 +440,7 @@ export default function Home() {
       <NoSSR>
 {/* <Private> */}
 <Navbar />
-
+<div style={{height: 105+"px"}}></div>
 <CarouselM8 items={itemsBanner}/>
 {/*package section*/}
 <Container maxWidth="lg">
