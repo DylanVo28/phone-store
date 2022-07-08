@@ -103,9 +103,26 @@ const ImgMediaCard = (props) => {
             width: auto;
             margin: auto;
           }
+          .img-media-card .img-media-card__card{
+            position: relative;
+          }
+          .img-media-card .img-media-card__icon-cart{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9;
+            background: #0061AF;
+            box-shadow: 0px 0px 8px 2px #67b9f4;
+            padding: 5px;
+            border-radius: 50%;
+          }
+          .img-media-card .img-media-card__icon-cart img{
+            width: 18px;
+            display: block;
+          }
           `}
         </style>
-      <Card sx={{ maxWidth: 270 }}>
+      <Card sx={{ maxWidth: 270 }} className={"img-media-card__card"}>
         <CardMedia
           component="img"
           alt="green iguana"
@@ -113,7 +130,7 @@ const ImgMediaCard = (props) => {
           image={props.item.image}
           className="card-image"
         ></CardMedia>
-        {props.isCart && <img src={icons.cart.src} className="cart-icon" />}
+        {props.isCart &&<div className="img-media-card__icon-cart"><img src={icons.cart.src} /></div> }
 
         <div style={{ position: "relative" }}>
           <div className="product__price-discount">
