@@ -109,6 +109,8 @@ const MultiItemCarousel = (props) => {
         </Grid>
       <div id={props.id} style={{position: 'relative'}} className="multi-item-carousel-m8">
         <Carousel
+        containerClass="carousel-container"
+        itemClass="carousel-item"
         renderButtonGroupOutside={true}
          customButtonGroup={<ButtonGroup />}
           additionalTransfrom={0}
@@ -116,12 +118,10 @@ const MultiItemCarousel = (props) => {
           autoPlaySpeed={3000}
           centerMode={false}
           className=""
-          containerClass="container-with-dots"
           dotListClass=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover
@@ -159,18 +159,23 @@ const MultiItemCarousel = (props) => {
           shouldResetAutoplay
           showDots={false}
           sliderClass=""
-          slidesToSlide={1}
+          slidesToSlide={3}
           swipeable
         >
           {props.htmlDescription}
         </Carousel>
-        <div style={{textAlign: 'center'}}>
-        <Button variant="outlined" style={props.btnWhite && {color: 'white',borderColor: 'white'}}>Xem thêm</Button>
-
-        </div>
+        {
+          props.isBtnMore &&  <div style={{textAlign: 'center'}}>
+          <Button variant="outlined" style={props.btnWhite && {color: 'white',borderColor: 'white'}}>Xem thêm</Button>
+          </div>
+        }
+       
       </div>
     </>
   );
 };
 
 export default MultiItemCarousel;
+MultiItemCarousel.defaultProps={
+  isBtnMore:true
+}

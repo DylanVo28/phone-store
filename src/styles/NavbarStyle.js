@@ -108,6 +108,7 @@ export default function NavbarStyle(){
               #navbar .input-m8{
                 margin-right: 0;
                 transition: 0.3s;
+                margin-right: 6px;
               }
               
               .dropdown--item{

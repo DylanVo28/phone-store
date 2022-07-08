@@ -66,7 +66,7 @@ export default function PromotionCard(props) {
         
     </style>
 
-    <Card sx={{ maxWidth: 345 }} className="promotion-card">
+    <Card sx={{ maxWidth: 300 }} className="promotion-card">
       <Card className="promotion-card__card">
       <CardMedia
         className="promotion-card__image"

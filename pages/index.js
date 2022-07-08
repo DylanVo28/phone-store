@@ -294,19 +294,7 @@ const itemsPackage = [
       "Thuê bao mới hòa mạng",
     ],
   },
-  {
-    id:1,
-    image:
-      packageImage.src,
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-    incentives: [
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-    ],
-  },
+ 
 ];
 const itemsSolution = [
   {
@@ -385,19 +373,7 @@ const itemsSolution = [
       "Thuê bao mới hòa mạng",
     ],
   },
-  {
-    id:1,
-    image:
-    solutionImage.src,
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-    incentives: [
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-      "Thuê bao mới hòa mạng",
-    ],
-  },
+  
 ];
 export default function Home() {
   const [width, setWidth] = useState(0);
@@ -442,7 +418,7 @@ export default function Home() {
 
 {/* <Private> */}
 <Navbar />
-<div style={{height: 105+"px"}}></div>
+<div style={{height: 120+"px"}}></div>
 <CarouselM8 items={itemsBanner}/>
 
 {/*package section*/}
@@ -456,9 +432,17 @@ export default function Home() {
         maxItemSlide={3}
         linkTo={"/packages"}
         component="package"
-        htmlDescription={itemsPackage.map((item,index) => (
-          <PackageCardM8 item={item} detail={true} key={index} />
-        ))}
+        htmlDescription={itemsPackage.map((item,index) => {
+          if(index%3===0){
+            return  <PackageCardM8 item={item} detail={true} key={index} kaka={index} justify={{justifyContent: 'flex-start'}}/>
+          }
+          else if(index%3===2){
+            return  <PackageCardM8 item={item} detail={true} key={index}  kaka={index} justify={{justifyContent: 'flex-end'}}/>
+
+          }
+           return  <PackageCardM8 item={item} detail={true} key={index}  kaka={index} />
+        
+        })}
       />
 </Container>
 {/*product section*/}
@@ -481,7 +465,7 @@ export default function Home() {
         <ImgMediaCard item={item} isCart={true} isdiscount={true} key={index}/>
       ))}
       btnWhite={true}
-
+      isBtnMore={false}
     />
   </Container>
 </Grid>
@@ -511,7 +495,7 @@ export default function Home() {
 <Grid item xs={12} spacing={2} id="promotion">
   <Container
     maxWidth="lg"
-    style={{ padding: "5vw 0" }}
+    style={{ paddingTop: 5+"vw",paddingBottom: 5+"vw" }}
   >
     <MultiItemCarousel
       iconLeft={icons.device.src}
@@ -543,7 +527,7 @@ export default function Home() {
           }}
           className="news__box"
         >
-          <Item sx={{ gridRow: "1", gridColumn: "span 2" }} className="news__item-left" style={{padding: '8px 0 0 0'}}>
+          <Item sx={{ gridRow: "1", gridColumn: "span 2" }} className="news__item-left" >
             {
               <NewsCardLeft
                 item={{
@@ -561,12 +545,14 @@ export default function Home() {
           <Item
             sx={{ gridRow: "1", gridColumn: "span 2" }}
             className="news__col-right"
+            style={{paddingRight: 0}}
           >
             <List
               sx={{
                 width: "100%",
                 maxWidth: 360,
                 bgcolor: "background.paper",
+
               }}
               className="news__list"
             >
@@ -608,11 +594,11 @@ export default function Home() {
 
 {/*support section*/}
 <Container maxWidth="lg">
-<div>
+<Grid item xs={12}>
   <span>
     <h1 className="title">Hỗ trợ khách hàng</h1>
   </span>
-</div>
+</Grid>
   <Grid container spacing={2} id="supports">
     <Grid item xs={3}>
           <ActionAreaCardM8 image={faq.src}/>

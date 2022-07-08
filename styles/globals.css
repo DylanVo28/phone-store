@@ -41,13 +41,13 @@
 #packages .react-multi-carousel-track {
   padding: 15px 0;
 }
+#packages .react-multi-carousel-track .react-multi-carousel-item{
+  padding: 8px;
+    padding-right: 0px;
+}
 
 #packages .text-mobi-8{
   color: #5180C0;
-}
-#packages .arrow-forward-m8{
-  color: white;
-  background: #0061af;
 }
 #promotion{
   background: url("../src/images/background-promotion.svg");
@@ -56,8 +56,16 @@
   background-repeat: no-repeat!important;
 }
 #promotion .react-multi-carousel-item{
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 17px;
+  padding-left: 17px;
+}
+#promotion .react-multi-carousel-item:nth-child(3n) {
+  padding-right: 0;
+  padding-left: 34px
+}
+#promotion .react-multi-carousel-item:nth-child(3n+1) {
+  padding-left: 0;
+  padding-right: 34px;
 }
 #promotion .promotion-card{
   position: relative;
@@ -196,6 +204,9 @@
   box-shadow: none;
   margin-right: 15px 
 }
+.btn-mobi-8:hover{
+  background-color: white;
+}
 .btn-package-active{
   background: #5180C0;
   color: white;
@@ -204,6 +215,12 @@
 .btn-package-outline{
   color: #5180C0;
   border-color: #5180C0;
+  transition: 0.3s;
+
+}
+.btn-package-outline:hover{
+  color: white;
+  background: #5180C0;
 }
 .item-button{
   border: 1px solid #D9D9D9;
@@ -245,7 +262,7 @@
   align-items: center;
 } 
 .carousel-banner{
-  height: 300px;
+  height: 400px;
 }
 .carousel-banner .css-1m9128y{
   top: -45px;
@@ -269,7 +286,7 @@
   background-color: transparent!important;
 }
 .carousel-banner .banner{
-  height: 300px;
+  height: 400px;
   background-repeat: no-repeat!important;
   background-size: 100%!important;
   background-position: center!important;
@@ -450,12 +467,22 @@ body{margin:0;padding:0;background:#f4f6f9;color:#222;font-family:"Raleway",sans
 #__next {
   background: white;
 }
+#solution .arrow-forward-m8{
+  color: white;
+  background: #0061af;
+}
 #solution{
   padding: 50px 0;
 }
 #solution .react-multi-carousel-item{
   display: flex;
     justify-content: center;
+}
+#solution .react-multi-carousel-item:nth-child(3n+1){
+  justify-content: left;
+}
+#solution .react-multi-carousel-item:nth-child(3n){
+  justify-content: right;
 }
 #solution .react-multi-carousel-track{
   margin: 20px 0;

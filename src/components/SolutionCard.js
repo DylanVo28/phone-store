@@ -13,7 +13,6 @@ export default function SolutionCard(props) {
     {`
         .solution-card{
           box-shadow:none;
-          border: 
         }
         .solution-card__title{
             font-weight: 600;
@@ -56,6 +55,8 @@ export default function SolutionCard(props) {
         }
     `}
   </style>
+  <Link href="tada">
+    <a className="text-decoration--none">
     <Card sx={{ maxWidth: 345 }} className="solution-card">
       <Card>
       <CardMedia
@@ -84,6 +85,10 @@ export default function SolutionCard(props) {
         <Button variant="contained">Đăng ký</Button>
       </CardActions>
     </Card>
+    </a>
+ 
+  </Link>
+    
     </>
   );
 }
