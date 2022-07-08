@@ -28,6 +28,7 @@ export default function NavbarStyle(){
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+                padding-right: 7px;
               }
               .navbar-header .textmobi8{
                 font-weight: 500;
@@ -106,10 +107,12 @@ export default function NavbarStyle(){
               }
               #navbar .input-m8{
                 margin-right: 0;
-                width: 135px;
+                transition: 0.3s;
               }
               
-              
+              .dropdown--item{
+                cursor: pointer;
+              }
               .dropdown--item__list-parent{
                 display: flex;
                 margin-top: 20px;
@@ -168,6 +171,7 @@ export default function NavbarStyle(){
                 border-bottom: 10px solid#0061af;
               }
               .dropdown--item__menu .MuiPaper-elevation{
+                
                 overflow: unset;
                 margin-left: 15px;
                 border-bottom-right-radius: 57px;
@@ -176,6 +180,8 @@ export default function NavbarStyle(){
                 border: none;
                 margin-top: 13px;
               }
+            
+             
         `}
     </style>)
 }

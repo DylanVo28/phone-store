@@ -105,7 +105,7 @@ const ImgMediaCard = (props) => {
           }
           `}
         </style>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 270 }}>
         <CardMedia
           component="img"
           alt="green iguana"

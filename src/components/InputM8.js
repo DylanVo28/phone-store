@@ -16,10 +16,10 @@ import { useState } from "react";
 import { PropTypes } from 'prop-types';
 const InputM8 = (props) => {
   const [value, setValue] = useState("");
-
+  const [widthForm,setWidthform]=useState(15)
   return (
     <FormControl
-      sx={{ m: 1, width: "25ch" }}
+      sx={{ m: 1, width: widthForm+"ch" }}
       variant="outlined"
       className="input-m8"
     >
@@ -33,11 +33,13 @@ const InputM8 = (props) => {
         id="outlined-adornment-password"
         type={"text"}
         endAdornment={
-          <InputAdornment position="end" placeHolder={props.placeHolder}>{props.icon}</InputAdornment>
+          <InputAdornment position="end" placeHolder={props.placeHolder}  >{props.icon}</InputAdornment>
         }
         label="Password"
         className="input-m8__outlined-input"
         onChange={(e) => setValue(e.target.value)}
+        onFocus={e=>setWidthform(25)}
+        onBlur={e=>setWidthform(15)}
       />
     </FormControl>
   );

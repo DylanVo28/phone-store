@@ -156,10 +156,10 @@ function Navbar(props) {
 
   return (
     <>
-      <Grid item xs={12} spacing={2} className="navbar-header">
+      <Grid item xs={12} style={{background: "#0061af"}} className="navbar-header">
         <NavbarStyle/>
         <Container maxWidth="lg">
-          <Grid container spacing={2}>
+          <Grid container >
             <Grid item xs={3} className="navbar-header__left">
               <Link href="/" passHref>
                 <a>

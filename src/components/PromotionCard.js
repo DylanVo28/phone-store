@@ -29,6 +29,38 @@ export default function PromotionCard(props) {
       background: none;
       border-radius: 12px;
     }
+    .promotion-card .promotion-card__title{
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.0015em;
+      color: #333333;
+      padding-top: 30px;
+    }
+    .promotion-card .promotion-card__btn{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: right;
+      letter-spacing: 0.0015em;
+      text-decoration-line: underline;
+     /* Blue main */
+      color: #0061AF;
+    }
+    .promotion-card .promotion-card__content{
+      background: url(${background.src});
+      background-size: 100%!important;
+      background-repeat: no-repeat!important;
+      background-position: top!important;
+      transform: translateY(-60px)!important;
+      padding-bottom: 0!important;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+    .promotion-card .promotion-card__image{
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
   
     `}
         

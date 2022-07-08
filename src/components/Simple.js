@@ -67,14 +67,13 @@ const MultiItemCarousel = (props) => {
     <>
       {props.style}
       <MultiItemCarouselStyle/>
-      <div>
+      <Grid  xs={12} className="">
         <span>
           <h1 className="title">{props.titleLeft}</h1>
         </span>
-      </div>
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
-          <Grid item xs={9} style={{ paddingLeft: 0 }} className="">
+      </Grid>
+        <Grid container style={{paddingLeft: 7 +"px"}}>
+          <Grid item xs={9} className="">
           {props.component == "package" && (<>
             {filterPackages.map((item,index)=>index===0? <ButtonM8 title={item} className="btn-mobi-8 btn-package-active"></ButtonM8> : <ButtonM8
                 title={item}
@@ -108,7 +107,6 @@ const MultiItemCarousel = (props) => {
             </Link>
           </Grid>}
         </Grid>
-      </Container>
       <div id={props.id} style={{position: 'relative'}} className="multi-item-carousel-m8">
         <Carousel
         renderButtonGroupOutside={true}

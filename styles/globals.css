@@ -1,3 +1,4 @@
+
 #packages .react-multi-carousel-track {
   padding: 15px 0;
 }
@@ -14,9 +15,7 @@
   color: white;
   background: #0061af;
 }
-.MuiGrid-item{
-  padding-left: 0!important;
-}
+
 /*product section*/
 #products{
   background: url('../src/images/background.svg');
@@ -26,8 +25,8 @@
 }
 #products .react-multi-carousel-item{
 
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 #products .react-multi-carousel-track {
@@ -42,12 +41,7 @@
 #packages .react-multi-carousel-track {
   padding: 15px 0;
 }
-#packages .title{
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 38px;
-  color: #0061AF;
-}
+
 #packages .text-mobi-8{
   color: #5180C0;
 }
@@ -144,38 +138,7 @@
   line-height: 38px;
   color: white;
 }
-.promotion-card__title{
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0.0015em;
-  color: #333333;
-  padding-top: 30px;
-}
-.promotion-card__btn{
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: right;
-  letter-spacing: 0.0015em;
-  text-decoration-line: underline;
- /* Blue main */
-  color: #0061AF;
-}
-.promotion-card__content{
-  background: url("../src/images/background-card.svg");
-  background-size: 100%!important;
-  background-repeat: no-repeat!important;
-  background-position: top!important;
-  transform: translateY(-60px)!important;
-  padding-bottom: 0!important;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-.promotion-card__image{
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
+
 .news__list{
   max-width: none;
   padding: 0;
@@ -272,6 +235,7 @@
   color: #0061AF;
 }
 .title{
+  padding-left: 7px;
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;

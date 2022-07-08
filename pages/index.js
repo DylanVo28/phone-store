@@ -438,14 +438,16 @@ export default function Home() {
     <React.Fragment>
       {head()}
       <NoSSR>
+        {/*banner section */}
+
 {/* <Private> */}
 <Navbar />
 <div style={{height: 105+"px"}}></div>
 <CarouselM8 items={itemsBanner}/>
+
 {/*package section*/}
-<Container maxWidth="lg">
-  <Grid container spacing={2} id="packages">
-    <Grid item xs={12}>
+<Container maxWidth="lg" id="packages">
+  
       <MultiItemCarousel
         iconLeft={IconPrev.src}
         titleLeft={"Gói cước"}
@@ -458,8 +460,6 @@ export default function Home() {
           <PackageCardM8 item={item} detail={true} key={index} />
         ))}
       />
-    </Grid>
-  </Grid>
 </Container>
 {/*product section*/}
 <Grid item xs={12} spacing={2} id="products">
@@ -511,7 +511,7 @@ export default function Home() {
 <Grid item xs={12} spacing={2} id="promotion">
   <Container
     maxWidth="lg"
-    style={{ paddingTop: 30 + "px", paddingBottom: 30 + "px" }}
+    style={{ padding: "5vw 0" }}
   >
     <MultiItemCarousel
       iconLeft={icons.device.src}
