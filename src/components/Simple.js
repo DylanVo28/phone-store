@@ -29,8 +29,8 @@ const images = [
   "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
 ];
-
-
+const filterPackages=["Trả trước", "Trả sau", "Giải trí", "Gói cước cho doanh nghiệp"]
+const filterProducts=["Smartphone chính hãng","Thiết bị phát wifi", "Tablet","Điện thoại cơ bản"]
 const MultiItemCarousel = (props) => {
   function CustomRightArrow({ onClick }) {
     return (
@@ -74,31 +74,32 @@ const MultiItemCarousel = (props) => {
       </div>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={9} style={{ paddingLeft: 0 }}>
+          <Grid item xs={9} style={{ paddingLeft: 0 }} className="">
           {props.component == "package" && (<>
-            <ButtonM8 title="Trả trước" className="btn-mobi-8 btn-package-active"></ButtonM8>
-                <ButtonM8
-                title="Thiết bị phát wifi"
+            {filterPackages.map((item,index)=>index===0? <ButtonM8 title={item} className="btn-mobi-8 btn-package-active"></ButtonM8> : <ButtonM8
+                title={item}
                 className="btn-mobi-8-outline btn-package-outline"
               >
                 Outlined
-              </ButtonM8>
+              </ButtonM8> )}
+               
           </>
                
           )}
             {props.component == "product" && (
               <>
-                <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
-                <ButtonM8
+              {filterProducts.map((item,index)=>index===0? <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>:  <ButtonM8
                   title="Thiết bị phát wifi"
                   className="btn-mobi-8-outline"
                 >
                   Outlined
-                </ButtonM8>
+                </ButtonM8>)}
+               
+               
               </>
             )}
           </Grid>
-          {props.titleRight && <Grid item xs={3} style={{ textAlign: "right" }}>
+          {props.titleRight && <Grid item xs={3} style={{ textAlign: "right" }} className="multi-item-carousel__right">
             <Link href={props.linkTo} >
               <a className="text-decoration--none display--flex align-item--center float--right">
                 <TypograPhyM8 title={props.titleRight} isWhiteColor={props.isColorWhiteTextRight}></TypograPhyM8>

@@ -25,6 +25,8 @@ export default function PromotionCard(props) {
     }
     .promotion-card .promotion-card__card{
       overflow: hidden;
+      box-shadow: none;
+    background: none;
     }
   
     `}
@@ -37,7 +39,7 @@ export default function PromotionCard(props) {
         className="promotion-card__image"
         component="img"
         height="300"
-        image={"https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"}
+        image={props.item.image}
         alt="green iguana"
       />
       </Card>

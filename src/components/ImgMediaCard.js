@@ -16,6 +16,95 @@ const ImgMediaCard = (props) => {
       }}
     >
       <a className="text-decoration--none img-media-card">
+        <style jsx global>
+          {`
+          .img-media-card .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+            position: relative;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: none;
+          }
+          .img-media-card .cart-icon{
+            position: absolute;
+            background: #0090ff;
+            padding: 4px;
+            border-radius: 50%;
+            width: 30px;
+            right: 15px;
+            top: 15px;
+            box-shadow: 0px 0px 8px 0px #0090ff80;
+            background: #0061AF;
+            box-shadow: 0px 0px 8px 2px #67b9f4;
+            border-radius: 100px;
+          }
+          .img-media-card .card-image{
+            padding-bottom: 15px;
+            padding-top: 15px;
+          }
+          .img-media-card .product__price-discount{
+            position: absolute;
+            top: -13px;
+            background: #ff0000;
+            padding: 3px 15px;
+            color: white;
+          
+            font-size: 13px;
+            border-radius: 0px 6px 6px 0px;
+
+          }
+          .img-media-card .react-multi-carousel-track{
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+          .img-media-card .card__description{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 125%;
+            letter-spacing: 0.0025em;
+            color: #44494D;
+          }
+          #products {
+            background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat!important;
+          }
+          .img-media-card .product__price{
+            justify-content: space-between;
+            padding: 16px 
+          }
+          .img-media-card .product__price__price{
+            text-decoration-line: line-through;
+            color: #0061AF;
+            letter-spacing: 0.004em;
+            font-weight: 300;
+            font-size: 14px;
+          }
+          .img-media-card .product__price__discount{
+            color: #EE1C24;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.0015em;
+          }
+          .img-media-card .card__title{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            letter-spacing: 0.0015em;
+            color: #44494D;
+          }
+          .img-media-card .img-media-card__card-content{
+            border-top: 1px solid #D9D9D9;
+          }
+          .img-media-card .card-image{
+            background-size: 100%;
+            width: auto;
+            margin: auto;
+          }
+          `}
+        </style>
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
@@ -31,7 +120,7 @@ const ImgMediaCard = (props) => {
             Giảm : {props.item.discountValue}
           </div>
 
-          <CardContent>
+          <CardContent className="img-media-card__card-content">
             <Typography
               gutterBottom
               variant="h5"

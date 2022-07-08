@@ -27,11 +27,18 @@ import IconPrev from '../src/images/icon-prev.svg'
 import IconNext from '../src/images/icon-next.svg'
 const isSSR = () => typeof window === undefined; 
 import NoSSR from 'react-no-ssr';
+import banner from '../src/images/baner-6-1.png'
+import packageImage from '../src/images/package-image.png'
+import phone from '../src/images/phone.png'
+import solutionImage from '../src/images/solution-image.png'
+import promotionImage from '../src/images/promotion-image.png'
+import newsImage from '../src/images/news-image.png'
+import banner62 from '../src/images/baner-6-2.png'
+import faq from '../src/images/faq.png'
 const items = [
   {
     id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+    image:phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -41,7 +48,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -51,7 +58,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -61,7 +68,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -71,7 +78,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -81,7 +88,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -91,7 +98,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -101,7 +108,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -111,7 +118,7 @@ const items = [
   {
     id: 1,
     image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
+      phone.src,
     discountValue: 1000000,
     title: "Samsung galaxy 2020",
     description:
@@ -119,12 +126,113 @@ const items = [
     price: 300000000,
   },
 ];
-
+const itemsPromotion = [
+  {
+    id: 1,
+    image:promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      " which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+  {
+    id: 1,
+    image:
+    promotionImage.src,
+    discountValue: 1000000,
+    title: "Samsung galaxy 2020",
+    description:
+      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
+    price: 300000000,
+  },
+];
 const itemsPackage = [
   {
     id:1,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+    image:packageImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:packageImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -137,7 +245,7 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      packageImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -150,7 +258,7 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      packageImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -163,7 +271,7 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      packageImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -176,7 +284,7 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      packageImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -189,7 +297,33 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      packageImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+];
+const itemsSolution = [
+  {
+    id:1,
+    image:solutionImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:solutionImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -202,7 +336,59 @@ const itemsPackage = [
   {
     id:1,
     image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      solutionImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:
+    solutionImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:
+    solutionImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:
+    solutionImage.src,
+    title: "dijango",
+    des: "Thuê bao mới hòa mạng",
+    incentives: [
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+      "Thuê bao mới hòa mạng",
+    ],
+  },
+  {
+    id:1,
+    image:
+    solutionImage.src,
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
     incentives: [
@@ -223,12 +409,10 @@ export default function Home() {
 
   var itemsBanner = [
     {
-      image:
-        "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      image:banner.src,
     },
     {
-      image:
-        "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+      image:banner.src,
     },
   ];
   const head=()=>{
@@ -304,7 +488,7 @@ export default function Home() {
 
 {/*solution section*/}
 <Container maxWidth="lg">
-  <Grid container spacing={2} id="packages">
+  <Grid container spacing={2} id="solution">
     <Grid item xs={12}>
       <MultiItemCarousel
         iconLeft={icons.solution.src}
@@ -314,7 +498,7 @@ export default function Home() {
         maxItemSlide={3}
         linkTo={"/solutions"}
         component="package"
-        htmlDescription={itemsPackage.map((item,index) => (
+        htmlDescription={itemsSolution.map((item,index) => (
           <SolutionCard item={item} detail={true} key={index}/>
         ))}
       />
@@ -322,30 +506,12 @@ export default function Home() {
   </Grid>
 </Container>
 
-{/*banner section*/}
-<Container maxWidth="lg">
-  <Grid container spacing={2} style={{ padding: 15 + "px  " + 0 }}>
-    <Grid item xs={12}>
-      <div
-        style={{
-          background:
-            "url('https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg')",
-          height: 300 + "px",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: 15 + "px",
-        }}
-      ></div>
-    </Grid>
-  </Grid>
-</Container>
 
 {/* promotion section*/}
 <Grid item xs={12} spacing={2} id="promotion">
   <Container
     maxWidth="lg"
-    style={{ paddingTop: 30 + "px", paddingBottom: 150 + "px" }}
+    style={{ paddingTop: 30 + "px", paddingBottom: 30 + "px" }}
   >
     <MultiItemCarousel
       iconLeft={icons.device.src}
@@ -356,7 +522,7 @@ export default function Home() {
       isColorWhiteTextRight={true}
       btnWhite={true}
      
-      htmlDescription={items.map((item,index) => (
+      htmlDescription={itemsPromotion.map((item,index) => (
         <PromotionCard item={item} isCart={true} isdiscount={true} key={index}/>
       ))}
     />
@@ -368,6 +534,7 @@ export default function Home() {
   <Grid container spacing={2}>
     <Grid item xs={12}>
       <div style={{ width: "100%" }}>
+        <h1 className="title" style={{textAlign: 'left'}}>Tin tức</h1>
         <Box
           sx={{
             display: "grid",
@@ -376,15 +543,16 @@ export default function Home() {
           }}
           className="news__box"
         >
-          <Item sx={{ gridRow: "1", gridColumn: "span 2" }}>
+          <Item sx={{ gridRow: "1", gridColumn: "span 2" }} className="news__item-left" style={{padding: '8px 0 0 0'}}>
             {
               <NewsCardLeft
                 item={{
-                  image:
-                    "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+                  image:newsImage.src,
                   title: "Tada",
                   des: "Sau thành công lớn tại giải chạy online Head to 2021 được tổ chức vào cuối năm 2020 với gần 3000 VĐV tham dự trên khắp cả nước. Từ ngày 01/12/2021, MobiFone tiếp tục tổ chức giải chạy online Head to 2022. Giải được tổ chức nhằm đem lại sân chơi gắn kết cộng đồng với mong muốn...",
+                  id:1
                 }}
+                heightCard={420}
               />
             }
           </Item>
@@ -403,13 +571,13 @@ export default function Home() {
               className="news__list"
             >
               <ListItem className="news__list-item">
-                <NewsCard />
+                <NewsCard   image={newsImage.src}/>
               </ListItem>
               <ListItem className="news__list-item">
-                <NewsCard />
+                <NewsCard image={newsImage.src}/>
               </ListItem>
               <ListItem className="news__list-item">
-                <NewsCard />
+                <NewsCard image={newsImage.src}/>
               </ListItem>
             </List>
           </Item>
@@ -424,14 +592,12 @@ export default function Home() {
 <Container maxWidth="lg" id="banner">
   <Grid container spacing={2} id="banners">
     <Grid item xs={12}>
-      <Card sx={{ maxWidth: 100 + "%" }}>
+      <Card sx={{ maxWidth: 100 + "%" , boxShadow: 'none'}}>
         <CardMedia
           component="img"
           alt="green iguana"
           height="400"
-          image={
-            "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
-          }
+          image={banner62.src}
           className="card-image"
         />
       </Card>
@@ -449,16 +615,16 @@ export default function Home() {
 </div>
   <Grid container spacing={2} id="supports">
     <Grid item xs={3}>
-          <ActionAreaCardM8/>
+          <ActionAreaCardM8 image={faq.src}/>
       </Grid>
       <Grid item xs={3}>
-          <ActionAreaCardM8/>
+          <ActionAreaCardM8 image={faq.src}/>
       </Grid>
       <Grid item xs={3}>
-          <ActionAreaCardM8/>
+          <ActionAreaCardM8 image={faq.src}/>
       </Grid>
       <Grid item xs={3}>
-          <ActionAreaCardM8/>
+          <ActionAreaCardM8 image={faq.src}/>
       </Grid>
       </Grid>
       </Container>

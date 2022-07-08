@@ -16,6 +16,7 @@ const CarouselM8=(props)=>{
         cycleNavigation={true}
         navButtonsAlwaysVisible={true}
         duration={1000}
+       
      >
             {
                 props.items.map( (item, i) => <>

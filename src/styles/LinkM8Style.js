@@ -11,6 +11,7 @@ const LinkM8Style=()=>{
                 text-decoration-line: underline;
                 color: #0061AF;
                 float: right;
+                text-transform: uppercase;
               }
               
         `}

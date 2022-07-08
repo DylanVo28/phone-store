@@ -11,9 +11,11 @@ import ListItemText from '@mui/material/ListItemText';
 import AllOutIcon  from '@mui/icons-material/AllOut';
 import IconTitle from './IconTitle';
 import LinkM8 from './LinkM8';
+import  Link  from 'next/link';
  const NewsCardLeft=(props)=>{
     return <>
-   
+   <Link href={"/"+props.item.id}>
+    <a className="text-decoration--none">
     <Card  className="package-card">
       <CardMedia
         component="img"
@@ -38,6 +40,9 @@ import LinkM8 from './LinkM8';
       </CardContent>
      
     </Card>
+    </a>
+   </Link>
+   
     </>
 }
 NewsCardLeft.defaultProps={

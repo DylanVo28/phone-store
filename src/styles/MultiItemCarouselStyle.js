@@ -26,7 +26,11 @@ const MultiItemCarouselStyle=()=>{
                 display: flex;
                 justify-content: center;
             } 
-           
+             .multi-item-carousel__right{
+                align-items: center;
+                display: flex;
+                justify-content: flex-end;
+            }
             
            
         `}

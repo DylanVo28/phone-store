@@ -3,7 +3,7 @@ export default function NavbarStyle(){
         {`
             .navbar-header{
                 background: #0061AF;
-                height: 58px;
+                height: 70px;
               }
               .navbar-header .css-1oqqzyl-MuiContainer-root, .navbar-header .css-mhc70k-MuiGrid-root, .navbar-header .css-1equabv-MuiGrid-root{
                 height:100%!important;
@@ -36,6 +36,23 @@ export default function NavbarStyle(){
               }
               .navbar-header .icon-title__icon{
                 display: inline-block;
+                position: relative;
+              }
+              .navbar-header__right span.icon-title__icon::after {
+                  content: "2";
+                  position: absolute;
+                  width: 15px;
+                  height: 15px;
+                  background: white;
+                  -webkit-border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  border-radius: 50%;
+                  left: -5px;
+                  top: -5px;
+                  color: red;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
               }
               .navbar-header .navbar-header__icon-title{
                 display: flex;
@@ -72,6 +89,7 @@ export default function NavbarStyle(){
               }
               #navbar .input-m8{
                 margin-right: 0;
+                width: 135px;
               }
               
               
@@ -97,13 +115,15 @@ export default function NavbarStyle(){
                 letter-spacing: 0.0015em;
                 color: #333333;
               }
-              .dropdown--item .css-37jdci-MuiTypography-root{
-                font-size: 16px
+              .dropdown--item .dropdown--item__menu-title{
+                font-size: 16px;
+                display: flex;
+                align-items: center;
               }
               .dropdown--item .dropdown--item__icon-btn{
                 width: 26px;
                 height: 26px;
-                border-radius: 50%;
+                background-repeat: no-repeat!important;
                 display: inline-block;
                 background-size: 100%;
               }
@@ -118,15 +138,15 @@ export default function NavbarStyle(){
                 border-bottom-right-radius: 15px;
               }
               .dropdown--item__menu .MuiMenu-list::before{
-                content: '';
+                content: "";
                 position: absolute;
-                width: 15px;
-                height: 15px;
-                top: -15px;
+                width: 10px;
+                height: 10px;
+                top: -10px;
                 left: 0px;
-                border-left: 15px solid transparent;
-                border-right: 15px solid transparent;
-                border-bottom: 15px solid #0061AF;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid#0061af;
               }
               .dropdown--item__menu .MuiPaper-elevation{
                 overflow: unset;
@@ -135,6 +155,7 @@ export default function NavbarStyle(){
                 border-bottom-left-radius: 57px;
                 background: none;
                 border: none;
+                margin-top: 13px;
               }
         `}
     </style>)

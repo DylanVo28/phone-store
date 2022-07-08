@@ -189,7 +189,6 @@ export default function PackageDetail() {
         `
         .package-title{
           padding: 0;
-          border-radius: 15px;
           border-radius: 12px;
           border: 1px solid #00000033;
           padding: 15px 0;

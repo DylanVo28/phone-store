@@ -20,86 +20,11 @@
   background: url('../src/images/background.svg');
 }
 #products .react-multi-carousel-item{
+
   padding-right: 10px;
   padding-left: 10px;
 }
-.img-media-card .css-1ri6ub7-MuiPaper-root-MuiCard-root{
-  position: relative;
-  border-radius: 15px;
-  box-sizing: border-box;
-  background: #FFFFFF;
-  border-radius: 15;
-  border: none;
-}
-.img-media-card .cart-icon{
-  position: absolute;
-  background: #0090ff;
-  padding: 4px;
-  border-radius: 50%;
-  width: 30px;
-  right: 15px;
-  top: 15px;
-  box-shadow: 0px 0px 8px 0px #0090ff80;
-  background: #0061AF;
-  box-shadow: 0px 0px 8px 2px #67b9f4;
-  border-radius: 100px;
-}
-.img-media-card .card-image{
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-.img-media-card .product__price-discount{
-  position: absolute;
-  top: -13px;
-  background: #ff0000;
-  padding: 3px 15px;
-  color: white;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  font-size: 13px;
-}
-.img-media-card .react-multi-carousel-track{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.img-media-card .card__description{
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 125%;
-  letter-spacing: 0.0025em;
-  color: #44494D;
-}
-#products {
-  background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat!important;
-}
-.img-media-card .product__price{
-  justify-content: space-between;
-  padding: 16px 
-}
-.img-media-card .product__price__price{
-  text-decoration-line: line-through;
-  color: #0061AF;
-  letter-spacing: 0.004em;
-  font-weight: 300;
-  font-size: 14px;
-}
-.img-media-card .product__price__discount{
-  color: #EE1C24;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.0015em;
-}
-.img-media-card .card__title{
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: 0.0015em;
-  color: #44494D;
-}
+
 #products .react-multi-carousel-track {
   padding: 20px 0;
 }
@@ -137,7 +62,7 @@
 }
 #promotion .promotion-card{
   position: relative;
-  border-radius: 15px;
+  border-radius: 12px;
   box-sizing: border-box;
   background: #FFFFFF;
   border: none;
@@ -248,6 +173,7 @@
 }
 .news__list{
   max-width: none;
+  padding: 0;
 }
 .news__list-item{
   padding: 0;
@@ -349,16 +275,34 @@
 .align-item--center{
   align-items: center;
 } 
+.carousel-banner{
+  height: 300px;
+}
+.carousel-banner .css-1m9128y{
+  top: -35px;
+    position: relative;
+    z-index: 999;
+}
+.carousel-banner .MuiIconButton-root{
+  color: #D6D6D6;
+  margin: 0 5px;
+}
+.carousel-banner .css-1m9128y .MuiIconButton-root.activeIndicator{
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 2px #3cadf9;
+  color: white;
+  border-radius: 50%;
+}
 .carousel-banner .MuiIconButton-root{
   background: none;
 }
 .carousel-banner .css-1abc02a:hover button,.carousel-banner .css-hn784z:hover button{
   background-color: transparent!important;
 }
-.carousel-banner  .banner{
-  height: 500px;
+.carousel-banner .banner{
+  height: 300px;
   background-repeat: no-repeat!important;
-  background-size: cover!important;
+  background-size: 100%!important;
   background-position: center!important;
 }
 .parallax-carousel-m8 .makeStyles-arrowLeft-6{
@@ -372,55 +316,21 @@
 .input-m8 .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
   font-size: 14px;
 }
+
 .input-m8 .input-m8__outlined-input{
   flex-direction: row-reverse;
+  border-radius: 12px;
+  height: 44px;
 }
 .input-m8 .input-m8__label{
   padding-left: 33px;
+  top: -5px
 }
 .input-m8 .Mui-focused{
   padding-left: 0px;
 }
 
-.news-card{
-  width: 100%;
-}
-.news-card .css-1mcnwpj-MuiList-root{
-  max-width: none;
-}
-.news-card .css-1p823my-MuiListItem-root{
-  display: block
-}
-.news-card .css-ag7rrr-MuiTypography-root{
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  /* or 150% */
 
-  letter-spacing: 0.0015em;
-
-  /* Blue main */
-
-  color: #0061AF;
-}
-.news-card .css-ecpxie-MuiTypography-root{
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  /* or 171% */
-
-
-  /* gray sub text */
-
-  color: #44494D;
-}
-.news-card .news-card__content{
-  width: 100%;
-}
-.news-card .news-card__box{
-  display: block;
-  width: 80%;
-}
 .text-decoration--none{
   text-decoration: none;
 }
@@ -570,4 +480,14 @@ body{margin:0;padding:0;background:#f4f6f9;color:#222;font-family:"Raleway",sans
 
 #__next {
   background: white;
+}
+#solution{
+  padding: 50px 0;
+}
+#solution .react-multi-carousel-item{
+  display: flex;
+    justify-content: center;
+}
+#solution .react-multi-carousel-track{
+  margin: 20px 0;
 }

@@ -103,6 +103,7 @@ arrItem.map((item,index)=><ListItem  key={index}  className="dropdown--item__lis
           <IconTitle
             variant="p"
             component="h6"
+            className="dropdown--item__menu-title"
             icon={
               <div
                 className="dropdown--item__icon-btn"
