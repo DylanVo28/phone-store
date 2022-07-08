@@ -32,6 +32,9 @@ const Footer = () => {
                     color: #FFFFFF;
                     text-transform: uppercase;
                 }
+                #footer span.icon-title__icon{
+                  padding-right: 5px;
+                }
             `}
 
         </style> }

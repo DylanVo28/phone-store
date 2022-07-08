@@ -26,7 +26,8 @@ export default function PromotionCard(props) {
     .promotion-card .promotion-card__card{
       overflow: hidden;
       box-shadow: none;
-    background: none;
+      background: none;
+      border-radius: 12px;
     }
   
     `}

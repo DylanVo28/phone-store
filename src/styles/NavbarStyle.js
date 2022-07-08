@@ -39,6 +39,9 @@ export default function NavbarStyle(){
               .navbar-header .navbar-header__vn-en{
                 margin-left:15px;
               }
+              .navbar-header .navbar-header__vn-en p{
+                padding: 0;
+              }
               .navbar-header .navbar-header__cart{
                 width: 24px;
               }
@@ -128,6 +131,8 @@ export default function NavbarStyle(){
                 line-height: 19px;
                 letter-spacing: 0.0015em;
                 color: #333333;
+                padding-left: 0;
+                padding-right: 25px;
               }
               .dropdown--item .dropdown--item__menu-title{
                 font-size: 16px;

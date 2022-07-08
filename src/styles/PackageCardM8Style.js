@@ -7,6 +7,7 @@ const PackageCardM8Style=()=>{
                 box-shadow: none;
                 background: none;
                 width: 100%;
+                border-radius: 12px;
               }
               .package-card .package-card__list{
                 padding: 15px 0;
@@ -84,8 +85,8 @@ const PackageCardM8Style=()=>{
                 color: #EE1C24;
               }
               .package-card_image{
-                border-top-right-radius: 15px;
-                border-top-left-radius: 15px;
+                border-top-right-radius: 12px;
+                border-top-left-radius: 12px;
               }
               .package-card .package-card__title{
                 font-family: 'Roboto';
@@ -138,8 +139,8 @@ const PackageCardM8Style=()=>{
                 color: #EE1C24;
               }
               .package-card .package-card_image{
-                border-top-right-radius: 15px;
-                border-top-left-radius: 15px;
+                border-top-right-radius: 12px;
+                border-top-left-radius: 12px;
               }
               
               .package-card:hover .package-card_image,.img-media-card:hover .card-image,
