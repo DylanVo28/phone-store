@@ -267,8 +267,8 @@ function Navbar(props) {
               />
             </Toolbar>
           </Container>
-        </AppBar>
 
+        </AppBar>
         <Box component="nav">
           <Drawer
             container={container}
@@ -290,6 +290,7 @@ function Navbar(props) {
           </Drawer>
         </Box>
       </Box>
+      <div className="menu-virtual"></div>
     </>
   );
 }

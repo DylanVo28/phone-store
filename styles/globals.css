@@ -1,4 +1,7 @@
-
+body{
+  padding-right: 0!important;
+  overflow: auto!important;
+}
 #packages .react-multi-carousel-track {
   padding: 15px 0;
 }
@@ -486,4 +489,12 @@ body{margin:0;padding:0;background:#f4f6f9;color:#222;font-family:"Raleway",sans
 }
 #solution .react-multi-carousel-track{
   margin: 20px 0;
+}
+.menu-virtual{
+  width: 100vw;
+    height: 22px;
+    background: white;
+    position: fixed;
+    top: 95px;
+    z-index: 9;
 }

@@ -82,7 +82,7 @@ export default function NavbarStyle(){
               #navbar{
                 position: fixed;
                 top: 55px;
-                z-index: 99;
+                z-index: 99999;
                 width: 100vw;
               }
               #navbar .navbar__toolbar{
@@ -90,6 +90,7 @@ export default function NavbarStyle(){
                 padding: 0;
               }
               #navbar .MuiPaper-root{
+                padding-right: 0!important;
                 position: unset!important 
               }
               #navbar .logo.width-15{
@@ -101,6 +102,7 @@ export default function NavbarStyle(){
               #navbar .bg-white{
                 background: white;
                 box-shadow: none;
+                height: 41px;
               }
               .navbar__box{
                 display:flex 
@@ -174,7 +176,6 @@ export default function NavbarStyle(){
               .dropdown--item__menu .MuiPaper-elevation{
                 
                 overflow: unset;
-                margin-left: 15px;
                 border-bottom-right-radius: 57px;
                 border-bottom-left-radius: 57px;
                 background: none;

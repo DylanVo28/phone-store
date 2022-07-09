@@ -15,14 +15,37 @@ export default function DropdownItemM8(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
+  const [move,setMove]=React.useState(false)
   const open = Boolean(anchorEl);
+  const handleHover=(event)=>{
+    setAnchorEl(event.currentTarget);
+  }
   const handleClick = (event) => {
     if (anchorEl !== event.currentTarget) {
       setAnchorEl(event.currentTarget);
     }
+   
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+const handleCloseMenu=async()=>{
+  setMove(false)
+  setAnchorEl(null);
+
+}
+  const handleClose = async () => {
+    sleep(1000)
+    if(!move){
+      setAnchorEl(null);
+
+    }
+    else if(!move && anchorEl){
+      setAnchorEl(null);
+
+    }
+
+    
   };
   const Demo = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -50,8 +73,8 @@ export default function DropdownItemM8(props) {
       <Button
         aria-owns={anchorEl ? "simple-menu" : undefined}
         aria-haspopup="true"
-        onClick={handleClick}
-        onMouseOver={handleClick}
+        onMouseOver={handleHover}
+        onMouseLeave={handleClose}
         className="dropdown--item__button"
       >
         {
@@ -74,8 +97,9 @@ export default function DropdownItemM8(props) {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        MenuListProps={{ onMouseLeave: handleClose }}
+        MenuListProps={{ onMouseLeave: handleCloseMenu }}
         className="dropdown--item__menu"
+        onMouseOver={e=>setMove(true)}
       >
         <Container maxWidth="lg">
           <Grid container spacing={2}>
