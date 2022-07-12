@@ -12,7 +12,7 @@ function handleClick(event) {
 
 export default function BreadCrumbsM8() {
   const breadcrumbs = [
-    <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+    <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick} className="bread-crumb-m8__link">
       MUI
     </Link>,
     <Link
@@ -21,6 +21,7 @@ export default function BreadCrumbsM8() {
       color="inherit"
       href="/material-ui/getting-started/installation/"
       onClick={handleClick}
+      className="bread-crumb-m8__link"
     >
       Core
     </Link>,
@@ -30,8 +31,18 @@ export default function BreadCrumbsM8() {
   ];
 
   return (
-    <Stack spacing={2}>
-    
+    <Stack spacing={2} className="bread-crumb-m8">
+      <style jsx global>
+        {`
+          .bread-crumb-m8 .bread-crumb-m8__link{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.005em;
+            color: #146AB3;
+          }
+        `}
+      </style>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"

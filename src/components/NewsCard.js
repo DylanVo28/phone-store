@@ -102,7 +102,7 @@ export default function NewsCard(props) {
          <Typography variant="subtitle1" color="text.secondary" component="div" className={"news-card__description"}>
            {props.description}
          </Typography>
-         <LinkM8 href={props.href} title={props.hrefTitle}></LinkM8>
+        {props.hrefTitle && <LinkM8 href={props.href} title={props.hrefTitle}></LinkM8>} 
        </CardContent>
      </Box>
    </Card>
@@ -112,10 +112,8 @@ export default function NewsCard(props) {
 }
 NewsCard.defaultProps={
   image: "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-  title: "Nhập title",
   description: "Nhập description",
   href: "/tada",
-  hrefTitle: "Xem chi tiết",
   heightCard: 182,
   widthCard: 200 
 }

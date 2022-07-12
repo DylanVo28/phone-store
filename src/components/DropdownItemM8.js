@@ -40,7 +40,7 @@ const handleCloseMenu=async()=>{
       setAnchorEl(null);
 
     }
-    else if(!move && anchorEl){
+    else if(anchorEl){
       setAnchorEl(null);
 
     }

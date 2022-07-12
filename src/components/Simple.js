@@ -72,7 +72,7 @@ const MultiItemCarousel = (props) => {
           <h1 className="title">{props.titleLeft}</h1>
         </span>
       </Grid>
-        <Grid container style={{paddingLeft: 7 +"px"}}>
+        <Grid container className="filter-product" style={{paddingLeft: 7 +"px"}}>
           <Grid item xs={9} className="">
           {props.component == "package" && (<>
             {filterPackages.map((item,index)=>index===0? <ButtonM8 title={item} className="btn-mobi-8 btn-package-active"></ButtonM8> : <ButtonM8

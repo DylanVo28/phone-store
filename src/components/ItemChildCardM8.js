@@ -17,10 +17,22 @@ export default function ItemChildCardM8() {
 
   return (
     <Card sx={{ display: 'flex', flexDirection: 'flex-end'}} className={'item-child-card'}>
+      <style jsx global>
+        {`
+          .item-child-card{
+            border: 1px solid #E2EEFF;
+            border-radius: 6px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            box-shadow: none;
+          }
+        `}
+      </style>
       <ItemChildCardM8Style/>
       <CardMedia
         component="img"
-        style={{width: 60+"px"}}
+        style={{width: 40+"px"}}
         image="https://cdn.tgdd.vn/Products/Images/42/274360/samsung-galaxy-a13-xanh-thumb-1-600x600.jpg"
         alt="Live from space album cover"
       />
