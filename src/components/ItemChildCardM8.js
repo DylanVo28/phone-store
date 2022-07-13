@@ -12,11 +12,11 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import ItemChildCardM8Style from '../styles/ItemChildCardM8Style';
 
-export default function ItemChildCardM8() {
+export default function ItemChildCardM8({children,checked}) {
   const theme = useTheme();
 
   return (
-    <Card sx={{ display: 'flex', flexDirection: 'flex-end'}} className={'item-child-card'}>
+    <Card sx={{ display: 'flex', flexDirection: 'flex-end'}} className={`item-child-card  ${checked ?'active':'' } `}>
       <style jsx global>
         {`
           .item-child-card{
@@ -26,6 +26,27 @@ export default function ItemChildCardM8() {
             display: flex;
             align-items: center;
             box-shadow: none;
+          }
+          .item-child-card.active{
+            border: 1px solid #5180C0;
+            position: relative;
+            overflow: auto;
+          }
+          .item-child-card.active::before{
+            content: '✔';
+            width: 20px;
+            height: 15px;
+            position: absolute;
+            background: #5180C0;
+            top: 0px;
+            right: 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 3px;
+            font-weight: bold;
+            font-size: 10px;
           }
         `}
       </style>

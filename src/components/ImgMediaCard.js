@@ -116,6 +116,10 @@ const ImgMediaCard = (props) => {
             padding: 5px;
             border-radius: 50%;
           }
+          .img-media-card:hover .card-image{
+            transform: scale(1.2);
+            transition: 0.3s;
+          }
           .img-media-card .img-media-card__icon-cart img{
             width: 18px;
             display: block;

@@ -52,6 +52,8 @@ const ImageGalleryM8=()=>{
         }
         .image-gallery .image-gallery-thumbnail+.image-gallery-thumbnail:nth-child(4)::before{
           content: 'Xem thêm';
+          left: 0;
+          top: 0;
           width: 92px;
           height: 92px;
           background: #00000052;
@@ -62,12 +64,17 @@ const ImageGalleryM8=()=>{
           align-items: center;
           justify-content: center;
           color: white;
+          border-radius: 12px;
+          overflow: hidden;
         }
         .image-gallery .image-gallery-fullscreen-button{
           right: 83px;
           opacity:0;
           bottom: -103px;
           padding: 34px 35px;
+        }
+        .image-gallery .image-gallery-content.bottom.fullscreen{
+          top: 18%;
         }
         .image-gallery .image-gallery-content.bottom.fullscreen .image-gallery-fullscreen-button{
           opacity:1
@@ -82,11 +89,13 @@ const ImageGalleryM8=()=>{
         .image-gallery .image-gallery-content.bottom.fullscreen .image-gallery-left-nav,.image-gallery .image-gallery-content.bottom.fullscreen .image-gallery-right-nav{
           display: block!important;
         }
+        .image-gallery .image-gallery-thumbnail{
+          padding: 10px;
+        }
         .image-gallery .image-gallery-thumbnail.active{
           background: #E2EEFF;
           border: 1px solid #5180C0;
           border-radius: 8px;
-          padding: 10px;
         }
         .image-gallery .image-gallery-thumbnail:hover{
           transition: 0.3s;
@@ -95,8 +104,11 @@ const ImageGalleryM8=()=>{
           border-radius: 8px;
           padding: 10px;
         }
-        .image-gallery .image-gallery-thumbnail:nth-child(3).active{
-
+        .image-gallery .image-gallery-icon{
+          filter: none;
+        }
+        .image-gallery .image-gallery-swipe{
+          padding: 30px;
         }
         `
       }

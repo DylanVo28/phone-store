@@ -45,6 +45,11 @@ import closeIcon from "../../src/images/close.svg";
 import { APP_NAME, DOMAIN,FB_APP_ID } from "../../config";
 import Head  from 'next/head';
 import { useRouter } from 'next/router';
+import iconPrev from'../../src/images/icon-prev.svg'
+import iconNext from '../../src/images/icon-next.svg'
+import banner from '../../src/images/baner-6-1.png'
+import hot from '../../src/images/hot.svg'
+
 const itemsProduct = [
   {
     id: 1,
@@ -157,12 +162,10 @@ const images = [
 ];
 var itemsBanner = [
   {
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+    image:banner.src,
   },
   {
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
+    image:banner.src,
   },
 ];
 const ProductDetail = () => {
@@ -195,45 +198,47 @@ const ProductDetail = () => {
       <meta property="og:image:type" content={`image/jpg`}/>
       <meta property="fb:app_id" content={`${FB_APP_ID}`} />
       <script>
-        {`
-          
-          for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
-              
-            document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
-                  if(i===2){
-                     document.querySelector(".image-gallery-right-nav").style.display='none' 
-                  }
-                  else if(i===0){
-                    document.querySelector(".image-gallery-left-nav").style.display='none' 
-                  }
-                  else{
-                      document.querySelector(".image-gallery-right-nav").style.display='block' 
-                      document.querySelector(".image-gallery-left-nav").style.display='block' 
-
-                  }
-              })
-          }
-          document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
+  {`
     
-            if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-                document.querySelector(".image-gallery-left-nav").style.display='none'
+    for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
+        
+      document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
+            if(i===2){
+               document.querySelector(".image-gallery-right-nav").style.display='none' 
+            }
+            else if(i===0){
+              document.querySelector(".image-gallery-left-nav").style.display='none' 
             }
             else{
-              document.querySelector(".image-gallery-right-nav").style.display='block'
+                document.querySelector(".image-gallery-right-nav").style.display='block' 
+                document.querySelector(".image-gallery-left-nav").style.display='block' 
+
             }
         })
-        document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
-    
-          if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-              document.querySelector(".image-gallery-right-nav").style.display='none'
-          }
-          else{
-            document.querySelector(".image-gallery-left-nav").style.display='block'
-          }
-      })
-        `
-        }
-      </script>
+    }
+    document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
+
+      if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+          document.querySelector(".image-gallery-left-nav").style.display='none'
+      }
+      else{
+        document.querySelector(".image-gallery-right-nav").style.display='block'
+      }
+  })
+  document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
+
+    if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+        document.querySelector(".image-gallery-right-nav").style.display='none'
+    }
+    else{
+      document.querySelector(".image-gallery-left-nav").style.display='block'
+    }
+})
+document.querySelector('.image-gallery-left-nav').innerHTML= '<img src="${iconPrev.src}" alt=""/>'
+document.querySelector('.image-gallery-right-nav').innerHTML= '<img src="${iconNext.src}" alt=""/>'
+  `
+  }
+</script>
     </Head>
   }
   return (
@@ -424,28 +429,31 @@ const ProductDetail = () => {
         .modal-m8 .table-m8 .table-m8__table-row th,.modal-m8 .table-m8 .table-m8__table-row td{
           border: none
         }
-        .modal-m8 .css-1wnsr1i{
-          width: 40vw;
-          padding: 0;
-          border: none;
-        }
-        .modal-m8{
-          z-index: 99999;
-        }
+       
         .modal-m8 .table-m8 .table-m8__table-row td{
           text-align: left;
           width: 30%;
         }
+        .modal-m8 .modal-m8__title{
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          letter-spacing: 0.0015em;
+        }
       `}
       </style>
       <React.Fragment>
-        {head()}
+     
         <NoSSR>
+        {head()}
+
           <Navbar />
+<div style={{height: 120+"px"}}></div>
+
           <CarouselM8 items={itemsBanner} />
           <Container
             maxWidth="lg"
-            style={{ paddingTop: "20px" }}
+            style={{ paddingTop: "50px" }}
             className="product bread-crumb"
           >
             <Grid container spacing={2}>
@@ -495,13 +503,13 @@ const ProductDetail = () => {
                   Đen
                 </Typography>
                 <Grid container spacing={2} style={{ paddingTop: 10 + "px" }}>
-                  <Grid item md={4}>
+                  <Grid item md={4} style={{paddingTop: '13px'}}>
+                    <ItemChildCardM8 checked={true}/>
+                  </Grid>
+                  <Grid item md={4} style={{paddingTop: '13px'}}> 
                     <ItemChildCardM8 />
                   </Grid>
-                  <Grid item md={4}>
-                    <ItemChildCardM8 />
-                  </Grid>
-                  <Grid item md={4}>
+                  <Grid item md={4} style={{paddingTop: '13px'}}>
                     <ItemChildCardM8 />
                   </Grid>
                 </Grid>
@@ -663,7 +671,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={emoji.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} />}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -728,7 +736,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={emoji.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} />}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -772,7 +780,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={emoji.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} />}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -873,7 +881,7 @@ const ProductDetail = () => {
               <Container maxWidth="lg">
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
-                    <Typography variant="b" component="b">
+                    <Typography variant="b" component="b" className="modal-m8__title">
                       Thông tin hàng hóa
                     </Typography>
                     <TableM8>
@@ -968,6 +976,42 @@ const ProductDetail = () => {
                       </TableRow>
                     </TableM8>
                   </Grid>
+                  <Grid item xs={12}>
+                    <Typography variant="b" component="b">
+                      Thông tin hàng hóa
+                    </Typography>
+                    <TableM8>
+                      {["item","item1"].map((row) => (
+                        <TableRow
+                          key={row}
+                          sx={{
+                            "&:nth-child(2n)": {
+                              background: "white!important",
+                            },
+                          }}
+                        >
+                          <TableCell component="th" scope="row" style={{border:'none'}}>
+                            <IconTitle
+                               variant="p"
+                               component="p"
+                               className="display--flex align-item--center "
+                               icon={<Image src={emoji.src} width={30} height={30} />}
+                               title={"san pham"}
+                            />
+                          </TableCell>
+                          <TableCell align="right" style={{textAlign: 'left',border:'none'}}>
+                          <IconTitle
+                               variant="p"
+                               component="p"
+                               className="display--flex align-item--center "
+                               icon={<Image src={emoji.src} width={30} height={30} />}
+                               title={"san pham"}
+                            />
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                      </TableM8>
+                    </Grid>
                 </Grid>
               </Container>
             </Box>

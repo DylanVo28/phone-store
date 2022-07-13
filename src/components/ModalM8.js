@@ -20,6 +20,21 @@ export default function ModalM8({children,open,onClose, className}) {
 
   return (
     <div>
+      <style jsx global>
+        {`
+          .modal-m8 .css-1wnsr1i{
+            width: 40vw;
+            padding: 0;
+            border: none;
+            outline: none;
+            overflow: scroll;
+            height: 90vh;
+          }
+          .modal-m8{
+            z-index: 99999;
+          }
+        `}
+      </style>
       <Modal
         open={open}
         onClose={onClose}

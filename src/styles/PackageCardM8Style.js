@@ -143,7 +143,7 @@ const PackageCardM8Style=()=>{
                 border-top-left-radius: 12px;
               }
               
-              .package-card:hover .package-card_image,.img-media-card:hover .card-image,
+              .package-card:hover .package-card_image,
               .solution-card:hover .MuiCardMedia-img{
                 transform: scale(1.2);
                 transition: 0.3s;
