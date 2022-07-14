@@ -15,6 +15,8 @@ const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogIm
             <meta property="og:image:secure_url" content={`${DOMAIN}${ogImage}`}/>
             <meta property='og:url' content={ogUrl}/>
             <meta property="og:site_name" content={`${APP_NAME}`}/>
+            <meta property="og:image:width" content="200" /> 
+            <meta property="og:image:height" content="200" />
             {/* <meta name="robots" content='indexing'/> */}
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
             <link rel="canonical" href={`${DOMAIN}${asPath}`}/>
