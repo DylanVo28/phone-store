@@ -291,7 +291,7 @@ body{
 .carousel-banner .banner{
   height: 400px;
   background-repeat: no-repeat!important;
-  background-size: 100%!important;
+  background-size: cover!important;
   background-position: center!important;
 }
 .parallax-carousel-m8 .makeStyles-arrowLeft-6{

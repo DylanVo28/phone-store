@@ -18,14 +18,12 @@ import NewsCard from "../src/components/NewsCard";
 import NewsCardLeft from "../src/components/NewsCardLeft";
 import Card from "@mui/material/Card";
 import ActionAreaCardM8 from "../src/components/ActionAreaCardM8/ActionAreaCardM8";
-import { Private } from "../auth/auth";
 
 import  Head  from 'next/head';
 import { APP_NAME, DOMAIN,FB_APP_ID } from "../config";
 import Router, { useRouter } from 'next/router';
 import IconPrev from '../src/images/icon-prev.svg'
 import IconNext from '../src/images/icon-next.svg'
-const isSSR = () => typeof window === undefined; 
 import NoSSR from 'react-no-ssr';
 import banner from '../src/images/baner-6-1.png'
 import packageImage from '../src/images/package-image.png'
@@ -385,29 +383,85 @@ export default function Home() {
 
   var itemsBanner = [
     {
-      image:banner.src,
+      image:'https://media4.giphy.com/media/jJjb9AUHOiP3nJJMdy/giphy.gif?cid=82a1493brk1p5lo4f0kludsbvfxp3iv8d9ajxafmvqch52xy&rid=giphy.gif&ct=v',
     },
     {
       image:banner.src,
     },
   ];
+  function addProductJsonLd() {
+    return {
+      __html: `{
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Executive Anvil",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "description": "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
+      "sku": "0446310786",
+      "mpn": "925872",
+      "brand": {
+        "@type": "Brand",
+        "name": "ACME"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Fred Benson"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://example.com/anvil",
+        "priceCurrency": "USD",
+        "price": "119.99",
+        "priceValidUntil": "2020-11-20",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  `,
+    };
+  }
   const head=()=>{
     return <Head>
       <title>Home | {APP_NAME}</title>
       <meta
         name="description"
         content="Trang home"
+        key="desc"
       />
+      <meta name="robots" content="all" />
+      <meta name="googlebot" content="noindex,nofollow" />
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`}/>
       <meta property="og:title" content={`Lasted web development | ${APP_NAME}`}/>
       <meta property="og:description" content="Tada description"/>
       <meta property="og:type" content="website"/>
       <meta property="og:url" content={`${DOMAIN}${router.pathname}`}/>
       <meta property="og:site_name" content={`${APP_NAME}`}/>
-      <meta property="og:image" content={`${DOMAIN}/static/images/banner_1.jpg`}/>
-      <meta property="og:image:secure_url" content={`../src/images/banner_1.jpg`}/>
+      <meta property="og:image" content={`${banner.src}`}/>
+      <meta property="og:image:secure_url" content={`${banner.src}`}/>
       <meta property="og:image:type" content={`image/jpg`}/>
       <meta property="fb:app_id" content={`${FB_APP_ID}`} />
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd()}
+          key="product-jsonld"
+        />
     </Head>
   }
   return (

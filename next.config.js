@@ -10,16 +10,19 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   publicRuntimeConfig:{
-    APP_NAME: 'MOBI8',
-    API_DEVELOPMENT: "http://localhost:8000/api",
-    API_PRODUCTION: "https://mobi8.pvssolution.com/api",
+    APP_NAME: process.env.APP_NAME,
+    API_DEVELOPMENT: process.env.API_DEVELOPMENT,
+    API_PRODUCTION: process.env.API_PRODUCTION,
     PRODUCTION:false,
-    DOMAIN_DEVELOPMENT: 'http://localhost:3000',
-    DOMAIN_PRODUCTION: "https://mobi8.pvssolution.com",
-    FB_APP_ID: "749452959524618"
-
+    DOMAIN_DEVELOPMENT: process.env.DOMAIN_DEVELOPMENT,
+    DOMAIN_PRODUCTION: process.env.DOMAIN_PRODUCTION,
+    FB_APP_ID: process.env.FB_APP_ID
   },
-  
+  images:{
+    domains: [
+      'media4.giphy'
+    ]
+  }
 }
 
 

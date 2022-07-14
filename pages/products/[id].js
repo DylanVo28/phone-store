@@ -49,6 +49,8 @@ import iconPrev from'../../src/images/icon-prev.svg'
 import iconNext from '../../src/images/icon-next.svg'
 import banner from '../../src/images/baner-6-1.png'
 import hot from '../../src/images/hot.svg'
+import MetaSEO from "../../src/components/MetaSEO";
+import Script from "next/script";
 
 const itemsProduct = [
   {
@@ -173,35 +175,10 @@ const ProductDetail = () => {
   const [openModal, setOpenModal] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
   const router=useRouter()
-
   useEffect(() => {
     setWidth(window.innerWidth);
-  }, []);
-  useEffect(()=>{
-    
-  })
-  const head=()=>{
-    return <Head>
-      <title>Home | {APP_NAME}</title>
-      <meta
-        name="description"
-        content="Trang home"
-      />
-      <link rel="canonical" href={`${DOMAIN}${router.pathname}`}/>
-      <meta property="og:title" content={`Lasted web development | ${APP_NAME}`}/>
-      <meta property="og:description" content="Tada description"/>
-      <meta property="og:type" content="website"/>
-      <meta property="og:url" content={`${DOMAIN}${router.pathname}`}/>
-      <meta property="og:site_name" content={`${APP_NAME}`}/>
-      <meta property="og:image" content={`${DOMAIN}/static/images/banner_1.jpg`}/>
-      <meta property="og:image:secure_url" content={`../src/images/banner_1.jpg`}/>
-      <meta property="og:image:type" content={`image/jpg`}/>
-      <meta property="fb:app_id" content={`${FB_APP_ID}`} />
-      <script>
-  {`
-    
     for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
-        
+            
       document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
             if(i===2){
                document.querySelector(".image-gallery-right-nav").style.display='none' 
@@ -234,12 +211,22 @@ const ProductDetail = () => {
       document.querySelector(".image-gallery-left-nav").style.display='block'
     }
 })
-document.querySelector('.image-gallery-left-nav').innerHTML= '<img src="${iconPrev.src}" alt=""/>'
-document.querySelector('.image-gallery-right-nav').innerHTML= '<img src="${iconNext.src}" alt=""/>'
-  `
-  }
-</script>
-    </Head>
+document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
+document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
+  }, []);
+ 
+  const head=()=>{
+    return <MetaSEO title={`Home | ${APP_NAME}`}
+        description={"Trang product"}
+        asPath={router.asPath}
+        keywords="keywords"
+        ogTitle={`Lasted web development | ${APP_NAME}`}
+        ogDescription={'Tada description'}
+        ogUrl={`${DOMAIN}${router.asPath}`}
+        ogImage={banner.src}
+
+      ></MetaSEO>
+    
   }
   return (
     <>
