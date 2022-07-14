@@ -177,42 +177,42 @@ const ProductDetail = () => {
   const router=useRouter()
   useEffect(() => {
     setWidth(window.innerWidth);
-    for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
+//     for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
             
-      document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
-            if(i===2){
-               document.querySelector(".image-gallery-right-nav").style.display='none' 
-            }
-            else if(i===0){
-              document.querySelector(".image-gallery-left-nav").style.display='none' 
-            }
-            else{
-                document.querySelector(".image-gallery-right-nav").style.display='block' 
-                document.querySelector(".image-gallery-left-nav").style.display='block' 
+//       document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
+//             if(i===2){
+//                document.querySelector(".image-gallery-right-nav").style.display='none' 
+//             }
+//             else if(i===0){
+//               document.querySelector(".image-gallery-left-nav").style.display='none' 
+//             }
+//             else{
+//                 document.querySelector(".image-gallery-right-nav").style.display='block' 
+//                 document.querySelector(".image-gallery-left-nav").style.display='block' 
 
-            }
-        })
-    }
-    document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
+//             }
+//         })
+//     }
+//     document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
 
-      if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-          document.querySelector(".image-gallery-left-nav").style.display='none'
-      }
-      else{
-        document.querySelector(".image-gallery-right-nav").style.display='block'
-      }
-  })
-  document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
+//       if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+//           document.querySelector(".image-gallery-left-nav").style.display='none'
+//       }
+//       else{
+//         document.querySelector(".image-gallery-right-nav").style.display='block'
+//       }
+//   })
+//   document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
 
-    if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-        document.querySelector(".image-gallery-right-nav").style.display='none'
-    }
-    else{
-      document.querySelector(".image-gallery-left-nav").style.display='block'
-    }
-})
-document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
-document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
+//     if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+//         document.querySelector(".image-gallery-right-nav").style.display='none'
+//     }
+//     else{
+//       document.querySelector(".image-gallery-left-nav").style.display='block'
+//     }
+// })
+// document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
+// document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
   }, []);
  
   const head=()=>{
