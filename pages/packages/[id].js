@@ -261,16 +261,16 @@ export default function PackageDetail() {
               </Grid>
               
               <Grid item md={12} className={"package-detail__promotion"}>
-                    <ListItemTextM8 iconTitle={<img src={iconDiscount.src} className="list-item-text-m8__icon"/>}
+                    <ListItemTextM8 iconTitle={<img src={iconDiscount.src} className="list-item-text-m8__icon" alt="icon discount"/>}
                       title={"Ưu đãi"}
                       iconItem={<span>-</span>}
                       items={["Tặng 3GB data tốc độ cao","Tặng 3GB data tốc độ cao"]}
                     />
-                    <ListItemTextM8 iconTitle={<img src={iconDiscount.src}/>}
+                    <ListItemTextM8 iconTitle={<img src={iconDiscount.src} alt="icon discount"/>}
                       title={"Lưu ý"}
                       items={["Gói cước chỉ hỗ trợ thuê bao sử dụng điện thoại truy cập vào ứng dụng/trình duyệt truy cập trực tiếp vào các trang, ứng dụng di động củ"]}
                     />
-                     <ListItemTextM8 iconTitle={<img src={iconDiscount.src}/>}
+                     <ListItemTextM8 iconTitle={<img src={iconDiscount.src} alt="icon discount"/>}
                       title={<span className="list-item-text-m8__contact">Liên hệ <span style={{color: "red"}}>9090</span> để biết thêm thông tin chi tiết</span>}
                     /> 
                   </Grid>

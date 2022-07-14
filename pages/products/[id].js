@@ -513,7 +513,7 @@ const ProductDetail = () => {
                       variant="p"
                       component="h6"
                       className="product-detail__icon-title"
-                      icon={<Image src={emoji.src} width={30} height={30} />}
+                      icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
                       title={"san pham"}
                     />
                     <Box className="product-detail__box">
@@ -539,6 +539,7 @@ const ProductDetail = () => {
                                   src={tick.src}
                                   width={30}
                                   height={30}
+                                  alt="tick icon"
                                 />
                               }
                               title={item}
@@ -567,6 +568,7 @@ const ProductDetail = () => {
                                   src={tick.src}
                                   width={30}
                                   height={30}
+                                  alt="tick"
                                 />
                               }
                               title={
@@ -605,7 +607,7 @@ const ProductDetail = () => {
                           className={
                             "display--flex align-items--center justify-content--center"
                           }
-                          icon={<Image src={cart.src} width={30} height={30} />}
+                          icon={<Image src={cart.src} width={30} height={30} alt="cart"/>}
                           title={"san pham"}
                         />
                       </ButtonBlockM8>
@@ -658,7 +660,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -723,7 +725,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -753,7 +755,7 @@ const ProductDetail = () => {
                     <IconTitle
                       variant="p"
                       component="p"
-                      icon={<Image src={emoji.src} width={30} height={30} />}
+                      icon={<Image src={emoji.src} width={30} height={30} alt="hot"/>}
                       onClick={(e) => setOpenModal(true)}
                       title={"Xem cấu hình chi tiết"}
                       className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
@@ -767,7 +769,7 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} />}
+                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -787,7 +789,7 @@ const ProductDetail = () => {
                   <IconTitle
                     variant="p"
                     component="p"
-                    icon={<Image src={emoji.src} width={30} height={30} />}
+                    icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
                     title={"Xem cấu hình chi tiết"}
                     className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
                   />
@@ -853,7 +855,7 @@ const ProductDetail = () => {
                 <IconTitle
                   variant="h4"
                   component="h4"
-                  icon={<Image src={emoji.src} width={30} height={30} />}
+                  icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
                   title={"san pham"}
                   className={"display--flex align-items--center"}
                 />
@@ -982,7 +984,7 @@ const ProductDetail = () => {
                                variant="p"
                                component="p"
                                className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} />}
+                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
                                title={"san pham"}
                             />
                           </TableCell>
@@ -991,7 +993,7 @@ const ProductDetail = () => {
                                variant="p"
                                component="p"
                                className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} />}
+                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
                                title={"san pham"}
                             />
                           </TableCell>

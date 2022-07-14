@@ -207,7 +207,7 @@ function Navbar(props) {
                   variant="p"
                   component="h5"
                   className="navbar-header__icon-title"
-                  icon={<Image src={cart.src} width={30} height={30} className="navbar-header__cart"/>}
+                  icon={<Image src={cart.src} width={30} height={30} className="navbar-header__cart" alt="cart"/>}
                   title={"Giỏ hàng"}
                 />
               <Link href={"/logout"}>

@@ -50,19 +50,19 @@ const Footer = () => {
                 <IconTitle
                   variant="p"
                   component="h6"
-                  icon={<Image src={address.src} width={15} height={15} />}
+                  icon={<Image src={address.src} width={15} height={15} alt="address"/>}
                   title="236a Phan Trung, Phường Tân Tiến, TP. Biên Hòa, Đồng Nai "
                 />
                 <IconTitle
                   variant="p"
                   component="h6"
-                  icon={<Image src={headphone.src} width={15} height={15} />}
+                  icon={<Image src={headphone.src} width={15} height={15} alt="headphone" />}
                   title="c8_khcn@mobifone.vn"
                 />
                 <IconTitle
                   variant="p"
                   component="h6"
-                  icon={<Image src={mail.src} width={15} height={15} />}
+                  icon={<Image src={mail.src} width={15} height={15} alt="mail"/>}
                   title="18001090 và 9090"
                 />
               </Box>
