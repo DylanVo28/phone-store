@@ -17,6 +17,11 @@ const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogIm
             <meta property="og:site_name" content={`${APP_NAME}`}/>
             <meta property="og:image:width" content="200" /> 
             <meta property="og:image:height" content="200" />
+            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:image:alt" content="PSGC API Banner"/>
+            <meta name="twitter:title" content={ogTitle}/>
+            <meta name="twitter:description" content={ogDescription}/>
+            <meta name="twitter:image" content={`http://mobi8.pvssolution.com${ogImage}`}></meta>
             {/* <meta name="robots" content='indexing'/> */}
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
             <link rel="canonical" href={`${DOMAIN}${asPath}`}/>
