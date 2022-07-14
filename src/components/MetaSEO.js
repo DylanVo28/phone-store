@@ -11,7 +11,7 @@ const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogIm
             <meta property='og:type' content='website'/>
             <meta property='og:title' content={ogTitle}/>
             <meta property='og:description' content={ogDescription}/>
-            <meta property='og:image:url' content={`${DOMAIN}${ogImage}`}/>
+            <meta property='og:image' content={`${DOMAIN}${ogImage}`}/>
             <meta property="og:image:secure_url" content={`${DOMAIN}${ogImage}`}/>
             <meta property='og:url' content={ogUrl}/>
             <meta property="og:site_name" content={`${APP_NAME}`}/>
