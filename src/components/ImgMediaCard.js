@@ -134,7 +134,7 @@ const ImgMediaCard = (props) => {
           image={props.item.image}
           className="card-image"
         ></CardMedia>
-        {props.isCart &&<div className="img-media-card__icon-cart"><img src={icons.cart.src} /></div> }
+        {props.isCart &&<div className="img-media-card__icon-cart"><img src={icons.cart.src} alt="icon cart"/></div> }
 
         <div style={{ position: "relative" }}>
           <div className="product__price-discount">

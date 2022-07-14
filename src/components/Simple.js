@@ -50,7 +50,7 @@ const MultiItemCarousel = (props) => {
         <button aria-label="Go to previous slide"
                         className={currentSlide === 0 ? "disable" : "react-multiple-carousel__arrow react-multiple-carousel__arrow--left react-multiple-carousel__arrow-left"}
                         onClick={() => previous()}>
-        <img src={IconPrev.src} />
+        <img src={IconPrev.src} alt="prev" />
 
                         </button>
        <button
@@ -58,7 +58,7 @@ const MultiItemCarousel = (props) => {
         aria-label="Go to next slide"
         className="react-multiple-carousel__arrow react-multiple-carousel__arrow--right react-multiple-carousel__arrow-right"
       >
-        <img src={IconNext.src} />
+        <img src={IconNext.src} alt="next"/>
       </button>
       </div>
     );

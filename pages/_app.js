@@ -13,6 +13,7 @@ import NProgress from 'nprogress'
 import LoadingM8 from '../src/components/LoadingM8';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import  Head  from 'next/head';
 
 
 
@@ -46,6 +47,10 @@ const MyApp = (props) => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
         {loading && <LoadingM8 loading={loading}/>}
+        <Head>
+            <meta httpEquiv='Content-Type' content='text/html; charset=utf-8'/>
+            <meta name="viewport" content='width=device-width, initial-scale=1'/>
+        </Head>
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>

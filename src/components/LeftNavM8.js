@@ -14,7 +14,7 @@ const LeftNavM8 = React.memo(({
       onClick={onClick}
       aria-label="Previous Slide"
     >
-       <img src={iconPrev.src}/>
+       <img src={iconPrev.src} alt="prev"/>
     </button>
   );
 });

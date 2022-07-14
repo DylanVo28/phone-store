@@ -43,7 +43,7 @@ const Footer = () => {
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
               <Box>
-                <img src={logoMobi.src} style={{ maxWidth: 150 + "px" }} />
+                <img src={logoMobi.src} style={{ maxWidth: 150 + "px" }} alt="logo mobi"/>
               </Box>
               <Box>
                 <h5 className="footer__title">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 8</h5>
@@ -156,6 +156,7 @@ const Footer = () => {
                       <img
                         src="https://th.bing.com/th/id/R.26d9974a1feec9905a4e0d5e5ddf8db6?rik=ycoXFwG5Udz08A&pid=ImgRaw&r=0"
                         style={{ width: 100 + "%" }}
+                        alt="logo mobi"
                       />
                     </Box>
                     <Box
@@ -173,6 +174,7 @@ const Footer = () => {
                       <img
                         src="https://th.bing.com/th/id/R.26d9974a1feec9905a4e0d5e5ddf8db6?rik=ycoXFwG5Udz08A&pid=ImgRaw&r=0"
                         style={{ width: 100 + "%" }}
+                        alt="icon"
                       />
                     </Box>
                     <Box
@@ -190,6 +192,7 @@ const Footer = () => {
                       <img
                         src="https://th.bing.com/th/id/R.26d9974a1feec9905a4e0d5e5ddf8db6?rik=ycoXFwG5Udz08A&pid=ImgRaw&r=0"
                         style={{ width: 100 + "%" }}
+                        alt="icon"
                       />
                     </Box>
                     

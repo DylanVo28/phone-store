@@ -93,6 +93,7 @@ export default function NewsCard(props) {
        component="img"
        sx={{ height: props.heightCard, width: props.widthCard }}
        image={props.image}
+       alt="card media"
      />
       <Box sx={{ display: 'flex', flexDirection: 'column' }} className="news-card__box">
        <CardContent sx={{ flex: '1 0 auto' }} className="news-card__content">

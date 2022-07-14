@@ -166,7 +166,7 @@ const Index = () => {
            
             {
                <Grid item xs={12} className="text-align--center">
-                  <img className="not-found" src={iconNotFound.src}/>
+                  <img className="not-found" src={iconNotFound.src} alt="not-found"/>
                </Grid>
               }
 

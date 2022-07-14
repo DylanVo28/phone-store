@@ -180,7 +180,7 @@ function Navbar(props) {
               <Link href={"/signin"}>
                 <a className="navbar-header__sign-in text-decoration--none">
                 <span className="icon-title__icon">
-                    <img src={IconUser.src} />
+                    <img src={IconUser.src} alt="user"/>
                   </span>
                   <TypograPhyM8
                     title={"Đăng nhập"}

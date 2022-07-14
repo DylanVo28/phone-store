@@ -42,16 +42,16 @@ import cart from "../../src/images/cart-blue.svg";
 import giffy from "../../src/images/giphy.gif";
 import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
 import closeIcon from "../../src/images/close.svg";
-import { APP_NAME, DOMAIN,FB_APP_ID } from "../../config";
-import Head  from 'next/head';
-import { useRouter } from 'next/router';
-import iconPrev from'../../src/images/icon-prev.svg'
-import iconNext from '../../src/images/icon-next.svg'
-import banner from '../../src/images/baner-6-1.png'
-import hot from '../../src/images/hot.svg'
+import { APP_NAME, DOMAIN, FB_APP_ID } from "../../config";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import iconPrev from "../../src/images/icon-prev.svg";
+import iconNext from "../../src/images/icon-next.svg";
+import banner from "../../src/images/baner-6-1.png";
+import hot from "../../src/images/hot.svg";
 import MetaSEO from "../../src/components/MetaSEO";
 import Script from "next/script";
-
+import { NextSeo } from "next-seo";
 const itemsProduct = [
   {
     id: 1,
@@ -164,70 +164,71 @@ const images = [
 ];
 var itemsBanner = [
   {
-    image:banner.src,
+    image: banner.src,
   },
   {
-    image:banner.src,
+    image: banner.src,
   },
 ];
 const ProductDetail = () => {
   const [width, setWidth] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
-  const router=useRouter()
+  const router = useRouter();
   useEffect(() => {
     setWidth(window.innerWidth);
-//     for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
-            
-//       document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
-//             if(i===2){
-//                document.querySelector(".image-gallery-right-nav").style.display='none' 
-//             }
-//             else if(i===0){
-//               document.querySelector(".image-gallery-left-nav").style.display='none' 
-//             }
-//             else{
-//                 document.querySelector(".image-gallery-right-nav").style.display='block' 
-//                 document.querySelector(".image-gallery-left-nav").style.display='block' 
+    //     for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
 
-//             }
-//         })
-//     }
-//     document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
+    //       document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
+    //             if(i===2){
+    //                document.querySelector(".image-gallery-right-nav").style.display='none'
+    //             }
+    //             else if(i===0){
+    //               document.querySelector(".image-gallery-left-nav").style.display='none'
+    //             }
+    //             else{
+    //                 document.querySelector(".image-gallery-right-nav").style.display='block'
+    //                 document.querySelector(".image-gallery-left-nav").style.display='block'
 
-//       if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-//           document.querySelector(".image-gallery-left-nav").style.display='none'
-//       }
-//       else{
-//         document.querySelector(".image-gallery-right-nav").style.display='block'
-//       }
-//   })
-//   document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
+    //             }
+    //         })
+    //     }
+    //     document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
 
-//     if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-//         document.querySelector(".image-gallery-right-nav").style.display='none'
-//     }
-//     else{
-//       document.querySelector(".image-gallery-left-nav").style.display='block'
-//     }
-// })
-// document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
-// document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
+    //       if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+    //           document.querySelector(".image-gallery-left-nav").style.display='none'
+    //       }
+    //       else{
+    //         document.querySelector(".image-gallery-right-nav").style.display='block'
+    //       }
+    //   })
+    //   document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
+
+    //     if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
+    //         document.querySelector(".image-gallery-right-nav").style.display='none'
+    //     }
+    //     else{
+    //       document.querySelector(".image-gallery-left-nav").style.display='block'
+    //     }
+    // })
+    // document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
+    // document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
   }, []);
- 
-  const head=()=>{
-    return <MetaSEO title={`Home | ${APP_NAME}`}
+
+  const head = () => {
+    return (
+      <MetaSEO
+        title={`Home | ${APP_NAME}`}
         description={"Trang product"}
         asPath={router.asPath}
         keywords="keywords"
         ogTitle={`Lasted web development | ${APP_NAME}`}
-        ogDescription={'Tada description'}
+        ogDescription={"Tada description"}
         ogUrl={`${DOMAIN}${router.asPath}`}
         ogImage={banner.src}
-
       ></MetaSEO>
-    
-  }
+    );
+  };
   return (
     <>
       <style jsx global>
@@ -430,449 +431,319 @@ const ProductDetail = () => {
       `}
       </style>
       <React.Fragment>
-     
-        <NoSSR>
         {head()}
 
-          <Navbar />
-<div style={{height: 120+"px"}}></div>
+        <Navbar />
+        <div style={{ height: 120 + "px" }}></div>
 
-          <CarouselM8 items={itemsBanner} />
-          <Container
-            maxWidth="lg"
-            style={{ paddingTop: "50px" }}
-            className="product bread-crumb"
-          >
-            <Grid container spacing={2}>
-              <Grid item md={12} className={"bread-crumb__grid-12"}>
-                <h1 className="title">Gói cước</h1>
-                <BreadCrumbsM8 />
-              </Grid>
+        <CarouselM8 items={itemsBanner} />
+        <Container
+          maxWidth="lg"
+          style={{ paddingTop: "50px" }}
+          className="product bread-crumb"
+        >
+          <Grid container spacing={2}>
+            <Grid item md={12} className={"bread-crumb__grid-12"}>
+              <h1 className="title">Gói cước</h1>
+              <BreadCrumbsM8 />
             </Grid>
-          </Container>
-          <Container maxWidth="lg" className="product-detail">
-            <Grid container spacing={2} className="product-detail__grid-12">
-              <Grid item md={6}>
-                <ImageGalleryM8 />
-              </Grid>
-              <Grid item md={6} className="product-detail__grid-6-right">
-                <TextHeader title="Điện thoại sam sung galaxy s20 ultra" />
+          </Grid>
+        </Container>
+        <Container maxWidth="lg" className="product-detail">
+          <Grid container spacing={2} className="product-detail__grid-12">
+            <Grid item md={6}>
+              <ImageGalleryM8 />
+            </Grid>
+            <Grid item md={6} className="product-detail__grid-6-right">
+              <TextHeader title="Điện thoại sam sung galaxy s20 ultra" />
 
-                <div className="display--flex align-items--center">
-                  <Typography
-                    variant="span"
-                    component="span"
-                    className="product-detail__price"
-                  >
-                    23.990.000đ
-                  </Typography>
-                  <Typography
-                    variant="span"
-                    component="span"
-                    className="product-detail__price-origin"
-                  >
-                    24,290,000 đồng
-                  </Typography>
-                </div>
+              <div className="display--flex align-items--center">
                 <Typography
-                  variant="p"
-                  component="p"
-                  className="product-detail__description"
+                  variant="span"
+                  component="span"
+                  className="product-detail__price"
                 >
-                  Giá bán chỉ còn 11.890.000 đồng khi mua kèm gói cước sub1399,
-                  cam kết sử dụng 18 tháng
+                  23.990.000đ
                 </Typography>
-                <br />
-                <Typography variant="span" component="span">
-                  {"Chọn màu: "}
+                <Typography
+                  variant="span"
+                  component="span"
+                  className="product-detail__price-origin"
+                >
+                  24,290,000 đồng
                 </Typography>
-                <Typography variant="span" component="span">
-                  Đen
-                </Typography>
-                <Grid container spacing={2} style={{ paddingTop: 10 + "px" }}>
-                  <Grid item md={4} style={{paddingTop: '13px'}}>
-                    <ItemChildCardM8 checked={true}/>
-                  </Grid>
-                  <Grid item md={4} style={{paddingTop: '13px'}}> 
-                    <ItemChildCardM8 />
-                  </Grid>
-                  <Grid item md={4} style={{paddingTop: '13px'}}>
-                    <ItemChildCardM8 />
+              </div>
+              <Typography
+                variant="p"
+                component="p"
+                className="product-detail__description"
+              >
+                Giá bán chỉ còn 11.890.000 đồng khi mua kèm gói cước sub1399,
+                cam kết sử dụng 18 tháng
+              </Typography>
+              <br />
+              <Typography variant="span" component="span">
+                {"Chọn màu: "}
+              </Typography>
+              <Typography variant="span" component="span">
+                Đen
+              </Typography>
+              <Grid container spacing={2} style={{ paddingTop: 10 + "px" }}>
+                <Grid item md={4} style={{ paddingTop: "13px" }}>
+                  <ItemChildCardM8 checked={true} />
+                </Grid>
+                <Grid item md={4} style={{ paddingTop: "13px" }}>
+                  <ItemChildCardM8 />
+                </Grid>
+                <Grid item md={4} style={{ paddingTop: "13px" }}>
+                  <ItemChildCardM8 />
+                </Grid>
+              </Grid>
+              <br />
+              <Box
+                sx={{
+                  display: "grid",
+                  gridAutoColumns: "1fr",
+                  gap: 1,
+                }}
+              >
+                <div className="product-detail__promotion">
+                  <IconTitle
+                    variant="p"
+                    component="h6"
+                    className="product-detail__icon-title"
+                    icon={
+                      <Image
+                        src={emoji.src}
+                        width={30}
+                        height={30}
+                        alt="emoji"
+                      />
+                    }
+                    title={"san pham"}
+                  />
+                  <Box className="product-detail__box">
+                    <Typography
+                      variant="b"
+                      component="b"
+                      className="product-detail__title"
+                    >
+                      Quà tặng
+                    </Typography>
+                    <List className="product-detail__list">
+                      {items.map((item, index) => (
+                        <ListItem key={index} className="product-detail__item">
+                          <IconTitle
+                            variant="p"
+                            component="p"
+                            icon={
+                              <Image
+                                className="product-detail__icon-image"
+                                src={tick.src}
+                                width={30}
+                                height={30}
+                                alt="tick icon"
+                              />
+                            }
+                            title={item}
+                            className="product-detail__list-item"
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                  <Box className="product-detail__box">
+                    <Typography variant="b" component="b">
+                      Quà tặng
+                    </Typography>
+                    <List className="product-detail__list">
+                      {items.map((item, index) => (
+                        <ListItem key={index} className="product-detail__item">
+                          <IconTitle
+                            variant="p"
+                            component="p"
+                            icon={
+                              <Image
+                                className="product-detail__icon-image"
+                                src={tick.src}
+                                width={30}
+                                height={30}
+                                alt="tick"
+                              />
+                            }
+                            title={
+                              <Typography variant="p" component="p">
+                                {item}
+                                <LinkM8 href={"/tada"} title={"Xem chi tiết"} />
+                              </Typography>
+                            }
+                            className="product-detail__list-item"
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </div>
+                <Grid container spacing={2} style={{ padding: "15px 0" }}>
+                  <Grid
+                    item
+                    md={12}
+                    className="display--flex align-items--center"
+                  >
+                    <span>Số lượng</span>
+                    <NumericInputM8 />
                   </Grid>
                 </Grid>
-                <br />
-                <Box
-                  sx={{
-                    display: "grid",
-                    gridAutoColumns: "1fr",
-                    gap: 1,
-                  }}
-                >
-                  <div className="product-detail__promotion">
-                    <IconTitle
-                      variant="p"
-                      component="h6"
-                      className="product-detail__icon-title"
-                      icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                      title={"san pham"}
-                    />
-                    <Box className="product-detail__box">
-                      <Typography
-                        variant="b"
-                        component="b"
-                        className="product-detail__title"
-                      >
-                        Quà tặng
-                      </Typography>
-                      <List className="product-detail__list">
-                        {items.map((item, index) => (
-                          <ListItem
-                            key={index}
-                            className="product-detail__item"
-                          >
-                            <IconTitle
-                              variant="p"
-                              component="p"
-                              icon={
-                                <Image
-                                  className="product-detail__icon-image"
-                                  src={tick.src}
-                                  width={30}
-                                  height={30}
-                                  alt="tick icon"
-                                />
-                              }
-                              title={item}
-                              className="product-detail__list-item"
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Box>
-                    <Box className="product-detail__box">
-                      <Typography variant="b" component="b">
-                        Quà tặng
-                      </Typography>
-                      <List className="product-detail__list">
-                        {items.map((item, index) => (
-                          <ListItem
-                            key={index}
-                            className="product-detail__item"
-                          >
-                            <IconTitle
-                              variant="p"
-                              component="p"
-                              icon={
-                                <Image
-                                  className="product-detail__icon-image"
-                                  src={tick.src}
-                                  width={30}
-                                  height={30}
-                                  alt="tick"
-                                />
-                              }
-                              title={
-                                <Typography variant="p" component="p">
-                                  {item}
-                                  <LinkM8
-                                    href={"/tada"}
-                                    title={"Xem chi tiết"}
-                                  />
-                                </Typography>
-                              }
-                              className="product-detail__list-item"
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Box>
-                  </div>
-                  <Grid container spacing={2} style={{ padding: "15px 0" }}>
-                    <Grid
-                      item
-                      md={12}
-                      className="display--flex align-items--center"
-                    >
-                      <span>Số lượng</span>
-                      <NumericInputM8 />
-                    </Grid>
-                  </Grid>
 
-                  <Grid container spacing={2}>
-                    <Grid item md={6}>
-                      <ButtonBlockM8 className="product-detail__btn-cart">
-                        <IconTitle
-                          variant="p"
-                          component="h6"
-                          className={
-                            "display--flex align-items--center justify-content--center"
-                          }
-                          icon={<Image src={cart.src} width={30} height={30} alt="cart"/>}
-                          title={"san pham"}
-                        />
-                      </ButtonBlockM8>
-                    </Grid>
-                    <Grid item md={6}>
-                      <ButtonBlockM8>
-                        <Typography
-                          variant="h6"
-                          component="h6"
-                          className="button-block-m8__title"
-                        >
-                          Mua ngay
-                        </Typography>
-                        <Typography
-                          variant="p"
-                          component="p"
-                          className="button-block-m8__description"
-                        >
-                          Giao tận nơi hoặc nhận tại cửa hàng
-                        </Typography>
-                      </ButtonBlockM8>
-                    </Grid>
-                  </Grid>
-
-                  <ButtonBlockM8 background="background--orange">
-                    <Typography
-                      variant="div"
-                      component="div"
-                      className="button-block-m8__description"
-                    >
-                      Giao tận nơi hoặc nhận tại cửa hàng
-                      <LinkM8
-                        href={"/tada"}
-                        title={"Xem chi tiết"}
-                        className="product-detail__link"
-                      />
-                    </Typography>
-                  </ButtonBlockM8>
-                </Box>
-              </Grid>
-            </Grid>
-            <br />
-            <br />
-
-            <Grid container spacing={2}>
-              <Grid item md={8} style={{ paddingLeft: 0 }}>
-                <Grid md={12} className="product-detail__table">
-                  <Box>
-                    <TitleBoxM8 variant={"div"} component={"div"}>
+                <Grid container spacing={2}>
+                  <Grid item md={6}>
+                    <ButtonBlockM8 className="product-detail__btn-cart">
                       <IconTitle
-                        variant="h4"
-                        component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
+                        variant="p"
+                        component="h6"
+                        className={
+                          "display--flex align-items--center justify-content--center"
+                        }
+                        icon={
+                          <Image
+                            src={cart.src}
+                            width={30}
+                            height={30}
+                            alt="cart"
+                          />
+                        }
                         title={"san pham"}
-                        className={"display--flex align-items--center"}
                       />
-                    </TitleBoxM8>
-                    <Box
-                      style={{ padding: "16px 0px 0px 16px" }}
-                      className="text-align--center"
-                    >
-                      <Image src={giffy.src} width={400} height={300} />
+                    </ButtonBlockM8>
+                  </Grid>
+                  <Grid item md={6}>
+                    <ButtonBlockM8>
+                      <Typography
+                        variant="h6"
+                        component="h6"
+                        className="button-block-m8__title"
+                      >
+                        Mua ngay
+                      </Typography>
                       <Typography
                         variant="p"
                         component="p"
-                        className={`product-detail__max-length ${
-                          seeMore ? "over-flow--inherit" : ""
-                        }`}
-                        style={{ textAlign: "left" }}
+                        className="button-block-m8__description"
                       >
-                        Đánh giá chi tiết Samsung Galaxy S22 Ultra 5G Samsung
-                        Galaxy S22 Ultra 5G là siêu phẩm kế thừa tinh hoa Galaxy
-                        Note cùng đột phá Galaxy S, tạo nên sức mạnh vô song
-                        đỉnh cao. Điện thoại đã thiết lập chuẩn mực mới cho dòng
-                        smartphone cao cấp từ sức mạnh hàng đầu Snapdragon 8 Gen
-                        1, camera “mắt thần bóng đêm”, khả năng zoom 100x, bút
-                        S-Pen tích hợp và thời gian sử dụng cả ngày dài. Đây là
-                        siêu phẩm tuyệt vời nhất mà Samsung từng mang đến. Cuộc
-                        cách mạng về thiết kế Lần đầu tiên Samsung mang tới
-                        thiết kế dòng Galaxy Note lên Galaxy S. Siêu phẩm Galaxy
-                        S22 Ultra 5G xuất hiện độc bản đậm chất Galaxy Note, cụm
-                        camera không viền độc đáo và màu sắc thời thượng, tạo
-                        nên bản sắc riêng biệt, khó nhầm lẫn trên thị trường.
-                        Dẫn đầu xu hướng màu trên thế hệ di động, Samsung trang
-                        bị hai màu sắc hoàn toàn mới là Đỏ Burgundy và Xanh Zeta
-                        bên cạnh hai phiên bản Trắng Phantom và Đen Phantom sang
-                        trọng và tinh tế. Cụm camera sau đã tăng lên 2 camera
-                        gồm chiếc camera chính 12MP với khả năng lấy nét pha kép
-                        Dual Pixel và camera phụ 5MP để thu độ sâu ảnh cho chức
-                        năng chụp xóa phông. Trong khi đó, camera trước có độ
-                        phân giải 8MP. Đáng chú ý, Bkav đã ứng dụng nhiếp ảnh
-                        điện toán và AI để đưa vào camera của Bphone 2020 nhiều
-                        tính năng mới mẻ như khả năng đóng băng chuyển động,
-                        chụp đêm không nhiễu, chụp xóa phông tự nhiên, chụp cận
-                        cảnh macro hay tính năng chụp sản phẩm dành Đây là siêu
-                        phẩm tuyệt vời nhất mà Samsung từng mang đến. Lần đầu
-                        tiên Samsung mang tới thiết kế
+                        Giao tận nơi hoặc nhận tại cửa hàng
                       </Typography>
-                      {!seeMore && (
-                        <Button
-                          variant="contained"
-                          onClick={(e) => setSeeMore(!seeMore)}
-                        >
-                          Xem thêm
-                        </Button>
-                      )}
-                    </Box>
-                  </Box>
+                    </ButtonBlockM8>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <Grid item md={4}>
-                <Grid item md={12} className="product-detail__table">
-                  <Box className="">
-                    <TitleBoxM8 variant={"div"} component={"div"}>
-                      <IconTitle
-                        variant="h4"
-                        component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
-                        title={"san pham"}
-                        className={"display--flex align-items--center"}
-                      />
-                    </TitleBoxM8>
-                    <br />
-                    <Box style={{ padding: "10px 0 0 10px" }}>
-                      <TableM8>
-                        {rows.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{
-                              "&:nth-child(2n)": {
-                                background: "white!important",
-                              },
-                            }}
-                            className={"table-m8__table-row "}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                          </TableRow>
-                        ))}
-                      </TableM8>
-                      <br />
-                    </Box>
+
+                <ButtonBlockM8 background="background--orange">
+                  <Typography
+                    variant="div"
+                    component="div"
+                    className="button-block-m8__description"
+                  >
+                    Giao tận nơi hoặc nhận tại cửa hàng
+                    <LinkM8
+                      href={"/tada"}
+                      title={"Xem chi tiết"}
+                      className="product-detail__link"
+                    />
+                  </Typography>
+                </ButtonBlockM8>
+              </Box>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+
+          <Grid container spacing={2}>
+            <Grid item md={8} style={{ paddingLeft: 0 }}>
+              <Grid md={12} className="product-detail__table">
+                <Box>
+                  <TitleBoxM8 variant={"div"} component={"div"}>
                     <IconTitle
+                      variant="h4"
+                      component="h4"
+                      icon={
+                        <Image src={hot.src} width={30} height={30} alt="hot" />
+                      }
+                      title={"san pham"}
+                      className={"display--flex align-items--center"}
+                    />
+                  </TitleBoxM8>
+                  <Box
+                    style={{ padding: "16px 0px 0px 16px" }}
+                    className="text-align--center"
+                  >
+                    <Image
+                      src={giffy.src}
+                      width={400}
+                      height={300}
+                      alt={banner.src}
+                    />
+                    <Typography
                       variant="p"
                       component="p"
-                      icon={<Image src={emoji.src} width={30} height={30} alt="hot"/>}
-                      onClick={(e) => setOpenModal(true)}
-                      title={"Xem cấu hình chi tiết"}
-                      className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
-                    />
-                  </Box>
-                </Grid>
-                <br />
-                <Grid item md={12} className="product-detail__table">
-                  <Box>
-                    <TitleBoxM8 variant={"div"} component={"div"}>
-                      <IconTitle
-                        variant="h4"
-                        component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
-                        title={"san pham"}
-                        className={"display--flex align-items--center"}
-                      />
-                    </TitleBoxM8>
-                    <br />
-                    <br />
-                    <Box style={{ padding: "10px 0 0 10px" }}>
-                      <NewsCard heightCard={83} widthCard={125} />
-                      <br />
-
-                      <NewsCard heightCard={83} widthCard={125} />
-                      <br />
-                      <NewsCard heightCard={83} widthCard={125} />
-                    </Box>
-                  </Box>
-                  <br />
-                  <IconTitle
-                    variant="p"
-                    component="p"
-                    icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                    title={"Xem cấu hình chi tiết"}
-                    className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Container>
-          {/*product section*/}
-          <Grid
-            item
-            xs={12}
-            spacing={2}
-            id="products"
-            className="products--detail"
-          >
-            <Container
-              maxWidth="lg"
-              style={{ paddingTop: 30 + "px", paddingBottom: 150 + "px" }}
-            >
-              <MultiItemCarousel
-                iconLeft={icons.device.src}
-                titleLeft={"Thiết bị di động"}
-                iconRight={icons.arrowRight.src}
-                titleRight={"Xem tất cả"}
-                maxItemSlide={4}
-                linkTo={"/products"}
-                component="product"
-                isColorWhiteTextRight={true}
-                htmlDescription={itemsProduct.map((item, index) => (
-                  <ImgMediaCard
-                    item={item}
-                    isCart={true}
-                    isdiscount={true}
-                    key={index}
-                  />
-                ))}
-                btnWhite={true}
-                isBtnMore={false}
-              />
-            </Container>
-          </Grid>
-          {/*banner section */}
-          <Container maxWidth="lg" id="banner">
-            <Grid container spacing={2} id="banners">
-              <Grid item xs={12}>
-                <Card sx={{ maxWidth: 100 + "%" }}>
-                  <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    height="400"
-                    image={
-                      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
-                    }
-                    className="card-image"
-                  />
-                </Card>
-              </Grid>
-            </Grid>
-          </Container>
-          <ModalM8 open={openModal} onClose={(e) => setOpenModal(false)}>
-            <Box>
-              <TitleBoxM8 variant={"div"} component={"div"}>
-                <IconTitle
-                  variant="h4"
-                  component="h4"
-                  icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                  title={"san pham"}
-                  className={"display--flex align-items--center"}
-                />
-                <Image
-                  src={closeIcon.src}
-                  width={30}
-                  height={30}
-                  style={{ cursor: "pointer" }}
-                  onClick={(e) => setOpenModal(false)}
-                />
-              </TitleBoxM8>
-              <Container maxWidth="lg">
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <Typography variant="b" component="b" className="modal-m8__title">
-                      Thông tin hàng hóa
+                      className={`product-detail__max-length ${
+                        seeMore ? "over-flow--inherit" : ""
+                      }`}
+                      style={{ textAlign: "left" }}
+                    >
+                      Đánh giá chi tiết Samsung Galaxy S22 Ultra 5G Samsung
+                      Galaxy S22 Ultra 5G là siêu phẩm kế thừa tinh hoa Galaxy
+                      Note cùng đột phá Galaxy S, tạo nên sức mạnh vô song đỉnh
+                      cao. Điện thoại đã thiết lập chuẩn mực mới cho dòng
+                      smartphone cao cấp từ sức mạnh hàng đầu Snapdragon 8 Gen
+                      1, camera “mắt thần bóng đêm”, khả năng zoom 100x, bút
+                      S-Pen tích hợp và thời gian sử dụng cả ngày dài. Đây là
+                      siêu phẩm tuyệt vời nhất mà Samsung từng mang đến. Cuộc
+                      cách mạng về thiết kế Lần đầu tiên Samsung mang tới thiết
+                      kế dòng Galaxy Note lên Galaxy S. Siêu phẩm Galaxy S22
+                      Ultra 5G xuất hiện độc bản đậm chất Galaxy Note, cụm
+                      camera không viền độc đáo và màu sắc thời thượng, tạo nên
+                      bản sắc riêng biệt, khó nhầm lẫn trên thị trường. Dẫn đầu
+                      xu hướng màu trên thế hệ di động, Samsung trang bị hai màu
+                      sắc hoàn toàn mới là Đỏ Burgundy và Xanh Zeta bên cạnh hai
+                      phiên bản Trắng Phantom và Đen Phantom sang trọng và tinh
+                      tế. Cụm camera sau đã tăng lên 2 camera gồm chiếc camera
+                      chính 12MP với khả năng lấy nét pha kép Dual Pixel và
+                      camera phụ 5MP để thu độ sâu ảnh cho chức năng chụp xóa
+                      phông. Trong khi đó, camera trước có độ phân giải 8MP.
+                      Đáng chú ý, Bkav đã ứng dụng nhiếp ảnh điện toán và AI để
+                      đưa vào camera của Bphone 2020 nhiều tính năng mới mẻ như
+                      khả năng đóng băng chuyển động, chụp đêm không nhiễu, chụp
+                      xóa phông tự nhiên, chụp cận cảnh macro hay tính năng chụp
+                      sản phẩm dành Đây là siêu phẩm tuyệt vời nhất mà Samsung
+                      từng mang đến. Lần đầu tiên Samsung mang tới thiết kế
                     </Typography>
+                    {!seeMore && (
+                      <Button
+                        variant="contained"
+                        onClick={(e) => setSeeMore(!seeMore)}
+                      >
+                        Xem thêm
+                      </Button>
+                    )}
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item md={4}>
+              <Grid item md={12} className="product-detail__table">
+                <Box className="">
+                  <TitleBoxM8 variant={"div"} component={"div"}>
+                    <IconTitle
+                      variant="h4"
+                      component="h4"
+                      icon={
+                        <Image src={hot.src} width={30} height={30} alt="hot" />
+                      }
+                      title={"san pham"}
+                      className={"display--flex align-items--center"}
+                    />
+                  </TitleBoxM8>
+                  <br />
+                  <Box style={{ padding: "10px 0 0 10px" }}>
                     <TableM8>
                       {rows.map((row) => (
                         <TableRow
@@ -890,124 +761,297 @@ const ProductDetail = () => {
                           <TableCell align="right">{row.calories}</TableCell>
                         </TableRow>
                       ))}
-                      <TableRow
-                        sx={{
-                          "&:nth-child(2n)": { background: "white!important" },
-                        }}
+                    </TableM8>
+                    <br />
+                  </Box>
+                  <IconTitle
+                    variant="p"
+                    component="p"
+                    icon={
+                      <Image src={emoji.src} width={30} height={30} alt="hot" />
+                    }
+                    onClick={(e) => setOpenModal(true)}
+                    title={"Xem cấu hình chi tiết"}
+                    className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
+                  />
+                </Box>
+              </Grid>
+              <br />
+              <Grid item md={12} className="product-detail__table">
+                <Box>
+                  <TitleBoxM8 variant={"div"} component={"div"}>
+                    <IconTitle
+                      variant="h4"
+                      component="h4"
+                      icon={
+                        <Image src={hot.src} width={30} height={30} alt="hot" />
+                      }
+                      title={"san pham"}
+                      className={"display--flex align-items--center"}
+                    />
+                  </TitleBoxM8>
+                  <br />
+                  <br />
+                  <Box style={{ padding: "10px 0 0 10px" }}>
+                    <NewsCard heightCard={83} widthCard={125} />
+                    <br />
 
+                    <NewsCard heightCard={83} widthCard={125} />
+                    <br />
+                    <NewsCard heightCard={83} widthCard={125} />
+                  </Box>
+                </Box>
+                <br />
+                <IconTitle
+                  variant="p"
+                  component="p"
+                  icon={
+                    <Image src={emoji.src} width={30} height={30} alt="emoji" />
+                  }
+                  title={"Xem cấu hình chi tiết"}
+                  className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+        {/*product section*/}
+        <Grid
+          item
+          xs={12}
+          spacing={2}
+          id="products"
+          className="products--detail"
+        >
+          <Container
+            maxWidth="lg"
+            style={{ paddingTop: 30 + "px", paddingBottom: 150 + "px" }}
+          >
+            <MultiItemCarousel
+              iconLeft={icons.device.src}
+              titleLeft={"Thiết bị di động"}
+              iconRight={icons.arrowRight.src}
+              titleRight={"Xem tất cả"}
+              maxItemSlide={4}
+              linkTo={"/products"}
+              component="product"
+              isColorWhiteTextRight={true}
+              htmlDescription={itemsProduct.map((item, index) => (
+                <ImgMediaCard
+                  item={item}
+                  isCart={true}
+                  isdiscount={true}
+                  key={index}
+                />
+              ))}
+              btnWhite={true}
+              isBtnMore={false}
+            />
+          </Container>
+        </Grid>
+        {/*banner section */}
+        <Container maxWidth="lg" id="banner">
+          <Grid container spacing={2} id="banners">
+            <Grid item xs={12}>
+              <Card sx={{ maxWidth: 100 + "%" }}>
+                <CardMedia
+                  component="img"
+                  alt="green iguana"
+                  height="400"
+                  image={
+                    "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
+                  }
+                  className="card-image"
+                />
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+        <ModalM8 open={openModal} onClose={(e) => setOpenModal(false)}>
+          <Box>
+            <TitleBoxM8 variant={"div"} component={"div"}>
+              <IconTitle
+                variant="h4"
+                component="h4"
+                icon={
+                  <Image src={emoji.src} width={30} height={30} alt="emoji" />
+                }
+                title={"san pham"}
+                className={"display--flex align-items--center"}
+              />
+              <Image
+                src={closeIcon.src}
+                width={30}
+                height={30}
+                style={{ cursor: "pointer" }}
+                onClick={(e) => setOpenModal(false)}
+                alt="close icon"
+              />
+            </TitleBoxM8>
+            <Container maxWidth="lg">
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Typography
+                    variant="b"
+                    component="b"
+                    className="modal-m8__title"
+                  >
+                    Thông tin hàng hóa
+                  </Typography>
+                  <TableM8>
+                    {rows.map((row) => (
+                      <TableRow
+                        key={row.name}
+                        sx={{
+                          "&:nth-child(2n)": {
+                            background: "white!important",
+                          },
+                        }}
                         className={"table-m8__table-row "}
                       >
                         <TableCell component="th" scope="row">
-                          danhs ach
+                          {row.name}
                         </TableCell>
-                        <TableCell align="right">
-                          <List
-                            sx={{
-                              width: "100%",
-                              maxWidth: 360,
-                              bgcolor: "background.paper",
-                            }}
-                          >
-                            {[
-                              "ca me ra chinh",
-                              "camera hphu",
-                              "camera giua",
-                              "camera lui",
-                            ].map((value) => (
-                              <ListItem key={value} disableGutters>
-                                <span
-                                  style={{
-                                    width: "4px",
-                                    height: "4px",
-                                    background: "#495057",
-                                    borderRadius: "50%",
-                                  }}
-                                ></span>
-                                <ListItemText
-                                  style={{ paddingLeft: "5px" }}
-                                  primary={`Line item ${value}`}
-                                />
-                              </ListItem>
-                            ))}
-                          </List>
-                        </TableCell>
-                        <TableCell align="right">
-                          <List
-                            sx={{
-                              width: "100%",
-                              maxWidth: 360,
-                              bgcolor: "background.paper",
-                            }}
-                          >
-                            {[
-                              "ca me ra chinh",
-                              "camera hphu",
-                              "camera giua",
-                              "camera lui",
-                            ].map((value) => (
-                              <ListItem key={value} disableGutters>
-                                <span
-                                  style={{
-                                    width: "4px",
-                                    height: "4px",
-                                    background: "#495057",
-                                    borderRadius: "50%",
-                                  }}
-                                ></span>
-                                <ListItemText
-                                  style={{ paddingLeft: "5px" }}
-                                  primary={`Line item ${value}`}
-                                />
-                              </ListItem>
-                            ))}
-                          </List>
-                        </TableCell>
+                        <TableCell align="right">{row.calories}</TableCell>
                       </TableRow>
-                    </TableM8>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="b" component="b">
-                      Thông tin hàng hóa
-                    </Typography>
-                    <TableM8>
-                      {["item","item1"].map((row) => (
-                        <TableRow
-                          key={row}
+                    ))}
+                    <TableRow
+                      sx={{
+                        "&:nth-child(2n)": { background: "white!important" },
+                      }}
+                      className={"table-m8__table-row "}
+                    >
+                      <TableCell component="th" scope="row">
+                        danhs ach
+                      </TableCell>
+                      <TableCell align="right">
+                        <List
                           sx={{
-                            "&:nth-child(2n)": {
-                              background: "white!important",
-                            },
+                            width: "100%",
+                            maxWidth: 360,
+                            bgcolor: "background.paper",
                           }}
                         >
-                          <TableCell component="th" scope="row" style={{border:'none'}}>
-                            <IconTitle
-                               variant="p"
-                               component="p"
-                               className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                               title={"san pham"}
-                            />
-                          </TableCell>
-                          <TableCell align="right" style={{textAlign: 'left',border:'none'}}>
-                          <IconTitle
-                               variant="p"
-                               component="p"
-                               className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                               title={"san pham"}
-                            />
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                      </TableM8>
-                    </Grid>
+                          {[
+                            "ca me ra chinh",
+                            "camera hphu",
+                            "camera giua",
+                            "camera lui",
+                          ].map((value) => (
+                            <ListItem key={value} disableGutters>
+                              <span
+                                style={{
+                                  width: "4px",
+                                  height: "4px",
+                                  background: "#495057",
+                                  borderRadius: "50%",
+                                }}
+                              ></span>
+                              <ListItemText
+                                style={{ paddingLeft: "5px" }}
+                                primary={`Line item ${value}`}
+                              />
+                            </ListItem>
+                          ))}
+                        </List>
+                      </TableCell>
+                      <TableCell align="right">
+                        <List
+                          sx={{
+                            width: "100%",
+                            maxWidth: 360,
+                            bgcolor: "background.paper",
+                          }}
+                        >
+                          {[
+                            "ca me ra chinh",
+                            "camera hphu",
+                            "camera giua",
+                            "camera lui",
+                          ].map((value) => (
+                            <ListItem key={value} disableGutters>
+                              <span
+                                style={{
+                                  width: "4px",
+                                  height: "4px",
+                                  background: "#495057",
+                                  borderRadius: "50%",
+                                }}
+                              ></span>
+                              <ListItemText
+                                style={{ paddingLeft: "5px" }}
+                                primary={`Line item ${value}`}
+                              />
+                            </ListItem>
+                          ))}
+                        </List>
+                      </TableCell>
+                    </TableRow>
+                  </TableM8>
                 </Grid>
-              </Container>
-            </Box>
-          </ModalM8>
-          {width && <SpeedDialTooltipOpen />}
-          <Footer></Footer>
-        </NoSSR>
+                <Grid item xs={12}>
+                  <Typography variant="b" component="b">
+                    Thông tin hàng hóa
+                  </Typography>
+                  <TableM8>
+                    {["item", "item1"].map((row) => (
+                      <TableRow
+                        key={row}
+                        sx={{
+                          "&:nth-child(2n)": {
+                            background: "white!important",
+                          },
+                        }}
+                      >
+                        <TableCell
+                          component="th"
+                          scope="row"
+                          style={{ border: "none" }}
+                        >
+                          <IconTitle
+                            variant="p"
+                            component="p"
+                            className="display--flex align-item--center "
+                            icon={
+                              <Image
+                                src={emoji.src}
+                                width={30}
+                                height={30}
+                                alt="emoji"
+                              />
+                            }
+                            title={"san pham"}
+                          />
+                        </TableCell>
+                        <TableCell
+                          align="right"
+                          style={{ textAlign: "left", border: "none" }}
+                        >
+                          <IconTitle
+                            variant="p"
+                            component="p"
+                            className="display--flex align-item--center "
+                            icon={
+                              <Image
+                                src={emoji.src}
+                                width={30}
+                                height={30}
+                                alt="emoji"
+                              />
+                            }
+                            title={"san pham"}
+                          />
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableM8>
+                </Grid>
+              </Grid>
+            </Container>
+          </Box>
+        </ModalM8>
+        {width && <SpeedDialTooltipOpen />}
+        <Footer></Footer>
       </React.Fragment>
     </>
   );

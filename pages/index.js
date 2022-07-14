@@ -445,7 +445,7 @@ export default function Home() {
         content="Trang home"
         key="desc"
       />
-      <meta name="robots" content="all" />
+      {/* <meta name="robots" content="all" /> */}
       <meta name="googlebot" content="noindex,nofollow" />
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`}/>
       <meta property="og:title" content={`Lasted web development | ${APP_NAME}`}/>

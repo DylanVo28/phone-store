@@ -9,7 +9,7 @@ const SpeedDialTooltipOpen=()=>{
     return <>
    
      <Fab
-    icon={<img className='fab-mobi-8__icon' src={contact.src}/> }
+    icon={<img className='fab-mobi-8__icon' src={contact.src} alt="contract"/> }
     event={'hover'}
     alwaysShowTitle={true}
   >

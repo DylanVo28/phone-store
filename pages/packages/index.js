@@ -213,7 +213,7 @@ const Index = () => {
                 </Grid>
               ))}
               {
-                  <img className="not-found" src={iconNotFound.src}/>
+                  <img className="not-found" src={iconNotFound.src} alt="not found"/>
               }
               </Grid>
             </Grid>

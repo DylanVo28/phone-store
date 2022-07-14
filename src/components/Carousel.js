@@ -10,8 +10,8 @@ const CarouselM8=(props)=>{
   
      <Carousel id="carousel" className="carousel-banner"
         animation="slide" activeIndicatorIconButtonProps={{className: "activeIndicator"}}
-        NextIcon={<img src={IconNext.src}/>}
-        PrevIcon={<img src={IconPrev.src}/>}
+        NextIcon={<img src={IconNext.src} alt="next"/>}
+        PrevIcon={<img src={IconPrev.src} alt="prev"/>}
         swipe={true}
         cycleNavigation={true}
         navButtonsAlwaysVisible={true}
