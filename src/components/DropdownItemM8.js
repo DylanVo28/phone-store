@@ -35,15 +35,12 @@ const handleCloseMenu=async()=>{
 
 }
   const handleClose = async () => {
-    sleep(1000)
+    // await sleep(1000)
     if(!move){
       setAnchorEl(null);
 
     }
-    else if(anchorEl){
-      setAnchorEl(null);
-
-    }
+    
 
     
   };
@@ -96,7 +93,7 @@ const handleCloseMenu=async()=>{
         id="simple-menu"
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={handleCloseMenu}
         MenuListProps={{ onMouseLeave: handleCloseMenu }}
         className="dropdown--item__menu"
         onMouseOver={e=>setMove(true)}

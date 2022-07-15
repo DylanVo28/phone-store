@@ -10,6 +10,7 @@ import CommentIcon from '@mui/icons-material/Comment';
 
 const ItemCheckBox=(props)=>{
     const [isChecked,setIsChecked]=React.useState(false)
+
     return (
         <ListItem
         className="item-checkbox"
@@ -20,6 +21,12 @@ const ItemCheckBox=(props)=>{
         }
         disablePadding
       >
+        <style jsx global>{`
+          .item-checkbox .item-checkbox__checkbox{
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        `}</style>
         <ListItemButton role={undefined} onClick={()=>setIsChecked(!isChecked)} dense >
           <ListItemIcon className='checkbox'>
             <Checkbox
@@ -29,6 +36,7 @@ const ItemCheckBox=(props)=>{
               disableRipple
              
               inputProps={{ 'aria-labelledby':'checkbox-list-label-1'}}
+              className="item-checkbox__checkbox"
             />
           </ListItemIcon>
           <ListItemText  primary={props.title} />

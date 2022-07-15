@@ -199,7 +199,7 @@ const Index = () => {
                   <p>Ưu tiên xem</p>
                 <ButtonM8
                   title="Trả trước"
-                  className="btn-mobi-8 btn-package-active"
+                  className="btn-mobi-8 active"
                 ></ButtonM8>
                 <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
                   </div>

@@ -105,6 +105,8 @@ const ImgMediaCard = (props) => {
           }
           .img-media-card .img-media-card__card{
             position: relative;
+            box-shadow: none;
+            border: 1px solid #D9D9D9;
           }
           .img-media-card .img-media-card__icon-cart{
             position: absolute;

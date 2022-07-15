@@ -42,16 +42,15 @@ import cart from "../../src/images/cart-blue.svg";
 import giffy from "../../src/images/giphy.gif";
 import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
 import closeIcon from "../../src/images/close.svg";
-import { APP_NAME, DOMAIN,FB_APP_ID } from "../../config";
-import Head  from 'next/head';
-import { useRouter } from 'next/router';
-import iconPrev from'../../src/images/icon-prev.svg'
-import iconNext from '../../src/images/icon-next.svg'
-import banner from '../../src/images/baner-6-1.png'
-import hot from '../../src/images/hot.svg'
+import { APP_NAME, DOMAIN, FB_APP_ID } from "../../config";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import iconPrev from "../../src/images/icon-prev.svg";
+import iconNext from "../../src/images/icon-next.svg";
+import banner from "../../src/images/baner-6-1.png";
+import hot from "../../src/images/hot.svg";
 import MetaSEO from "../../src/components/MetaSEO";
 import Script from "next/script";
-import { NextSeo } from 'next-seo';
 const itemsProduct = [
   {
     id: 1,
@@ -164,10 +163,10 @@ const images = [
 ];
 var itemsBanner = [
   {
-    image:banner.src,
+    image: banner.src,
   },
   {
-    image:banner.src,
+    image: banner.src,
   },
 ];
 
@@ -175,60 +174,89 @@ const ProductDetail = () => {
   const [width, setWidth] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
-  const router=useRouter()
+  const router = useRouter();
   useEffect(() => {
     setWidth(window.innerWidth);
-//     for(let i=0; i<document.querySelectorAll(".image-gallery .image-gallery-thumbnail").length;i++){
-            
-//       document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[i].addEventListener("click",function(){
-//             if(i===2){
-//                document.querySelector(".image-gallery-right-nav").style.display='none' 
-//             }
-//             else if(i===0){
-//               document.querySelector(".image-gallery-left-nav").style.display='none' 
-//             }
-//             else{
-//                 document.querySelector(".image-gallery-right-nav").style.display='block' 
-//                 document.querySelector(".image-gallery-left-nav").style.display='block' 
+    if (document.querySelector(".image-gallery-left-nav")) {
+      for (
+        let i = 0;
+        i <
+        document.querySelectorAll(".image-gallery .image-gallery-thumbnail")
+          .length;
+        i++
+      ) {
+        document
+          .querySelectorAll(".image-gallery .image-gallery-thumbnail")
+          [i].addEventListener("click", function () {
+            if (i === 2) {
+              document.querySelector(".image-gallery-right-nav").style.display =
+                "none";
+            } else if (i === 0) {
+              document.querySelector(".image-gallery-left-nav").style.display =
+                "none";
+            } else {
+              document.querySelector(".image-gallery-right-nav").style.display =
+                "block";
+              document.querySelector(".image-gallery-left-nav").style.display =
+                "block";
+            }
+          });
+      }
+      document
+        .querySelector(".image-gallery-left-nav")
+        .addEventListener("click", function () {
+          if (
+            document
+              .querySelectorAll(".image-gallery .image-gallery-thumbnail")[1]
+              .classList.contains("active")
+          ) {
+            document.querySelector(".image-gallery-left-nav").style.display =
+              "none";
+          } else {
+            document.querySelector(".image-gallery-right-nav").style.display =
+              "block";
+          }
+        });
+      document
+        .querySelector(".image-gallery-right-nav")
+        .addEventListener("click", function () {
+          if (
+            document
+              .querySelectorAll(".image-gallery .image-gallery-thumbnail")[1]
+              .classList.contains("active")
+          ) {
+            document.querySelector(".image-gallery-right-nav").style.display =
+              "none";
+          } else {
+            document.querySelector(".image-gallery-left-nav").style.display =
+              "block";
+          }
+        });
+      document.querySelector(
+        ".image-gallery-left-nav"
+      ).innerHTML = `<img src="${iconPrev.src}" alt=""/>`;
+      document.querySelector(
+        ".image-gallery-right-nav"
+      ).innerHTML = `<img src="${iconNext.src}" alt=""/>`;
+    }
+  });
 
-//             }
-//         })
-//     }
-//     document.querySelector(".image-gallery-left-nav").addEventListener("click",function(){
-
-//       if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-//           document.querySelector(".image-gallery-left-nav").style.display='none'
-//       }
-//       else{
-//         document.querySelector(".image-gallery-right-nav").style.display='block'
-//       }
-//   })
-//   document.querySelector(".image-gallery-right-nav").addEventListener("click",function(){
-
-//     if(document.querySelectorAll(".image-gallery .image-gallery-thumbnail")[1].classList.contains("active")){
-//         document.querySelector(".image-gallery-right-nav").style.display='none'
-//     }
-//     else{
-//       document.querySelector(".image-gallery-left-nav").style.display='block'
-//     }
-// })
-// document.querySelector('.image-gallery-left-nav').innerHTML= `<img src="${iconPrev.src}" alt=""/>`
-// document.querySelector('.image-gallery-right-nav').innerHTML= `<img src="${iconNext.src}" alt=""/>`
-  }, []);
- 
-  const head=()=>{
-    return <MetaSEO title={`Home | ${APP_NAME}`}
+  const head = () => {
+    return (
+      <MetaSEO
+        title={`Home | ${APP_NAME}`}
         description={"Trang product"}
         asPath={router.asPath}
         keywords="keywords"
         ogTitle={`Lasted web development | ${APP_NAME}`}
-        ogDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum'}
+        ogDescription={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        }
         ogUrl={`${DOMAIN}${router.asPath}`}
         ogImage={banner.src}
-
       ></MetaSEO>
-    
-  }
+    );
+  };
   return (
     <>
       <style jsx global>
@@ -431,14 +459,10 @@ const ProductDetail = () => {
       `}
       </style>
       <React.Fragment>
-        {head()} 
-      
+        {head()}
         <NoSSR>
-        
-
           <Navbar />
-<div style={{height: 120+"px"}}></div>
-
+          <div style={{ height: 120 + "px" }}></div>
           <CarouselM8 items={itemsBanner} />
           <Container
             maxWidth="lg"
@@ -492,13 +516,13 @@ const ProductDetail = () => {
                   Đen
                 </Typography>
                 <Grid container spacing={2} style={{ paddingTop: 10 + "px" }}>
-                  <Grid item md={4} style={{paddingTop: '13px'}}>
-                    <ItemChildCardM8 checked={true}/>
+                  <Grid item md={4} style={{ paddingTop: "13px" }}>
+                    <ItemChildCardM8 checked={true} />
                   </Grid>
-                  <Grid item md={4} style={{paddingTop: '13px'}}> 
+                  <Grid item md={4} style={{ paddingTop: "13px" }}>
                     <ItemChildCardM8 />
                   </Grid>
-                  <Grid item md={4} style={{paddingTop: '13px'}}>
+                  <Grid item md={4} style={{ paddingTop: "13px" }}>
                     <ItemChildCardM8 />
                   </Grid>
                 </Grid>
@@ -515,7 +539,14 @@ const ProductDetail = () => {
                       variant="p"
                       component="h6"
                       className="product-detail__icon-title"
-                      icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
+                      icon={
+                        <Image
+                          src={emoji.src}
+                          width={30}
+                          height={30}
+                          alt="emoji"
+                        />
+                      }
                       title={"san pham"}
                     />
                     <Box className="product-detail__box">
@@ -609,7 +640,14 @@ const ProductDetail = () => {
                           className={
                             "display--flex align-items--center justify-content--center"
                           }
-                          icon={<Image src={cart.src} width={30} height={30} alt="cart"/>}
+                          icon={
+                            <Image
+                              src={cart.src}
+                              width={30}
+                              height={30}
+                              alt="cart"
+                            />
+                          }
                           title={"san pham"}
                         />
                       </ButtonBlockM8>
@@ -662,7 +700,14 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
+                        icon={
+                          <Image
+                            src={hot.src}
+                            width={30}
+                            height={30}
+                            alt="hot"
+                          />
+                        }
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -671,7 +716,12 @@ const ProductDetail = () => {
                       style={{ padding: "16px 0px 0px 16px" }}
                       className="text-align--center"
                     >
-                      <Image src={giffy.src} width={400} height={300} alt={banner.src}/>
+                      <Image
+                        src={giffy.src}
+                        width={400}
+                        height={300}
+                        alt={banner.src}
+                      />
                       <Typography
                         variant="p"
                         component="p"
@@ -727,7 +777,14 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
+                        icon={
+                          <Image
+                            src={hot.src}
+                            width={30}
+                            height={30}
+                            alt="hot"
+                          />
+                        }
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -757,7 +814,14 @@ const ProductDetail = () => {
                     <IconTitle
                       variant="p"
                       component="p"
-                      icon={<Image src={emoji.src} width={30} height={30} alt="hot"/>}
+                      icon={
+                        <Image
+                          src={emoji.src}
+                          width={30}
+                          height={30}
+                          alt="hot"
+                        />
+                      }
                       onClick={(e) => setOpenModal(true)}
                       title={"Xem cấu hình chi tiết"}
                       className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
@@ -771,7 +835,14 @@ const ProductDetail = () => {
                       <IconTitle
                         variant="h4"
                         component="h4"
-                        icon={<Image src={hot.src} width={30} height={30} alt="hot"/>}
+                        icon={
+                          <Image
+                            src={hot.src}
+                            width={30}
+                            height={30}
+                            alt="hot"
+                          />
+                        }
                         title={"san pham"}
                         className={"display--flex align-items--center"}
                       />
@@ -791,7 +862,14 @@ const ProductDetail = () => {
                   <IconTitle
                     variant="p"
                     component="p"
-                    icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
+                    icon={
+                      <Image
+                        src={emoji.src}
+                        width={30}
+                        height={30}
+                        alt="emoji"
+                      />
+                    }
                     title={"Xem cấu hình chi tiết"}
                     className="display--flex align-items--center flex-direction--row-reverse justify-content--center product-detail__see-more"
                   />
@@ -857,7 +935,9 @@ const ProductDetail = () => {
                 <IconTitle
                   variant="h4"
                   component="h4"
-                  icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
+                  icon={
+                    <Image src={emoji.src} width={30} height={30} alt="emoji" />
+                  }
                   title={"san pham"}
                   className={"display--flex align-items--center"}
                 />
@@ -873,7 +953,11 @@ const ProductDetail = () => {
               <Container maxWidth="lg">
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
-                    <Typography variant="b" component="b" className="modal-m8__title">
+                    <Typography
+                      variant="b"
+                      component="b"
+                      className="modal-m8__title"
+                    >
                       Thông tin hàng hóa
                     </Typography>
                     <TableM8>
@@ -897,7 +981,6 @@ const ProductDetail = () => {
                         sx={{
                           "&:nth-child(2n)": { background: "white!important" },
                         }}
-
                         className={"table-m8__table-row "}
                       >
                         <TableCell component="th" scope="row">
@@ -973,7 +1056,7 @@ const ProductDetail = () => {
                       Thông tin hàng hóa
                     </Typography>
                     <TableM8>
-                      {["item","item1"].map((row) => (
+                      {["item", "item1"].map((row) => (
                         <TableRow
                           key={row}
                           sx={{
@@ -982,28 +1065,49 @@ const ProductDetail = () => {
                             },
                           }}
                         >
-                          <TableCell component="th" scope="row" style={{border:'none'}}>
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            style={{ border: "none" }}
+                          >
                             <IconTitle
-                               variant="p"
-                               component="p"
-                               className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                               title={"san pham"}
+                              variant="p"
+                              component="p"
+                              className="display--flex align-item--center "
+                              icon={
+                                <Image
+                                  src={emoji.src}
+                                  width={30}
+                                  height={30}
+                                  alt="emoji"
+                                />
+                              }
+                              title={"san pham"}
                             />
                           </TableCell>
-                          <TableCell align="right" style={{textAlign: 'left',border:'none'}}>
-                          <IconTitle
-                               variant="p"
-                               component="p"
-                               className="display--flex align-item--center "
-                               icon={<Image src={emoji.src} width={30} height={30} alt="emoji"/>}
-                               title={"san pham"}
+                          <TableCell
+                            align="right"
+                            style={{ textAlign: "left", border: "none" }}
+                          >
+                            <IconTitle
+                              variant="p"
+                              component="p"
+                              className="display--flex align-item--center "
+                              icon={
+                                <Image
+                                  src={emoji.src}
+                                  width={30}
+                                  height={30}
+                                  alt="emoji"
+                                />
+                              }
+                              title={"san pham"}
                             />
                           </TableCell>
                         </TableRow>
                       ))}
-                      </TableM8>
-                    </Grid>
+                    </TableM8>
+                  </Grid>
                 </Grid>
               </Container>
             </Box>
