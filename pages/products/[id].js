@@ -913,7 +913,7 @@ const ProductDetail = () => {
           </Grid>
           {/*banner section */}
           <Container maxWidth="lg" id="banner">
-            <Grid container spacing={2} id="banners">
+            <Grid container spacing={2} >
               <Grid item xs={12}>
                 <Card sx={{ maxWidth: 100 + "%" }}>
                   <CardMedia

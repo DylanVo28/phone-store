@@ -51,8 +51,14 @@ const PackageCardM8Style=()=>{
                 letter-spacing: 0.005em;
                 color: #44494D;
               }
-              .package-card__description span{
+              .package-card__description h5{
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.0015em;
                 color: #0061AF;
+                margin: 0;
+                margin-bottom: 10px;
               }
               .package-card__title-list{
                 font-weight: 500;
@@ -134,7 +140,7 @@ const PackageCardM8Style=()=>{
               }
               .package-card .package-card__price{
                 font-weight: 600;
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 28px;
                 color: #EE1C24;
               }

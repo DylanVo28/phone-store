@@ -18,19 +18,19 @@ const PackageCardM8 = (props) => {
       <Link
         href={{
           pathname: "/packages/[id]",
-          query: { id: props.kaka },
+          query: { id: props.id },
         }}
       >
         <a className="text-decoration--none" style={props.justify}>
           <Card sx={{ maxWidth: 345 }} className="package-card">
             <CardMedia
               component="img"
-              height="250"
+              height={props.maxHeightImage}
               image={props.item.image}
               alt="green iguana"
               className="package-card_image"
             />
-            <CardContent className="package-card-content">
+            <CardContent className="package-card-content" style={{padding: '12px'}}>
               <Typography
                 gutterBottom
                 variant="h5"
@@ -45,7 +45,7 @@ const PackageCardM8 = (props) => {
                 component="div"
                 className="package-card__description"
               >
-                <span>Đối tượng: </span>
+                <h5>Đối tượng: </h5>
                 {props.item.des}
               </Typography>
               {props.item.incentives && (
@@ -84,7 +84,7 @@ const PackageCardM8 = (props) => {
               </List>
               <CardActions
                 className="package-card__card-actions"
-                style={{ justifyContent: "space-between" }}
+                style={{ justifyContent: "space-between", padding: '0px' }}
               >
                 <Typography
                   gutterBottom

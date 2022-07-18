@@ -172,9 +172,10 @@ export default function NavbarStyle(){
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
                 border-bottom: 10px solid#0061af;
+                left: 25px;
               }
               .dropdown--item__menu .MuiPaper-elevation{
-                
+                transform: translateX(-25px)!important;
                 overflow: unset;
                 border-bottom-right-radius: 57px;
                 border-bottom-left-radius: 57px;

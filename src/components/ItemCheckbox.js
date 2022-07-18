@@ -14,17 +14,14 @@ const ItemCheckBox=(props)=>{
     return (
         <ListItem
         className="item-checkbox"
-        secondaryAction={
-          <IconButton edge="end" aria-label="comments">
-            <CommentIcon />
-          </IconButton>
-        }
+       
         disablePadding
       >
         <style jsx global>{`
           .item-checkbox .item-checkbox__checkbox{
             padding-top: 0;
             padding-bottom: 0;
+            color: #0061AF;
           }
         `}</style>
         <ListItemButton role={undefined} onClick={()=>setIsChecked(!isChecked)} dense >

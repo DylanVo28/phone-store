@@ -267,6 +267,7 @@ const Index = () => {
                   src={iconNotFound.src}
                   alt="not-found"
                 />
+                <h1 className="title" style={{textTransform: 'inherit'}}>Không tìm thấy thiết bị</h1>
               </Grid>
             }
               </Grid>
@@ -279,7 +280,7 @@ const Index = () => {
       </Container>
       {/*banner section */}
 <Container maxWidth="lg" id="banner">
-  <Grid container spacing={2} id="banners">
+  <Grid container spacing={2}>
     <Grid item xs={12}>
       <Card sx={{ maxWidth: 100 + "%" , boxShadow: 'none'}}>
         <CardMedia

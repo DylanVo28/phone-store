@@ -12,12 +12,14 @@ import PackageCardM8 from "../../src/components/PackageCardM8";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonM8 from "../../src/components/ButtonM8/Button";
 import TabsM8 from "../../src/components/TabsM8";
-import  Card  from '@mui/material/Card';
-import  CardMedia  from '@mui/material/CardMedia';
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCardM8";
 import CarouselM8 from "../../src/components/Carousel";
-import iconNotFound from'../../src/images/404.svg'
+import iconNotFound from "../../src/images/404.svg";
 import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
+import faq from '../../src/images/faq.png'
+
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -35,49 +37,49 @@ const images = [
 ];
 const itemsPackage = [
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
     des: "Thuê bao mới hòa mạng",
   },
   {
-    id:1,
+    id: 1,
     image:
       "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
     title: "dijango",
@@ -96,15 +98,22 @@ var itemsBanner = [
 ];
 const Index = () => {
   const [width, setWidth] = useState(0);
+  const [checkNull, setCheckNull] = useState(true);
+
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
-
+  const onChangeTabs = (num) => {
+    if (num === 1) {
+      setCheckNull(true);
+    } else {
+      setCheckNull(false);
+    }
+  };
   return (
     <>
-    <style jsx global>
-      {
-        `
+      <style jsx global>
+        {`
           .package__list-option{
             box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
             border-radius: 12px;
@@ -119,6 +128,7 @@ const Index = () => {
           }
           .package-list__title .title{
             margin: 0;
+            padding: 0;
           }
           .package-list__item{
             margin-left: 15px;
@@ -130,17 +140,21 @@ const Index = () => {
             padding-left: 0px;
           }
           .package__list-option 
-        `
-      }
-    </style>
-      <Navbar />
-      <CarouselM8 items={itemsBanner}/>
+        `}
+      </style>
+      <div style={{ height: 120 + "px" }}></div>
 
-      <Container maxWidth="lg">
+      <Navbar />
+      <CarouselM8 items={itemsBanner} />
+
+      <Container
+        maxWidth="lg"
+        style={{ paddingTop: "5vw", paddingBottom: "5vw" }}
+      >
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={2} className="package__list-option">
-            <Grid item xs={12}>
-              <h4 style={{margin: 0}}>Loại gói cước</h4>
+          <Grid item xs={12} sm={3} className="package__list-option">
+            <Grid item xs={12} style={{ padding: "10px 0" }}>
+              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
               <List
                 sx={{
                   width: "100%",
@@ -148,13 +162,13 @@ const Index = () => {
                   bgcolor: "background.paper",
                 }}
               >
-                {items.map((item,index) => (
+                {items.map((item, index) => (
                   <ItemCheckBox title={item} key={index} />
                 ))}
               </List>
             </Grid>
-            <Grid item xs={12}>
-              <h4 style={{margin: 0}}>Loại gói cước</h4>
+            <Grid item xs={12} style={{ padding: "10px 0" }}>
+              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
               <List
                 sx={{
                   width: "100%",
@@ -162,13 +176,13 @@ const Index = () => {
                   bgcolor: "background.paper",
                 }}
               >
-                {items.map((item,index) => (
+                {items.map((item, index) => (
                   <ItemCheckBox title={item} key={index} />
                 ))}
               </List>
             </Grid>
-            <Grid item xs={12}>
-              <h4 style={{margin: 0}}>Loại gói cước</h4>
+            <Grid item xs={12} style={{ padding: "10px 0" }}>
+              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
               <List
                 sx={{
                   width: "100%",
@@ -176,56 +190,76 @@ const Index = () => {
                   bgcolor: "background.paper",
                 }}
               >
-                {items.map((item,index) => (
+                {items.map((item, index) => (
                   <ItemCheckBox title={item} key={index} />
                 ))}
               </List>
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={10}>
+          <Grid item xs={12} sm={9} style={{ paddingTop: 0 }}>
             <Grid item xs={12} className="package-list__title">
-              <div>
+              <div style={{ padding: "15px 0" }}>
                 <h1 className="title">Gói cước</h1>
-                <BreadCrumbsM8/>
-                <span>Lọc theo: </span>
-                <ItemButton icon={<CloseIcon />} title={<span>Tất cả</span>} />
-                
+                <BreadCrumbsM8 />
+                <div style={{ marginTop: "5px" }}>
+                  <span>Lọc theo: </span>
+                  <ItemButton
+                    icon={<CloseIcon />}
+                    title={<span style={{ paddingTop: "4px" }}>Tất cả</span>}
+                  />
+                </div>
               </div>
             </Grid>
-          
-            <Grid container spacing={2}>
-            <Grid item xs={12} className="package-list__item">
-                  <div>
-                  <p>Ưu tiên xem</p>
-                <ButtonM8
-                  title="Trả trước"
-                  className="btn-mobi-8 active"
-                ></ButtonM8>
-                <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
-                  </div>
-                  <TabsM8 />
-            <Grid container spacing={2}>
 
-              {itemsPackage.slice(0, 5).map((item, index) => (
-                <Grid item xs={12} sm={4} key={index}>
-                  {" "}
-                  <PackageCardM8 item={item} detail={true} />
-                </Grid>
-              ))}
-              {
-                  <img className="not-found" src={iconNotFound.src} alt="not found"/>
-              }
+            <Grid container spacing={2}>
+              <Grid item xs={12} className="package-list__item">
+                <div>
+                  <p style={{ display: "inline-block", paddingRight: "10px" }}>
+                    Ưu tiên xem:
+                  </p>
+                  <ButtonM8
+                    title="Trả trước"
+                    className="btn-mobi-8 active"
+                  ></ButtonM8>
+                  <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
+                </div>
+                <TabsM8 onChangeTabs={onChangeTabs} />
+                {checkNull && (
+                  <Grid container spacing={2}>
+                    {itemsPackage.slice(0, 5).map((item, index) => (
+                      <Grid item xs={12} sm={4} key={index}>
+                        {" "}
+                        <PackageCardM8
+                          id={item.id}
+                          item={item}
+                          detail={true}
+                          maxHeightImage={195}
+                        />
+                      </Grid>
+                    ))}
+                  </Grid>
+                )}
+                {!checkNull && (
+                  <Grid item xs={12} className="text-align--center">
+                    <img
+                      className="not-found"
+                      src={iconNotFound.src}
+                      alt="not-found"
+                    />
+                    <h1 className="title" style={{ textTransform: "inherit" }}>
+                      Không tìm thấy thiết bị
+                    </h1>
+                  </Grid>
+                )}
               </Grid>
-            </Grid>
-             
             </Grid>
           </Grid>
           <Grid item xs={12}></Grid>
         </Grid>
       </Container>
       {/*banner section */}
-      <Container maxWidth="lg">
-        <Grid container spacing={2} id="banners">
+      <Container maxWidth="lg" id="banner">
+        <Grid container spacing={2} >
           <Grid item xs={12}>
             <Card sx={{ maxWidth: 100 + "%" }}>
               <CardMedia
@@ -242,28 +276,28 @@ const Index = () => {
         </Grid>
       </Container>
 
- {/*support section*/}
- <Container maxWidth="lg">
-      <div>
-        <span>
-          <h1 className="title">Hỗ trợ khách hàng</h1>
-        </span>
-      </div>
+      {/*support section*/}
+      <Container maxWidth="lg">
+      <Grid item xs={12}>
+  <span>
+            <h1 className="title">Hỗ trợ khách hàng</h1>
+          </span>
+        </Grid>
         <Grid container spacing={2} id="supports">
           <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            <Grid item xs={3}>
-                <ActionAreaCardM8/>
-            </Grid>
-            </Grid>
-            </Container>
+            <ActionAreaCardM8 image={faq.src} />
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 image={faq.src}/>
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 image={faq.src}/>
+          </Grid>
+          <Grid item xs={3}>
+            <ActionAreaCardM8 image={faq.src}/>
+          </Grid>
+        </Grid>
+      </Container>
 
       {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>

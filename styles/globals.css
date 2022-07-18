@@ -191,6 +191,7 @@ body{
   letter-spacing: 0.0025em;
   margin-right: 15px;
   border: 1px solid #D9D9D9;
+  text-transform: capitalize;
 }
 .btn-mobi-8:hover{
   background: white;
@@ -210,7 +211,8 @@ body{
   font-family: 'Roboto';
   font-style: normal;
   box-shadow: none;
-  margin-right: 15px 
+  margin-right: 15px;
+  text-transform: capitalize; 
 }
 
 .btn-mobi-8.active{
@@ -239,9 +241,7 @@ body{
   letter-spacing: 0.004em;
   color: #44494D;
 }
-.package__list-option .css-zkqepn-MuiButtonBase-root-MuiCheckbox-root{
-  color: #0061AF;
-}
+
 .tabs-m8{
   padding-top: 20px;
 }
@@ -263,6 +263,7 @@ body{
   font-size: 24px;
   line-height: 28px;
   color: #0061AF;
+  text-transform: uppercase;
 }
 .align-item--center{
   align-items: center;
@@ -403,6 +404,9 @@ color: #0061AF;
 
 .not-found{
   margin: auto;
+  width: 15vw;
+    max-width: 222px;
+    padding-top: 2vw;
 }
 .packages .package-card {
   max-width: 278px;
