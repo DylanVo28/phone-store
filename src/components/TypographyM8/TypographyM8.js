@@ -4,7 +4,7 @@ import styles from './TypographyM8.module.sass'
 const TypograPhyM8=(props)=>{
     return <>
    
-    <Typography className={styles.textmobi8 +" "+ `${props.isWhiteColor?"":styles.colorblue}`} >
+    <Typography className={styles.textmobi8 +" "+ `${props.isWhiteColor?"":styles.colorblue}`} style={props.style}>
         {props.title}
 
     </Typography>

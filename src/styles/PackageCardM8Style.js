@@ -143,6 +143,7 @@ const PackageCardM8Style=()=>{
                 font-size: 16px;
                 line-height: 28px;
                 color: #EE1C24;
+                margin: 0;
               }
               .package-card .package-card_image{
                 border-top-right-radius: 12px;

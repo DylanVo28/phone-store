@@ -16,7 +16,7 @@ import { useState } from "react";
 import { PropTypes } from 'prop-types';
 const InputM8 = (props) => {
   const [value, setValue] = useState("");
-  const [widthForm,setWidthform]=useState(15)
+  const [widthForm,setWidthform]=useState(23)
   return (
     <FormControl
       sx={{ m: 1, width: widthForm+"ch" }}
@@ -39,7 +39,7 @@ const InputM8 = (props) => {
         className="input-m8__outlined-input"
         onChange={(e) => setValue(e.target.value)}
         onFocus={e=>setWidthform(25)}
-        onBlur={e=>setWidthform(15)}
+        onBlur={e=>setWidthform(23)}
       />
     </FormControl>
   );

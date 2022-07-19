@@ -1,0 +1,5 @@
+[
+    {"source": "/goi-cuoc","destination": "/packages"},
+    {"source": "/goi-cuoc/:title","destination": "/packages/:title"},
+    {"source": "/thiet-bi/:id","destination": "/products/:id"}
+]

@@ -3,7 +3,7 @@
 const path = require('path')
 
 const withImages = require('next-images')
-
+const translatedRoute=require("./public/locales/translatedRoute.json")
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
@@ -20,8 +20,16 @@ const nextConfig = {
   },
   images:{
     domains: [
-      'media4.giphy'
+      'media4.giphy',
+      'upload.wikimedia.org'
     ]
+  },
+  i18n:{
+    locales:['vi-VN','en-US'],
+    defaultLocale:'vi-VN'
+  },
+  async rewrites(){
+    return translatedRoute
   }
 }
 

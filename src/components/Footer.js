@@ -11,7 +11,11 @@ import address from "../images/address.svg";
 import headphone from "../images/headphone.svg";
 import mail from "../images/mail.svg";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import content from "../../public/locales/content";
 const Footer = () => {
+  const {locale}=useRouter()
   return (
     <footer>
       {<style jsx global>
@@ -46,24 +50,24 @@ const Footer = () => {
                 <img src={logoMobi.src} style={{ maxWidth: 150 + "px" }} alt="logo mobi"/>
               </Box>
               <Box>
-                <h5 className="footer__title">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 8</h5>
+                <h5 className="footer__title">{content[locale]['title.footer.company']}</h5>
                 <IconTitle
                   variant="p"
                   component="h6"
                   icon={<Image src={address.src} width={15} height={15} alt="address"/>}
-                  title="236a Phan Trung, Phường Tân Tiến, TP. Biên Hòa, Đồng Nai "
+                  title={content[locale]['title.footer.address']}
                 />
                 <IconTitle
                   variant="p"
                   component="h6"
                   icon={<Image src={headphone.src} width={15} height={15} alt="headphone" />}
-                  title="c8_khcn@mobifone.vn"
+                  title={content[locale]['title.footer.mail']}
                 />
                 <IconTitle
                   variant="p"
                   component="h6"
                   icon={<Image src={mail.src} width={15} height={15} alt="mail"/>}
-                  title="18001090 và 9090"
+                  title={content[locale]['title.footer.phoneNum']}
                 />
               </Box>
             </Grid>

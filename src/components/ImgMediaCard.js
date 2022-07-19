@@ -7,12 +7,17 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import icons from "../images/icons";
 import Link from "next/link";
+import TranslatedLink from "./TranslatedLink";
+import content from "../../public/locales/content";
+import { useRouter } from "next/router";
+import { replaceSpaceToDash } from "../helpers/utils";
 const ImgMediaCard = (props) => {
+  const {locale}=useRouter()
   return (
-    <Link
+    <TranslatedLink
       href={{
-        pathname: "/products/[id]",
-        query: { id: props.item.id },
+        pathname: content[locale]["title.[/products/product]"],
+        query: { product: replaceSpaceToDash(props.item.title) },
       }}
     >
       <a className="text-decoration--none img-media-card">
@@ -68,7 +73,9 @@ const ImgMediaCard = (props) => {
             background-size: cover;
               background-position: center;
               background-repeat: no-repeat!important;
-          }
+          }import TranslatedLink from './TranslatedLink';
+import { replaceSpaceToDash } from './../helpers/utils';
+
           .img-media-card .product__price{
             justify-content: space-between;
             padding: 16px 
@@ -161,7 +168,7 @@ const ImgMediaCard = (props) => {
             </Typography>
           </CardContent>
 
-          <CardActions className="product__price">
+          <CardActions className="product__price" style={{justifyContent:'space-between'}}>
             <span>
               <div className="product__price__discount">
                 {props.item.price - props.item.discountValue}
@@ -170,7 +177,7 @@ const ImgMediaCard = (props) => {
             </span>
 
             <Button variant="outlined" size="small">
-              {props.textBtn}
+              {content[locale]['title.signup']}
             </Button>
           </CardActions>
         </div>
@@ -178,7 +185,7 @@ const ImgMediaCard = (props) => {
       </a>
 
      
-    </Link>
+    </TranslatedLink>
   );
 };
 ImgMediaCard.defaultProps = {

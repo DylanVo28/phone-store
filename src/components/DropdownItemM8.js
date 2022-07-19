@@ -10,6 +10,7 @@ import IconCashBack from "../images/Cashback.svg";
 import { Container, Grid } from "@mui/material";
 import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import ListItemText from "@mui/material/ListItemText";
+import Image from "next/image";
 
 export default function DropdownItemM8(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -80,9 +81,11 @@ const handleCloseMenu=async()=>{
             component="h6"
             className="dropdown--item__menu-title"
             icon={
-              <div
+              <Image
                 className="dropdown--item__icon-btn"
-                style={{ background: `url('${props.icon}')` }}
+                src={props.icon}
+                width={20}
+                height={20}
               />
             }
             title={props.title}

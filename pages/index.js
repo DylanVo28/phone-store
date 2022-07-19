@@ -33,6 +33,7 @@ import promotionImage from '../src/images/promotion-image.png'
 import newsImage from '../src/images/news-image.png'
 import banner62 from '../src/images/baner-6-2.png'
 import faq from '../src/images/faq.png'
+import content from "../public/locales/content";
 const items = [
   {
     id: 1,
@@ -375,7 +376,7 @@ const itemsSolution = [
 ];
 export default function Home() {
   const [width, setWidth] = useState(0);
-  const router=useRouter()
+  const {locale,router}=useRouter();
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -466,7 +467,7 @@ export default function Home() {
   }
   return (
     <React.Fragment>
-      {head()}
+      {/* {head()} */}
       <NoSSR>
         {/*banner section */}
 
@@ -480,11 +481,11 @@ export default function Home() {
   
       <MultiItemCarousel
         iconLeft={IconPrev.src}
-        titleLeft={"Gói cước"}
+        titleLeft={content[locale]['title.package']}
         iconRight={IconNext.src}
-        titleRight={"Xem tất cả"}
+        titleRight={content[locale]['title.viewAll']}
         maxItemSlide={3}
-        linkTo={"/packages"}
+        linkTo={content[locale]['title.[/packages]']}
         component="package"
         htmlDescription={itemsPackage.map((item,index) => {
           if(index%3===0){
@@ -507,9 +508,9 @@ export default function Home() {
   >
     <MultiItemCarousel
       iconLeft={icons.device.src}
-      titleLeft={"Thiết bị di động"}
+      titleLeft={content[locale]['title.device']}
       iconRight={icons.arrowRight.src}
-      titleRight={"Xem tất cả"}
+      titleRight={content[locale]['title.viewAll']}
       maxItemSlide={4}
       linkTo={"/products"}
       component="product"
@@ -530,9 +531,9 @@ export default function Home() {
     <Grid item xs={12}>
       <MultiItemCarousel
         iconLeft={icons.solution.src}
-        titleLeft={"Giải pháp doanh nghiệp"}
+        titleLeft={content[locale]['title.solutionEnterprise']}
         iconRight={icons.arrowRight.src}
-        titleRight={"Xem tất cả"}
+        titleRight={content[locale]['title.viewAll']}
         maxItemSlide={3}
         linkTo={"/solutions"}
         component="package"
@@ -553,7 +554,7 @@ export default function Home() {
   >
     <MultiItemCarousel
       iconLeft={icons.device.src}
-      titleLeft={"Chương trình khuyến mãi"}
+      titleLeft={content[locale]['title.promotionProgram']}
       maxItemSlide={3}
       linkTo={"/promotions"}
       component="promotion"
@@ -572,7 +573,7 @@ export default function Home() {
   <Grid container spacing={2}>
     <Grid item xs={12}>
       <div style={{ width: "100%" }}>
-        <h1 className="title" style={{textAlign: 'left'}}>Tin tức</h1>
+        <h1 className="title" style={{textAlign: 'left'}}>{content[locale]['title.news']}</h1>
         <Box
           sx={{
             display: "grid",
@@ -625,7 +626,7 @@ export default function Home() {
       </div>
     </Grid>
   </Grid>
-  <Button variant="contained">Đăng ký</Button>
+  <Button variant="contained">{content[locale]['title.signup']}</Button>
 </Container>
 
 {/*banner section */}
@@ -650,7 +651,7 @@ export default function Home() {
 <Container maxWidth="lg">
 <Grid item xs={12}>
   <span>
-    <h1 className="title">Hỗ trợ khách hàng</h1>
+    <h1 className="title">{content[locale]['title.supportCustomer']}</h1>
   </span>
 </Grid>
   <Grid container spacing={2} id="supports">

@@ -51,6 +51,7 @@ import banner from "../../src/images/baner-6-1.png";
 import hot from "../../src/images/hot.svg";
 import MetaSEO from "../../src/components/MetaSEO";
 import Script from "next/script";
+import content from "../../public/locales/content";
 const itemsProduct = [
   {
     id: 1,
@@ -171,6 +172,7 @@ var itemsBanner = [
 ];
 
 const ProductDetail = () => {
+  const {locale}=useRouter()
   const [width, setWidth] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
@@ -609,7 +611,7 @@ const ProductDetail = () => {
                                   {item}
                                   <LinkM8
                                     href={"/tada"}
-                                    title={"Xem chi tiết"}
+                                    title={content[locale]['title.viewDetail']}
                                   />
                                 </Typography>
                               }
@@ -681,7 +683,7 @@ const ProductDetail = () => {
                       Giao tận nơi hoặc nhận tại cửa hàng
                       <LinkM8
                         href={"/tada"}
-                        title={"Xem chi tiết"}
+                        title={content[locale]['title.viewDetail']}
                         className="product-detail__link"
                       />
                     </Typography>

@@ -7,7 +7,7 @@ import ImgMediaCard from "./../../src/components/ImgMediaCard";
 import ItemButton from "../../src/components/ItemButton";
 import Footer from "./../../src/components/Footer";
 import SpeedDialTooltipOpen from "./../../src/components/SpeedDialTooltipOpen";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PackageCardM8 from "../../src/components/PackageCardM8";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonM8 from "../../src/components/ButtonM8/Button";
@@ -19,7 +19,9 @@ import CarouselM8 from "../../src/components/Carousel";
 import iconNotFound from "../../src/images/404.svg";
 import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
 import faq from '../../src/images/faq.png'
-
+import NoSSR from "react-no-ssr";
+import { useRouter } from "next/router";
+import content from "../../public/locales/content";
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -97,11 +99,12 @@ var itemsBanner = [
   },
 ];
 const Index = () => {
+  const { locale, locales, defaultLocale, asPath } = useRouter();
   const [width, setWidth] = useState(0);
   const [checkNull, setCheckNull] = useState(true);
-
   useEffect(() => {
     setWidth(window.innerWidth);
+    console.log(locale, locales, defaultLocale, asPath )
   }, []);
   const onChangeTabs = (num) => {
     if (num === 1) {
@@ -142,6 +145,9 @@ const Index = () => {
           .package__list-option 
         `}
       </style>
+      <React.Fragment>
+      <NoSSR>
+
       <div style={{ height: 120 + "px" }}></div>
 
       <Navbar />
@@ -199,7 +205,7 @@ const Index = () => {
           <Grid item xs={12} sm={9} style={{ paddingTop: 0 }}>
             <Grid item xs={12} className="package-list__title">
               <div style={{ padding: "15px 0" }}>
-                <h1 className="title">Gói cước</h1>
+                <h1 className="title">{content[locale]['packages.title']}</h1>
                 <BreadCrumbsM8 />
                 <div style={{ marginTop: "5px" }}>
                   <span>Lọc theo: </span>
@@ -277,7 +283,7 @@ const Index = () => {
       </Container>
 
       {/*support section*/}
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{paddingBottom: '5vw'}}>
       <Grid item xs={12}>
   <span>
             <h1 className="title">Hỗ trợ khách hàng</h1>
@@ -301,6 +307,8 @@ const Index = () => {
 
       {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>
+      </NoSSR>
+      </React.Fragment>
     </>
   );
 };

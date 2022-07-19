@@ -1,0 +1,30 @@
+{
+    "title.[/products/product]": "/thiet-bi/[product]",
+    "title.[/packages]":  "/goi-cuoc",
+    "title.[/packages/package]":"/goi-cuoc/[package]",
+   
+    "packages.title":"Tiêu đề gói cước",
+    "title.vietnamese": "Tiếng việt",
+    "title.english":"Tiếng anh",
+    "title.product":"Sản phẩm",
+    "title.switchNetwork":"Chuyển mạng giữ số",
+    "title.promotion":"Khuyến mãi",
+    "title.supportCustomer":"Hỗ trợ khách hàng",
+    "title.news":"Tin tức",
+    "title.signin":"Đăng nhập",
+    "title.signup":"Đăng ký",
+    "title.cart":"Giỏ hàng",
+    "title.search":"Tìm kiếm",
+    "title.package":"Gói cước",
+    "title.viewAll":"Xem tất cả",
+    "title.device":"Thiết bị di động",
+    "title.solutionEnterprise":"Giải pháp doanh nghiệp",
+    "title.promotionProgram":"Chương trình khuyến mãi",
+    "title.viewMore":"xem thêm",
+    "title.viewDetail":"Xem chi tiết",
+    "title.footer.company":"Công ty dịch vụ MOBIFONE khu vực 8",
+    "title.footer.address":"236a Phan Trung, Phường Tân Tiến, TP. Biên Hòa, Đồng Nai",
+    "title.footer.mail":"c8_khcn@mobifone.vn",
+    "title.footer.phoneNum":"18001090 và 9090"
+
+}

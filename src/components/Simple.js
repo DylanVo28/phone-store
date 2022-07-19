@@ -15,6 +15,9 @@ import { ArrowForwardM8 } from "./Icons";
 import IconPrev from '../images/icon-prev.svg'
 import IconNext from '../images/icon-next.svg'
 import MultiItemCarouselStyle from "../styles/MultiItemCarouselStyle";
+import { useRouter } from "next/router";
+import content from "../../public/locales/content";
+import TranslatedLink from "./TranslatedLink";
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -32,6 +35,7 @@ const images = [
 const filterPackages=["Trả trước", "Trả sau", "Giải trí", "Gói cước cho doanh nghiệp"]
 const filterProducts=["Smartphone chính hãng","Thiết bị phát wifi", "Tablet","Điện thoại cơ bản"]
 const MultiItemCarousel = (props) => {
+  const {locale}=useRouter()
   function CustomRightArrow({ onClick }) {
     return (
       <button
@@ -99,12 +103,16 @@ const MultiItemCarousel = (props) => {
             )}
           </Grid>
           {props.titleRight && <Grid item xs={3} style={{ textAlign: "right" }} className="multi-item-carousel__right">
-            <Link href={props.linkTo} >
+            <TranslatedLink
+              href={{
+                pathname: props.linkTo
+              }}
+            >
               <a className="text-decoration--none display--flex align-item--center float--right">
                 <TypograPhyM8 title={props.titleRight} isWhiteColor={props.isColorWhiteTextRight}></TypograPhyM8>
                 {<ArrowForwardM8 />}
               </a>
-            </Link>
+            </TranslatedLink>
           </Grid>}
         </Grid>
       <div id={props.id} style={{position: 'relative'}} className="multi-item-carousel-m8">
@@ -166,7 +174,7 @@ const MultiItemCarousel = (props) => {
         </Carousel>
         {
           props.isBtnMore &&  <div style={{textAlign: 'center'}}>
-          <Button variant="outlined" style={props.btnWhite && {color: 'white',borderColor: 'white'}}>Xem thêm</Button>
+          <Button variant="outlined" style={props.btnWhite && {color: 'white',borderColor: 'white'}}>{content[locale]['title.viewMore']}</Button>
           </div>
         }
        

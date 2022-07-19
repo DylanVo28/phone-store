@@ -491,4 +491,21 @@ body{margin:0;padding:0;background:#f4f6f9;color:#222;font-family:"Raleway",sans
 .align-items--center{
   align-items: center;
 }
-
+#menu-{
+  z-index: 1302;
+}
+#menu- .MuiPaper-root{
+  margin-top: 11px;
+  overflow: visible;
+}
+#menu- .MuiPaper-root .MuiList-root::before{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  right: 10px;
+}

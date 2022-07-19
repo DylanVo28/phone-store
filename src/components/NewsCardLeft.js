@@ -3,16 +3,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import AllOutIcon  from '@mui/icons-material/AllOut';
-import IconTitle from './IconTitle';
 import LinkM8 from './LinkM8';
 import  Link  from 'next/link';
+import content from '../../public/locales/content';
+import { useRouter } from 'next/router';
  const NewsCardLeft=(props)=>{
+  const {locale}=useRouter()
     return <>
    <Link href={"/"+props.item.id}>
     <a className="text-decoration--none">
@@ -34,7 +31,7 @@ import  Link  from 'next/link';
       
             <CardActions style={{justifyContent: 'space-between'}}>
       
-            <LinkM8 href={props.href} title={props.hrefTitle}></LinkM8>
+            <LinkM8 href={props.href} title={content[locale]['title.viewDetail']}></LinkM8>
 
       </CardActions>
       </CardContent>
@@ -47,7 +44,7 @@ import  Link  from 'next/link';
 }
 NewsCardLeft.defaultProps={
   href: "/tada",
-  hrefTitle:"Xem chi tiết",
+  
   heightCard:400
 }
 export default NewsCardLeft

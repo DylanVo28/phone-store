@@ -30,16 +30,21 @@ import idCart from '../images/id-cart.svg'
 import discount from '../images/discount-menu.svg'
 import newspaper from '../images/newspaper.svg'
 import sp from '../images/sp.svg'
+import SelectLanguage from "./SelectLanguage";
+import SelectBox from "./SelectBox";
+import { useRouter } from 'next/router';
+import content from './../../public/locales/content';
 const drawerWidth = 240;
 
 function Navbar(props) {
   const { window } = props;
+  const {locale}=useRouter()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const itemsNavbar = {
     logo: "https://cdn.tgdd.vn/Files/2015/04/21/634836/3638927_y-nghia-logo-mobifone.jpg",
     navItems: [
       {
-        title: "Sản phẩm",
+        title: content[locale]['title.product'],
         icon: idCart.src,
         items: [
           {
@@ -62,7 +67,7 @@ function Navbar(props) {
         ],
       },
       {
-        title: "Chuyển mạng giữ số",
+        title: content[locale]['title.switchNetwork'],
         icon: idCart.src,
         items: [
           {
@@ -84,7 +89,7 @@ function Navbar(props) {
         ],
       },
       {
-        title: "Khuyến mãi",
+        title:content[locale]['title.promotion'],
         icon: discount.src,
         items: [
           {
@@ -106,7 +111,7 @@ function Navbar(props) {
         ],
       },
       {
-        title: "Hỗ trợ khách hàng",
+        title: content[locale]['title.supportCustomer'],
         icon: newspaper.src,
         items: [
           {
@@ -158,7 +163,7 @@ function Navbar(props) {
     <>
       <Grid item xs={12} style={{background: "#0061af"}} className="navbar-header">
         <NavbarStyle/>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" style={{overflow: 'hidden'}}>
           <Grid container >
             <Grid item xs={3} className="navbar-header__left">
               <Link href="/" passHref>
@@ -176,14 +181,17 @@ function Navbar(props) {
                 </a>
               </Link>
             </Grid>
-            <Grid item xs={7} className="navbar-header__between">
-              <Link href={"/signin"}>
+            <Grid item xs={3} className="navbar-header__between">
+              
+            </Grid>
+            <Grid item xs={6} className="navbar-header__right">
+            <Link href={"/signin"}>
                 <a className="navbar-header__sign-in text-decoration--none">
                 <span className="icon-title__icon">
                     <img src={IconUser.src} alt="user"/>
                   </span>
                   <TypograPhyM8
-                    title={"Đăng nhập"}
+                    title={content[locale]['title.signin']}
                     isWhiteColor={true}
                   ></TypograPhyM8>
                 
@@ -195,31 +203,21 @@ function Navbar(props) {
 
               <a className="navbar-header__register text-decoration--none">
                   <TypograPhyM8
-                    title={"Đăng ký"}
+                    title={content[locale]['title.signup']}
                     isWhiteColor={true}
+                    style={{paddingLeft: '10px'}}
                   ></TypograPhyM8>
                  
                 </a>
                 </Link>
-            </Grid>
-            <Grid item xs={2} className="navbar-header__right">
             <IconTitle
                   variant="p"
                   component="h5"
                   className="navbar-header__icon-title"
                   icon={<Image src={cart.src} width={30} height={30} className="navbar-header__cart" alt="cart"/>}
-                  title={"Giỏ hàng"}
+                  title={content[locale]['title.cart']}
                 />
-              <Link href={"/logout"}>
-
-              <a className="navbar-header__vn-en text-decoration--none">
-                  <TypograPhyM8
-                    title={"VN/EN"}
-                    isWhiteColor={true}
-                  ></TypograPhyM8>
-                
-                </a>
-                </Link>
+                    <SelectLanguage/>
             </Grid>
           </Grid>
         </Container>
@@ -255,7 +253,7 @@ function Navbar(props) {
                 ))}
               </Box>
               <InputM8
-                placeHolder="Tìm kiếm"
+                placeHolder={content[locale]['title.search']}
                 icon={
                   <SearchIcon
                     aria-label="toggle password visibility"

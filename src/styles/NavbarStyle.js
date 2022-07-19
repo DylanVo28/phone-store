@@ -6,7 +6,7 @@ export default function NavbarStyle(){
                 height: 55px;
                 position: fixed;
                 top: 0;
-                z-index: 9999;
+                z-index: 1300;
                 width: 100vw;
               }
               .navbar-header .MuiContainer-root{
@@ -50,7 +50,7 @@ export default function NavbarStyle(){
                 display: inline-block;
                 position: relative;
               }
-              .navbar-header__right span.icon-title__icon::after {
+              .navbar-header__right .navbar-header__icon-title span.icon-title__icon::after {
                   content: "2";
                   position: absolute;
                   width: 15px;
@@ -82,7 +82,7 @@ export default function NavbarStyle(){
               #navbar{
                 position: fixed;
                 top: 55px;
-                z-index: 99999;
+                z-index: 1301;
                 width: 100vw;
               }
               #navbar .navbar__toolbar{
@@ -112,7 +112,10 @@ export default function NavbarStyle(){
                 transition: 0.3s;
                 margin-right: 6px;
               }
-              
+              .dropdown--item:hover .dropdown--item__menu-title{
+                transition: 0.3s;
+                color: #0061AF;
+              }
               .dropdown--item{
                 cursor: pointer;
               }
@@ -144,6 +147,13 @@ export default function NavbarStyle(){
                 font-size: 16px;
                 display: flex;
                 align-items: center;
+              }
+              .dropdown--item .dropdown--item__menu-title .icon-title__icon{
+                padding-right: 5px;
+              }
+              .dropdown--item:hover .dropdown--item__icon-btn{
+                transition: 0.3s;
+                filter: invert(24%) sepia(83%) saturate(1342%) hue-rotate(183deg) brightness(102%) contrast(107%);
               }
               .dropdown--item .dropdown--item__icon-btn{
                 width: 26px;

@@ -6,8 +6,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link  from 'next/link';
+import content from '../../public/locales/content';
+import { useRouter } from 'next/router';
 
 export default function SolutionCard(props) {
+  const {locale}=useRouter()
   return (<>
   <style jsx global>
     {`
@@ -78,11 +81,11 @@ export default function SolutionCard(props) {
       <CardActions style={{justifyContent: 'space-between'}}>
         <Link href="/tada" >
             <a className='solution-card__link-to'>
-            Xem chi tiết
+            {content[locale]['title.viewDetail']}
 
             </a>
         </Link>
-        <Button variant="contained">Đăng ký</Button>
+        <Button variant="contained">{content[locale]['title.signup']}</Button>
       </CardActions>
     </Card>
     </a>

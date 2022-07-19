@@ -11,15 +11,21 @@ import ListItem from "@mui/material/ListItem";
 import IconTitle from "./IconTitle";
 import Link from "next/link";
 import PackageCardM8Style from "../styles/PackageCardM8Style";
+import content from "../../public/locales/content";
+import { useRouter } from "next/router";
+import TranslatedLink from "./TranslatedLink";
+import { replaceSpaceToDash } from "../helpers/utils";
 const PackageCardM8 = (props) => {
+  const {locale}=useRouter()
   return (
     <>
       <PackageCardM8Style />
-      <Link
-        href={{
-          pathname: "/packages/[id]",
-          query: { id: props.id },
-        }}
+      <TranslatedLink
+      href={{
+        pathname: content[locale]["title.[/packages/package]"],
+        query: { package: replaceSpaceToDash(props.item.title) }
+      }}
+       
       >
         <a className="text-decoration--none" style={props.justify}>
           <Card sx={{ maxWidth: 345 }} className="package-card">
@@ -94,12 +100,12 @@ const PackageCardM8 = (props) => {
                 >
                   100.000đ/ 1 month
                 </Typography>
-                <Button variant="contained">Đăng ký</Button>
+                <Button variant="contained">{content[locale]['title.signup']}</Button>
               </CardActions>
             </CardContent>
           </Card>
         </a>
-      </Link>
+      </TranslatedLink>
     </>
   );
 };

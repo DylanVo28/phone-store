@@ -20,6 +20,7 @@ import banner62 from '../../src/images/baner-6-2.png'
 import faq from '../../src/images/faq.png'
 import NoSSR from "react-no-ssr";
 import banner from '../../src/images/baner-6-1.png'
+import { ProductProvider } from "../../src/context/ProductProvider";
 
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const itemsProduct = [
@@ -171,6 +172,7 @@ const Index = () => {
       `}
       </style>
       <NoSSR>
+        <ProductProvider>
       <Navbar />
       <div style={{height: 120+"px"}}></div>
       <CarouselM8 items={itemsBanner} />
@@ -321,6 +323,7 @@ const Index = () => {
   {width&&<SpeedDialTooltipOpen />}
       {width && <SpeedDialTooltipOpen />}
       <Footer></Footer>
+      </ProductProvider>
       </NoSSR>
       </React.Fragment>
     </>
