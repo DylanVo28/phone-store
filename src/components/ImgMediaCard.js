@@ -11,13 +11,14 @@ import TranslatedLink from "./TranslatedLink";
 import content from "../../public/locales/content";
 import { useRouter } from "next/router";
 import { replaceSpaceToDash } from "../helpers/utils";
+
 const ImgMediaCard = (props) => {
   const {locale}=useRouter()
   return (
     <TranslatedLink
       href={{
         pathname: content[locale]["title.[/products/product]"],
-        query: { product: replaceSpaceToDash(props.item.title) },
+        query: { product: replaceSpaceToDash(props.item.name) },
       }}
     >
       <a className="text-decoration--none img-media-card">
@@ -73,8 +74,7 @@ const ImgMediaCard = (props) => {
             background-size: cover;
               background-position: center;
               background-repeat: no-repeat!important;
-          }import TranslatedLink from './TranslatedLink';
-import { replaceSpaceToDash } from './../helpers/utils';
+          }
 
           .img-media-card .product__price{
             justify-content: space-between;
@@ -147,7 +147,7 @@ import { replaceSpaceToDash } from './../helpers/utils';
 
         <div style={{ position: "relative" }}>
           <div className="product__price-discount">
-            Giảm : {props.item.discountValue}
+            Giảm : {props.item.discount_amount}
           </div>
 
           <CardContent className="img-media-card__card-content">
@@ -157,23 +157,23 @@ import { replaceSpaceToDash } from './../helpers/utils';
               component="div"
               className="card__title"
             >
-              {props.item.title}
+              {props.item.name}
             </Typography>
             <Typography
               variant="body2"
               color="text.secondary"
               className="card__description"
             >
-              {props.item.description}
+              {props.item.sale_info}
             </Typography>
           </CardContent>
 
           <CardActions className="product__price" style={{justifyContent:'space-between'}}>
             <span>
               <div className="product__price__discount">
-                {props.item.price - props.item.discountValue}
+                {props.item.unit_price_gross}
               </div>
-              <div className="product__price__price">{props.item.price}</div>
+              <div className="product__price__price">{props.item.unit_price_net}</div>
             </span>
 
             <Button variant="outlined" size="small">
@@ -194,7 +194,7 @@ ImgMediaCard.defaultProps = {
     image:
       "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
     discountValue: 1000000,
-    title: "Samsung galaxy 2020",
+    name: "Samsung galaxy 2020",
     description:
       " which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. ",
     price: 300000000,

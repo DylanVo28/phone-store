@@ -25,6 +25,15 @@
     "title.footer.company":"Công ty dịch vụ MOBIFONE khu vực 8",
     "title.footer.address":"236a Phan Trung, Phường Tân Tiến, TP. Biên Hòa, Đồng Nai",
     "title.footer.mail":"c8_khcn@mobifone.vn",
-    "title.footer.phoneNum":"18001090 và 9090"
+    "title.footer.phoneNum":"18001090 và 9090",
+    "title.products.brand":"Thương hiệu",
+    "title.products.os":"Hệ điều hành",
+    "title.products.type":"Thể loại",
+    "title.products.storage":"Bộ nhớ",
+    "title.products.devices":"Thiết bị di động",
+    "title.products.titleFilter":"lọc theo",
+    "title.products.price":"Giá"
+
+
 
 }

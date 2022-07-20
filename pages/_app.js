@@ -14,6 +14,13 @@ import LoadingM8 from '../src/components/LoadingM8';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import  Head  from 'next/head';
+import Home from './index';
+import { HomeProvider } from '../src/context/HomeProvider';
+import Products from './products/index';
+import Packages from './packages/index';
+import { PackageProvider } from '../src/context/PackageProvider';
+
+import { ProductProvider } from '../src/context/ProductProvider';
 
 
 
@@ -26,6 +33,7 @@ const MyApp = (props) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+    
   }, []);
   const sleep = ms => new Promise(
     resolve => setTimeout(resolve, ms)
@@ -43,6 +51,18 @@ const MyApp = (props) => {
     // NProgress.done()
     setLoading(false)
   })
+  const renderComponent=()=>{
+    switch(Component){
+      case Home: 
+        return <HomeProvider><Component {...pageProps} /></HomeProvider>
+      case Products:
+        return <ProductProvider><Component {...pageProps} /></ProductProvider>
+      case Packages:
+        return <PackageProvider><Component {...pageProps} /></PackageProvider>
+      default:
+        return <Component {...pageProps} />
+    }
+  }
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
@@ -52,7 +72,7 @@ const MyApp = (props) => {
             <meta name="viewport" content='width=device-width, initial-scale=1'/>
         </Head>
         <CssBaseline />
-        <Component {...pageProps} />
+       {renderComponent()}
       </ThemeProvider>
     </CacheProvider>
   );

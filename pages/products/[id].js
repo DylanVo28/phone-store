@@ -880,7 +880,7 @@ const ProductDetail = () => {
             </Grid>
           </Container>
           {/*product section*/}
-          <Grid
+          {/* <Grid
             item
             xs={12}
             spacing={2}
@@ -912,7 +912,7 @@ const ProductDetail = () => {
                 isBtnMore={false}
               />
             </Container>
-          </Grid>
+          </Grid> */}
           {/*banner section */}
           <Container maxWidth="lg" id="banner">
             <Grid container spacing={2} >

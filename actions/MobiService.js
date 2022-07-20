@@ -1,68 +1,83 @@
 import fetch from 'isomorphic-fetch'
 import cookie from 'js-cookie'
-export const signup=(user)=>{
-    return fetch(`${API}/signup`,{
-        method: 'POST',
-        headers:{
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body:JSON.stringify(user)
-    })
-    .then(response=>{
-        return response.json()
-    })
-    .catch(err=> console.log(err))
-}
+import { API } from '../config'
 
-export const setCookie=(key,value)=>{
-    if(process.browser){
-        cookie.set(key,value,{
-            expires: 1
+class MobiService{
+    getFilterDevicesSetting(){
+        return fetch(`${API}/settings/list-device-filter-setting`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+           
         })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
     }
-}
-
-export const removieCookie=(key)=>{
-    if(process.browser){
-        cookie.remove(key,{expires:1})
-    }
-}
-
-export const getCookie=(key)=>{
-    if(process.browser){
-        cookie.get(key)
-    }
-}
-
-export const setLocalStorage=(key,value)=>{
-    if(process.browser){
-        localStorage.setItem(key,JSON.stringify(value))
-    }
-}
-
-export const getLocalStorage=(key)=>{
-    if(process.browser){
-        localStorage.getItem(key)
-    }
-}
-
-export const authenticate=(data,next)=>{
-    setCookie('token',data.token)
-    setLocalStorage('user',data.user)
-    next()
-}
-
-export const isAuth=()=>{
-    if(process.browser){
-        const cookieChecked=getCookie('token')
-        if(cookieChecked){
-            if(localStorage.getItem('user')){
-                return JSON.parse(localStorage.getItem('user'))
-            }
-            else{
-                return false
-            }
+    getDevicesFilter(type,storage,brand,os,min,max){
+        let stringFilter="?";
+        if(type){
+            stringFilter+=`&type_id=${type}`
         }
+        if(storage){
+            stringFilter+=`&storage_id=${storage}`
+        }
+        if(brand){
+            stringFilter+=`&brand_id=${brand}`
+        }
+        if(os){
+            stringFilter+=`&os_id=${os}`
+        }
+        stringFilter+=`&min_unit_price=${min}`
+        stringFilter+=`&max_unit_price=${max}`
+
+        return fetch(`${API}/devices/list${stringFilter}`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+           
+            },
+           
+        })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
+    }
+    getDevices(){
+        return fetch(`${API}/devices/list`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+           
+        })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
+    }
+    getPackages(){
+        return fetch(`${API}/packages/list`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+           
+        })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
     }
 }
+
+
+export default new MobiService()
+

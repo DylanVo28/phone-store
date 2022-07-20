@@ -22,6 +22,7 @@ import faq from '../../src/images/faq.png'
 import NoSSR from "react-no-ssr";
 import { useRouter } from "next/router";
 import content from "../../public/locales/content";
+import MobiService from "../../actions/MobiService";
 const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
 const images = [
   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -98,13 +99,12 @@ var itemsBanner = [
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
   },
 ];
-const Index = () => {
+const Packages = ({res}) => {
   const { locale, locales, defaultLocale, asPath } = useRouter();
   const [width, setWidth] = useState(0);
   const [checkNull, setCheckNull] = useState(true);
   useEffect(() => {
     setWidth(window.innerWidth);
-    console.log(locale, locales, defaultLocale, asPath )
   }, []);
   const onChangeTabs = (num) => {
     if (num === 1) {
@@ -235,12 +235,12 @@ const Index = () => {
                     {itemsPackage.slice(0, 5).map((item, index) => (
                       <Grid item xs={12} sm={4} key={index}>
                         {" "}
-                        <PackageCardM8
+                        {/* <PackageCardM8
                           id={item.id}
                           item={item}
                           detail={true}
                           maxHeightImage={195}
-                        />
+                        /> */}
                       </Grid>
                     ))}
                   </Grid>
@@ -313,4 +313,14 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Packages;
+Packages.getInitialProps = async (ctx) => {
+  //where call api to render data for page
+
+  const res = await Promise.all([
+    MobiService.getPackages(),
+  ]);
+  return {
+    res,
+  };
+};

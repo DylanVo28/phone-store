@@ -5,7 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 const ItemButton=(props)=>{
     return (
-        <Button variant="outlined" endIcon={props.icon} className="item-button">
+        <Button variant="outlined" endIcon={props.icon} className="item-button" onClick={props.onClick}>
         {props.title}
         </Button>
     )

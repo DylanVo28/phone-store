@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -9,8 +10,8 @@ import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
 
 const ItemCheckBox=(props)=>{
-    const [isChecked,setIsChecked]=React.useState(false)
-
+   
+    
     return (
         <ListItem
         className="item-checkbox"
@@ -24,11 +25,11 @@ const ItemCheckBox=(props)=>{
             color: #0061AF;
           }
         `}</style>
-        <ListItemButton role={undefined} onClick={()=>setIsChecked(!isChecked)} dense >
+        <ListItemButton role={undefined} onClick={(e)=>props.handleChange(props.id,props.name,props.checked)} dense >
           <ListItemIcon className='checkbox'>
             <Checkbox
               edge="start"
-              checked={isChecked}
+              checked={props.checked}
               tabIndex={-1}
               disableRipple
              

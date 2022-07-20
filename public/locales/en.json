@@ -24,5 +24,14 @@
     "title.footer.company":"Company MOBIFONE area 8",
     "title.footer.address":"236a Phan Trung,  Tan Tien, Bien Hoa City, Dong Nai",
     "title.footer.mail":"c8_khcn@mobifone.vn",
-    "title.footer.phoneNum":"18001090 and 9090"
+    "title.footer.phoneNum":"18001090 and 9090",
+    "title.products.brand":"Brand",
+    "title.products.os":"Operating system",
+    "title.products.type":"Type",
+    "title.products.storage":"Storage",
+    "title.products.devices":"Devices",
+    "title.products.titleFilter":"Filter",
+    "title.products.price":"Price"
+
+
 }

@@ -23,7 +23,7 @@ const PackageCardM8 = (props) => {
       <TranslatedLink
       href={{
         pathname: content[locale]["title.[/packages/package]"],
-        query: { package: replaceSpaceToDash(props.item.title) }
+        query: { package: replaceSpaceToDash(props.item.name) }
       }}
        
       >
@@ -43,7 +43,7 @@ const PackageCardM8 = (props) => {
                 component="div"
                 className="package-card__title"
               >
-                {props.item.title}
+                {props.item.name}
               </Typography>
               <Typography
                 gutterBottom
@@ -52,7 +52,7 @@ const PackageCardM8 = (props) => {
                 className="package-card__description"
               >
                 <h5>Đối tượng: </h5>
-                {props.item.des}
+                {props.item.promotion_info}
               </Typography>
               {props.item.incentives && (
                 <Typography
@@ -98,7 +98,7 @@ const PackageCardM8 = (props) => {
                   component="div"
                   className="package-card__price"
                 >
-                  100.000đ/ 1 month
+                  {props.item.unit_price_net}
                 </Typography>
                 <Button variant="contained">{content[locale]['title.signup']}</Button>
               </CardActions>

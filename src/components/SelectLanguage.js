@@ -16,11 +16,9 @@ export default function SelectLanguage() {
   const { locale, locales, defaultLocale, asPath } = useRouter();
 
   useEffect(() => {
-    console.log(locale,asPath);
   }, []);
 
   const handleChange = (event) => {
-    console.log(event)
     setAge(event.target.value);
   };
 
