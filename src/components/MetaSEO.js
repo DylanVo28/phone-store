@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import Head from 'next/head'
 import { APP_NAME, DOMAIN, FB_APP_ID } from '../../config'
 const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogImage, ogUrl,asPath, indexing})=>{

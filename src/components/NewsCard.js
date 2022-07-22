@@ -1,4 +1,9 @@
-
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -97,10 +102,10 @@ export default function NewsCard(props) {
      />
       <Box sx={{ display: 'flex', flexDirection: 'column' }} className="news-card__box">
        <CardContent sx={{ flex: '1 0 auto' }} className="news-card__content">
-         <Typography component="div" variant="h5">
+         <Typography component="h5" variant="h5">
            {props.title}
          </Typography>
-         <Typography variant="subtitle1" color="text.secondary" component="div" className={"news-card__description"}>
+         <Typography variant="p" color="text.secondary" component="p" className={"news-card__description"}>
            {props.description}
          </Typography>
         {props.hrefTitle && <LinkM8 href={props.href} title={props.hrefTitle}></LinkM8>} 
@@ -116,5 +121,6 @@ NewsCard.defaultProps={
   description: "Nhập description",
   href: "/tada",
   heightCard: 182,
-  widthCard: 200 
+  widthCard: 200 ,
+  title: "nhập title"
 }

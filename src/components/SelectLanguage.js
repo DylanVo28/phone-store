@@ -1,7 +1,12 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
+
 import * as React from "react";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import IconTitle from "./IconTitle";
@@ -16,6 +21,7 @@ export default function SelectLanguage() {
   const { locale, locales, defaultLocale, asPath,pathname } = useRouter();
 
   useEffect(() => {
+    console.log( locale, locales, defaultLocale, asPath,pathname)
     setLocaleDefault(locale)
   }, []);
 
@@ -89,7 +95,7 @@ export default function SelectLanguage() {
           >
             <Link
               activeClassName={locale === "vi-VN"}
-              href={content[locale][pathname]}
+              href={asPath}
 
 
               locale="vi-VN"
@@ -115,7 +121,7 @@ export default function SelectLanguage() {
           <MenuItem className="select-box-m8__menu-item" value={"en-US"}>
             <Link
               activeClassName={locale === "en-US"}
-              href={content[locale][pathname]}
+              href={asPath}
               locale="en-US"
             >
               <IconTitle

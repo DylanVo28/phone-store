@@ -55,6 +55,8 @@
     "products":"Danh sách thiết bị",
     "title.home":"Trang chủ",
     "/packages":"/packages",
+    "/packages/[id]":"/packages/{{id}}",
+
     "/products":"/products",
     "/":"/"
 

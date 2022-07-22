@@ -26,6 +26,8 @@ import MobiService from "../../actions/MobiService";
 import { usePackageContext } from "../../src/context/PackageProvider";
 import InputRangeM8 from "../../src/components/InputRangeM8";
 import Tab from "@mui/material/Tab";
+import PackagePageStyle from './../../src/styles/pages/PackagePageStyle';
+import { replaceStringMultiLanguage } from "../../src/helpers/utils";
 
 var itemsBanner = [
   {
@@ -56,42 +58,15 @@ const Packages = ({ res }) => {
     removeFilterDuration 
   } = usePackageContext();
   useEffect(() => {
+    const string=content[locale]['/packages/[id]']
+    console.log(replaceStringMultiLanguage(string,{key:"id",value:"123"}))
     setWidth(window.innerWidth);
     setStPackages(res[0]["data"]);
   }, []);
  
   return (
     <>
-      <style jsx global>
-        {`
-          .package__list-option{
-            box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-            border-radius: 12px;
-          }
-          .package__list-option .MuiList-root{
-            background: none;
-          }
-          .package-list__title{
-            box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-            border-radius: 12px;
-            padding: 10px 20px;
-          }
-          .package-list__title .title{
-            margin: 0;
-            padding: 0;
-          }
-          .package-list__item{
-            margin-left: 15px;
-            box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-            border-radius: 12px;
-            margin-top: 30px;
-          }
-          .item-checkbox .MuiListItemButton-root{
-            padding-left: 0px;
-          }
-          .package__list-option 
-        `}
-      </style>
+      <PackagePageStyle/>
       <React.Fragment>
         <NoSSR>
           <div style={{ height: 120 + "px" }}></div>
@@ -352,11 +327,12 @@ const Packages = ({ res }) => {
 };
 
 export default Packages;
-Packages.getInitialProps = async (ctx) => {
+
+export async function getServerSideProps() {
   //where call api to render data for page
 
   const res = await Promise.all([MobiService.getPackages()]);
   return {
-    res,
+    props:{res}
   };
 };

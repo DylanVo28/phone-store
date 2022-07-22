@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import InputRange from "react-input-range"
 import {useState,useEffect} from "react"
 const InputRangeM8=(props)=>{

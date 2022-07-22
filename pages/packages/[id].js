@@ -283,7 +283,7 @@ export default function PackageDetail() {
       </Container>
 
       {/*package section */}
-      <Container maxWidth="lg">
+      {/* <Container maxWidth="lg">
         <Grid container spacing={2} id="packages" className="packages">
           <Grid item xs={12}>
             <MultiItemCarousel
@@ -300,7 +300,7 @@ export default function PackageDetail() {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
       {/*banner section */}
       <Container maxWidth="lg">
         <Grid container spacing={2} >

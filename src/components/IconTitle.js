@@ -1,4 +1,9 @@
-
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import  Typography  from '@mui/material/Typography';
 import  AllOutIcon  from '@mui/icons-material/AllOut';
 const IconTitle=(props)=>{

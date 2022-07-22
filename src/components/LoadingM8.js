@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import { useState, CSSProperties } from "react";
 import { BounceLoader } from "react-spinners";
 import ClipLoader from "react-spinners/ClipLoader";

@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import { useRouter } from 'next/router';
 import content from '../../public/locales/content';
 import  Link from 'next/link';

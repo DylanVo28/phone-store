@@ -19,32 +19,32 @@ import { HomeProvider } from '../src/context/HomeProvider';
 import Products from './products/index';
 import Packages from './packages/index';
 import { PackageProvider } from '../src/context/PackageProvider';
-
 import { ProductProvider } from '../src/context/ProductProvider';
 
 
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const [loading,setLoading]=useState(false)
+  const [loading,setLoading]=useState(true)
   useEffect(() => {
     // Remove the server-side injected CSS.
+    sleep(1000)
+    setLoading(false)
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
     
   }, []);
+
   const sleep = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );
-
   Router.events.on('routeChangeStart', () => {
     // NProgress.start()
     setLoading(true)
   })
   Router.events.on('routeChangeComplete',async () => {
-   
     setLoading(false)
   })
   Router.events.on('routeChangeError', () => {

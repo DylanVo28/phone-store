@@ -54,6 +54,8 @@
     "packages":"Packages",
     "title.home":"Home",
     "/packages":"/goi-cuoc",
+    "/packages/[id]":"/packages/{{id}}",
+
     "/products":"/thiet-bi",
     "/":"/"
 

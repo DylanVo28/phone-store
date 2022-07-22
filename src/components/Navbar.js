@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -12,7 +18,6 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import Link from "next/link";
 import { Container, Grid } from "@mui/material";
 import DropdownItemM8 from "./DropdownItemM8";
@@ -22,18 +27,17 @@ import TypograPhyM8 from "./TypographyM8/TypographyM8";
 import IconUser from "../images/icon-user.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import Visibility from "@mui/icons-material/Visibility";
-import NavbarStyle from "../styles/NavbarStyle";
+import NavbarStyle from "../styles/components/NavbarStyle";
 import IconTitle from "./IconTitle";
 import Image from "next/image";
 import cart from '../images/cart.svg'
 import idCart from '../images/id-cart.svg'
 import discount from '../images/discount-menu.svg'
 import newspaper from '../images/newspaper.svg'
-import sp from '../images/sp.svg'
 import SelectLanguage from "./SelectLanguage";
-import SelectBox from "./SelectBox";
 import { useRouter } from 'next/router';
 import content from './../../public/locales/content';
+import NoSSR from "react-no-ssr";
 const drawerWidth = 240;
 
 function Navbar(props) {
@@ -168,16 +172,8 @@ function Navbar(props) {
             <Grid item xs={3} className="navbar-header__left">
               <Link href="/" passHref>
                 <a>
-                  <Box
-                    component="img"
-                    sx={{
-                      height: 100 + "%",
-                      maxHeight: { xs: 233, md: 167 },
-                      maxWidth: { xs: 150, md: 150 },
-                    }}
-                    alt="The house from the offer."
-                    src={LogoMobi.src}
-                  />
+                  
+                  <Image width={150} height={50}  src={LogoMobi.src} alt="muna logo"/>
                 </a>
               </Link>
             </Grid>
@@ -185,10 +181,10 @@ function Navbar(props) {
               
             </Grid>
             <Grid item xs={6} className="navbar-header__right">
-            <Link href={"/signin"}>
+            <Link href={"/signin"} passHref>
                 <a className="navbar-header__sign-in text-decoration--none">
                 <span className="icon-title__icon">
-                    <img src={IconUser.src} alt="user"/>
+                    <Image width={20} height={20} src={IconUser.src} alt="user"/>
                   </span>
                   <TypograPhyM8
                     title={content[locale]['title.signin']}

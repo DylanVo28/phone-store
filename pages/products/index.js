@@ -30,6 +30,8 @@ import content from "../../public/locales/content";
 import InputRangeM8 from "../../src/components/InputRangeM8";
 import { replaceSpaceToDash } from "../../src/helpers/utils";
 import Tab from "@mui/material/Tab";
+import ProductPageStyle from "../../src/styles/pages/ProductPageStyle";
+import { Hydration } from "../../auth/auth";
 
 var itemsBanner = [
   {
@@ -66,7 +68,8 @@ const Products = ({ res }) => {
     setStDevices(res[0]["data"]);
     setStFilter(res[1]["data"]);
   }, []);
-  
+ 
+
   const renderTabs = () => {
     if (stFilterProduct.brand === 0 && stFilter["brand_list"]) {
       let arrayTab = [];
@@ -104,39 +107,9 @@ const Products = ({ res }) => {
   };
   return (
     <>
+    <Hydration>
       <React.Fragment>
-        <style jsx global>
-          {`
-        .package__list-option{
-          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-          border-radius: 12px;
-        }
-        .package__list-option .MuiList-root{
-          background: none;
-        }
-        .package-list__title{
-          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-          border-radius: 12px;
-          padding: 10px 20px;
-        }
-        .package-list__title .title{
-          margin: 0;
-        }
-        .package-list__item{
-          margin-left: 15px;
-          box-shadow: 0px 0px 4px rgb(130 130 130 / 25%);
-          border-radius: 12px;
-          margin-top: 30px;
-        }
-        .item-checkbox .MuiListItemButton-root{
-          padding-left: 0px;
-        }
-        .package-list__title .title{
-          padding-left: 0;
-        }
-      `}
-        </style>
-        <NoSSR>
+        <ProductPageStyle/>
           <Navbar />
           <div style={{ height: 120 + "px" }}></div>
           <CarouselM8 items={itemsBanner} />
@@ -154,7 +127,7 @@ const Products = ({ res }) => {
                     sx={{
                       width: "100%",
                       maxWidth: 360,
-                      bgcolor: "background.paper",
+                    
                     }}
                   >
                     <ItemCheckBox
@@ -503,14 +476,15 @@ const Products = ({ res }) => {
           {width && <SpeedDialTooltipOpen />}
           {width && <SpeedDialTooltipOpen />}
           <Footer></Footer>
-        </NoSSR>
       </React.Fragment>
+      </Hydration>
     </>
   );
 };
 
 export default Products;
-Products.getInitialProps = async (ctx) => {
+
+export async function getServerSideProps() {
   //where call api to render data for page
 
   const res = await Promise.all([
@@ -518,6 +492,6 @@ Products.getInitialProps = async (ctx) => {
     MobiService.getFilterDevicesSetting(),
   ]);
   return {
-    res,
+    props:{res}
   };
 };

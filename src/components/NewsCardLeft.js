@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,7 +17,7 @@ import { useRouter } from 'next/router';
  const NewsCardLeft=(props)=>{
   const {locale}=useRouter()
     return <>
-   <Link href={"/"+props.item.id}>
+   <Link href={"/"+props.item.id} passHref>
     <a className="text-decoration--none">
     <Card  className="package-card">
       <CardMedia
@@ -22,18 +28,17 @@ import { useRouter } from 'next/router';
         className="package-card_image"
       />
       <CardContent className="package-card-content">
-        <Typography gutterBottom variant="h5" component="div" className="package-card__title">
+        <Typography gutterBottom variant="h5" component="h5" className="package-card__title">
           {props.item.title}
         </Typography>
-        <Typography gutterBottom variant="p" component="div" className="package-card__description">
+        <Typography gutterBottom variant="p" component="p" className="package-card__description">
           {props.item.des}
         </Typography>
       
             <CardActions style={{justifyContent: 'space-between'}}>
       
-            <LinkM8 href={props.href} title={content[locale]['title.viewDetail']}></LinkM8>
 
-      </CardActions>
+      </CardActions> 
       </CardContent>
      
     </Card>

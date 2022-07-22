@@ -463,7 +463,6 @@ const ProductDetail = ({device}) => {
       </style>
       <React.Fragment>
         {head()}
-        <NoSSR>
           <Navbar />
           <div style={{ height: 120 + "px" }}></div>
           <CarouselM8 items={itemsBanner} />
@@ -566,8 +565,8 @@ const ProductDetail = ({device}) => {
                             className="product-detail__item"
                           >
                             <IconTitle
-                              variant="p"
-                              component="p"
+                              variant="div"
+                              component="div"
                               icon={
                                 <Image
                                   className="product-detail__icon-image"
@@ -595,8 +594,8 @@ const ProductDetail = ({device}) => {
                             className="product-detail__item"
                           >
                             <IconTitle
-                              variant="p"
-                              component="p"
+                              variant="div"
+                              component="div"
                               icon={
                                 <Image
                                   className="product-detail__icon-image"
@@ -1116,7 +1115,7 @@ const ProductDetail = ({device}) => {
           </ModalM8>
           {width && <SpeedDialTooltipOpen />}
           <Footer></Footer>
-        </NoSSR>
+  
       </React.Fragment>
     </>
   );
@@ -1124,11 +1123,12 @@ const ProductDetail = ({device}) => {
 
 
 export default ProductDetail;
-ProductDetail.getInitialProps=async({req, query: { id }})=>{
+
+export async function getServerSideProps({req, query: { id }}) {
+  //where call api to render data for page
   const slug=id.split("_")
   const device=await MobiService.getDeviceById(parseInt(slug[1]))
-    return {
-      device
-    }
-}
-
+  return {
+    props:{device}
+  };
+};

@@ -213,7 +213,6 @@ export default function Home({ res }) {
 
   return (
     <React.Fragment>
-      <NoSSR>
      
         {/*banner section */}
 
@@ -380,7 +379,6 @@ export default function Home({ res }) {
                     }
                   </Item>
 
-                  {/* The second non-visible column has width of 1/4 */}
                   <Item
                     sx={{ gridRow: "1", gridColumn: "span 2" }}
                     className="news__col-right"
@@ -457,11 +455,10 @@ export default function Home({ res }) {
         <Footer></Footer>
         {/* </Private> */}
 
-      </NoSSR>
     </React.Fragment>
   );
 }
-Home.getInitialProps = async (ctx) => {
+export async function getServerSideProps() {
   //where call api to render data for page
 
   const res = await Promise.all([
@@ -469,6 +466,6 @@ Home.getInitialProps = async (ctx) => {
     MobiService.getPackages(),
   ]);
   return {
-    res,
+    props:{res}
   };
 };

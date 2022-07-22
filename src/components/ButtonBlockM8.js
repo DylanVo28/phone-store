@@ -1,5 +1,11 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import { Button } from '@mui/material';
-import ButtonBlockM8Style from './../styles/ButtonBlockM8Style';
+import ButtonBlockM8Style from './../styles/components/ButtonBlockM8Style';
 import  React  from 'react';
 
 const ButtonBlockM8=({children, background,className})=>{

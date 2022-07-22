@@ -4,8 +4,6 @@ import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "../utility/createEmotionCache";
 import { ServerStyleSheets } from "@material-ui/core";
 import { ServerStyleSheet } from "styled-components";
-
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -25,6 +23,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+      
         </Head>
         <body>
         
@@ -81,6 +80,8 @@ MyDocument.getInitialProps = async (ctx) => {
         ),
       }
     } finally {
+     
       sheet.seal()
     }
+    
 };

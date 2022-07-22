@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,10 +16,9 @@ import ListItem from "@mui/material/ListItem";
 
 import IconTitle from "./IconTitle";
 import Link from "next/link";
-import PackageCardM8Style from "../styles/PackageCardM8Style";
+import PackageCardM8Style from "../styles/components/PackageCardM8Style";
 import content from "../../public/locales/content";
 import { useRouter } from "next/router";
-import TranslatedLink from "./TranslatedLink";
 import { replaceSpaceToDash } from "../helpers/utils";
 import { DOMAIN_SERVICE } from "../../config";
 const PackageCardM8 = (props) => {
@@ -21,11 +26,12 @@ const PackageCardM8 = (props) => {
   return (
     <>
       <PackageCardM8Style />
-      <TranslatedLink
+      <Link
       href={{
         pathname: content[locale]["title.[/packages/package]"],
         query: { package: replaceSpaceToDash(props.item.name) }
       }}
+      passHref
        
       >
         <a className="text-decoration--none" style={props.justify}>
@@ -106,7 +112,7 @@ const PackageCardM8 = (props) => {
             </CardContent>
           </Card>
         </a>
-      </TranslatedLink>
+      </Link>
     </>
   );
 };

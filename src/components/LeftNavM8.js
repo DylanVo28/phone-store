@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import React from 'react';
 import { bool, func } from 'prop-types';
 import iconPrev from'../images/icon-prev.svg'

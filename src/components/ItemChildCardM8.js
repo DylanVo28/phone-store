@@ -1,4 +1,9 @@
-
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -10,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
-import ItemChildCardM8Style from '../styles/ItemChildCardM8Style';
+import ItemChildCardM8Style from '../styles/components/ItemChildCardM8Style';
 
 export default function ItemChildCardM8({children,checked}) {
   const theme = useTheme();
