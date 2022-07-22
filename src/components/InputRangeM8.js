@@ -11,8 +11,8 @@ const InputRangeM8=(props)=>{
                 -webkit-appearance: none;
                    -moz-appearance: none;
                         appearance: none;
-                background: #3f51b5;
-                border: 1px solid #3f51b5;
+                background: #0061af;
+                border: 1px solid #0061af;
                 border-radius: 100%;
                 cursor: pointer;
                 display: block;
@@ -92,7 +92,7 @@ const InputRangeM8=(props)=>{
                 top: 50%; }
               
               .input-range__track--active {
-                background: #3f51b5; }
+                background: #0061af; }
               
               .input-range {
                 height: 1rem;
@@ -103,11 +103,11 @@ const InputRangeM8=(props)=>{
             `}
         </style>
     <InputRange
-    maxValue={stMax}
-    minValue={stMin}
-    onChange={value=>setStValue(value)}
-    onChangeComplete={value => props.handleChange(value,"price")}
-    value={stValue}
+    maxValue={props.max}
+    minValue={props.min}
+    onChange={props.onChange}
+    onChangeComplete={props.handleChange}
+    value={props.value}
      />
      </>
 }

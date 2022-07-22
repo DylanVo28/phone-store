@@ -2,7 +2,7 @@
     "title.[/products/product]":  "/products/[product]",
     "title.[/packages]":  "/packages",
     "title.[/packages/package]":"/packages/[package]",
-    "packages.title":"Title packages",
+    "title.[/products]":  "/products",
     "title.vietnamese": "Vietnamese",
     "title.english":"English",
     "title.product":"Products",
@@ -30,8 +30,41 @@
     "title.products.type":"Type",
     "title.products.storage":"Storage",
     "title.products.devices":"Devices",
-    "title.products.titleFilter":"Filter",
-    "title.products.price":"Price"
+    "title.products.titleFilter":"Filter:",
+    "title.products.price":"Price",
+    "title.products.notFound":"Not Found",
+
+    "title.packages.type":"Type",
+    "title.packages.typeAll":"All",
+    "title.packages.typePrepay":"Prepay",
+    "title.packages.typePostpaid":"Postpaid",
+    "title.packages.typeEntertainment":"Entertainment",
+    "title.packages.typeEnterprise":"Enterprise",
+    "title.packages.uintDuration.day":"Day",
+    "title.packages.uintDuration.month":"Month",
+    "title.packages.uintDuration.year":"Year",
+    "title.packages.uintDuration":"Type time",
+    "title.packages.price":"Price",
+    "title.packages.duration":"Duration packages",
+    "title.packages.notFound":"Not found",
+
+    "/products/[id]":"/products",
+    "packages.title":"Title packages",
+    "products":"Devices",
+    "packages":"Packages",
+    "title.home":"Home",
+    "/packages":"/goi-cuoc",
+    "/products":"/thiet-bi",
+    "/":"/"
+
+
+    
+
+
+
+
+
+
 
 
 }

@@ -242,21 +242,7 @@ body{
   color: #44494D;
 }
 
-.tabs-m8{
-  padding-top: 20px;
-}
-.tabs-m8 .tabs-m8__list{
-  display:block;
-}
-.tabs-m8 .tabs-m8__tab{
-  width: 33%!important;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.0015em;
-  color: #0061AF;
-}
+
 .title{
   padding-left: 7px;
   font-weight: 600;

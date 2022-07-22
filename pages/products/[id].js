@@ -52,6 +52,7 @@ import hot from "../../src/images/hot.svg";
 import MetaSEO from "../../src/components/MetaSEO";
 import Script from "next/script";
 import content from "../../public/locales/content";
+import MobiService from "../../actions/MobiService";
 const itemsProduct = [
   {
     id: 1,
@@ -171,7 +172,7 @@ var itemsBanner = [
   },
 ];
 
-const ProductDetail = () => {
+const ProductDetail = ({device}) => {
   const {locale}=useRouter()
   const [width, setWidth] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -484,7 +485,7 @@ const ProductDetail = () => {
                 <ImageGalleryM8 />
               </Grid>
               <Grid item md={6} className="product-detail__grid-6-right">
-                <TextHeader title="Điện thoại sam sung galaxy s20 ultra" />
+                <TextHeader title={device['data'].name} />
 
                 <div className="display--flex align-items--center">
                   <Typography
@@ -492,14 +493,14 @@ const ProductDetail = () => {
                     component="span"
                     className="product-detail__price"
                   >
-                    23.990.000đ
+                    {device['data']['unit_price_gross']}
                   </Typography>
                   <Typography
                     variant="span"
                     component="span"
                     className="product-detail__price-origin"
                   >
-                    24,290,000 đồng
+                    {device['data']['unit_price_net']}
                   </Typography>
                 </div>
                 <Typography
@@ -507,8 +508,7 @@ const ProductDetail = () => {
                   component="p"
                   className="product-detail__description"
                 >
-                  Giá bán chỉ còn 11.890.000 đồng khi mua kèm gói cước sub1399,
-                  cam kết sử dụng 18 tháng
+                  {device['data']['sale_info']}
                 </Typography>
                 <br />
                 <Typography variant="span" component="span">
@@ -560,7 +560,7 @@ const ProductDetail = () => {
                         Quà tặng
                       </Typography>
                       <List className="product-detail__list">
-                        {items.map((item, index) => (
+                        {device['data']['promotion_info']['qua_tang'].map((item, index) => (
                           <ListItem
                             key={index}
                             className="product-detail__item"
@@ -589,7 +589,7 @@ const ProductDetail = () => {
                         Quà tặng
                       </Typography>
                       <List className="product-detail__list">
-                        {items.map((item, index) => (
+                        {device['data']['promotion_info']['uu_dai_goi'].map((item, index) => (
                           <ListItem
                             key={index}
                             className="product-detail__item"
@@ -1122,4 +1122,13 @@ const ProductDetail = () => {
   );
 };
 
+
 export default ProductDetail;
+ProductDetail.getInitialProps=async({req, query: { id }})=>{
+  const slug=id.split("_")
+  const device=await MobiService.getDeviceById(parseInt(slug[1]))
+    return {
+      device
+    }
+}
+

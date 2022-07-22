@@ -2,7 +2,8 @@
     "title.[/products/product]": "/thiet-bi/[product]",
     "title.[/packages]":  "/goi-cuoc",
     "title.[/packages/package]":"/goi-cuoc/[package]",
-   
+    "title.[/products]":  "/thiet-bi",
+    "/products/[id]":"/thiet-bi",
     "packages.title":"Tiêu đề gói cước",
     "title.vietnamese": "Tiếng việt",
     "title.english":"Tiếng anh",
@@ -31,8 +32,36 @@
     "title.products.type":"Thể loại",
     "title.products.storage":"Bộ nhớ",
     "title.products.devices":"Thiết bị di động",
-    "title.products.titleFilter":"lọc theo",
-    "title.products.price":"Giá"
+    "title.products.titleFilter":"Lọc theo:",
+    "title.products.price":"Giá",
+    "title.products.notFound":"Không tìm thấy thiết bị",
+
+    "title.packages.type":"Loại gói cước",
+    "title.packages.typeAll":"Tất cả",
+    "title.packages.typePrepay":"Trả trước",
+    "title.packages.typePostpaid":"Trả sau",
+    "title.packages.typeEntertainment":"Giải trí",
+    "title.packages.typeEnterprise":"Cho doanh nghiệp",
+    "title.packages.uintDuration.day":"Ngày",
+    "title.packages.uintDuration.month":"Tháng",
+    "title.packages.uintDuration.year":"Năm",
+    "title.packages.uintDuration":"Loại thời gian",
+    "title.packages.price":"Giá",
+    "title.packages.duration":"Thời lượng gói",
+    "title.packages.notFound":"Không tìm thấy thiết bị",
+
+
+    "packages":"Danh sách gói cước",
+    "products":"Danh sách thiết bị",
+    "title.home":"Trang chủ",
+    "/packages":"/packages",
+    "/products":"/products",
+    "/":"/"
+
+
+
+
+
 
 
 

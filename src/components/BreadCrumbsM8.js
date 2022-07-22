@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import {useEffect,useState} from 'react'
 import { useRouter } from "next/router";
+import content from '../../public/locales/content';
 
 function handleClick(event) {
   event.preventDefault();
@@ -14,9 +15,11 @@ function handleClick(event) {
 
 export default function BreadCrumbsM8() {
   const [paths,setPaths]=useState([])
-  const {asPath}=useRouter()
+  const {locale,pathname}=useRouter()
+  const router=useRouter()
+
   useEffect(()=>{
-    setPaths(asPath.split("/"))
+    setPaths(pathname.split("/"))
   },[])
  
 
@@ -40,7 +43,8 @@ export default function BreadCrumbsM8() {
         {paths.map((item,index)=>{
           if(index===0){
             return <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick} className="bread-crumb-m8__link">
-            Trang chủ
+                        {content[locale]['title.home']}
+
           </Link>
           }
           else{
@@ -52,7 +56,7 @@ export default function BreadCrumbsM8() {
             onClick={handleClick}
             className="bread-crumb-m8__link"
           >
-            {item}
+            {content[locale][item]}
           </Link>
           }
         })}

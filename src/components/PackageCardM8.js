@@ -15,6 +15,7 @@ import content from "../../public/locales/content";
 import { useRouter } from "next/router";
 import TranslatedLink from "./TranslatedLink";
 import { replaceSpaceToDash } from "../helpers/utils";
+import { DOMAIN_SERVICE } from "../../config";
 const PackageCardM8 = (props) => {
   const {locale}=useRouter()
   return (
@@ -32,7 +33,7 @@ const PackageCardM8 = (props) => {
             <CardMedia
               component="img"
               height={props.maxHeightImage}
-              image={props.item.image}
+              image={`${DOMAIN_SERVICE}/${props.item.image}`}
               alt="green iguana"
               className="package-card_image"
             />
@@ -65,8 +66,8 @@ const PackageCardM8 = (props) => {
                 </Typography>
               )}
               <List>
-                {props.item.incentives &&
-                  props.item.incentives.map((item, index) => (
+                {props.item['promotion_info'] &&
+                  props.item['promotion_info'].map((item, index) => (
                     <ListItem key={index}>
                       <IconTitle
                         variant="p"

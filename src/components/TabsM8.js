@@ -5,16 +5,30 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
-export default function TabsM8({children,items,onChangeTabs}) {
-  const [value, setValue] = React.useState("1");
+export default function TabsM8({children,items,onChangeTabs,type}) {
+  const [value, setValue] = React.useState(items[0]?.id);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (label, newValue) => {
     setValue(newValue)
     onChangeTabs(newValue)
   };
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }} className="tabs-m8">
+      <style jsx global>{`
+      
+        .tabs-m8 .tabs-m8__list{
+          display:block;
+        }
+        .tabs-m8 .tabs-m8__tab{
+          text-transform: capitalize;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: 0.0015em;
+          color: #0061AF;
+        }
+      `}</style>
       <TabContext value={value}>
         <Box>
           <TabList
@@ -22,21 +36,10 @@ export default function TabsM8({children,items,onChangeTabs}) {
             aria-label="lab API tabs example"
             className="tabs-m8__list"
           >
-            {items.map((item, index) => (
-              <Tab
-                label={item.label}
-                value={item.value}
-                key={index}
-                className="tabs-m8__tab"
-              />
-            ))}
+            {children}
           </TabList>
         </Box>
-        {/* {items.map((item, index) => (
-          <TabPanel value={item.value} key={index}>
-            {item.label}
-          </TabPanel>
-        ))} */}
+  
       </TabContext>
     </Box>
   );

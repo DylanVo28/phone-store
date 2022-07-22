@@ -28,6 +28,8 @@ import MobiService from "../../actions/MobiService";
 import { useRouter } from "next/router";
 import content from "../../public/locales/content";
 import InputRangeM8 from "../../src/components/InputRangeM8";
+import { replaceSpaceToDash } from "../../src/helpers/utils";
+import Tab from "@mui/material/Tab";
 
 var itemsBanner = [
   {
@@ -38,6 +40,8 @@ var itemsBanner = [
     image: banner.src,
   },
 ];
+const MAX_PRICE = 100000000;
+const MIN_PRICE = 0;
 const Products = ({ res }) => {
   const [width, setWidth] = useState(0);
   const [checkNull, setCheckNull] = useState(true);
@@ -50,17 +54,52 @@ const Products = ({ res }) => {
     handleChangeFilter,
     stFilterProduct,
     handleChangeChecked,
+    setStFilterProduct,
+    onChangeTabs
   } = useProductContext();
+  const [stFilterPrice, setStFilterPrice] = useState({
+    min: MIN_PRICE,
+    max: MAX_PRICE,
+  });
   useEffect(() => {
     setWidth(window.innerWidth);
     setStDevices(res[0]["data"]);
     setStFilter(res[1]["data"]);
   }, []);
-  const onChangeTabs = (num) => {
-    if (num === 1) {
-      setCheckNull(true);
-    } else {
-      setCheckNull(false);
+  
+  const renderTabs = () => {
+    if (stFilterProduct.brand === 0 && stFilter["brand_list"]) {
+      let arrayTab = [];
+      arrayTab.push(
+        <Tab
+          style={{ width: `${100 / (stFilter["brand_list"].length + 1)}%` }}
+          label={"ALL"}
+          value={0}
+          className="tabs-m8__tab"
+        />
+      );
+
+      arrayTab.push(
+        stFilter["brand_list"].map((item, index) => (
+          <Tab
+            style={{ width: `${100 / (stFilter["brand_list"].length + 1)}%` }}
+            label={item.value}
+            value={item.id}
+            key={index}
+            className="tabs-m8__tab"
+          />
+        ))
+      );
+      return arrayTab;
+    }
+    else{
+      const brand=stFilter["brand_list"].find(item=>item.id===stFilterProduct.brand)
+      return  <Tab
+        style={{ width: `${100 / (stFilter["brand_list"].length + 1)}%` }}
+        label={brand.value}
+        value={brand.id}
+        className="tabs-m8__tab"
+      />
     }
   };
   return (
@@ -118,6 +157,19 @@ const Products = ({ res }) => {
                       bgcolor: "background.paper",
                     }}
                   >
+                    <ItemCheckBox
+                      title={"All"}
+                      name={"brand"}
+                      id={0}
+                      handleChange={(e) =>
+                        handleChangeChecked(
+                          0,
+                          "brand",
+                          stFilterProduct.brand === 0
+                        )
+                      }
+                      checked={stFilterProduct.brand === 0}
+                    />
                     {stFilter["brand_list"] &&
                       stFilter["brand_list"].map((item, index) => (
                         <ItemCheckBox
@@ -125,7 +177,13 @@ const Products = ({ res }) => {
                           key={item.id}
                           name={"brand"}
                           id={item.id}
-                          handleChange={handleChangeChecked}
+                          handleChange={(e) =>
+                            handleChangeChecked(
+                              item.id,
+                              "brand",
+                              stFilterProduct.brand === item.id
+                            )
+                          }
                           checked={stFilterProduct.brand === item.id}
                         />
                       ))}
@@ -149,7 +207,13 @@ const Products = ({ res }) => {
                           key={item.id}
                           name={"os"}
                           id={item.id}
-                          handleChange={handleChangeChecked}
+                          handleChange={(e) =>
+                            handleChangeChecked(
+                              item.id,
+                              "os",
+                              stFilterProduct.os === item.id
+                            )
+                          }
                           checked={stFilterProduct.os === item.id}
                         />
                       ))}
@@ -173,7 +237,13 @@ const Products = ({ res }) => {
                           key={item.id}
                           id={item.id}
                           name={"type"}
-                          handleChange={handleChangeChecked}
+                          handleChange={(e) =>
+                            handleChangeChecked(
+                              item.id,
+                              "type",
+                              stFilterProduct.type === item.id
+                            )
+                          }
                           checked={stFilterProduct.type === item.id}
                         />
                       ))}
@@ -197,7 +267,13 @@ const Products = ({ res }) => {
                           id={item.id}
                           key={item.id}
                           name={"storage"}
-                          handleChange={handleChangeChecked}
+                          handleChange={(e) =>
+                            handleChangeChecked(
+                              item.id,
+                              "storage",
+                              stFilterProduct.storage === item.id
+                            )
+                          }
                           checked={stFilterProduct.storage === item.id}
                         />
                       ))}
@@ -210,10 +286,13 @@ const Products = ({ res }) => {
 
                   {stFilterProduct.price && (
                     <InputRangeM8
-                      min={stFilterProduct.price.min}
-                      max={stFilterProduct.price.max}
-                      value={stFilterProduct.price}
-                      handleChange={handleChangeFilter}
+                      min={MIN_PRICE}
+                      max={MAX_PRICE}
+                      value={stFilterPrice}
+                      onChange={(value) => setStFilterPrice(value)}
+                      handleChange={(value) =>
+                        handleChangeFilter(value, "price")
+                      }
                     />
                   )}
                 </Grid>
@@ -318,7 +397,17 @@ const Products = ({ res }) => {
                         className="btn-mobi-8"
                       ></ButtonM8>
                     </div> */}
-                    {/* <TabsM8 onChangeTabs={onChangeTabs} /> */}
+                    <TabsM8
+                      items={
+                        stFilterProduct.brand === 0
+                          ? stFilter["brand_list"]
+                          : []
+                      }
+                      type={"brand"}
+                      onChangeTabs={onChangeTabs}
+                    >
+                      { stFilter["brand_list"] && renderTabs()}
+                    </TabsM8>
                     {checkNull && (
                       <Grid
                         container
@@ -338,6 +427,15 @@ const Products = ({ res }) => {
                               isCart={true}
                               isdiscount={true}
                               discountValue={3000000}
+                              href={{
+                                pathname:
+                                  content[locale]["title.[/products/product]"],
+                                query: {
+                                  product: `${replaceSpaceToDash(item.name)}_${
+                                    item.id
+                                  }`,
+                                },
+                              }}
                             />
                           </Grid>
                         ))}
@@ -354,7 +452,7 @@ const Products = ({ res }) => {
                           className="title"
                           style={{ textTransform: "inherit" }}
                         >
-                          Không tìm thấy thiết bị
+                          {content[locale]['title.products.notFound']}
                         </h1>
                       </Grid>
                     )}

@@ -18,77 +18,15 @@ import ActionAreaCardM8 from "../../src/components/ActionAreaCardM8/ActionAreaCa
 import CarouselM8 from "../../src/components/Carousel";
 import iconNotFound from "../../src/images/404.svg";
 import BreadCrumbsM8 from "../../src/components/BreadCrumbsM8";
-import faq from '../../src/images/faq.png'
+import faq from "../../src/images/faq.png";
 import NoSSR from "react-no-ssr";
 import { useRouter } from "next/router";
 import content from "../../public/locales/content";
 import MobiService from "../../actions/MobiService";
-const items = ["Tất cả", "Trả trước", "Trả trước", "Trả trước"];
-const images = [
-  "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1549737328-8b9f3252b927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-];
-const itemsPackage = [
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id: 1,
-    image:
-      "https://static.vecteezy.com/system/resources/previews/000/691/688/original/sale-banner-template-with-special-sale-vector.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-];
+import { usePackageContext } from "../../src/context/PackageProvider";
+import InputRangeM8 from "../../src/components/InputRangeM8";
+import Tab from "@mui/material/Tab";
+
 var itemsBanner = [
   {
     image:
@@ -99,20 +37,29 @@ var itemsBanner = [
       "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
   },
 ];
-const Packages = ({res}) => {
+const Packages = ({ res }) => {
   const { locale, locales, defaultLocale, asPath } = useRouter();
   const [width, setWidth] = useState(0);
   const [checkNull, setCheckNull] = useState(true);
+  const {
+    stPackages,
+    setStPackages,
+    filter,
+    stFilter,
+    setStFilter,
+    handleChange,
+    stFilterPrice,
+    setStFilterPrice,
+    onChangeTabs,
+    stFilterTab,
+    handleChangeFilter,
+    removeFilterDuration 
+  } = usePackageContext();
   useEffect(() => {
     setWidth(window.innerWidth);
+    setStPackages(res[0]["data"]);
   }, []);
-  const onChangeTabs = (num) => {
-    if (num === 1) {
-      setCheckNull(true);
-    } else {
-      setCheckNull(false);
-    }
-  };
+ 
   return (
     <>
       <style jsx global>
@@ -146,168 +93,259 @@ const Packages = ({res}) => {
         `}
       </style>
       <React.Fragment>
-      <NoSSR>
+        <NoSSR>
+          <div style={{ height: 120 + "px" }}></div>
 
-      <div style={{ height: 120 + "px" }}></div>
+          <Navbar />
+          <CarouselM8 items={itemsBanner} />
 
-      <Navbar />
-      <CarouselM8 items={itemsBanner} />
-
-      <Container
-        maxWidth="lg"
-        style={{ paddingTop: "5vw", paddingBottom: "5vw" }}
-      >
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={3} className="package__list-option">
-            <Grid item xs={12} style={{ padding: "10px 0" }}>
-              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                }}
-              >
-                {items.map((item, index) => (
-                  <ItemCheckBox title={item} key={index} />
-                ))}
-              </List>
-            </Grid>
-            <Grid item xs={12} style={{ padding: "10px 0" }}>
-              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                }}
-              >
-                {items.map((item, index) => (
-                  <ItemCheckBox title={item} key={index} />
-                ))}
-              </List>
-            </Grid>
-            <Grid item xs={12} style={{ padding: "10px 0" }}>
-              <h4 style={{ margin: 0 }}>Loại gói cước</h4>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                }}
-              >
-                {items.map((item, index) => (
-                  <ItemCheckBox title={item} key={index} />
-                ))}
-              </List>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sm={9} style={{ paddingTop: 0 }}>
-            <Grid item xs={12} className="package-list__title">
-              <div style={{ padding: "15px 0" }}>
-                <h1 className="title">{content[locale]['packages.title']}</h1>
-                <BreadCrumbsM8 />
-                <div style={{ marginTop: "5px" }}>
-                  <span>Lọc theo: </span>
-                  <ItemButton
-                    icon={<CloseIcon />}
-                    title={<span style={{ paddingTop: "4px" }}>Tất cả</span>}
-                  />
-                </div>
-              </div>
-            </Grid>
-
+          <Container
+            maxWidth="lg"
+            style={{ paddingTop: "5vw", paddingBottom: "5vw" }}
+          >
             <Grid container spacing={2}>
-              <Grid item xs={12} className="package-list__item">
-                <div>
-                  <p style={{ display: "inline-block", paddingRight: "10px" }}>
-                    Ưu tiên xem:
-                  </p>
-                  <ButtonM8
-                    title="Trả trước"
-                    className="btn-mobi-8 active"
-                  ></ButtonM8>
-                  <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>
-                </div>
-                <TabsM8 onChangeTabs={onChangeTabs} />
-                {checkNull && (
-                  <Grid container spacing={2}>
-                    {itemsPackage.slice(0, 5).map((item, index) => (
-                      <Grid item xs={12} sm={4} key={index}>
-                        {" "}
-                        {/* <PackageCardM8
-                          id={item.id}
-                          item={item}
-                          detail={true}
-                          maxHeightImage={195}
-                        /> */}
-                      </Grid>
+              <Grid item xs={12} sm={3} className="package__list-option">
+                <Grid item xs={12} style={{ padding: "10px 0" }}>
+                  <h4 style={{ margin: 0 }}>
+                    {content[locale]["title.packages.type"]}
+                  </h4>
+                  <List
+                    sx={{
+                      width: "100%",
+                      maxWidth: 360,
+                      bgcolor: "background.paper",
+                    }}
+                  >
+                    {filter.type.map((item, index) => (
+                      <ItemCheckBox
+                        title={item.name}
+                        key={index}
+                        value={item.id}
+                        handleChange={(e) => handleChange("type", item)}
+                        checked={item.id === stFilter.type.id}
+                      />
                     ))}
-                  </Grid>
-                )}
-                {!checkNull && (
-                  <Grid item xs={12} className="text-align--center">
-                    <img
-                      className="not-found"
-                      src={iconNotFound.src}
-                      alt="not-found"
-                    />
-                    <h1 className="title" style={{ textTransform: "inherit" }}>
-                      Không tìm thấy thiết bị
+                  </List>
+                </Grid>
+                <Grid item xs={12} style={{ padding: "10px 0" }}>
+                  <h4 style={{ margin: 0 }}>
+                    {content[locale]["title.packages.duration"]}
+                  </h4>
+                  <List
+                    sx={{
+                      width: "100%",
+                      maxWidth: 360,
+                      bgcolor: "background.paper",
+                    }}
+                  >
+                    {filter.uint_duration_value.map((item, index) => (
+                      <ItemCheckBox
+                        title={item}
+                        key={index}
+                        value={item}
+                        handleChange={(e) =>
+                          handleChange("uint_duration_value", item)
+                        }
+                        checked={item === stFilter.uint_duration_value}
+                      />
+                    ))}
+                  </List>
+                </Grid>
+                <Grid item xs={12} style={{ padding: "10px 0" }}>
+                  <h4 style={{ margin: 0 }}>
+                    {content[locale]["title.packages.uintDuration"]}
+                  </h4>
+                  <List
+                    sx={{
+                      width: "100%",
+                      maxWidth: 360,
+                      bgcolor: "background.paper",
+                    }}
+                  >
+                    {filter.uint_duration.map((item, index) => (
+                      <ItemCheckBox
+                        title={item.name}
+                        key={index}
+                        value={item.id}
+                        handleChange={(e) =>
+                          handleChange("uint_duration", item)
+                        }
+                        checked={item.id === stFilter.uint_duration.id}
+                      />
+                    ))}
+                  </List>
+                </Grid>
+                <Grid item xs={12} style={{ padding: "10px 0" }}>
+                  <h4 style={{ margin: 0 }}>
+                    {content[locale]["title.packages.price"]}
+                  </h4>
+                  <InputRangeM8
+                    min={filter["MIN_UINT_PRICE"]}
+                    max={filter["MAX_UINT_PRICE"]}
+                    value={stFilterPrice}
+                    onChange={(value) => setStFilterPrice(value)}
+                    handleChange={(value) => handleChange("price", value)}
+                  />
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={9} style={{ paddingTop: 0 }}>
+                <Grid item xs={12} className="package-list__title">
+                  <div style={{ padding: "15px 0" }}>
+                    <h1 className="title">
+                      {content[locale]["packages.title"]}
                     </h1>
+                    <BreadCrumbsM8 />
+                    <div style={{ marginTop: "5px" }}>
+                      <span>{content[locale]['title.products.titleFilter']} </span>
+                      {stFilter.type.id && (
+                        <ItemButton
+                          icon={<CloseIcon />}
+                          onClick={(e) => handleChangeFilter(filter.type[0], "type")}
+                          title={
+                            <span style={{ paddingTop: "4px" }}>
+                              {stFilter.type.name}
+                            </span>
+                          }
+                        />
+                      )}
+                      {stFilter["uint_duration_value"] !== 0 &&
+                        stFilter["uint_duration"] && (
+                          <ItemButton
+                            icon={<CloseIcon />}
+                            onClick={(e) => removeFilterDuration()}
+                            title={
+                              <span
+                                style={{ paddingTop: "4px" }}
+                              >{`${stFilter["uint_duration_value"]} ${stFilter["uint_duration"].name} `}</span>
+                            }
+                          />
+                        )}
+                    </div>
+                  </div>
+                </Grid>
+
+                <Grid container spacing={2}>
+                  <Grid item xs={12} className="package-list__item">
+                    {/* <div>
+                      <p
+                        style={{
+                          display: "inline-block",
+                          paddingRight: "10px",
+                        }}
+                      >
+                        Ưu tiên xem:
+                      </p>
+                      <ButtonM8
+                        title="Trả trước"
+                        className="btn-mobi-8 active"
+                      ></ButtonM8>
+                      <ButtonM8
+                        title="Trả trước"
+                        className="btn-mobi-8"
+                      ></ButtonM8>
+                    </div> */}
+                    <TabsM8 items={!stFilter.type.id? filter.type:[]} onChangeTabs={onChangeTabs} type={"type"}>
+                      {!stFilter.type.id &&
+                        filter.type.map((item, index) => {
+                            return  <Tab
+                            style={{width :`${100/(filter.type.length)}%`}}
+                            label={item.name}
+                            value={item.id}
+                            key={index}
+                            className="tabs-m8__tab"
+                          />
+                         
+                        })}
+                     {stFilter.type.id &&
+                      <Tab
+                      style={{ width:`${100/(filter.type.length)}%`}}
+                      label={stFilter.type.name}
+                      value={stFilter.type.id}
+                      className="tabs-m8__tab"
+                    />
+                     }
+                    </TabsM8>
+                    {checkNull && (
+                      <Grid container spacing={2}>
+                        {stPackages.map((item, index) => (
+                          <Grid item xs={12} sm={4} key={index}>
+                            {" "}
+                            <PackageCardM8
+                              id={item.id}
+                              item={item}
+                              detail={true}
+                              maxHeightImage={195}
+                            />
+                          </Grid>
+                        ))}
+                      </Grid>
+                    )}
+                    {stPackages.length === 0 && (
+                      <Grid item xs={12} className="text-align--center">
+                        <img
+                          className="not-found"
+                          src={iconNotFound.src}
+                          alt="not-found"
+                        />
+                        <h1
+                          className="title"
+                          style={{ textTransform: "inherit" }}
+                        >
+                          {content[locale]['title.packages.notFound']}
+                        </h1>
+                      </Grid>
+                    )}
                   </Grid>
-                )}
+                </Grid>
+              </Grid>
+              <Grid item xs={12}></Grid>
+            </Grid>
+          </Container>
+          {/*banner section */}
+          <Container maxWidth="lg" id="banner">
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Card sx={{ maxWidth: 100 + "%" }}>
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    height="400"
+                    image={
+                      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
+                    }
+                    className="card-image"
+                  />
+                </Card>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={12}></Grid>
-        </Grid>
-      </Container>
-      {/*banner section */}
-      <Container maxWidth="lg" id="banner">
-        <Grid container spacing={2} >
-          <Grid item xs={12}>
-            <Card sx={{ maxWidth: 100 + "%" }}>
-              <CardMedia
-                component="img"
-                alt="green iguana"
-                height="400"
-                image={
-                  "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg"
-                }
-                className="card-image"
-              />
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
+          </Container>
 
-      {/*support section*/}
-      <Container maxWidth="lg" style={{paddingBottom: '5vw'}}>
-      <Grid item xs={12}>
-  <span>
-            <h1 className="title">Hỗ trợ khách hàng</h1>
-          </span>
-        </Grid>
-        <Grid container spacing={2} id="supports">
-          <Grid item xs={3}>
-            <ActionAreaCardM8 image={faq.src} />
-          </Grid>
-          <Grid item xs={3}>
-            <ActionAreaCardM8 image={faq.src}/>
-          </Grid>
-          <Grid item xs={3}>
-            <ActionAreaCardM8 image={faq.src}/>
-          </Grid>
-          <Grid item xs={3}>
-            <ActionAreaCardM8 image={faq.src}/>
-          </Grid>
-        </Grid>
-      </Container>
+          {/*support section*/}
+          <Container maxWidth="lg" style={{ paddingBottom: "5vw" }}>
+            <Grid item xs={12}>
+              <span>
+                <h1 className="title">Hỗ trợ khách hàng</h1>
+              </span>
+            </Grid>
+            <Grid container spacing={2} id="supports">
+              <Grid item xs={3}>
+                <ActionAreaCardM8 image={faq.src} />
+              </Grid>
+              <Grid item xs={3}>
+                <ActionAreaCardM8 image={faq.src} />
+              </Grid>
+              <Grid item xs={3}>
+                <ActionAreaCardM8 image={faq.src} />
+              </Grid>
+              <Grid item xs={3}>
+                <ActionAreaCardM8 image={faq.src} />
+              </Grid>
+            </Grid>
+          </Container>
 
-      {width && <SpeedDialTooltipOpen />}
-      <Footer></Footer>
-      </NoSSR>
+          {width && <SpeedDialTooltipOpen />}
+          <Footer></Footer>
+        </NoSSR>
       </React.Fragment>
     </>
   );
@@ -317,9 +355,7 @@ export default Packages;
 Packages.getInitialProps = async (ctx) => {
   //where call api to render data for page
 
-  const res = await Promise.all([
-    MobiService.getPackages(),
-  ]);
+  const res = await Promise.all([MobiService.getPackages()]);
   return {
     res,
   };

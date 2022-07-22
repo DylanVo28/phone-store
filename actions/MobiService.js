@@ -76,6 +76,46 @@ class MobiService{
         })
         .catch(err=> console.log(err))
     }
+    getFilterPackages(type,minUintPrice,maxUintPrice,uintDurationValue,uintDuration){
+        let stringFilter="?"
+        if(type){
+            stringFilter+=`&type=${type}`
+        }
+        if(uintDurationValue){
+            stringFilter+=`&unit_duration_value=${uintDurationValue}`
+        }
+        if(uintDuration){
+            stringFilter+=`&unit_duration=${uintDuration}`
+        }
+        stringFilter+=`&min_unit_price=${minUintPrice}`,
+        stringFilter+=`&max_unit_price=${maxUintPrice}`
+        return fetch(`${API}/packages/list${stringFilter}`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+           
+        })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
+    }
+    getDeviceById(id){
+        return fetch(`${API}/devices/detail/${id}`,{
+            method: 'GET',
+            headers:{
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+           
+        })
+        .then(response=>{
+            return response.json()
+        })
+        .catch(err=> console.log(err))
+    }
 }
 
 

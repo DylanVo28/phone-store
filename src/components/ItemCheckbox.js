@@ -25,7 +25,7 @@ const ItemCheckBox=(props)=>{
             color: #0061AF;
           }
         `}</style>
-        <ListItemButton role={undefined} onClick={(e)=>props.handleChange(props.id,props.name,props.checked)} dense >
+        <ListItemButton role={undefined} onClick={(e)=>props.handleChange()} dense >
           <ListItemIcon className='checkbox'>
             <Checkbox
               edge="start"

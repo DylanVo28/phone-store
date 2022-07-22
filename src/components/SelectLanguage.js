@@ -12,14 +12,15 @@ import content from "../../public/locales/content";
 import Link from "next/link";
 
 export default function SelectLanguage() {
-  const [age, setAge] = React.useState("");
-  const { locale, locales, defaultLocale, asPath } = useRouter();
+  const [localeDefault, setLocaleDefault] = React.useState("");
+  const { locale, locales, defaultLocale, asPath,pathname } = useRouter();
 
   useEffect(() => {
+    setLocaleDefault(locale)
   }, []);
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setLocaleDefault(event.target.value);
   };
 
   return (
@@ -70,7 +71,7 @@ export default function SelectLanguage() {
         style={{ margin: 0 }}
       >
         <Select
-          value={age}
+          value={localeDefault}
           onChange={handleChange}
           displayEmpty
           inputProps={{ "aria-label": "Without label" }}
@@ -88,7 +89,8 @@ export default function SelectLanguage() {
           >
             <Link
               activeClassName={locale === "vi-VN"}
-              href={asPath}
+              href={content[locale][pathname]}
+
 
               locale="vi-VN"
             >
@@ -113,7 +115,7 @@ export default function SelectLanguage() {
           <MenuItem className="select-box-m8__menu-item" value={"en-US"}>
             <Link
               activeClassName={locale === "en-US"}
-              href={asPath}
+              href={content[locale][pathname]}
               locale="en-US"
             >
               <IconTitle

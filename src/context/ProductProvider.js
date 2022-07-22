@@ -6,6 +6,7 @@ const Context = createContext();
 export function ProductProvider({ children }) {
   const [stFilter,setStFilter]=useState({})
   const [stDevices,setStDevices]=useState([])
+  const [stFilterTab,setStFilterTab]=useState('')
   const [stFilterProduct,setStFilterProduct]=useState({
     brand:0,
     os:0,
@@ -26,6 +27,16 @@ export function ProductProvider({ children }) {
     }
     fetchData()
   },[stFilterProduct])
+  useEffect(()=>{
+    const fetchData=async()=>{
+      const res=await MobiService.getDevicesFilter(stFilterProduct['type'],stFilterProduct['storage'],stFilterTab,
+      stFilterProduct['os'],stFilterProduct['price'].min,stFilterProduct['price'].max)
+      if(res){
+        setStDevices(res['data'])
+      }
+    }
+    fetchData()
+  },[stFilterTab])
  const handleChangeFilter=(id,name)=>{
     setStFilterProduct({...stFilterProduct,[name]:id})
  }
@@ -37,10 +48,12 @@ export function ProductProvider({ children }) {
     setStFilterProduct({...stFilterProduct,[name]:0})
   }
  }
-
+ const onChangeTabs=(value)=>{
+  setStFilterTab(value)
+}
  
   return (
-    <Context.Provider value={{setStFilter,stFilter,stDevices,setStDevices,handleChangeFilter,stFilterProduct,handleChangeChecked}}>{children}</Context.Provider>
+    <Context.Provider value={{setStFilter,stFilter,stDevices,setStDevices,handleChangeFilter,stFilterProduct,handleChangeChecked,setStFilterProduct,onChangeTabs,stFilterTab}}>{children}</Context.Provider>
   );
 }
 

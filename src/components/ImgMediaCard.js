@@ -11,15 +11,13 @@ import TranslatedLink from "./TranslatedLink";
 import content from "../../public/locales/content";
 import { useRouter } from "next/router";
 import { replaceSpaceToDash } from "../helpers/utils";
+import { DOMAIN_SERVICE } from "../../config";
 
 const ImgMediaCard = (props) => {
   const {locale}=useRouter()
   return (
-    <TranslatedLink
-      href={{
-        pathname: content[locale]["title.[/products/product]"],
-        query: { product: replaceSpaceToDash(props.item.name) },
-      }}
+    <Link
+      href={props.href}
     >
       <a className="text-decoration--none img-media-card">
         <style jsx global>
@@ -140,7 +138,7 @@ const ImgMediaCard = (props) => {
           component="img"
           alt="green iguana"
           height={props.heightCard}
-          image={props.item.image}
+          image={`${DOMAIN_SERVICE}/${props.item.image}`}
           className="card-image"
         ></CardMedia>
         {props.isCart &&<div className="img-media-card__icon-cart"><img src={icons.cart.src} alt="icon cart"/></div> }
@@ -185,7 +183,7 @@ const ImgMediaCard = (props) => {
       </a>
 
      
-    </TranslatedLink>
+    </Link>
   );
 };
 ImgMediaCard.defaultProps = {
