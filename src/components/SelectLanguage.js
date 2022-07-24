@@ -15,13 +15,14 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import content from "../../public/locales/content";
 import Link from "next/link";
+import { replaceStringMultiLanguage } from "../helpers/utils";
 
 export default function SelectLanguage() {
   const [localeDefault, setLocaleDefault] = React.useState("");
   const { locale, locales, defaultLocale, asPath,pathname } = useRouter();
-
+  const slug=asPath.split("/")
   useEffect(() => {
-    console.log( locale, locales, defaultLocale, asPath,pathname)
+ 
     setLocaleDefault(locale)
   }, []);
 
@@ -95,9 +96,7 @@ export default function SelectLanguage() {
           >
             <Link
               activeClassName={locale === "vi-VN"}
-              href={asPath}
-
-
+              href={replaceStringMultiLanguage(content['vi-VN'][`title.[${pathname}]`],{key: "slug", value:slug[slug.length-1]})}
               locale="vi-VN"
             >
               <IconTitle
@@ -121,7 +120,7 @@ export default function SelectLanguage() {
           <MenuItem className="select-box-m8__menu-item" value={"en-US"}>
             <Link
               activeClassName={locale === "en-US"}
-              href={asPath}
+              href={replaceStringMultiLanguage(content['en-US'][`title.[${pathname}]`],{key: "slug", value:slug[slug.length-1]})}
               locale="en-US"
             >
               <IconTitle

@@ -21,7 +21,8 @@ const nextConfig = {
   images:{
     domains: [
       'media4.giphy',
-      'upload.wikimedia.org'
+      'upload.wikimedia.org',
+      'assets.iproup.com'
     ]
   },
   i18n:{

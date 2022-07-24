@@ -39,7 +39,7 @@ const InputM8 = (props) => {
         id="outlined-adornment-password"
         type={"text"}
         endAdornment={
-          <InputAdornment position="end" placeHolder={props.placeHolder}  >{props.icon}</InputAdornment>
+          <InputAdornment position="end" placeholder={props.placeHolder}  >{props.icon}</InputAdornment>
         }
         label="Password"
         className="input-m8__outlined-input"

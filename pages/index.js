@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import { Button, CardMedia, Grid, List } from "@mui/material";
 import Navbar from "../src/components/Navbar";
 import MultiItemCarousel from "../src/components/Simple";

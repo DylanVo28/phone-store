@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import { createContext, useContext, useState,useEffect } from "react";
 import MobiService from "../../actions/MobiService";
 import content from "../../public/locales/content";

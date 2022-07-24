@@ -1,8 +1,23 @@
-
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 const ButtonBlockM8Style=()=>{
     return (<style jsx global>
         {
-            `.button-block-m8{
+            `
+            .button-block-m8.btn-submit{
+                width: 100%;
+                background: rgb(0 97 175 / 70%);
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.0015em;
+                text-transform: uppercase;
+                border-radius: 4px;
+            }
+            .button-block-m8{
                 background: linear-gradient(89.99deg, #0061AF 0.57%, #3787F3 99.99%);
                 border-radius: 6px;
                 display:block;

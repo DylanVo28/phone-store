@@ -59,7 +59,6 @@ const Packages = ({ res }) => {
   } = usePackageContext();
   useEffect(() => {
     const string=content[locale]['/packages/[id]']
-    console.log(replaceStringMultiLanguage(string,{key:"id",value:"123"}))
     setWidth(window.innerWidth);
     setStPackages(res[0]["data"]);
   }, []);

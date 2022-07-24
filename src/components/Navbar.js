@@ -195,7 +195,7 @@ function Navbar(props) {
                
               </Link>
               /
-              <Link href={"/logout"}>
+              <Link href={"/signup"}>
 
               <a className="navbar-header__register text-decoration--none">
                   <TypograPhyM8

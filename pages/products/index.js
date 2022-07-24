@@ -474,7 +474,6 @@ const Products = ({ res }) => {
             </Grid>
           </Container>
           {width && <SpeedDialTooltipOpen />}
-          {width && <SpeedDialTooltipOpen />}
           <Footer></Footer>
       </React.Fragment>
       </Hydration>

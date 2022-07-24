@@ -55,8 +55,9 @@ const MultiItemCarousel = (props) => {
         <Grid container className="filter-product" style={{paddingLeft: 7 +"px"}}>
           <Grid item xs={9} className="">
           {props.component == "package" && (<>
-            {filterPackages.map((item,index)=>index===0? <ButtonM8 title={item} className="btn-mobi-8 active"></ButtonM8> : <ButtonM8
+            {filterPackages.map((item,index)=>index===0? <ButtonM8 key={index} title={item} className="btn-mobi-8 active"></ButtonM8> : <ButtonM8
                 title={item}
+                key={index} 
                 className="btn-mobi-8-outline btn-package-outline"
               >
                 Outlined
@@ -67,9 +68,10 @@ const MultiItemCarousel = (props) => {
           )}
             {props.component == "product" && (
               <>
-              {filterProducts.map((item,index)=>index===0? <ButtonM8 title="Trả trước" className="btn-mobi-8"></ButtonM8>:  <ButtonM8
+              {filterProducts.map((item,index)=>index===0? <ButtonM8  key={index}  title="Trả trước" className="btn-mobi-8"></ButtonM8>:  <ButtonM8
                   title="Thiết bị phát wifi"
                   className="btn-mobi-8-outline"
+                  key={index} 
                 >
                   Outlined
                 </ButtonM8>)}

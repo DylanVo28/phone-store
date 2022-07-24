@@ -38,7 +38,6 @@ const ItemCheckBox=(props)=>{
               checked={props.checked}
               tabIndex={-1}
               disableRipple
-             
               inputProps={{ 'aria-labelledby':'checkbox-list-label-1'}}
               className="item-checkbox__checkbox"
             />

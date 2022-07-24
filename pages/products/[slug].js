@@ -1,6 +1,6 @@
-import Navbar from "./../../src/components/Navbar";
-import Footer from "./../../src/components/Footer";
-import SpeedDialTooltipOpen from "./../../src/components/SpeedDialTooltipOpen";
+import Navbar from "../../src/components/Navbar";
+import Footer from "../../src/components/Footer";
+import SpeedDialTooltipOpen from "../../src/components/SpeedDialTooltipOpen";
 import CarouselM8 from "../../src/components/Carousel";
 import React, { useEffect, useState } from "react";
 import ImageGalleryM8 from "../../src/components/ImageGalleryM8";
@@ -1124,10 +1124,10 @@ const ProductDetail = ({device}) => {
 
 export default ProductDetail;
 
-export async function getServerSideProps({req, query: { id }}) {
+export async function getServerSideProps({req, query: { slug }}) {
   //where call api to render data for page
-  const slug=id.split("_")
-  const device=await MobiService.getDeviceById(parseInt(slug[1]))
+  const items=slug.split("_")
+  const device=await MobiService.getDeviceById(parseInt(items[1]))
   return {
     props:{device}
   };

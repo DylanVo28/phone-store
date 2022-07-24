@@ -3,7 +3,8 @@
     "title.[/packages]":  "/goi-cuoc",
     "title.[/packages/package]":"/goi-cuoc/[package]",
     "title.[/products]":  "/thiet-bi",
-    "/products/[id]":"/thiet-bi",
+    "title.[/products/[slug]]":"/thiet-bi/{{slug}}",
+
     "packages.title":"Tiêu đề gói cước",
     "title.vietnamese": "Tiếng việt",
     "title.english":"Tiếng anh",

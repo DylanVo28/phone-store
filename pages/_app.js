@@ -1,8 +1,13 @@
+/*******************************************************************************
+ * Copyright 2022 (C) PVS Solution.
+ *
+ * Created on : 22/07/2022
+ * Author: Dinh Vo
+ *******************************************************************************/
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-
 import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/themes/lightTheme';
 import '../styles/globals.css';
@@ -20,8 +25,6 @@ import Products from './products/index';
 import Packages from './packages/index';
 import { PackageProvider } from '../src/context/PackageProvider';
 import { ProductProvider } from '../src/context/ProductProvider';
-
-
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

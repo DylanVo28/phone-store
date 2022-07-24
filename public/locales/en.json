@@ -3,6 +3,8 @@
     "title.[/packages]":  "/packages",
     "title.[/packages/package]":"/packages/[package]",
     "title.[/products]":  "/products",
+    "title.[/products/[slug]]":"/products/{{slug}}",
+
     "title.vietnamese": "Vietnamese",
     "title.english":"English",
     "title.product":"Products",

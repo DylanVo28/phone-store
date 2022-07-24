@@ -11,7 +11,7 @@ import iconDiscount from '../../src/images/Discount.svg'
 import MultiItemCarousel from "../../src/components/Simple";
 import icons from "../../src/images/icons";
 import PackageCardM8 from "../../src/components/PackageCardM8";
-import BreadCrumbsM8 from './../../src/components/BreadCrumbsM8';
+import BreadCrumbsM8 from '../../src/components/BreadCrumbsM8';
 
 const backgroundImage =
   "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
