@@ -8,8 +8,8 @@ import { Button } from '@mui/material';
 import ButtonBlockM8Style from './../styles/components/ButtonBlockM8Style';
 import  React  from 'react';
 
-const ButtonBlockM8=({children, background,className,type,style})=>{
-    return (<Button className={`button-block-m8 ${background} ${className}`} variant="contained" type={type} style={style}>
+const ButtonBlockM8=({children, background,className,type,style,onClick})=>{
+    return (<Button className={`button-block-m8 ${background} ${className}`} variant="contained" type={type} style={style} onClick={type!=="submit" ?onClick: undefined} >
         <ButtonBlockM8Style />
         <React.Fragment>
         {children}

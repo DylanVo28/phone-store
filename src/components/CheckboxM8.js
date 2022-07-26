@@ -9,10 +9,15 @@ import Checkbox from '@mui/material/Checkbox';
 import { Box } from '@mui/material';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function CheckboxM8({children,icon,checkedIcon}){
-    return (
-        <Box  component="div" >
-            <Checkbox {...label} icon={icon} checkedIcon={checkedIcon}/>
+export default function CheckboxM8({children,icon,checkedIcon,defaultChecked,handleChange,checked}){
+    return (<Box  component="div" className="checkbox-m8">
+            <style jsx global>{`
+                .checkbox-m8{
+                    display: flex;
+                    align-items: center;
+                }
+            `}</style>
+            <Checkbox {...label} icon={icon} checkedIcon={checkedIcon} defaultChecked={defaultChecked} checked={checked} onChange={handleChange}/>
             {children}
         </Box>
         

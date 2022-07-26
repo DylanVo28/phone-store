@@ -6,7 +6,7 @@
  *******************************************************************************/
 import Typography  from '@mui/material/Typography';
 import styles from './TypographyM8.module.sass'
-const TypograPhyM8=({isWhiteColor,style,title,children,component,variant})=>{
+const TypograPhyM8=({isWhiteColor,style,title,children,component,variant, className})=>{
     return <>
    <style jsx global>
         {`
@@ -29,9 +29,18 @@ const TypograPhyM8=({isWhiteColor,style,title,children,component,variant})=>{
                 text-transform: capitalize;
                 display:block;
             }
+            h1.text-mobi-8{
+                padding-left: 7px;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 28px;
+                color: #0061AF;
+                text-transform: uppercase;
+                display: block;
+            }
         `}
    </style>
-    <Typography component={component} variant={variant} className={" text-mobi-8 "+styles.textmobi8 +" "+ `${isWhiteColor?"":styles.colorblue}`} style={style}>
+    <Typography component={component} variant={variant} className={" text-mobi-8 "+styles.textmobi8 +" "+ `${isWhiteColor?"":styles.colorblue} ${className}`} style={style}>
         {title}
         {children}
     </Typography>

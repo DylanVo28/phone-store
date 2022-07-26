@@ -96,13 +96,13 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -126,12 +126,12 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   alignItems: 'center',
   ...(ownerState.active && {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+      'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
     boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   }),
   ...(ownerState.completed && {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+      'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
   }),
 }));
 
@@ -171,17 +171,43 @@ ColorlibStepIcon.propTypes = {
 
 const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
 
-export default function StepperM8() {
-  return (
-    <Stack sx={{ width: '100%' }} spacing={4}>
+export default function StepperM8(props) {
+  return (<>
+  <style>
+    {
+      `
+      .stepper-m8 .MuiStepLabel-label.Mui-active,.stepper-m8 .MuiStepLabel-label.Mui-completed{
+        color: #F1B821;
+      }
+      .stepper-m8 .MuiSvgIcon-root.Mui-completed{
+        color: #F1B821;
+      }
+        .stepper-m8 .MuiSvgIcon-root{
+          width: auto;
+          height: 40px;
+        }
+        .stepper-m8 .MuiSvgIcon-root.Mui-active{
+          color: #F1B821;
+        }
+        .stepper-m8 .MuiStepConnector-root{
+          top: 30%;
+          left: -30%;
+          right: 70%;
+
+        }
+      `
+    }
+  </style>
+    <Stack sx={{ width: '100%' }} spacing={4} className="stepper-m8">
       
-      <Stepper alternativeLabel activeStep={1} connector={<ColorlibConnector />}>
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+      <Stepper alternativeLabel activeStep={props.activeStep} connector={<ColorlibConnector />}>
+        {props.steps.map((item) => (
+          <Step key={item.key}>
+            <StepLabel >{item.text}</StepLabel>
           </Step>
         ))}
       </Stepper>
     </Stack>
+    </>
   );
 }

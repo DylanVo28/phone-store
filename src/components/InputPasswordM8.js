@@ -19,38 +19,35 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ButtonGroupM8 from './ButtonGroupM8';
-export default function InputPasswordM8() {
-  const [values, setValues] = React.useState({
-    password: '',
-    showPassword: false,
-  });
+import { useEffect } from 'react';
+import { isSpecialString, isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase } from '../helpers/utils';
+export default function InputPasswordM8(props) {
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+    setShowPassword( event.target.value );
   };
 
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+    setShowPassword(!showPassword)
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
+  const checkValidInput=(str)=>{
+    
+  }
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      <div>
+    <Box style={{width: '100%'}} className="input-password-m8">
        
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl sx={{ m: 1, width: '100%',margin: 0 }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
+            type={showPassword ? 'text' : 'password'}
+            value={props.value}
+            onChange={props.handleChange}
             startAdornment={
                 <InputAdornment position="start">
                   <AccountCircle />
@@ -64,7 +61,7 @@ export default function InputPasswordM8() {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
             }
@@ -73,7 +70,6 @@ export default function InputPasswordM8() {
          
 
         </FormControl>
-      </div>
     </Box>
   );
 }

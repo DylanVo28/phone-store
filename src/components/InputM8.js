@@ -18,16 +18,18 @@ import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { PropTypes } from 'prop-types';
 const InputM8 = (props) => {
   const [value, setValue] = useState("");
   const [widthForm,setWidthform]=useState(23)
+
   return (
     <FormControl
       sx={{ m: 1, width: widthForm+"ch" }}
       variant="outlined"
       className="input-m8"
+      style={props.style}
     >
       <InputLabel
         htmlFor="outlined-adornment-password"
@@ -41,11 +43,12 @@ const InputM8 = (props) => {
         endAdornment={
           <InputAdornment position="end" placeholder={props.placeHolder}  >{props.icon}</InputAdornment>
         }
+
         label="Password"
         className="input-m8__outlined-input"
-        onChange={(e) => setValue(e.target.value)}
+        onChange={props.handleChange}
+        defaultValue={props.defaultValue}
         onFocus={e=>setWidthform(25)}
-        onBlur={e=>setWidthform(23)}
       />
     </FormControl>
   );

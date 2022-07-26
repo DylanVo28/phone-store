@@ -8,10 +8,10 @@ import React, { useRef, useState } from 'react';
 import AuthCode, { AuthCodeRef } from 'react-auth-code-input';
 import { Box } from '@mui/material';
 
-const AuthCodeInputM8 = () => {
+const AuthCodeInputM8 = (props) => {
     const [result, setResult] = useState();
     const handleOnChange = (res) => {
-      setResult(res);
+      props.handleChange(res)
     };
   
     return<><style>
@@ -45,7 +45,7 @@ const AuthCodeInputM8 = () => {
       
     `}</style>
     <Box component="div" className='auth-code' >
-    <AuthCode onChange={handleOnChange} />
+    <AuthCode onChange={handleOnChange}/>
 
 
     </Box>

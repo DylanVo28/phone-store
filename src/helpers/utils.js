@@ -17,3 +17,32 @@ export const replaceStringMultiLanguage=(str,...objs)=>{
     }
    return ""
 }
+
+export const isValidStrUpperCase=(str)=>{
+    if(str.match(new RegExp("[A-Z]"))){
+        return true
+    }
+    return false
+}
+
+export const isValidStrLowerCase=(str)=>{
+    if(str.match(new RegExp("[a-z]"))){
+        return true
+    }
+    return false
+}
+
+export const isSpecialString=(str)=>{
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if(format.test(str)){
+        return true;
+      } 
+    return false
+}
+
+export const isValidCharNumber=(str)=>{
+    if(str.match(new RegExp(/\d+/g))){
+        return true
+    }
+    return false
+}

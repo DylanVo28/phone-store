@@ -15,14 +15,15 @@ const buttons = [
   <Button key="three">Three</Button>,
 ];
 
-export default function ButtonGroupM8({children}) {
+export default function ButtonGroupM8({children,className}) {
   return (
     <Box
-    
+    className={className}
     >
       <ButtonGroup
         aria-label="vertical outlined button group"
         style={{display: 'flex'}}
+        
       >
         {children}
       </ButtonGroup>

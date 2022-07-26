@@ -25,6 +25,10 @@ import Products from './products/index';
 import Packages from './packages/index';
 import { PackageProvider } from '../src/context/PackageProvider';
 import { ProductProvider } from '../src/context/ProductProvider';
+import SignUp from './signup';
+import { SignupProvider } from '../src/context/SignupProvider';
+import SignIn from './signin';
+import { SignInProvider } from '../src/context/SigninProvider';
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -62,6 +66,10 @@ const MyApp = (props) => {
         return <ProductProvider><Component {...pageProps} /></ProductProvider>
       case Packages:
         return <PackageProvider><Component {...pageProps} /></PackageProvider>
+      case SignUp:
+        return <SignupProvider><Component {...pageProps} /></SignupProvider>
+        case SignIn:
+          return <SignInProvider><Component {...pageProps} /></SignInProvider>
       default:
         return <Component {...pageProps} />
     }
