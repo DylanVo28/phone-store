@@ -30,7 +30,7 @@ const AuthCodeInputM8 = (props) => {
         background: #fff;
         background-clip: padding-box;
         border: none;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #0061AF;
       }
       
       .auth-code input:focus {

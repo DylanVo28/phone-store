@@ -184,11 +184,13 @@ function Navbar(props) {
             <Link href={"/signin"} passHref>
                 <a className="navbar-header__sign-in text-decoration--none">
                 <span className="icon-title__icon">
-                    <Image width={20} height={20} src={IconUser.src} alt="user"/>
+                    <Image width={30} height={30} src={IconUser.src} alt="user"/>
                   </span>
                   <TypograPhyM8
                     title={content[locale]['title.signin']}
-                    isWhiteColor={true}
+                    component={"h6"}
+                    className={"f-16"}
+                    style={{margin: 0,color: 'white',fontWeight: '500'}}
                   ></TypograPhyM8>
                 
                 </a>
@@ -200,8 +202,10 @@ function Navbar(props) {
               <a className="navbar-header__register text-decoration--none">
                   <TypograPhyM8
                     title={content[locale]['title.signup']}
-                    isWhiteColor={true}
-                    style={{paddingLeft: '10px'}}
+                 
+                    component={"h6"}
+                    className={"f-16"}
+                    style={{paddingLeft: '10px',margin: 0,color: 'white',fontWeight: '500'}}
                   ></TypograPhyM8>
                  
                 </a>

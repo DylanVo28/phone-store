@@ -29,6 +29,8 @@ import SignUp from './signup';
 import { SignupProvider } from '../src/context/SignupProvider';
 import SignIn from './signin';
 import { SignInProvider } from '../src/context/SigninProvider';
+import ResetPassword from './reset-password';
+import { ResetPasswordProvider } from '../src/context/ResetPasswordProvider';
 
 const MyApp = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -70,6 +72,8 @@ const MyApp = (props) => {
         return <SignupProvider><Component {...pageProps} /></SignupProvider>
         case SignIn:
           return <SignInProvider><Component {...pageProps} /></SignInProvider>
+        case ResetPassword:
+          return <ResetPasswordProvider><Component {...pageProps} /></ResetPasswordProvider>
       default:
         return <Component {...pageProps} />
     }

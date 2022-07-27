@@ -51,7 +51,9 @@
     "title.packages.duration":"Thời lượng gói",
     "title.packages.notFound":"Không tìm thấy thiết bị",
 
-
+    "reset-password":"Khôi phục password",
+    "signup":"Đăng ký",
+    "signin":"Đăng nhập",
     "packages":"Danh sách gói cước",
     "products":"Danh sách thiết bị",
     "title.home":"Trang chủ",

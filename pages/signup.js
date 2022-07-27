@@ -26,13 +26,11 @@
  import ButtonGroupM8 from "../src/components/ButtonGroupM8";
  import IconTickSuccess from "../src/images/tick-success.svg";
  import { useSignUpcontext } from "../src/context/SignupProvider";
- 
+ import LinkM8 from "../src/components/LinkM8";
+ import banner from '../src/images/banner-form.png'
  const SelectTypeSignUp = (props) => {
-   const {
-     stSignupPhone,
-     handleChange,
-     handleChangeSelect
-   } = useSignUpcontext();
+   const { stSignupPhone, handleChange, handleChangeSelect } =
+     useSignUpcontext();
    return (
      <>
        <Box component="div">
@@ -68,22 +66,25 @@
    );
  };
  const FormSignUp = (props) => {
-   const {
-     handleChange,
-     signUpTypes,
-     stSignupPhone,
-     changeStepActive
-   } = useSignUpcontext();
+   const { handleChange, signUpTypes, stSignupPhone, changeStepActive } =
+     useSignUpcontext();
    return (
      <FormSubmitM8
-       handleSubmit={(e) => changeStepActive("activeStep",props.activeStep)}
+       handleSubmit={(e) => changeStepActive("activeStep", props.activeStep)}
        className="form-signup"
      >
        <InputM8
          placeHolder={props.placeHolder}
          icon={props.icon}
          style={{ marginTop: "15px" }}
-         handleChange={(e) => handleChange(e.target.value, (stSignupPhone.type.key === signUpTypes[0].key)?"phoneNumber":"email")}
+         handleChange={(e) =>
+           handleChange(
+             e.target.value,
+             stSignupPhone.type.key === signUpTypes[0].key
+               ? "phoneNumber"
+               : "email"
+           )
+         }
        />
        <ButtonBlockM8
          type="submit"
@@ -92,35 +93,62 @@
        >
          Tiếp theo
        </ButtonBlockM8>
-       <TypograPhyM8 component={"p"} variant={"p"} style={{ marginTop: "15px" }}>
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         style={{ marginTop: "15px" }}
+         className={"p-12"}
+       >
          Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
          <span style={{ color: "red" }}>Chính sách riêng tư</span>
        </TypograPhyM8>
-       <TypograPhyM8 component={"p"} variant={"p"} style={{ marginTop: "15px" }}>
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         style={{ marginTop: "15px" }}
+         className={"p-14"}
+       >
          Bạn đã có tài khoản? Bạn muốn
-         <span style={{ color: "blue" }}>Đăng nhập</span>
+         <span>
+           <LinkM8
+             href={"/signin"}
+             title={" Đăng nhập"}
+             style={{ color: "blue" }}
+             className={"sign-up__href-sign-in"}
+           ></LinkM8>
+         </span>
        </TypograPhyM8>
      </FormSubmitM8>
    );
  };
  const FormAuthCode = () => {
-   const { handleChange, handleChangeCodeValidator,changeStepActive } = useSignUpcontext();
+   const { handleChange, handleChangeCodeValidator, changeStepActive } =
+     useSignUpcontext();
    return (
      <FormSubmitM8
-       handleSubmit={(e) => changeStepActive("activeStep",1)}
+       handleSubmit={(e) => changeStepActive("activeStep", 1)}
        className="form-auth-code"
      >
        <TypograPhyM8 variant="h5" component="h5" className="title">
-         Đăng ký tài khoản
+         Vui lòng nhập mã xác minh
        </TypograPhyM8>
-       <TypograPhyM8 component={"p"} variant={"p"}>
-         Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
-       </TypograPhyM8>
+       <Box component="div">
+         <TypograPhyM8 component={"p"} variant={"p"} className={"p-14"}>
+           Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
+         </TypograPhyM8>
+         <TypograPhyM8 component={"h6"} variant={"h6"} className={"f-16"}>
+           +84 378344936
+         </TypograPhyM8>
+       </Box>
+ 
        <AuthCodeInputM8 handleChange={handleChangeCodeValidator} />
-       <TypograPhyM8 component={"p"} variant={"p"}>
-         Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         className="p-14"
+         style={{ color: "#A2A2A2" }}
+       >
+         Nếu chưa nhận được, vui lòng chờ trong 60 giây để gửi lại.
        </TypograPhyM8>
        <ButtonBlockM8
          type="submit"
@@ -129,35 +157,52 @@
        >
          Tiếp theo
        </ButtonBlockM8>
-       <TypograPhyM8 component={"p"} variant={"p"}>
-         Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         style={{ marginTop: "15px" }}
+         className={"p-14"}
+       >
+         Bạn đã có tài khoản? Bạn muốn
+         <span>
+           <LinkM8
+             href={"/signin"}
+             title={" Đăng nhập"}
+             style={{ color: "blue" }}
+             className={"sign-up__href-sign-in"}
+           ></LinkM8>
+         </span>
        </TypograPhyM8>
      </FormSubmitM8>
    );
  };
  const FormPassword = (props) => {
-   const { stSignupPhone, handleChange, handleChangeCodeValidator,changeStepActive } =
-     useSignUpcontext();
+   const {
+     stSignupPhone,
+     handleChange,
+     handleChangeCodeValidator,
+     changeStepActive,
+   } = useSignUpcontext();
    return (
      <FormSubmitM8
-       handleSubmit={(e) => changeStepActive("activeStep",2)}
+       handleSubmit={(e) => changeStepActive("activeStep", 2)}
        className={"form-password"}
      >
        <TypograPhyM8 variant="h5" component="h5" className="title">
-         Đăng ký tài khoản
+         Thiết lập mật khẩu
        </TypograPhyM8>
-       <TypograPhyM8 component={"p"} variant={"p"}>
-         Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
+       <TypograPhyM8 component={"p"} variant={"p"} className={"p-14"}>
+         Thiết lập mật khẩu để hoàn tất việc đăng ký
        </TypograPhyM8>
        <InputPasswordM8
          value={stSignupPhone.password}
          handleChange={(e) => handleChange(e.target.value, "password")}
+         placeHolder={"Nhập mật khẩu *"}
        ></InputPasswordM8>
        <InputPasswordM8
          value={stSignupPhone.confirmPassword}
          handleChange={(e) => handleChange(e.target.value, "confirmPassword")}
+         placeHolder={"Nhập lại mật khẩu *"}
        ></InputPasswordM8>
        <ButtonGroupM8>
          <ButtonBlockM8
@@ -175,9 +220,21 @@
            Tiếp theo
          </ButtonBlockM8>
        </ButtonGroupM8>
-       <TypograPhyM8 component={"p"} variant={"p"}>
-         Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         style={{ marginTop: "15px" }}
+         className={"p-14"}
+       >
+         Bạn đã có tài khoản? Bạn muốn
+         <span>
+           <LinkM8
+             href={"/signin"}
+             title={" Đăng nhập"}
+             style={{ color: "blue" }}
+             className={"sign-up__href-sign-in"}
+           ></LinkM8>
+         </span>
        </TypograPhyM8>
      </FormSubmitM8>
    );
@@ -186,7 +243,7 @@
    return (
      <FormSubmitM8 className={"form-success"}>
        <TypograPhyM8 variant="h5" component="h5" className="title">
-         Đăng ký tài khoản
+         Đăng ký thành công
        </TypograPhyM8>
        <Image
          width={64}
@@ -194,9 +251,19 @@
          src={IconTickSuccess.src}
          alt={"tick success"}
        />
-       <TypograPhyM8 variant="p" component="p" className="title">
-         Tạo thành công
-       </TypograPhyM8>
+       <Box component={"div"}>
+         <TypograPhyM8 variant="h6" component="h6" className="f-16">
+           Bạn đã tạo thành công tài khoản Mobifone với số
+         </TypograPhyM8>
+         <TypograPhyM8
+           variant="h6"
+           component="h6"
+           className="f-16"
+           style={{ color: "red" }}
+         >
+           (+84) 359161790
+         </TypograPhyM8>
+       </Box>
        <ButtonBlockM8
          className="btn-submit"
          style={{ background: "#0061AF", marginLeft: "10px" }}
@@ -207,13 +274,8 @@
    );
  };
  export default function SignUp() {
-   const {
-     stSignupPhone,
-     signUpTypes,
-     handleChange,
-     steps,
-     changeStepActive
-   } = useSignUpcontext();
+   const { stSignupPhone, signUpTypes, handleChange, steps, changeStepActive } =
+     useSignUpcontext();
    var TO_later;
    function delayedCall(fn, delay) {
      clearTimeout(TO_later);
@@ -231,30 +293,74 @@
      <>
        <style jsx global>
          {`
-           .sign-up__right{
-             width: 100%;
-           }
-            `}
+            .sign-up__right{
+              width: 100%;
+              padding: 15px;
+             min-height: 328px;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+            }
+            .sign-up .sign-up__href-sign-in{
+             font-weight: 400;
+             line-height: 14px;
+             text-align: center;
+             letter-spacing: 0.004em;
+             text-transform: capitalize;
+             text-decoration: none;
+             float: none;
+            }
+            .sign-up .form-auth-code{
+             min-height: 400px!important;
+            }
+            .sign-up .form-password{
+             min-height: 400px!important;
+            }
+            .sign-up .input-password-m8 .MuiOutlinedInput-notchedOutline{
+             display: none;
+            }
+            .sign-up .input-password-m8 .MuiInputBase-root{
+             border: 1px solid #CBCBCB;
+            }
+            .sign-up .form-success{
+             min-height: 400px!important;
+            }
+            .sign-up .sign-up__right .checkbox-m8 .Mui-checked{
+             color: #F1B821;
+            }
+            .bread-crumb-m8 {
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
+             `}
        </style>
        <Navbar />
        <div style={{ height: "120px" }}></div>
-       <BreadCrumbsM8 />
+       <Box component="section">
+         <Container>
+           <Grid container spacing={2}>
+             <Grid item xs={12}>
+               <BreadCrumbsM8 />
+             </Grid>
+           </Grid>
+         </Container>
+       </Box>
        <Box component="section" className="sign-up">
          <Container>
            <Grid container spacing={2}>
-             <Grid item xs={6}>
+             <Grid item xs={7}>
                <div
                  style={{ width: "100%", height: "521px", position: "relative" }}
                >
                  <Image
                    alt="Mountains"
-                   src="https://assets.iproup.com/cdn-cgi/image/w=880,f=webp/https://assets.iproup.com/assets/jpg/2021/09/22436.jpg"
+                   src={banner.src}
                    layout="fill"
                    objectFit="cover"
                  />
                </div>
              </Grid>
-             <Grid item xs={6} style={{ display: "flex", alignItems: "center" }}>
+             <Grid item xs={5} style={{ display: "flex", alignItems: "center" }}>
                <Box
                  component="div"
                  style={{ padding: "15px" }}
@@ -297,8 +403,8 @@
                    <FormPassword
                      back={() =>
                        stSignupPhone.type.key === signUpTypes[0].key
-                         ? changeStepActive("activeStep",0)
-                         : changeStepActive( "activeStep",-1)
+                         ? changeStepActive("activeStep", 0)
+                         : changeStepActive("activeStep", -1)
                      }
                    />
                  )}

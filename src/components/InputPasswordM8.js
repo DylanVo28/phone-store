@@ -42,12 +42,13 @@ export default function InputPasswordM8(props) {
     <Box style={{width: '100%'}} className="input-password-m8">
        
         <FormControl sx={{ m: 1, width: '100%',margin: 0 }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          {/* <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> */}
           <OutlinedInput
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
             value={props.value}
             onChange={props.handleChange}
+            placeholder={props.placeHolder}
             startAdornment={
                 <InputAdornment position="start">
                   <AccountCircle />

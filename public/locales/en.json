@@ -51,6 +51,10 @@
     "title.packages.notFound":"Not found",
 
     "/products/[id]":"/products",
+
+    "reset-password":"Reset password",
+    "signup":"Sign up",
+    "signin":"Sign in",
     "packages.title":"Title packages",
     "products":"Devices",
     "packages":"Packages",

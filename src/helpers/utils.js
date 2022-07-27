@@ -46,3 +46,17 @@ export const isValidCharNumber=(str)=>{
     }
     return false
 }
+
+export const isValidPhoneNumber=(str)=>{
+    if(str.match(new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im))){
+        return true
+    }
+    return false
+}
+
+export const isValidEmail=(str)=>{
+    if(str.match(new RegExp( /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))){
+        return true
+    }
+    return false
+}
