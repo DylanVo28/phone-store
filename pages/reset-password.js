@@ -22,7 +22,7 @@ import AuthCodeInputM8 from "../src/components/AuthCodeInputM8";
 import LinkM8 from "../src/components/LinkM8";
 import { useResetPasswordContext } from "../src/context/ResetPasswordProvider";
 import banner from '../src/images/banner-form.png'
-
+import emailIcon from '../src/images/email-outline.svg'
 const FormAuthCode = () => {
   const {handleChange,submitUsername}=useResetPasswordContext()
 
@@ -92,7 +92,7 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
     </TypograPhyM8>
     <InputM8
       placeHolder={"Email/ SDT"}
-      icon={props.icon}
+      icon={<Image src={emailIcon.src} width={30} height={25} alt="tada"/>}
       style={{ marginTop: "15px" }}
         handleChange={(e) => handleChange("stUsername",e.target.value )}
     />
@@ -129,10 +129,12 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
          </TypograPhyM8>
        </Box>
         <InputPasswordM8
+        placeHolder={"Nhập mật khẩu"}
         //   value={stSignupPhone.password}
         //   handleChange={(e) => handleChange(e.target.value, "password")}
         ></InputPasswordM8>
         <InputPasswordM8
+        placeHolder={"Nhập lại mật khẩu"}
         //   value={stSignupPhone.confirmPassword}
         //   handleChange={(e) => handleChange(e.target.value, "confirmPassword")}
         ></InputPasswordM8>
@@ -168,14 +170,18 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
           src={IconTickSuccess.src}
           alt={"tick success"}
         />
+        <Box>
         <TypograPhyM8 variant="h6" component="h6" className="title f-16">
         Bạn đã tạo lại mật khẩu thành công với số
-(+84) 3591617190
- 
         </TypograPhyM8>
+        <TypograPhyM8 variant="h6" component="h6" className="title f-16" style={{color: 'red'}}> 
+        (+84) 3591617190
+        </TypograPhyM8>
+        </Box>
+      
         <ButtonBlockM8
           className="btn-submit"
-          style={{ background: "#0061AF", marginLeft: "10px" }}
+          style={{ background: "#0061AF"}}
         >
           Đăng nhập
         </ButtonBlockM8>
@@ -216,7 +222,7 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
       min-height: 400px!important;
     }
     .reset-password .form-submit-m8.form-success{
-      min-height: 480px;
+      min-height: 400px;
     }
   `
 }

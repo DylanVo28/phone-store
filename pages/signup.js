@@ -14,7 +14,6 @@
  import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
  import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
  import InputM8 from "../src/components/InputM8";
- import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
  import { Visibility } from "@mui/icons-material/Visibility";
  import FormSubmitM8 from "../src/components/FormSubmitM8";
  import ButtonM8 from "../src/components/ButtonM8/Button";
@@ -28,6 +27,9 @@
  import { useSignUpcontext } from "../src/context/SignupProvider";
  import LinkM8 from "../src/components/LinkM8";
  import banner from '../src/images/banner-form.png'
+ import iconPhoneOutline from '../src/images/icon-phone-outline.svg'
+ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+ import emailIcon from '../src/images/email-outline.svg'
  const SelectTypeSignUp = (props) => {
    const { stSignupPhone, handleChange, handleChangeSelect } =
      useSignUpcontext();
@@ -45,7 +47,7 @@
        </Box>
        <Box
          component="div"
-         style={{ display: "flex", justifyContent: "space-around" }}
+         style={{ display: "flex", justifyContent: "space-around",marginTop: '10px' }}
        >
          {props.signUpTypes.map((item) => (
            <CheckboxM8
@@ -56,7 +58,7 @@
              handleChange={(e) => handleChangeSelect(item, "type")}
              checked={item === stSignupPhone.type}
            >
-             <Typography component="span" variant="span">
+             <Typography component="span" variant="span" style={{fontSize: '14px'}}>
                {item.text}
              </Typography>
            </CheckboxM8>
@@ -75,8 +77,7 @@
      >
        <InputM8
          placeHolder={props.placeHolder}
-         icon={props.icon}
-         style={{ marginTop: "15px" }}
+         icon={<Image src={ stSignupPhone.type.key === signUpTypes[0].key ?iconPhoneOutline.src:emailIcon.src} width={30} height={30} alt={"iconphone"}/>}
          handleChange={(e) =>
            handleChange(
              e.target.value,
@@ -85,27 +86,37 @@
                : "email"
            )
          }
+         style={{marginTop: '10px'}}
        />
        <ButtonBlockM8
          type="submit"
          className="btn-submit"
-         style={{ marginTop: "15px" }}
+         style={{ marginTop: "24px" }}
        >
          Tiếp theo
        </ButtonBlockM8>
+       <Box component="div">
        <TypograPhyM8
          component={"p"}
          variant={"p"}
-         style={{ marginTop: "15px" }}
-         className={"p-12"}
+         style={{ marginTop: "32px" }}
+         className={"p-14"}
        >
          Bằng việc Đăng kí, bạn đã đồng ý với Mobifone và{" "}
-         <span style={{ color: "red" }}>Chính sách riêng tư</span>
        </TypograPhyM8>
        <TypograPhyM8
          component={"p"}
          variant={"p"}
-         style={{ marginTop: "15px" }}
+         style={{ color:"red" }}
+         className={"p-14"}
+       >Chính sách riêng tư
+        </TypograPhyM8>
+       </Box>
+       
+       <TypograPhyM8
+         component={"p"}
+         variant={"p"}
+         style={{ marginTop: "24px" }}
          className={"p-14"}
        >
          Bạn đã có tài khoản? Bạn muốn
@@ -206,7 +217,7 @@
        ></InputPasswordM8>
        <ButtonGroupM8>
          <ButtonBlockM8
-           className="btn-submit"
+           className="btn-cancel"
            style={{ background: "#D9D9D9", marginRight: "10px" }}
            onClick={props.back}
          >
@@ -252,7 +263,7 @@
          alt={"tick success"}
        />
        <Box component={"div"}>
-         <TypograPhyM8 variant="h6" component="h6" className="f-16">
+         <TypograPhyM8 variant="h6" component="h6" className="f-16" style={{textTransform: 'inherit'}}>
            Bạn đã tạo thành công tài khoản Mobifone với số
          </TypograPhyM8>
          <TypograPhyM8
@@ -266,7 +277,7 @@
        </Box>
        <ButtonBlockM8
          className="btn-submit"
-         style={{ background: "#0061AF", marginLeft: "10px" }}
+         style={{ background: "#0061AF" }}
        >
          Đăng nhập
        </ButtonBlockM8>
@@ -301,6 +312,7 @@
              flex-direction: column;
              justify-content: space-between;
             }
+         
             .sign-up .sign-up__href-sign-in{
              font-weight: 400;
              line-height: 14px;
@@ -332,6 +344,10 @@
               padding-top: 15px;
               padding-bottom: 15px;
             }
+            .sign-up .input-password-m8 .MuiOutlinedInput-input{
+              padding: 12.5px 14px;
+            }
+            .sign-up .sign-up__right 
              `}
        </style>
        <Navbar />
@@ -350,7 +366,7 @@
            <Grid container spacing={2}>
              <Grid item xs={7}>
                <div
-                 style={{ width: "100%", height: "521px", position: "relative" }}
+                 style={{ width: "100%", height: "521px", position: "relative",marginTop:'30px' }}
                >
                  <Image
                    alt="Mountains"
@@ -381,8 +397,7 @@
                      }
                      icon={
                        <LocalPhoneOutlinedIcon
-                         aria-label="toggle password visibility"
-                         edge="end"
+                         alt={"icon phone outline"}
                        >
                          {<Visibility />}
                        </LocalPhoneOutlinedIcon>
@@ -391,6 +406,7 @@
                  )}
                  {stSignupPhone.activeStep !== -1 && (
                    <StepperM8
+                   
                      activeStep={stSignupPhone.activeStep}
                      steps={steps}
                    />

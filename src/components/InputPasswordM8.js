@@ -21,6 +21,12 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import ButtonGroupM8 from './ButtonGroupM8';
 import { useEffect } from 'react';
 import { isSpecialString, isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase } from '../helpers/utils';
+import Image from 'next/image';
+import lockIcon from '../images/lock.svg'
+import visibilityOffIcon from '../images/visibility-off.svg'
+import visibilityOnIcon from '../images/visibility-on.svg'
+
+import styled from 'styled-components'
 export default function InputPasswordM8(props) {
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -38,9 +44,29 @@ export default function InputPasswordM8(props) {
   const checkValidInput=(str)=>{
     
   }
+  const StyledImage = styled(Image)`
+// your styles here
+marginRight: 30px; 
+`
+
   return (
     <Box style={{width: '100%'}} className="input-password-m8">
-       
+       <style jsx global>
+
+        {
+          `
+            .input-password-m8 .MuiOutlinedInput-input{
+              padding: 12.5px 14px;
+            }
+            .input-password-m8 .MuiInputBase-root{
+              border: 1px solid#cbcbcb;
+            }
+            .input-password-m8 .MuiOutlinedInput-notchedOutline{
+              display: none;
+            }
+          `
+        }
+       </style>
         <FormControl sx={{ m: 1, width: '100%',margin: 0 }} variant="outlined">
           {/* <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> */}
           <OutlinedInput
@@ -51,7 +77,7 @@ export default function InputPasswordM8(props) {
             placeholder={props.placeHolder}
             startAdornment={
                 <InputAdornment position="start">
-                  <AccountCircle />
+                  <Image src={lockIcon.src} width={30} height={30} alt="lock" />
                 </InputAdornment>
               }
             endAdornment={
@@ -61,8 +87,9 @@ export default function InputPasswordM8(props) {
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
+                  style={{marginRight: '10px'}}
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <Image  src={visibilityOffIcon.src} width={20} height={20} alt="lock" />: <Image  src={visibilityOnIcon.src} width={20} height={20} alt="lock" /> }
                 </IconButton>
               </InputAdornment>
             }

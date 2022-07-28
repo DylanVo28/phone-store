@@ -100,7 +100,7 @@ import mail from '../src/images/icon-email.png'
        <InputM8
          placeHolder={props.placeHolder}
          icon={props.icon}
-         style={{ marginTop: "15px" }}
+         style={{ marginTop: "24px" }}
          //   handleChange={(e) => handleChange(e.target.value, (stSignupPhone.type.key === signUpTypes[0].key)?"phoneNumber":"email")}
        />
        <InputPasswordM8
@@ -309,7 +309,7 @@ import mail from '../src/images/icon-email.png'
            justify-content: space-between;
          }
          .sign-in .form-auth-code{
-           min-height: 500px;
+           min-height: 500px!important;
            display: flex;
            flex-direction: column;
            justify-content: space-between;
@@ -338,8 +338,9 @@ import mail from '../src/images/icon-email.png'
              padding: 0 10%;
          }
          .sign-in .link-mb-8{
-             margin-top: 10px;
+             margin-top: 12px;
              text-transform: inherit;
+             text-decoration: none;
          }
          .sign-in .icon-title__title{
              font-weight: 400;
@@ -378,6 +379,9 @@ import mail from '../src/images/icon-email.png'
           .bread-crumb-m8 {
             padding-top: 15px;
             padding-bottom: 15px;
+          }
+          .sign-in .form-submit-m8.form-success{
+            min-height: 400px;
           }
          `}
        </style>

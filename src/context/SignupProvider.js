@@ -7,7 +7,7 @@
  import { createContext, useContext, useState } from "react";
 import { useEffect } from 'react';
 import { isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase,isSpecialString  } from "../helpers/utils";
-
+import DoneIcon from '@mui/icons-material/Done';
  const Context = createContext();
  const signUpTypes=[
     {
@@ -30,7 +30,7 @@ import { isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase,isSpecialSt
         activeStep:1
     },
     {
-        key:"icon",
+        key:3,
         text:"hoàn thành",
         activeStep: 2
     }

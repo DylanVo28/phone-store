@@ -8,6 +8,19 @@ const ButtonBlockM8Style=()=>{
     return (<style jsx global>
         {
             `
+            .button-block-m8.btn-cancel{
+                background: rgb(217, 217, 217);
+                margin-right: 10px;
+                color: #828282;
+                width: 100%;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: .0015em;
+                text-transform: uppercase;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+            }
             .button-block-m8.btn-submit{
                 width: 100%;
                 background: rgb(0 97 175 / 70%);

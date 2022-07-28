@@ -35,7 +35,7 @@ const TypograPhyM8=({isWhiteColor,style,title,children,component,variant, classN
                 line-height: 28px;
                 text-align: center;
                 color: #333333;
-                text-transform: capitalize;
+                text-transform: inherit;
                 display:block;
             }
             h1.text-mobi-8{
@@ -57,6 +57,7 @@ const TypograPhyM8=({isWhiteColor,style,title,children,component,variant, classN
                 display: block;
                 margin-top:15px;
                 padding: 0px;
+                text-transform: inherit;
             }
         `}
    </style>

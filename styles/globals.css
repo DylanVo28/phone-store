@@ -305,7 +305,7 @@ body{
 .input-m8 .input-m8__outlined-input{
   flex-direction: row-reverse;
   border-radius: 12px;
-  height: 44px;
+  height: 48px;
 }
 .input-m8 .input-m8__label{
   padding-left: 33px;

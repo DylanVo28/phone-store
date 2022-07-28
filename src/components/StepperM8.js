@@ -16,6 +16,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import DoneIcon from '@mui/icons-material/Done';
+
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -108,6 +110,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`& .${stepConnectorClasses.line}`]: {
     height: 3,
     border: 0,
+    width: '83px',
     backgroundColor:
       theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
     borderRadius: 1,
@@ -115,9 +118,10 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
 }));
 
 const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
+  backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : 'none',
   zIndex: 1,
-  color: '#fff',
+  color: '#C5C5C5',
+  border: '1px solid #C5C5C5',
   width: 50,
   height: 50,
   display: 'flex',
@@ -127,23 +131,24 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   ...(ownerState.active && {
     backgroundImage:
       'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+    color: 'white',
+    border: 'none',
   }),
   ...(ownerState.completed && {
     backgroundImage:
       'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
+    color: 'white',
+    border: 'none',
   }),
 }));
 
 function ColorlibStepIcon(props) {
   const { active, completed, className } = props;
-
   const icons = {
-    1: <SettingsIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
+    1: "1",
+    2: "2",
+    3: <DoneIcon />,
   };
-
   return (
     <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
       {icons[String(props.icon)]}
@@ -195,6 +200,24 @@ export default function StepperM8(props) {
           right: 70%;
 
         }
+        .stepper-m8 .MuiStepConnector-line::before{
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          display: block;
+          border-right: 3px solid #eaeaf0;
+          border-bottom: 3px solid #eaeaf0;
+          width: 10px;
+          height: 10px;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        .stepper-m8 .Mui-active .MuiStepConnector-line::before,.stepper-m8 .Mui-completed .MuiStepConnector-line::before{
+          border-right: 3px solid #f2bc2d;
+          border-bottom: 3px solid #f2bc2d;
+        }
+        
+        
       `
     }
   </style>
@@ -202,8 +225,8 @@ export default function StepperM8(props) {
       
       <Stepper alternativeLabel activeStep={props.activeStep} connector={<ColorlibConnector />}>
         {props.steps.map((item) => (
-          <Step key={item.key}>
-            <StepLabel >{item.text}</StepLabel>
+          <Step  key={item.key}>
+            <StepLabel  StepIconComponent={ColorlibStepIcon}>{item.text}</StepLabel>
           </Step>
         ))}
       </Stepper>
