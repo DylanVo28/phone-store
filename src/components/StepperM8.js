@@ -216,7 +216,9 @@ export default function StepperM8(props) {
           border-right: 3px solid #f2bc2d;
           border-bottom: 3px solid #f2bc2d;
         }
-        
+        .stepper-m8 .MuiStep-root {
+          padding: 0;
+        }
         
       `
     }
