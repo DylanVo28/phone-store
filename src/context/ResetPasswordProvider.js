@@ -5,7 +5,8 @@
  * Author: Dinh Vo
  *******************************************************************************/
  import { createContext, useContext, useState } from "react";
-import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
+import { isSpecialString, isValidCharNumber, isValidEmail, isValidPhoneNumber, isValidStrLowerCase, isValidStrUpperCase } from "../helpers/utils";
+import { useEffect } from 'react';
  const Context = createContext();
  const types = [
    {
@@ -28,8 +29,79 @@ import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
      stOTP: {
        phoneNumber: "",
        authCode: "",
+       password: "",
+       confirmPassword:""
      },
+     isArrayValidPassword:[{
+      valid:false,
+      name: "Bao gồm chữ thường"
+     },
+     {
+      valid:false,
+      name: "Bao gồm chữ hoa"
+     },
+     {
+      valid:false,
+      name: "Bao gồm ký tự đặc biệt"
+     },
+     {
+      valid:false,
+      name: "Bao gồm ít nhất sáu ký tự"
+     },
+     {
+      valid:false,
+      name: "Bao gồm số"
+     }],
+     hideValidatePassword:false
    });
+   useEffect(()=>{
+    const arrayPassword=[{
+        valid:false,
+        name: "Bao gồm chữ thường"
+       },
+       {
+        valid:false,
+        name: "Bao gồm chữ hoa"
+       },
+       {
+        valid:false,
+        name: "Bao gồm ký tự đặc biệt"
+       },
+       {
+        valid:false,
+        name: "Bao gồm ít nhất sáu ký tự"
+       },
+       {
+        valid:false,
+        name: "Bao gồm số"
+       }]
+    let hideValidate=true
+    
+      const  password=stResetPassword.type.key===types[0].key?stResetPassword.stEmail.password:stResetPassword.stOTP.password
+    if(isValidStrUpperCase(password)){
+        arrayPassword[1].valid=true
+    }
+    if(isValidStrLowerCase(password)){
+        arrayPassword[0].valid=true
+    }
+    if(isSpecialString(password)){
+        arrayPassword[2].valid=true
+
+    }
+    if(password.length>=6){
+        arrayPassword[3].valid=true
+    }
+    if(isValidCharNumber(password)){
+        arrayPassword[4].valid=true
+    }
+    arrayPassword.map(item=>{
+        if(!item.valid){
+            hideValidate=false
+        }
+    })
+ 
+    setStResetPassword(stResetPassword=>({...stResetPassword,isArrayValidPassword:arrayPassword,hideValidatePassword:hideValidate}))
+},[stResetPassword.stOTP.password,stResetPassword.stEmail.password])
    const handleChange=(name,value)=>{
     setStResetPassword({...stResetPassword,[name]:value})
    }
@@ -40,6 +112,8 @@ import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
          stOTP: {
            phoneNumber: "",
            authCode: "",
+           password: "",
+           confirmPassword:""
          },
          ["type"]: value,
        });
@@ -68,7 +142,7 @@ import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
         setStResetPassword({
          ...stResetPassword,
          stOTP: {
-           ...stSignIn.stOTP,
+           ...stResetPassword.stOTP,
            [name]: value,
          },
        });
@@ -87,6 +161,8 @@ import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
             stOTP:{
                 phoneNumber: "",
                 authCode: "",
+                password: "",
+                confirmPassword:""
             }
         })
     }
@@ -118,6 +194,8 @@ import { isValidEmail, isValidPhoneNumber } from "../helpers/utils";
             stOTP: {
               phoneNumber: "",
               authCode: "",
+              password: "",
+              confirmPassword:""
             },
         })
     }

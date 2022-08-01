@@ -6,7 +6,7 @@
  *******************************************************************************/
  import { createContext, useContext, useState } from "react";
 import { useEffect } from 'react';
-import { isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase,isSpecialString  } from "../helpers/utils";
+import { isValidCharNumber, isValidStrUpperCase,isSpecialString, isValidStrLowerCase  } from "../helpers/utils";
 import DoneIcon from '@mui/icons-material/Done';
  const Context = createContext();
  const signUpTypes=[
@@ -51,29 +51,79 @@ import DoneIcon from '@mui/icons-material/Done';
             email:"",
             password:"",
             confirmPassword:"",
-       }
+       },
+       isArrayValidPassword:[{
+        valid:false,
+        name: "Bao gồm chữ thường"
+       },
+       {
+        valid:false,
+        name: "Bao gồm chữ hoa"
+       },
+       {
+        valid:false,
+        name: "Bao gồm ký tự đặc biệt"
+       },
+       {
+        valid:false,
+        name: "Bao gồm ít nhất sáu ký tự"
+       },
+       {
+        valid:false,
+        name: "Bao gồm số"
+       }],
+       hideValidatePassword:false
     })
   
     const [stPhoneNumber,setStPhoneNumber]=useState("")
     const [stAuthCode,setStAuthCode]=useState("")
 
-    // useEffect(()=>{
-    //     if(!isValidStrUpperCase(stSignupPhone.password)){
-    //         console.log("phai co chu hoa")
-    //     }
-    //     if(!isValidStrLowerCase(stSignupPhone.password)){
-    //         console.log("Phai co chu thuong")
-    //     }
-    //     if(!isSpecialString(stSignupPhone.password)){
-    //         console.log("Phai có ky tu dac biet")
-    //     }
-    //     if(stSignupPhone.password<6){
-    //         console.log("It nhaat phai co 6 ky tu")
-    //     }
-    //     if(!isValidCharNumber(stSignupPhone.password)){
-    //         console.log("Bao gom so")
-    //     }
-    // },[stSignupPhone.password])
+    useEffect(()=>{
+        const arrayPassword=[{
+            valid:false,
+            name: "Bao gồm chữ thường"
+           },
+           {
+            valid:false,
+            name: "Bao gồm chữ hoa"
+           },
+           {
+            valid:false,
+            name: "Bao gồm ký tự đặc biệt"
+           },
+           {
+            valid:false,
+            name: "Bao gồm ít nhất sáu ký tự"
+           },
+           {
+            valid:false,
+            name: "Bao gồm số"
+           }]
+        let hideValidate=true
+        const password=stSignupPhone.type.key===signUpTypes[0].key?stSignupPhone.stPhone.password:stSignupPhone.stEmail.password
+        if(isValidStrUpperCase(password)){
+            arrayPassword[1].valid=true
+        }
+        if(isValidStrLowerCase(password)){
+            arrayPassword[0].valid=true
+        }
+        if(isSpecialString(password)){
+            arrayPassword[2].valid=true
+
+        }
+        if(password.length>=6){
+            arrayPassword[3].valid=true
+        }
+        if(isValidCharNumber(password)){
+            arrayPassword[4].valid=true
+        }
+        arrayPassword.map(item=>{
+            if(!item.valid){
+                hideValidate=false
+            }
+        })
+        setStSignupPhone({...stSignupPhone,isArrayValidPassword:arrayPassword,hideValidatePassword:hideValidate})
+    },[stSignupPhone.stPhone.password,stSignupPhone.stEmail.password])
     const handleChangeSelect=(value,name)=>{
         if(value.key===signUpTypes[0].key){
             setStSignupPhone({...stSignupPhone,

@@ -75,6 +75,7 @@ export default function NavbarStyle(){
               .navbar-header .navbar-header__icon-title{
                 display: flex;
                 align-items: center;
+                margin=left:15px;
               }
               .navbar-header .navbar-header__between{
                 display: flex;
@@ -128,6 +129,12 @@ export default function NavbarStyle(){
               .dropdown--item__list-parent{
                 display: flex;
                 margin-top: 20px;
+              }
+              .dropdown--item__list-parent h6.text-mobi-8{
+                text-align: left;
+                font-weight: 900;
+                color: white;
+                margin-top: 0;
               }
               .dropdown--item__list-child{
                 display: block;

@@ -190,7 +190,7 @@ function Navbar(props) {
                     title={content[locale]['title.signin']}
                     component={"h6"}
                     className={"f-16"}
-                    style={{margin: 0,color: 'white',fontWeight: '500'}}
+                    style={{margin: '0 15px',color: 'white',fontWeight: '500'}}
                   ></TypograPhyM8>
                 
                 </a>
@@ -216,6 +216,7 @@ function Navbar(props) {
                   className="navbar-header__icon-title"
                   icon={<Image src={cart.src} width={30} height={30} className="navbar-header__cart" alt="cart"/>}
                   title={content[locale]['title.cart']}
+                  style={{marginLeft: '15px'}}
                 />
                     <SelectLanguage/>
             </Grid>

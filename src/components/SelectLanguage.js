@@ -31,7 +31,7 @@ export default function SelectLanguage() {
   };
 
   return (
-    <div style={{ paddingLeft: "10px" }}>
+    <div style={{ marginLeft: '15px' }}>
       <style jsx global>{`
         .select-box-m8 .select-box-m8__select em{
           color: white;
@@ -75,7 +75,7 @@ export default function SelectLanguage() {
         sx={{ m: 1, minWidth: 120 }}
         variant="standard"
         className="select-box-m8"
-        style={{ margin: 0 }}
+        
       >
         <Select
           value={localeDefault}

@@ -20,6 +20,9 @@ const ButtonBlockM8Style=()=>{
                 -webkit-border-radius: 4px;
                 -moz-border-radius: 4px;
                 border-radius: 4px;
+                height: 48px;
+                border-top-right-radius: 4px!important;
+                border-bottom-right-radius: 4px!important;
             }
             .button-block-m8.btn-submit{
                 width: 100%;
@@ -29,6 +32,9 @@ const ButtonBlockM8Style=()=>{
                 letter-spacing: 0.0015em;
                 text-transform: uppercase;
                 border-radius: 4px;
+                height: 48px;
+                border-top-left-radius: 4px!important;
+                border-bottom-left-radius: 4px!important;
             }
             .button-block-m8{
                 background: linear-gradient(89.99deg, #0061AF 0.57%, #3787F3 99.99%);

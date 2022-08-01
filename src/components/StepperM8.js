@@ -128,6 +128,7 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   borderRadius: '50%',
   justifyContent: 'center',
   alignItems: 'center',
+  fontSize: '20px',
   ...(ownerState.active && {
     backgroundImage:
       'linear-gradient( 95deg,#f0c659 0%,#f3c039 50%,#f1b821 100%)',
@@ -183,13 +184,15 @@ export default function StepperM8(props) {
       `
       .stepper-m8 .MuiStepLabel-label.Mui-active,.stepper-m8 .MuiStepLabel-label.Mui-completed{
         color: #F1B821;
+        font-weight: 400;
+
       }
       .stepper-m8 .MuiSvgIcon-root.Mui-completed{
         color: #F1B821;
       }
         .stepper-m8 .MuiSvgIcon-root{
           width: auto;
-          height: 40px;
+          height: 30px;
         }
         .stepper-m8 .MuiSvgIcon-root.Mui-active{
           color: #F1B821;

@@ -92,6 +92,7 @@ const handleCloseMenu=async()=>{
                 src={props.icon}
                 width={20}
                 height={20}
+                alt="icon"
               />
             }
             title={props.title}
@@ -112,7 +113,7 @@ const handleCloseMenu=async()=>{
             <List dense={dense} class="dropdown--item__list-parent">
               {props.items.map((item, index) => (
                 <ListItem key={index} className="dropdown--item__list-child">
-                  <TypograPhyM8 title={item.title} isWhiteColor={true} />
+                  <TypograPhyM8 component="h6" variant={"h6"} title={item.title} isWhiteColor={true} />
                   <div
                     style={{
                       width: 70 + "px",

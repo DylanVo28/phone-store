@@ -108,7 +108,7 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
   </FormSubmitM8>
  }
  const FormResetPassword = (props) => {
-  const {handleChange,submitUsername}=useResetPasswordContext()
+  const {handleChange,submitUsername,stResetPassword,handleChangeData}=useResetPasswordContext()
     return (
       <FormSubmitM8
       handleSubmit={(e)=>{
@@ -129,18 +129,18 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
          </TypograPhyM8>
        </Box>
         <InputPasswordM8
-        placeHolder={"Nhập mật khẩu"}
-        //   value={stSignupPhone.password}
-        //   handleChange={(e) => handleChange(e.target.value, "password")}
+        handleChange={(e) => handleChangeData( "password",e.target.value)}
+        placeHolder={"Nhập mật khẩu *"}
+        validates={stResetPassword.isArrayValidPassword}
+        hideValidatePassword={stResetPassword.hideValidatePassword}
         ></InputPasswordM8>
         <InputPasswordM8
         placeHolder={"Nhập lại mật khẩu"}
-        //   value={stSignupPhone.confirmPassword}
-        //   handleChange={(e) => handleChange(e.target.value, "confirmPassword")}
+        handleChange={(e) => handleChangeData( "confirmPassword",e.target.value)}
         ></InputPasswordM8>
         <ButtonGroupM8>
           <ButtonBlockM8
-            className="btn-submit"
+            className="btn-cancel"
             style={{ background: "#D9D9D9", marginRight: "10px" }}
             onClick={()=>handleChange("activeStep",0)}
           >

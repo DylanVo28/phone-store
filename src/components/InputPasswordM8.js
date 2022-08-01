@@ -7,29 +7,22 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import ButtonGroupM8 from './ButtonGroupM8';
-import { useEffect } from 'react';
-import { isSpecialString, isValidCharNumber, isValidStrLowerCase, isValidStrUpperCase } from '../helpers/utils';
 import Image from 'next/image';
 import lockIcon from '../images/lock.svg'
 import visibilityOffIcon from '../images/visibility-off.svg'
 import visibilityOnIcon from '../images/visibility-on.svg'
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import FolderIcon from '@mui/icons-material/Folder';
+import ClearIcon from '@mui/icons-material/Clear';
+import DoneIcon from '@mui/icons-material/Done';
 
-import styled from 'styled-components'
 export default function InputPasswordM8(props) {
   const [showPassword, setShowPassword] = React.useState(false);
-
+  const [dense, setDense] = React.useState(false);
+  const [secondary, setSecondary] = React.useState(false);
   const handleChange = (prop) => (event) => {
     setShowPassword( event.target.value );
   };
@@ -44,13 +37,16 @@ export default function InputPasswordM8(props) {
   const checkValidInput=(str)=>{
     
   }
-  const StyledImage = styled(Image)`
-// your styles here
-marginRight: 30px; 
-`
+  function generate(element) {
+    return props.validates.map((item) =>
+      React.cloneElement(element, {
+        key: item.name,
+      }),
+    );
+  }
 
   return (
-    <Box style={{width: '100%'}} className="input-password-m8">
+    <Box style={{width: '100%'}} className={`input-password-m8 ${props.className?props.className:""}`}>
        <style jsx global>
 
         {
@@ -63,6 +59,42 @@ marginRight: 30px;
             }
             .input-password-m8 .MuiOutlinedInput-notchedOutline{
               display: none;
+            }
+            .input-password-m8 .input-password-m8__validate{
+              position: absolute;
+              background: white;
+              z-index: 9;
+              top: 60px;
+              box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+              border-radius: 4px;
+              width: 235px;
+            }
+            .input-password-m8.confirm-password .input-password-m8__validate{
+              display: none;
+            }
+            .input-password-m8 .input-password-m8__valid svg{
+              color: #F1B821;
+            }
+            .input-password-m8 .input-password-m8__valid p{
+              color: #F1B821;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 16px;
+              letter-spacing: 0.0025em;
+            }
+            .input-password-m8 .input-password-m8__invalid svg{
+              color:#EE1C24;
+            }
+            .input-password-m8 .input-password-m8__invalid p{
+              color:#EE1C24;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 16px;
+              letter-spacing: 0.0025em;
+            }
+            .input-password-m8 .input-password-m8__validate .MuiListItemIcon-root{
+              min-width: auto;
+              margin-right: 5px;
             }
           `
         }
@@ -89,13 +121,23 @@ marginRight: 30px;
                   edge="end"
                   style={{marginRight: '10px'}}
                 >
-                  {showPassword ? <Image  src={visibilityOffIcon.src} width={20} height={20} alt="lock" />: <Image  src={visibilityOnIcon.src} width={20} height={20} alt="lock" /> }
+                  {<Image  src={showPassword?visibilityOffIcon.src:visibilityOnIcon.src} width={20} height={20} alt="lock" /> }
                 </IconButton>
               </InputAdornment>
             }
             label="Password"
           />
-         
+          {(!props.hideValidatePassword&& props.validates) && <List dense={dense} className="input-password-m8__validate">
+              {props.validates && props.validates.map((item,index)=> <ListItem key={index} className={`input-password-m8__${item.valid?"valid":"invalid"}`}>
+                  <ListItemIcon>
+                    {item.valid ?<DoneIcon/>:<ClearIcon />}
+                  </ListItemIcon>
+                  <ListItemText 
+                    secondary={item.name}
+                  />
+                </ListItem>
+              )}
+            </List>}
 
         </FormControl>
     </Box>

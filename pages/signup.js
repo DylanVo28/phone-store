@@ -209,11 +209,14 @@
          value={stSignupPhone.password}
          handleChange={(e) => handleChange(e.target.value, "password")}
          placeHolder={"Nhập mật khẩu *"}
+         validates={stSignupPhone.isArrayValidPassword}
+         hideValidatePassword={stSignupPhone.hideValidatePassword}
        ></InputPasswordM8>
        <InputPasswordM8
          value={stSignupPhone.confirmPassword}
          handleChange={(e) => handleChange(e.target.value, "confirmPassword")}
          placeHolder={"Nhập lại mật khẩu *"}
+         className="confirm-password"
        ></InputPasswordM8>
        <ButtonGroupM8>
          <ButtonBlockM8
@@ -228,7 +231,7 @@
            className="btn-submit"
            style={{ background: "#0061AF", marginLeft: "10px" }}
          >
-           Tiếp theo
+            Xác nhận
          </ButtonBlockM8>
        </ButtonGroupM8>
        <TypograPhyM8

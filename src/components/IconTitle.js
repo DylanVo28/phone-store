@@ -7,9 +7,9 @@
 import  Typography  from '@mui/material/Typography';
 import  AllOutIcon  from '@mui/icons-material/AllOut';
 const IconTitle=(props)=>{
-    return ( <Typography variant={props.variant} component={props.component} className={props.className} onClick={props.onClick}>
+    return ( <Typography variant={props.variant} component={props.component} className={props.className} onClick={props.onClick} style={props.style}>
     {props.icon}
-    <span className='icon-title__title'>{props.title}</span>
+    <span className='icon-title__title' style={{paddingLeft: '10px'}}>{props.title}</span>
     </Typography>)
 }
 export default IconTitle
