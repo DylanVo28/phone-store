@@ -5,7 +5,7 @@
  * Author: Dinh Vo
  *******************************************************************************/
 import Head from 'next/head'
-import { APP_NAME, DOMAIN, FB_APP_ID } from '../../config'
+import { APP_NAME, DOMAIN, DOMAIN_SERVICE, FB_APP_ID } from '../../config'
 const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogImage, ogUrl,asPath, indexing})=>{
     return (
         <Head>
@@ -17,7 +17,7 @@ const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogIm
             <meta property='og:type' content='website'/>
             <meta property='og:title' content={ogTitle}/>
             <meta property='og:description' content={ogDescription}/>
-            <meta property='og:image' content={`http://mobi8.pvssolution.com${ogImage}`}/>
+            <meta property='og:image' content={`${DOMAIN_SERVICE}${ogImage}`}/>
             <meta property="og:image:secure_url" content={`${DOMAIN}${ogImage}`}/>
             <meta property='og:url' content={ogUrl}/>
             <meta property="og:site_name" content={`${APP_NAME}`}/>
@@ -26,7 +26,7 @@ const MetaSEO=({children,title,keywords,description,ogTitle, ogDescription, ogIm
             <meta name="twitter:image:alt" content="PSGC API Banner"/>
             <meta name="twitter:title" content={ogTitle}/>
             <meta name="twitter:description" content={ogDescription}/>
-            <meta name="twitter:image" content={`http://mobi8.pvssolution.com${ogImage}`}></meta>
+            <meta name="twitter:image" content={`${DOMAIN_SERVICE}${ogImage}`}></meta>
             {/* <meta name="robots" content='indexing'/> */}
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
             <link rel="canonical" href={`${DOMAIN}${asPath}`}/>
