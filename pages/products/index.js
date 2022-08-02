@@ -32,6 +32,8 @@ import { replaceSpaceToDash } from "../../src/helpers/utils";
 import Tab from "@mui/material/Tab";
 import ProductPageStyle from "../../src/styles/pages/ProductPageStyle";
 import { Hydration } from "../../auth/auth";
+import { APP_NAME, DOMAIN } from "../../config";
+import MetaSEO from "../../src/components/MetaSEO";
 
 var itemsBanner = [
   {
@@ -47,7 +49,7 @@ const MIN_PRICE = 0;
 const Products = ({ res }) => {
   const [width, setWidth] = useState(0);
   const [checkNull, setCheckNull] = useState(true);
-  const { locale } = useRouter();
+  const { locale,asPath } = useRouter();
   const {
     stFilter,
     setStFilter,
@@ -105,9 +107,25 @@ const Products = ({ res }) => {
       />
     }
   };
+  const head = () => {
+    return (
+      <MetaSEO
+        title={`Devices | ${APP_NAME}`}
+        description={"Trang product"}
+        asPath={asPath}
+        keywords="keywords"
+        ogTitle={`Lasted web development | ${APP_NAME}`}
+        ogDescription={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        }
+        ogUrl={`${DOMAIN}${asPath}`}
+        ogImage={banner.src}
+      ></MetaSEO>
+    );
+  };
   return (
     <>
-    <Hydration>
+    {head()}
       <React.Fragment>
         <ProductPageStyle/>
           <Navbar />
@@ -258,6 +276,8 @@ const Products = ({ res }) => {
                   </h4>
 
                   {stFilterProduct.price && (
+      <Hydration>
+
                     <InputRangeM8
                       min={MIN_PRICE}
                       max={MAX_PRICE}
@@ -267,6 +287,8 @@ const Products = ({ res }) => {
                         handleChangeFilter(value, "price")
                       }
                     />
+      </Hydration>
+
                   )}
                 </Grid>
               </Grid>
@@ -476,7 +498,6 @@ const Products = ({ res }) => {
           {width && <SpeedDialTooltipOpen />}
           <Footer></Footer>
       </React.Fragment>
-      </Hydration>
     </>
   );
 };

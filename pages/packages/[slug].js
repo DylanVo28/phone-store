@@ -8,169 +8,20 @@ import CardTextM8 from "../../src/components/CardTextM8";
 import CarouselM8 from "../../src/components/Carousel";
 import ListItemTextM8 from "../../src/components/ListItemTextM8";
 import iconDiscount from '../../src/images/Discount.svg'
-import MultiItemCarousel from "../../src/components/Simple";
-import icons from "../../src/images/icons";
-import PackageCardM8 from "../../src/components/PackageCardM8";
+
 import BreadCrumbsM8 from '../../src/components/BreadCrumbsM8';
-
-const backgroundImage =
-  "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/285412229_562998832205409_2099875105150622222_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7TyPYlJ_itoAX-cXw4U&_nc_ht=scontent.fsgn3-1.fna&oh=03_AVJX0V-PkgSE9SJDX0_e04cTxkogOX1BVeuGywhh4hiIog&oe=62D7CC26";
-const items = [
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      " which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-  {
-    id: 1,
-    image:
-      "https://n1.sdlcdn.com/imgs/g/o/f/iPhone-Black-iPhone-4s-16GB-SDL411082062-1-dfc7d.jpg",
-    discountValue: 1000000,
-    title: "Samsung galaxy 2020",
-    description:
-      "which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.  ",
-    price: 300000000,
-  },
-];
-
-const itemsPackage = [
-  {
-    id:1,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
- 
-  },
-  {
-    id:2,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-   
-  },
-  {
-    id:3,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-  },
-  {
-    id:4,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-   
-  },
-  {
-    id:5,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-    
-  },
-  {
-    id:6,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-    
-  },
-  {
-    id:7,
-    image:
-      "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
-    title: "dijango",
-    des: "Thuê bao mới hòa mạng",
-    
-  },
-];
+import VerticalCarouselM8 from "../../src/components/VerticalCarouselM8";
+import banner from '../../src/images/baner_1.jpg'
+import MetaSEO from "../../src/components/MetaSEO";
+import { useRouter } from 'next/router';
+import { APP_NAME, DOMAIN } from "../../config";
 
 export default function PackageDetail() {
   // const [width, setWidth] = useState(0);
   // useEffect(() => {
   //   setWidth(window.innerWidth);
   // }, []);
+  const router=useRouter()
   var itemsBanner = [
     {
       image:
@@ -181,9 +32,63 @@ export default function PackageDetail() {
         "https://cdn.dribbble.com/users/2165858/screenshots/9565926/iphone_x-xs-11_pro___1_4x.jpg",
     },
   ];
-
+  const itemData = [
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Breakfast',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Burger',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Camera',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Coffee',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Hats',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Honey',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Basketball',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Fern',
+    },
+    {
+      img: 'https://www.arabicfiction.org/sites/default/files/styles/slide-image/public/default_images/default-book.jpg?itok=j3SHuLkA',
+      title: 'Mushrooms',
+    }
+  ];
+  const head = () => {
+    return (
+      <MetaSEO
+        title={`Trang packages | ${APP_NAME}`}
+        description={"description"}
+        asPath={router.asPath}
+        keywords="keywords"
+        ogTitle={`Lasted web development | ${APP_NAME}`}
+        ogDescription={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        }
+        ogUrl={`${DOMAIN}${router.asPath}`}
+        ogImage={banner.src}
+      ></MetaSEO>
+    );
+  };
   return (
     <>
+    {head()}
     <style jsx global>
       {
         `
@@ -197,9 +102,7 @@ export default function PackageDetail() {
         .package-title .title{
           margin: 0;
         }
-        .package-detail{
-          padding: 20px 0;
-        }
+  
         .package-detail__promotion{
           border: 1px solid #D9D9D9;
           border-radius: 5px;
@@ -215,8 +118,8 @@ export default function PackageDetail() {
       <Navbar />
       <CarouselM8 items={itemsBanner} />
       <Container maxWidth="lg">
-        <Grid container spacing={2}>
-          <Grid item md={12} className={"package-title"}>
+        <Grid container>
+          <Grid md={12} className={"package-title"}>
             <h1 className="title">Gói cước</h1>
             <BreadCrumbsM8/>
           </Grid>
@@ -224,8 +127,8 @@ export default function PackageDetail() {
       </Container>
       {/*package section*/}
       <Container maxWidth="lg" className="package-detail">
-        <Grid container spacing={2}>
-          <Grid item md={10}>
+        <Grid container >
+          <Grid  md={10}>
             <Grid container spacing={2}>
               <Grid item md={5}>
                 <Card sx={{ maxWidth: 100 + "%" }}>
@@ -276,8 +179,8 @@ export default function PackageDetail() {
                   </Grid>
             </Grid>
           </Grid>
-          <Grid item md={2}>
-         
+          <Grid  item md={2} style={{textAlign: 'center'}}>
+                    <VerticalCarouselM8 items={itemData}/>
           </Grid>
         </Grid>
       </Container>

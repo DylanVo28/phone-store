@@ -247,8 +247,8 @@ const ProductDetail = ({device}) => {
   const head = () => {
     return (
       <MetaSEO
-        title={`Home | ${APP_NAME}`}
-        description={"Trang product"}
+        title={`${device['data'].name} | ${APP_NAME}`}
+        description={device['data']['sale_info']}
         asPath={router.asPath}
         keywords="keywords"
         ogTitle={`Lasted web development | ${APP_NAME}`}

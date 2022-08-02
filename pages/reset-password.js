@@ -23,6 +23,7 @@ import LinkM8 from "../src/components/LinkM8";
 import { useResetPasswordContext } from "../src/context/ResetPasswordProvider";
 import banner from '../src/images/banner-form.png'
 import emailIcon from '../src/images/email-outline.svg'
+import Footer from "../src/components/Footer";
 const FormAuthCode = () => {
   const {handleChange,submitUsername}=useResetPasswordContext()
 
@@ -270,6 +271,8 @@ Chúng tôi sẽ gửi  thông tin đặt lại mật khẩu cho bạn.
            </Grid>
          </Container>
        </Box>
+       <Footer></Footer>
+
      </>
    );
  }

@@ -28,7 +28,7 @@ import Router, { useRouter } from "next/router";
 import IconPrev from "../src/images/icon-prev.svg";
 import IconNext from "../src/images/icon-next.svg";
 import NoSSR from "react-no-ssr";
-import banner from "../src/images/baner-6-1.png";
+// import banner from "../src/images/baner-6-1.png";
 import solutionImage from "../src/images/solution-image.png";
 import promotionImage from "../src/images/promotion-image.png";
 import newsImage from "../src/images/news-image.png";
@@ -38,6 +38,9 @@ import content from "../public/locales/content";
 import MobiService from "../actions/MobiService";
 import {  useHomeContext } from './../src/context/HomeProvider';
 import { replaceSpaceToDash } from "../src/helpers/utils";
+import MetaSEO from "../src/components/MetaSEO";
+import { APP_NAME, DOMAIN } from "../config";
+import banner from '../src/images/baner_1.jpg'
 const itemsPromotion = [
   {
     id: 1,
@@ -199,7 +202,7 @@ const itemsSolution = [
 export default function Home({ res }) {
   const [width, setWidth] = useState(0);
   const {stPackages,setStPackages,setStDevices,stDevices}=useHomeContext()
-  const { locale, router } = useRouter();
+  const { locale, router,asPath } = useRouter();
   useEffect(() => {
     setWidth(window.innerWidth);
     setStPackages(res[1]['data'])
@@ -215,11 +218,27 @@ export default function Home({ res }) {
       image: banner.src,
     },
   ];
-  
+  const head = () => {
+    return (
+      <MetaSEO
+        title={`Home | ${APP_NAME}`}
+        description={"Trang product"}
+        asPath={asPath}
+        keywords="keywords"
+        ogTitle={`Lasted web development | ${APP_NAME}`}
+        ogDescription={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        }
+        ogUrl={`${DOMAIN}${asPath}`}
+        ogImage={banner.src}
+      ></MetaSEO>
+    );
+  };
 
   return (
     <React.Fragment>
-     
+        {head()}
+
         {/*banner section */}
 
         {/* <Private> */}

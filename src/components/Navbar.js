@@ -169,7 +169,7 @@ function Navbar(props) {
         <NavbarStyle/>
         <Container maxWidth="lg" style={{overflow: 'hidden'}}>
           <Grid container >
-            <Grid item xs={3} className="navbar-header__left">
+            <Grid  xs={3} className="navbar-header__left">
               <Link href="/" passHref>
                 <a>
                   
@@ -177,10 +177,10 @@ function Navbar(props) {
                 </a>
               </Link>
             </Grid>
-            <Grid item xs={3} className="navbar-header__between">
+            <Grid  xs={3} className="navbar-header__between">
               
             </Grid>
-            <Grid item xs={6} className="navbar-header__right">
+            <Grid  xs={6} className="navbar-header__right">
             <Link href={"/signin"} passHref>
                 <a className="navbar-header__sign-in text-decoration--none">
                 <span className="icon-title__icon">
